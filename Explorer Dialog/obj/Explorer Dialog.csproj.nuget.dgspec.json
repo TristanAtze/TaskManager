@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ben.sowieja\\Documents\\GitHub\\TaskScheduler\\Explorer Dialog\\Explorer Dialog.csproj": {}
+    "C:\\Users\\ben.sowieja\\OneDrive - 4SELLERS GmbH\\AA) Programming Projekts\\Console\\TaskSchedulerApp\\Explorer Dialog\\Explorer Dialog.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ben.sowieja\\Documents\\GitHub\\TaskScheduler\\Explorer Dialog\\Explorer Dialog.csproj": {
+    "C:\\Users\\ben.sowieja\\OneDrive - 4SELLERS GmbH\\AA) Programming Projekts\\Console\\TaskSchedulerApp\\Explorer Dialog\\Explorer Dialog.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ben.sowieja\\Documents\\GitHub\\TaskScheduler\\Explorer Dialog\\Explorer Dialog.csproj",
+        "projectUniqueName": "C:\\Users\\ben.sowieja\\OneDrive - 4SELLERS GmbH\\AA) Programming Projekts\\Console\\TaskSchedulerApp\\Explorer Dialog\\Explorer Dialog.csproj",
         "projectName": "Explorer Dialog",
-        "projectPath": "C:\\Users\\ben.sowieja\\Documents\\GitHub\\TaskScheduler\\Explorer Dialog\\Explorer Dialog.csproj",
+        "projectPath": "C:\\Users\\ben.sowieja\\OneDrive - 4SELLERS GmbH\\AA) Programming Projekts\\Console\\TaskSchedulerApp\\Explorer Dialog\\Explorer Dialog.csproj",
         "packagesPath": "C:\\Users\\ben.sowieja\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ben.sowieja\\Documents\\GitHub\\TaskScheduler\\Explorer Dialog\\obj\\",
+        "outputPath": "C:\\Users\\ben.sowieja\\OneDrive - 4SELLERS GmbH\\AA) Programming Projekts\\Console\\TaskSchedulerApp\\Explorer Dialog\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -45,7 +45,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0-windows7.0": {
@@ -69,7 +69,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

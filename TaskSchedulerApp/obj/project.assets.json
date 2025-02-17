@@ -1031,21 +1031,21 @@
           }
         }
       },
-      "TaskClasses/1.0.0": {
+      "TranslationsLibary/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
+        "framework": ".NETCoreApp,Version=v9.0",
         "compile": {
-          "bin/placeholder/TaskClasses.dll": {}
+          "bin/placeholder/TranslationsLibary.dll": {}
         },
         "runtime": {
-          "bin/placeholder/TaskClasses.dll": {}
+          "bin/placeholder/TranslationsLibary.dll": {}
         }
       },
       "WindowsForms/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
-          "TaskClasses": "1.0.0"
+          "TranslationsLibary": "1.0.0"
         },
         "compile": {
           "bin/placeholder/WindowsForms.dll": {}
@@ -4466,10 +4466,10 @@
         "system.threading.tasks.nuspec"
       ]
     },
-    "TaskClasses/1.0.0": {
+    "TranslationsLibary/1.0.0": {
       "type": "project",
-      "path": "../TaskClasses/TaskClasses.csproj",
-      "msbuildProject": "../TaskClasses/TaskClasses.csproj"
+      "path": "../TranslationsLibary/TranslationsLibary.csproj",
+      "msbuildProject": "../TranslationsLibary/TranslationsLibary.csproj"
     },
     "WindowsForms/1.0.0": {
       "type": "project",
@@ -4480,7 +4480,7 @@
   "projectFileDependencyGroups": {
     "net9.0-windows7.0": [
       "MiNET >= 1.0.2304",
-      "TaskClasses >= 1.0.0",
+      "TranslationsLibary >= 1.0.0",
       "WindowsForms >= 1.0.0"
     ]
   },
@@ -4520,8 +4520,8 @@
             "C:\\Users\\ben.sowieja\\Documents\\GitHub\\TaskManager\\FileDialog\\WindowsForms.csproj": {
               "projectPath": "C:\\Users\\ben.sowieja\\Documents\\GitHub\\TaskManager\\FileDialog\\WindowsForms.csproj"
             },
-            "C:\\Users\\ben.sowieja\\Documents\\GitHub\\TaskManager\\TaskClasses\\TaskClasses.csproj": {
-              "projectPath": "C:\\Users\\ben.sowieja\\Documents\\GitHub\\TaskManager\\TaskClasses\\TaskClasses.csproj"
+            "C:\\Users\\ben.sowieja\\Documents\\GitHub\\TaskManager\\TranslationsLibary\\TranslationsLibary.csproj": {
+              "projectPath": "C:\\Users\\ben.sowieja\\Documents\\GitHub\\TaskManager\\TranslationsLibary\\TranslationsLibary.csproj"
             }
           }
         }

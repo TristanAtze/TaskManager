@@ -1040,22 +1040,6 @@
         "runtime": {
           "bin/placeholder/TranslationsLibary.dll": {}
         }
-      },
-      "WindowsForms/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v9.0",
-        "dependencies": {
-          "TranslationsLibary": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/WindowsForms.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/WindowsForms.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WindowsForms"
-        ]
       }
     }
   },
@@ -4470,18 +4454,12 @@
       "type": "project",
       "path": "../TranslationsLibary/TranslationsLibary.csproj",
       "msbuildProject": "../TranslationsLibary/TranslationsLibary.csproj"
-    },
-    "WindowsForms/1.0.0": {
-      "type": "project",
-      "path": "../FileDialog/WindowsForms.csproj",
-      "msbuildProject": "../FileDialog/WindowsForms.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0-windows7.0": [
       "MiNET >= 1.0.2304",
-      "TranslationsLibary >= 1.0.0",
-      "WindowsForms >= 1.0.0"
+      "TranslationsLibary >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -4517,9 +4495,6 @@
         "net9.0-windows7.0": {
           "targetAlias": "net9.0-windows",
           "projectReferences": {
-            "C:\\Users\\ben.sowieja\\Documents\\GitHub\\TaskManager\\FileDialog\\WindowsForms.csproj": {
-              "projectPath": "C:\\Users\\ben.sowieja\\Documents\\GitHub\\TaskManager\\FileDialog\\WindowsForms.csproj"
-            },
             "C:\\Users\\ben.sowieja\\Documents\\GitHub\\TaskManager\\TranslationsLibary\\TranslationsLibary.csproj": {
               "projectPath": "C:\\Users\\ben.sowieja\\Documents\\GitHub\\TaskManager\\TranslationsLibary\\TranslationsLibary.csproj"
             }

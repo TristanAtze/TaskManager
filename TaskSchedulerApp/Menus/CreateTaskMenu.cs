@@ -1,4 +1,5 @@
-﻿using FileDialog;
+﻿using BackupTool;
+using FileDialog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,7 +43,8 @@ class CreateTaskMenu : Menu
                 autoCreator.Start();
                 break;
             case 2:
-                //todo Funktion verknüpfen
+                var backupTask = new Form1();
+                System.Windows.Forms.Application.Run(backupTask);
                 break;
             case 4:
                 KeepGoing = false;

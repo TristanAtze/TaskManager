@@ -93,7 +93,7 @@ namespace BackupTool
             this.buttonBrowseSource.Name = "buttonBrowseSource";
             this.buttonBrowseSource.Size = new System.Drawing.Size(100, 23);
             this.buttonBrowseSource.TabIndex = 3;
-            this.buttonBrowseSource.Text = GetTranslation(GetCurrentLanguage(), "searching_designer_backupmanage");
+            this.buttonBrowseSource.Text = GetTranslation(GetCurrentLanguage(), "searching_designer_backupmanager");
             this.buttonBrowseSource.UseVisualStyleBackColor = true;
             this.buttonBrowseSource.Click += new System.EventHandler(this.buttonBrowseSource_Click);
             // 

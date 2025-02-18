@@ -78,7 +78,7 @@ public class BasicTasks
         taskScheduler.ScheduleTask(Browser);
     }
 
-    public static void LockInactive(TaskScheduler taskScheduler, int timeSpan)
+    public static void LockInactive(TaskScheduler taskScheduler)
     {
         var notificationManager = new NotificationManager();
         var logger = new Logger("task_logs.csv");
@@ -91,7 +91,8 @@ public class BasicTasks
             {
                 while (true)
                 {
-                    // Asynchrone Prüfung, ob der Nutzer mindestens 1 Minute inaktiv ist
+                    Console.WriteLine("Test");
+                    //Asynchrone Prüfung, ob der Nutzer mindestens 1 Minute inaktiv ist
                     bool inactive = PcStatus.IsUserInactive;
                     if (inactive)
                     {
@@ -100,7 +101,7 @@ public class BasicTasks
                         SystemControl.LockWorkStation();
                         break; // Nach dem Sperren beenden wir die Überwachungsschleife.
                     }
-                    // Überprüfe alle 5 Sekunden erneut
+                    //Überprüfe alle 5 Sekunden erneut
                     await Task.Delay(TimeSpan.FromSeconds(5));
                 }
             });

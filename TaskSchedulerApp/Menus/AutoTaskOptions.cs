@@ -44,8 +44,8 @@ class AutoTaskOptions : Menu
                 BasicTasks.Browser(Scheduler);
                 break;
             case 3:
-                int minutes = GetMinutes() * 1000000000 * 60;
-                BasicTasks.LockInactive(Scheduler, minutes);
+                
+                BasicTasks.LockInactive(Scheduler);
                 break;
             case 5:
                 KeepGoing = false;
@@ -53,25 +53,5 @@ class AutoTaskOptions : Menu
             default:
                 break;
         }
-    }
-
-    static int GetMinutes()
-    {
-        int result = 0;
-
-        Console.Clear();
-        Console.Write("\nBitte geben Sie an, nach wie vielen Minuten der PC gesperrt werden soll:\n\nMinuten:\t");
-
-        do
-        {
-            string? input = Console.ReadLine();
-
-            if (input != null) int.TryParse(input, out result);
-
-        } while (result <= 0);
-
-        Console.Clear();
-
-        return result;
     }
 }

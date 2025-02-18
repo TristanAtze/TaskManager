@@ -8,7 +8,7 @@ public class Program
     public static void Main()
     {
         Console.CursorVisible = false;
-
+        Task.Run(() => PcStatus.StartMonitoring(TimeSpan.FromMinutes(1), TimeSpan.FromMinutes(1), 20.0f, ["test"], "test"));
         var taskScheduler = new TaskScheduler();
 
         Task.Run(taskScheduler.Start);
@@ -16,7 +16,7 @@ public class Program
         var mainMenu = new MainMenu(taskScheduler);
         mainMenu.Start();
 
-        Task.Run(() => PcStatus.StartMonitoring(TimeSpan.FromMinutes(3), TimeSpan.FromMinutes(3), 20.0f,["test"], "test" ));
+        
     }
 
     //public static async Task PreventShutdownStart()

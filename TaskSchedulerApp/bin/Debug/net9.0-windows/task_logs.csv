@@ -51,3 +51,40 @@ Timestamp,TaskName,Message
 11.02.2025 09:22:51,LockPC,Nutzer inaktiv. PC wird sofort gesperrt.
 18.02.2025 07:47:45,OpenMail,Task successfully executed.
 18.02.2025 10:28:50,OpenMail,Task successfully executed.
+18.02.2025 12:07:07,NotificationManager,SendNotification successfully executed.
+18.02.2025 12:07:07,LockInactive,Task successfully executed.
+18.02.2025 12:07:36,NotificationManager,SendNotification successfully executed.
+18.02.2025 12:07:36,Browser,Task successfully executed.
+18.02.2025 12:43:11,NotificationManager,SendNotification successfully executed.
+18.02.2025 12:43:20,LockInactive,Task successfully executed.
+18.02.2025 12:44:39,StartMonitoring,LASTINPUTINFO successfully executed.
+18.02.2025 12:44:55,StartMonitoring,Process.GetProcesses successfully executed.
+18.02.2025 12:45:08,NotificationManager,SendNotification successfully executed.
+18.02.2025 12:45:08,LockInactive,Task successfully executed.
+18.02.2025 12:56:39,StartMonitoring,Process.GetProcessesByName successfully executed.
+18.02.2025 12:59:07,StartMonitoring,Process.GetProcessesByName successfully executed.
+18.02.2025 13:05:03,StartMonitoring,Process.GetProcessesByName successfully executed.
+18.02.2025 13:05:08,NotificationManager,SendNotification successfully executed.
+18.02.2025 13:05:08,LockPC,Nutzer inaktiv. PC wird sofort gesperrt.
+18.02.2025 13:06:51,StartMonitoring,uptimeMilliseconds successfully executed.
+18.02.2025 13:07:02,NotificationManager,SendNotification successfully executed.
+18.02.2025 13:07:02,LockInactive,Task successfully executed.
+18.02.2025 13:07:02,NotificationManager,SendNotification successfully executed.
+18.02.2025 13:07:02,LockPC,Nutzer inaktiv. PC wird sofort gesperrt.
+18.02.2025 13:13:56,StartMonitoring,PerformanceCounter successfully executed.
+18.02.2025 13:14:06,NotificationManager,SendNotification successfully executed.
+18.02.2025 13:14:06,LockInactive,Task successfully executed.
+18.02.2025 13:21:43,StartMonitoring,PerformanceCounter successfully executed.
+18.02.2025 13:21:52,NotificationManager,SendNotification successfully executed.
+18.02.2025 13:21:52,LockInactive,Task successfully executed.
+18.02.2025 13:22:39,StartMonitoring,PerformanceCounter successfully executed.
+18.02.2025 13:22:39,StartMonitoring,Process.GetProcessesByName successfully executed.
+18.02.2025 13:22:48,NotificationManager,SendNotification successfully executed.
+18.02.2025 13:22:48,LockInactive,Task successfully executed.
+18.02.2025 13:22:48,NotificationManager,SendNotification successfully executed.
+18.02.2025 13:22:48,LockPC,Nutzer inaktiv. PC wird sofort gesperrt.
+18.02.2025 13:26:11,StartMonitoring,Process.GetProcesses successfully executed.
+18.02.2025 13:26:11,StartMonitoring,PerformanceCounter successfully executed.
+18.02.2025 13:26:28,StartMonitoring,uptimeMilliseconds successfully executed.
+18.02.2025 13:26:54,StartMonitoring,Process.GetProcesses successfully executed.
+18.02.2025 13:27:24,StartMonitoring,PerformanceCounter successfully executed.

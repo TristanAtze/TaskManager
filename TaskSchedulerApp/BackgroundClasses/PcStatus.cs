@@ -67,17 +67,33 @@ namespace TaskSchedulerApp.BackgroundClasses
                     {
                         LASTINPUTINFO lastInputInfo = new LASTINPUTINFO();
                         lastInputInfo.cbSize = (uint)Marshal.SizeOf(typeof(LASTINPUTINFO));
+
+                        // Ruft die Zeit der letzten Eingabe ab
                         if (!GetLastInputInfo(ref lastInputInfo))
                         {
-                            // Im Fehlerfall kann man hier ggf. einen Default-Wert setzen.
+                            throw new Exception("Fehler beim Aufrufen von GetLastInputInfo.");
                         }
-                        uint idleTimeMilliseconds = (uint)Environment.TickCount - lastInputInfo.dwTime;
-                        IsUserInactive = idleTimeMilliseconds >= inactivityThreshold.TotalMilliseconds;
+
+                        // Berechnet die seit der letzten Eingabe vergangene Zeit in Millisekunden
+                        uint letzteEingabe = lastInputInfo.dwTime;
+                        uint aktuelleZeit = (uint)Environment.TickCount;
+                        uint inaktiveZeitInMillisekunden = aktuelleZeit - letzteEingabe;
+
+                        // Prüft, ob die inaktive Zeit die angegebene Schwelle überschreitet
+                        IsUserInactive = (inaktiveZeitInMillisekunden / 1000) >= 5;
                     }
-                    catch { /* Fehler ggf. loggen */ }
+                    catch 
+                    {
+                        Environment.Exit(0);
+                    }
                     await Task.Delay(1000, token);
                 }
             }, token);
+
+            //_ = Task.Run(async () =>
+            //{
+            //    IsUserInactive = true;
+            //}, token);
 
             _ = Task.Run(async () =>
             {
@@ -210,16 +226,16 @@ namespace TaskSchedulerApp.BackgroundClasses
 
         #region Native Methoden für Nutzerinaktivität
 
+        [DllImport("user32.dll")]
+        private static extern bool GetLastInputInfo(ref LASTINPUTINFO plii);
+
+        // Struktur für die letzte Eingabeinformation
         [StructLayout(LayoutKind.Sequential)]
-        public struct LASTINPUTINFO
+        private struct LASTINPUTINFO
         {
             public uint cbSize;
             public uint dwTime;
         }
-
-        [DllImport("user32.dll")]
-        public static extern bool GetLastInputInfo(ref LASTINPUTINFO plii);
-
         #endregion
     }
 }

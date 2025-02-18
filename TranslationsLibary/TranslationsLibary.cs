@@ -21,6 +21,8 @@ namespace TranslationsLibrary
 
                     //Language Menü
                     { "language_option", "Sprache ändern" },
+                    { "choose_language", "Wähle eine Sprache:" },
+                    { "back_option", "Zurück zum Hauptmenü" },
 
 
                     //Mainmenu
@@ -30,8 +32,27 @@ namespace TranslationsLibrary
                     { "loadpreset_options_mainmenu", "[ Voreinstellungen laden ]" },
                     { "settings_options_mainmenu", "[ Einstellungen ]" },
                     { "end_options_mainmenu", "[ Beenden ]" },
-                    { "choose_language", "Wähle eine Sprache:" },
-                    { "back_option", "Zurück zum Hauptmenü" },
+
+                    //MainMenu - Task-Ausgabe
+                    {"headline_printtasks_mainmenu", "\nAusstehende Tasks:\n------------------\n" },
+                    {"name_printtasks_mainmenu", "[ Name ] = " },
+                    {"priority_printtasks_mainmenu", "[ Priorität ] = " },
+                    {"date_printtasks_mainmenu", "[ Datum ] = " },
+                    {"interval_printtasks_mainmenu", "[ Intervall ]" },
+
+                    //CreateTaskMenu - Optionen
+                    {"headline_createtaskmenu", "Task erstellen" },
+                    {"individualtask_createtaskmenu", "[ individueller Task ]" },
+                    {"automatictask_createtaskmenu", "[ automatischer Task ]" },
+                    {"backuptask_createtaskmenu", "[ Backup-Task ]" },
+                    {"return_createtaskmenu", "[ zurück ]" },
+
+                    //AutoMenu-Optionen
+                    {"headline_autotaskmenu", "Automatische Tasks" },
+                    {"email_autotaskmenu", "[ E-Mail ]" },
+                    {"calc_autotaskmenu", "[ Taschenrechner ]" },
+                    {"browser_autotaskmenu", "[ Browser ]" },
+                    {"return_autotaskmenu", "[ zurück ]" },
                     #endregion
 
                     #region Settingsmenu
@@ -145,6 +166,27 @@ namespace TranslationsLibrary
                     { "end_options_mainmenu", "[ Exit ]" },
                     { "choose_language", "Choose a language:" },
                     { "back_option", "Back to main menu" },
+
+                    //MainMenu - Task-Ausgabe
+                    {"headline_printtasks_mainmenu", "\nPending Tasks:\n------------------\n" },
+                    {"name_printtasks_mainmenu", "[ Name ] = " },
+                    {"priority_printtasks_mainmenu", "[ Priority ] = " },
+                    {"date_printtasks_mainmenu", "[ Date ] = " },
+                    {"interval_printtasks_mainmenu", "[ Interval ]" },
+
+                    //CreateMenu-Optionen
+                    { "headline_createtaskmenu", "Create Task" },
+                    { "individualtask_createtaskmenu", "[ Individual Task ]" },
+                    { "automatictask_createtaskmenu", "[ Automatic Task ]" },
+                    { "backuptask_createtaskmenu", "[ Backup Task ]" },
+                    { "return_createtaskmenu", "[ Back ]" },
+
+                    //AutoMenu-OPtionen
+                    { "headline_autotaskmenu", "Automated Tasks" },
+                    { "email_autotaskmenu", "[ Email ]" },
+                    { "calc_autotaskmenu", "[ Calculator ]" },
+                    { "browser_autotaskmenu", "[ Browser ]" },
+                    { "return_autotaskmenu", "[ Back ]" },
                     #endregion
 
                     #region Settingsmenu
@@ -246,6 +288,26 @@ namespace TranslationsLibrary
                     { "end_options_mainmenu", "[ Quitter ]" },
                     { "choose_language", "Choisissez une langue :" },
                     { "back_option", "Retour au menu principal" },
+
+                    //MainMenu - Task-Ausgabe
+                    {"headline_printtasks_mainmenu", "\nTâches en attente:\n------------------\n" },
+                    {"name_printtasks_mainmenu", "[ Nom ] = " },
+                    {"priority_printtasks_mainmenu", "[ Priorité ] = " },
+                    {"date_printtasks_mainmenu", "[ Date ] = " },
+                    {"interval_printtasks_mainmenu", "[ Intervalle ]" },
+
+                    //CreateMenu
+                    { "headline_createtaskmenu", "Créer une tâche" },
+                    { "individualtask_createtaskmenu", "[ Tâche individuelle ]" },
+                    { "automatictask_createtaskmenu", "[ Tâche automatique ]" },
+                    { "backuptask_createtaskmenu", "[ Tâche de sauvegarde ]" },
+                    { "return_createtaskmenu", "[ Retour ]" },
+
+                    //AutoMenu-Optionen{ "headline_autotaskmenu", "Tâches automatiques" },
+                    { "email_autotaskmenu", "[ E-mail ]" },
+                    { "calc_autotaskmenu", "[ Calculatrice ]" },
+                    { "browser_autotaskmenu", "[ Navigateur ]" },
+                    { "return_autotaskmenu", "[ Retour ]" },
                     #endregion
 
                     #region Settingsmenu
@@ -347,6 +409,27 @@ namespace TranslationsLibrary
                     { "end_options_mainmenu", "[ Esci ]" },
                     { "choose_language", "Scegli una lingua:" },
                     { "back_option", "Torna al menu principale" },
+
+                    //MainMenu - Task-Ausgabe
+                    {"headline_printtasks_mainmenu", "\nAttività in sospeso:\n------------------\n" },
+                    {"name_printtasks_mainmenu", "[ Nome ] = " },
+                    {"priority_printtasks_mainmenu", "[ Priorità ] = " },
+                    {"date_printtasks_mainmenu", "[ Data ] = " },
+                    {"interval_printtasks_mainmenu", "[ Intervallo ]" },
+
+                    //CreateMenu-Optionen
+                    { "headline_createtaskmenu", "Crea attività" },
+                    { "individualtask_createtaskmenu", "[ Attività individuale ]" },
+                    { "automatictask_createtaskmenu", "[ Attività automatica ]" },
+                    { "backuptask_createtaskmenu", "[ Attività di backup ]" },
+                    { "return_createtaskmenu", "[ Indietro ]" },
+
+                    //AutoMenu-Optionen
+                    { "headline_autotaskmenu", "Attività automatiche" },
+                    { "email_autotaskmenu", "[ E-mail ]" },
+                    { "calc_autotaskmenu", "[ Calcolatrice ]" },
+                    { "browser_autotaskmenu", "[ Browser ]" },
+                    { "return_autotaskmenu", "[ Indietro ]" },
                     #endregion
 
                     #region Settingsmenu
@@ -448,6 +531,27 @@ namespace TranslationsLibrary
                     { "end_options_mainmenu", "[ Salir ]" },
                     { "choose_language", "Elige un idioma:" },
                     { "back_option", "Volver al menú principal" },
+
+                    //MainMenu - Task-Ausgabe
+                    {"headline_printtasks_mainmenu", "\nTareas pendientes:\n------------------\n" },
+                    {"name_printtasks_mainmenu", "[ Nombre ] = " },
+                    {"priority_printtasks_mainmenu", "[ Prioridad ] = " },
+                    {"date_printtasks_mainmenu", "[ Fecha ] = " },
+                    {"interval_printtasks_mainmenu", "[ Intervalo ]" },
+
+                    //CreateMenu-Optionen
+                    { "headline_createtaskmenu", "Crear tarea" },
+                    { "individualtask_createtaskmenu", "[ Tarea individual ]" },
+                    { "automatictask_createtaskmenu", "[ Tarea automática ]" },
+                    { "backuptask_createtaskmenu", "[ Tarea de respaldo ]" },
+                    { "return_createtaskmenu", "[ Volver ]" },
+
+                    //AutoMenu-Optionen
+                    { "headline_autotaskmenu", "Tareas automáticas" },
+                    { "email_autotaskmenu", "[ Correo electrónico ]" },
+                    { "calc_autotaskmenu", "[ Calculadora ]" },
+                    { "browser_autotaskmenu", "[ Navegador ]" },
+                    { "return_autotaskmenu", "[ Volver ]" },
                     #endregion
 
                     #region Settingsmenu
@@ -549,6 +653,27 @@ namespace TranslationsLibrary
                     { "end_options_mainmenu", "[ 退出 ]" },
                     { "choose_language", "选择语言：" },
                     { "back_option", "返回主菜单" },
+
+                    //MainMenu - Task-Ausgabe
+                    {"headline_printtasks_mainmenu", "\n待办任务:\n------------------\n" },
+                    {"name_printtasks_mainmenu", "[ 名称 ] = " },
+                    {"priority_printtasks_mainmenu", "[ 优先级 ] = " },
+                    {"date_printtasks_mainmenu", "[ 日期 ] = " },
+                    {"interval_printtasks_mainmenu", "[ 间隔 ]" },
+
+                    //CreateMenu-Optionen
+                    { "headline_createtaskmenu", "创建任务" },
+                    { "individualtask_createtaskmenu", "[ 个别任务 ]" },
+                    { "automatictask_createtaskmenu", "[ 自动任务 ]" },
+                    { "backuptask_createtaskmenu", "[ 备份任务 ]" },
+                    { "return_createtaskmenu", "[ 返回 ]" },
+
+                    //AutoMenu-Optionen
+                    { "headline_autotaskmenu", "自动任务" },
+                    { "email_autotaskmenu", "[ 电子邮件 ]" },
+                    { "calc_autotaskmenu", "[ 计算器 ]" },
+                    { "browser_autotaskmenu", "[ 浏览器 ]" },
+                    { "return_autotaskmenu", "[ 返回 ]" },
                     #endregion
 
                     #region Settingsmenu
@@ -650,6 +775,26 @@ namespace TranslationsLibrary
                     { "end_options_mainmenu", "[ बंद करें ]" },
                     { "choose_language", "एक भाषा चुनें:" },
 
+                    //Main-Menu-Ausgabe
+                    { "headline_printtasks_mainmenu", "\nलंबित कार्य:\n------------------\n" },
+                    { "name_printtasks_mainmenu", "[ नाम ] = " },
+                    { "priority_printtasks_mainmenu", "[ प्राथमिकता ] = " },
+                    { "date_printtasks_mainmenu", "[ तिथि ] = " },
+                    { "interval_printtasks_mainmenu", "[ अंतराल ]" },
+
+                    //CreateMenu-Optionen
+                    { "headline_createtaskmenu", "कार्य बनाएं" },
+                    { "individualtask_createtaskmenu", "[ व्यक्तिगत कार्य ]" },
+                    { "automatictask_createtaskmenu", "[ स्वचालित कार्य ]" },
+                    { "backuptask_createtaskmenu", "[ बैकअप कार्य ]" },
+                    { "return_createtaskmenu", "[ वापस ]" },
+
+                    //AutoMenu-Optionen
+                    { "headline_autotaskmenu", "स्वचालित कार्य" },
+                    { "email_autotaskmenu", "[ ई-मेल ]" },
+                    { "calc_autotaskmenu", "[ कैलकुलेटर ]" },
+                    { "browser_autotaskmenu", "[ ब्राउज़र ]" },
+                    { "return_autotaskmenu", "[ वापस ]" },
                     #endregion
 
                     #region Settingsmenu

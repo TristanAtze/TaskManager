@@ -19,14 +19,14 @@ class CreateTaskMenu : Menu
     {
         Scheduler = taskScheduler;
 
-        Headline = "Task erstellen";
+        Headline = GetTranslation(GetCurrentLanguage(), "headline_createtaskmenu");
         Options =
         [
-            "[ individueller Task ]",
-            "[ automatischer Task ]",
-            "[ Backup-Task ]",
+            GetTranslation(GetCurrentLanguage(), "individualtask_createtaskmenu"),
+            GetTranslation(GetCurrentLanguage(), "automatictask_createtaskmenu"),
+            GetTranslation(GetCurrentLanguage(), "backuptask_createtaskMenu"),
             " ",
-            "[ zurück ]"
+            GetTranslation(GetCurrentLanguage(), "return_createtaskmenu")
         ];
     }
 

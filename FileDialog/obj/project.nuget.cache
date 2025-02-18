@@ -1,8 +1,12 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "ha0+5fMzAuw=",
+=======
+  "dgSpecHash": "4R1j33Ma4R0=",
+>>>>>>> Menü-Übersetzung
   "success": true,
-  "projectFilePath": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\FileDialog\\WindowsForms.csproj",
+  "projectFilePath": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Translation\\FileDialog\\WindowsForms.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

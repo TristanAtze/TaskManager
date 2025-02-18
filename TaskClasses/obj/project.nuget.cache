@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "OtPf6S++g8Y=",
   "success": true,
   "projectFilePath": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskClasses\\TaskClasses.csproj",
+=======
+  "dgSpecHash": "POXYPp94b1U=",
+  "success": false,
+  "projectFilePath": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Translation\\TaskClasses\\TaskClasses.csproj",
+>>>>>>> Menü-Übersetzung
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -1,0 +1,16 @@
+C:\Users\ben.sowieja\source\repos\TaskManager\TaskClasses\bin\Debug\net9.0\TaskClasses.deps.json
+C:\Users\ben.sowieja\source\repos\TaskManager\TaskClasses\bin\Debug\net9.0\TaskClasses.dll
+C:\Users\ben.sowieja\source\repos\TaskManager\TaskClasses\bin\Debug\net9.0\TaskClasses.pdb
+C:\Users\ben.sowieja\source\repos\TaskManager\TaskClasses\bin\Debug\net9.0\TranslationsLibary.dll
+C:\Users\ben.sowieja\source\repos\TaskManager\TaskClasses\bin\Debug\net9.0\TranslationsLibary.pdb
+C:\Users\ben.sowieja\source\repos\TaskManager\TaskClasses\obj\Debug\net9.0\TaskClasses.csproj.AssemblyReference.cache
+C:\Users\ben.sowieja\source\repos\TaskManager\TaskClasses\obj\Debug\net9.0\TaskClasses.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ben.sowieja\source\repos\TaskManager\TaskClasses\obj\Debug\net9.0\TaskClasses.AssemblyInfoInputs.cache
+C:\Users\ben.sowieja\source\repos\TaskManager\TaskClasses\obj\Debug\net9.0\TaskClasses.AssemblyInfo.cs
+C:\Users\ben.sowieja\source\repos\TaskManager\TaskClasses\obj\Debug\net9.0\TaskClasses.csproj.CoreCompileInputs.cache
+C:\Users\ben.sowieja\source\repos\TaskManager\TaskClasses\obj\Debug\net9.0\TaskClasses.sourcelink.json
+C:\Users\ben.sowieja\source\repos\TaskManager\TaskClasses\obj\Debug\net9.0\TaskClas.938A187B.Up2Date
+C:\Users\ben.sowieja\source\repos\TaskManager\TaskClasses\obj\Debug\net9.0\TaskClasses.dll
+C:\Users\ben.sowieja\source\repos\TaskManager\TaskClasses\obj\Debug\net9.0\refint\TaskClasses.dll
+C:\Users\ben.sowieja\source\repos\TaskManager\TaskClasses\obj\Debug\net9.0\TaskClasses.pdb
+C:\Users\ben.sowieja\source\repos\TaskManager\TaskClasses\obj\Debug\net9.0\ref\TaskClasses.dll

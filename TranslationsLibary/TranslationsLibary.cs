@@ -5,7 +5,7 @@ namespace TranslationsLibrary
 {
     public static class TranslationManager
     {
-        private static string CurrentLanguage = GetCurrentLanguage();
+        private static string CurrentLanguage = "de";
         /// <summary>
         /// Ist Das Dictionary für die übersetzung. Darf nur über die dafür vorgesehene methode aufgerufen werden
         /// Die übergebenen Parameter definieren dabei die jeweiligen Schwellenwerte.
@@ -101,15 +101,16 @@ namespace TranslationsLibrary
                     { "lessimportant_prioritys_taskcreator", "unwichtig" },
                     { "leastimportant_prioritys_taskcreator", "sehr unwichtig" },
                     { "priority_taskcreator", "Priorität" },
-                    { "unit_taskcreator", "Priorität" },
+                    { "unit_taskcreator", "Einheit" },
 
                     //TaskCreator.designer.cs
                     { "name_designer_taskcreator", "Name" },
                     { "choise_designer_taskcreator", "Auswählen" },
-                    { "recurring_designer_taskcreator", "wiederkehrend" },
+                    { "recurring_designer_taskcreator", "Wiederkehrend" },
                     { "filePath_designer_taskcreator", "Dateipfad" },
                     { "save_designer_taskcreator", "Speichern" },
                     { "cancel_designer_taskcreator", "Abbrechen" },
+                    { "create_designer_taskcreator", "Task erstellen" },
                     #endregion
 
                     #region Enum UnitFactors
@@ -915,6 +916,7 @@ namespace TranslationsLibrary
 
                 if (settings.Length >= 1)
                 {
+                    CurrentLanguage = settings[0].Replace("\n", "").Trim();
                     return settings[0].Replace("\n", "").Trim();
                 }
             }

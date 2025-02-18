@@ -11,13 +11,13 @@ public class SettingsMenu : Menu
 {
     public SettingsMenu()
     {
-        Headline = "Einstellungen";
+        Headline = GetTranslation(GetCurrentLanguage(), "headline_settingsmenu");
         Options =
         [
-            "[ Voreinstellungen für neue Tasks]",
-            "[ Sprachen ]",
+            GetTranslation(GetCurrentLanguage(), "taskpreset_options_settingsmenu"),
+            GetTranslation(GetCurrentLanguage(), "language_options_settingsmenu"),
             " ",
-            "[ zurück ]"
+            GetTranslation(GetCurrentLanguage(), "back_options_settingsmenu")
         ];
     }
 

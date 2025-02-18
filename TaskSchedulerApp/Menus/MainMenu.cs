@@ -17,16 +17,16 @@ public class MainMenu : Menu
     {
         Scheduler = taskScheduler;
 
-        Headline = "Hauptmenü";
+        Headline = GetTranslation(GetCurrentLanguage(), "headline_mainmenu");
         Options =
         [
-            "[ neuen Task erstellen ]",
-            "[ alle Tasks anzeigen ]",
+            GetTranslation(GetCurrentLanguage(), "newtask_options_mainmenu"),
+            GetTranslation(GetCurrentLanguage(), "showtask_options_mainmenu"),
             " ",
-            "[ Voreinstellungen laden ]",
-            "[ Einstellungen ]",
+            GetTranslation(GetCurrentLanguage(), "loadpreset_options_mainmenu"),
+            GetTranslation(GetCurrentLanguage(), "settings_options_mainmenu"),
             " ",
-            "[ Beenden ]"
+            GetTranslation(GetCurrentLanguage(), "end_options_mainmenu")
         ];
     }
 
@@ -56,23 +56,24 @@ public class MainMenu : Menu
         }
     }
 
+    //todo übersetzen
     void PrintTasks()
     {
-        Console.WriteLine("\nAusstehende Tasks:\n------------------\n");
+        Console.WriteLine(GetTranslation(GetCurrentLanguage(), "headline_printtasks_mainmenu"));
 
         foreach(var item in Scheduler.TaskQueue.TaskList)
         {
-            Console.WriteLine("[ Name ] = " + item.Name);
-            Console.WriteLine("[ Priorität ] = " + item.Priority);
-            Console.WriteLine("[ Datum ] = " + item.ScheduledTime);
+            Console.WriteLine(GetTranslation(GetCurrentLanguage(), "name_printtasks_mainmenu") + item.Name);
+            Console.WriteLine(GetTranslation(GetCurrentLanguage(), "priority_printtasks_mainmenu") + item.Priority);
+            Console.WriteLine(GetTranslation(GetCurrentLanguage(), "date_printtasks_mainmenu") + item.ScheduledTime);
 
             if (item.IsRecurring)
             {
-                Console.WriteLine("[ Intervall ] = " + item.Interval);
+                Console.WriteLine(GetTranslation(GetCurrentLanguage(), "interval_printtasks_mainmenu") + " = " + item.Interval);
             }
             else
             {
-                Console.WriteLine("[ Intervall ]");
+                Console.WriteLine(GetTranslation(GetCurrentLanguage(), "interval_printtasks_mainmenu"));
             }
 
             Console.WriteLine();

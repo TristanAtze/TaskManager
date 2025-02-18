@@ -53,10 +53,10 @@ public abstract class Menu
 
             switch (ck)
             {
-                case ConsoleKey.W:
+                case ConsoleKey.W or ConsoleKey.UpArrow:
                     MoveUp();
                     break;
-                case ConsoleKey.S:
+                case ConsoleKey.S or ConsoleKey.DownArrow:
                     MoveDown();
                     break;
                 default:

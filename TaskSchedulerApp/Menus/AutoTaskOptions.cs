@@ -13,6 +13,7 @@ class AutoTaskOptions : Menu
 {
     private TaskScheduler Scheduler { get; set; }
 
+    //todo übersetzen
     public AutoTaskOptions(TaskScheduler taskScheduler)
     {
         Scheduler = taskScheduler;

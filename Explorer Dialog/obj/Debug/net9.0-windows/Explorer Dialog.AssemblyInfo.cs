@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Explorer Dialog")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d30b2ebfd3462a5434f2c1335258e13961a1d060")]
 [assembly: System.Reflection.AssemblyProductAttribute("Explorer Dialog")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Explorer Dialog")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

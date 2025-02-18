@@ -4,7 +4,7 @@ using TaskClasses;
 
 public class TaskScheduler
 {
-    private readonly TaskQueue _taskQueue = new TaskQueue();
+    public TaskQueue TaskQueue { get; private set; } = new TaskQueue();
 
     /// <summary>
     /// Fügt in der Warteschlange eine neue Task hinzu.
@@ -12,7 +12,7 @@ public class TaskScheduler
     /// <param name="task">Die neue Task</param>
     public void ScheduleTask(MainTask task)
     {
-        _taskQueue.AddTask(task);
+        TaskQueue.AddTask(task);
     }
 
     /// <summary>
@@ -23,7 +23,7 @@ public class TaskScheduler
     {
         while (true)
         {
-            var nextTask = _taskQueue.GetNextTask();
+            var nextTask = TaskQueue.GetNextTask();
             if (nextTask != null)
             {
                 var delay = nextTask.ScheduledTime - DateTime.Now;

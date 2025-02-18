@@ -10,7 +10,7 @@ public class TaskQueue
     /// <summary>
     /// Liste mit allen Tasks.
     /// </summary>
-    private readonly List<MainTask> _taskQueue = new List<MainTask>();
+    public List<MainTask> TaskList { get; private set; } = new List<MainTask>();
 
     /// <summary>
     /// Fügt eine Task hinzu und sortiert anschließen die gesamte Liste nach Priorität.
@@ -18,8 +18,8 @@ public class TaskQueue
     /// <param name="task">Hinzuzufügende Task</param>
     public void AddTask(MainTask task)
     {
-        _taskQueue.Add(task);
-        _taskQueue.Sort((x, y) => x.Priority.CompareTo(y.Priority)); // Priorität sortieren
+        TaskList.Add(task);
+        TaskList.Sort((x, y) => x.Priority.CompareTo(y.Priority)); // Priorität sortieren
     }
 
     /// <summary>
@@ -28,10 +28,10 @@ public class TaskQueue
     /// <returns>Nächste ausstehende Task</returns>
     public MainTask? GetNextTask()
     {
-        var taskToExecute = _taskQueue.FirstOrDefault();
+        var taskToExecute = TaskList.FirstOrDefault();
         if (taskToExecute != null)
         {
-            _taskQueue.RemoveAt(0);
+            TaskList.RemoveAt(0);
         }
         return taskToExecute;
     }

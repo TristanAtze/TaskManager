@@ -46,6 +46,7 @@ class AutoTaskOptions : Menu
                 BasicTasks.LockInactive(Scheduler, minutes);
                 break;
             case 5:
+                KeepGoing = false;
                 break;
             default:
                 break;
@@ -56,6 +57,9 @@ class AutoTaskOptions : Menu
     {
         int result = 0;
 
+        Console.Clear();
+        Console.Write("\nBitte geben Sie an, nach wie vielen Minuten der PC gesperrt werden soll:\n\nMinuten:\t");
+
         do
         {
             string? input = Console.ReadLine();
@@ -63,6 +67,8 @@ class AutoTaskOptions : Menu
             if (input != null) int.TryParse(input, out result);
 
         } while (result <= 0);
+
+        Console.Clear();
 
         return result;
     }

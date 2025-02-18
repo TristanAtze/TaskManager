@@ -8,6 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Win32;
+using static TranslationsLibrary.TranslationManager;
 
 namespace TaskSchedulerApp.BackgroundClasses
 {

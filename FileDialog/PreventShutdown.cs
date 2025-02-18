@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using static TranslationsLibrary.TranslationManager;
 
 namespace ShutdownBlocker
 {

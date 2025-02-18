@@ -1,7 +1,7 @@
 ﻿
 using TaskClasses;
 using System.Diagnostics;
-
+using static TranslationsLibrary.TranslationManager;
 namespace FileDialog;
 
 public partial class TaskCreator : Form

@@ -5,6 +5,7 @@ using System.Printing;
 using System.Text;
 using System.Threading.Tasks;
 using TaskClasses;
+using static TranslationsLibrary.TranslationManager;
 
 namespace TaskSchedulerApp.Menus;
 

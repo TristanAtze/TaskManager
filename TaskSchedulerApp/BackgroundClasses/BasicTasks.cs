@@ -2,7 +2,7 @@
 using System.Windows;
 using TaskSchedulerApp.BackgroundClasses;
 using TaskClasses;
-
+using static TranslationsLibrary.TranslationManager;
 public class BasicTasks
 {
     public static void Email(TaskScheduler taskScheduler)

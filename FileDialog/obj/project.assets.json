@@ -5,11 +5,24 @@
       "TaskClasses/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "TranslationsLibary": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/TaskClasses.dll": {}
         },
         "runtime": {
           "bin/placeholder/TaskClasses.dll": {}
+        }
+      },
+      "TranslationsLibary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/TranslationsLibary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TranslationsLibary.dll": {}
         }
       }
     }
@@ -19,31 +32,37 @@
       "type": "project",
       "path": "../TaskClasses/TaskClasses.csproj",
       "msbuildProject": "../TaskClasses/TaskClasses.csproj"
+    },
+    "TranslationsLibary/1.0.0": {
+      "type": "project",
+      "path": "../TranslationsLibary/TranslationsLibary.csproj",
+      "msbuildProject": "../TranslationsLibary/TranslationsLibary.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0-windows7.0": [
-      "TaskClasses >= 1.0.0"
+      "TaskClasses >= 1.0.0",
+      "TranslationsLibary >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lorenz.kupfer\\.nuget\\packages\\": {},
+    "C:\\Users\\ben.sowieja\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\main\\FileDialog\\WindowsForms.csproj",
+      "projectUniqueName": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\FileDialog\\WindowsForms.csproj",
       "projectName": "WindowsForms",
-      "projectPath": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\main\\FileDialog\\WindowsForms.csproj",
-      "packagesPath": "C:\\Users\\lorenz.kupfer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\main\\FileDialog\\obj\\",
+      "projectPath": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\FileDialog\\WindowsForms.csproj",
+      "packagesPath": "C:\\Users\\ben.sowieja\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\FileDialog\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\lorenz.kupfer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ben.sowieja\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -52,14 +71,18 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net9.0-windows7.0": {
           "targetAlias": "net9.0-windows",
           "projectReferences": {
-            "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\main\\TaskClasses\\TaskClasses.csproj": {
-              "projectPath": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\main\\TaskClasses\\TaskClasses.csproj"
+            "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskClasses\\TaskClasses.csproj": {
+              "projectPath": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskClasses\\TaskClasses.csproj"
+            },
+            "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TranslationsLibary\\TranslationsLibary.csproj": {
+              "projectPath": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TranslationsLibary\\TranslationsLibary.csproj"
             }
           }
         }

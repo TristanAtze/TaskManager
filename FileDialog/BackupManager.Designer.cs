@@ -1,4 +1,6 @@
-﻿namespace BackupTool
+﻿using static TranslationsLibrary.TranslationManager;
+
+namespace BackupTool
 {
     partial class Form1
     {

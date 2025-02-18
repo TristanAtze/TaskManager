@@ -1,5 +1,6 @@
 ﻿using System.Windows.Forms;
 using System.Drawing;
+using static TranslationsLibrary.TranslationManager;
 
 namespace FileDialog
 {

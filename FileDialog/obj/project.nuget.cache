@@ -1,12 +1,15 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "ha0+5fMzAuw=",
-=======
-  "dgSpecHash": "4R1j33Ma4R0=",
->>>>>>> Menü-Übersetzung
   "success": true,
-  "projectFilePath": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Translation\\FileDialog\\WindowsForms.csproj",
+  "projectFilePath": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\FileDialog\\WindowsForms.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem beim Lesen der Cachedatei \"C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\FileDialog\\obj\\project.nuget.cache\": Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

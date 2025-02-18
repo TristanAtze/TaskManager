@@ -27,23 +27,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lorenz.kupfer\\.nuget\\packages\\": {},
+    "C:\\Users\\ben.sowieja\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Translation\\TaskClasses\\TaskClasses.csproj",
+      "projectUniqueName": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskClasses\\TaskClasses.csproj",
       "projectName": "TaskClasses",
-      "projectPath": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Translation\\TaskClasses\\TaskClasses.csproj",
-      "packagesPath": "C:\\Users\\lorenz.kupfer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Translation\\TaskClasses\\obj\\",
+      "projectPath": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskClasses\\TaskClasses.csproj",
+      "packagesPath": "C:\\Users\\ben.sowieja\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskClasses\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\lorenz.kupfer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ben.sowieja\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -52,14 +52,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Translation\\TranslationsLibary\\TranslationsLibary.csproj": {
-              "projectPath": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Translation\\TranslationsLibary\\TranslationsLibary.csproj"
+            "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TranslationsLibary\\TranslationsLibary.csproj": {
+              "projectPath": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TranslationsLibary\\TranslationsLibary.csproj"
             }
           }
         }
@@ -98,5 +99,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem beim Lesen der Cachedatei \"C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskClasses\\obj\\project.nuget.cache\": Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

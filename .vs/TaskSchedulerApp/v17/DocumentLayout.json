@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Translation\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|c:\\users\\lorenz.kupfer\\source\\ownrepos\\taskmanager\\translation\\taskschedulerapp\\menus\\autotaskoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|solutionrelative:taskschedulerapp\\menus\\autotaskoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E9E2F67A-9B63-4AF3-A0A9-59E070DE8E3E}|TranslationsLibary\\TranslationsLibary.csproj|c:\\users\\lorenz.kupfer\\source\\ownrepos\\taskmanager\\translation\\translationslibary\\translationslibary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E9E2F67A-9B63-4AF3-A0A9-59E070DE8E3E}|TranslationsLibary\\TranslationsLibary.csproj|solutionrelative:translationslibary\\translationslibary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|c:\\users\\lorenz.kupfer\\source\\ownrepos\\taskmanager\\translation\\taskschedulerapp\\menus\\autotaskoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|solutionrelative:taskschedulerapp\\menus\\autotaskoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -70,7 +70,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "AutoTaskOptions.cs",
               "DocumentMoniker": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Translation\\TaskSchedulerApp\\Menus\\AutoTaskOptions.cs",
               "RelativeDocumentMoniker": "TaskSchedulerApp\\Menus\\AutoTaskOptions.cs",
@@ -104,13 +104,13 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "TranslationsLibary.cs",
               "DocumentMoniker": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Translation\\TranslationsLibary\\TranslationsLibary.cs",
               "RelativeDocumentMoniker": "TranslationsLibary\\TranslationsLibary.cs",
               "ToolTip": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Translation\\TranslationsLibary\\TranslationsLibary.cs",
               "RelativeToolTip": "TranslationsLibary\\TranslationsLibary.cs",
-              "ViewState": "AgIAAAkDAAAAAAAAAAAQwBIDAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIDAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-18T07:16:18.862Z",
               "EditorCaption": ""

@@ -22,7 +22,6 @@ namespace BackupTool
         private System.Windows.Forms.Label labelAutomation;
         private System.Windows.Forms.ComboBox comboBoxAutomation;
         private System.Windows.Forms.Button buttonBackupStart;
-        private System.Windows.Forms.Button buttonStopAutomation;
 
         // Neue Steuerelemente für die Multi-Task-Verwaltung
         private System.Windows.Forms.ListView listViewActiveTasks;
@@ -55,240 +54,201 @@ namespace BackupTool
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            // Alte Controls
-            this.labelTitle = new System.Windows.Forms.Label();
-            this.labelSource = new System.Windows.Forms.Label();
-            this.textBoxSourceFolder = new System.Windows.Forms.TextBox();
-            this.buttonBrowseSource = new System.Windows.Forms.Button();
-            this.labelDestination = new System.Windows.Forms.Label();
-            this.textBoxDestinationFolder = new System.Windows.Forms.TextBox();
-            this.buttonBrowseDestination = new System.Windows.Forms.Button();
-            this.labelBackupType = new System.Windows.Forms.Label();
-            this.comboBoxBackupType = new System.Windows.Forms.ComboBox();
-            this.labelAutomation = new System.Windows.Forms.Label();
-            this.comboBoxAutomation = new System.Windows.Forms.ComboBox();
-            this.buttonBackupStart = new System.Windows.Forms.Button();
-            this.buttonStopAutomation = new System.Windows.Forms.Button();
-            // Neue Controls
-            this.listViewActiveTasks = new System.Windows.Forms.ListView();
-            this.columnHeaderTaskId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderSource = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderDestination = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderBackupType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderAutomation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.buttonStopSelectedTask = new System.Windows.Forms.Button();
-            this.buttonStopAllTasks = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            labelTitle = new Label();
+            labelSource = new Label();
+            textBoxSourceFolder = new TextBox();
+            buttonBrowseSource = new Button();
+            labelDestination = new Label();
+            textBoxDestinationFolder = new TextBox();
+            buttonBrowseDestination = new Button();
+            labelBackupType = new Label();
+            comboBoxBackupType = new ComboBox();
+            labelAutomation = new Label();
+            comboBoxAutomation = new ComboBox();
+            buttonBackupStart = new Button();
+            listViewActiveTasks = new ListView();
+            columnHeaderTaskId = new ColumnHeader();
+            columnHeaderSource = new ColumnHeader();
+            columnHeaderDestination = new ColumnHeader();
+            columnHeaderBackupType = new ColumnHeader();
+            columnHeaderAutomation = new ColumnHeader();
+            buttonStopSelectedTask = new Button();
+            buttonStopAllTasks = new Button();
+            SuspendLayout();
             // 
             // labelTitle
             // 
-            this.labelTitle.AutoSize = true;
-            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
-            this.labelTitle.Location = new System.Drawing.Point(150, 20);
-            this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(134, 26);
-            this.labelTitle.TabIndex = 0;
-            this.labelTitle.Text = "Backup Tool";
+            labelTitle.AutoSize = true;
+            labelTitle.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Bold);
+            labelTitle.Location = new Point(150, 20);
+            labelTitle.Name = "labelTitle";
+            labelTitle.Size = new Size(143, 26);
+            labelTitle.TabIndex = 0;
+            labelTitle.Text = "Backup Tool";
             // 
             // labelSource
             // 
-            this.labelSource.AutoSize = true;
-            this.labelSource.Location = new System.Drawing.Point(30, 70);
-            this.labelSource.Name = "labelSource";
-            this.labelSource.Size = new System.Drawing.Size(67, 13);
-            this.labelSource.TabIndex = 1;
-            this.labelSource.Text = GetTranslation(GetCurrentLanguage(), "source_folder_designer_backupmanager");
+            labelSource.AutoSize = true;
+            labelSource.Location = new Point(30, 70);
+            labelSource.Name = "labelSource";
+            labelSource.Size = new Size(0, 15);
+            labelSource.TabIndex = 1;
             // 
             // textBoxSourceFolder
             // 
-            this.textBoxSourceFolder.Location = new System.Drawing.Point(30, 90);
-            this.textBoxSourceFolder.Name = "textBoxSourceFolder";
-            this.textBoxSourceFolder.Size = new System.Drawing.Size(400, 20);
-            this.textBoxSourceFolder.TabIndex = 2;
+            textBoxSourceFolder.Location = new Point(30, 90);
+            textBoxSourceFolder.Name = "textBoxSourceFolder";
+            textBoxSourceFolder.Size = new Size(400, 23);
+            textBoxSourceFolder.TabIndex = 2;
             // 
             // buttonBrowseSource
             // 
-            this.buttonBrowseSource.Location = new System.Drawing.Point(440, 88);
-            this.buttonBrowseSource.Name = "buttonBrowseSource";
-            this.buttonBrowseSource.Size = new System.Drawing.Size(100, 23);
-            this.buttonBrowseSource.TabIndex = 3;
-            this.buttonBrowseSource.Text = GetTranslation(GetCurrentLanguage(), "searching_designer_backupmanager");
-            this.buttonBrowseSource.UseVisualStyleBackColor = true;
-            this.buttonBrowseSource.Click += new System.EventHandler(this.buttonBrowseSource_Click);
+            buttonBrowseSource.Location = new Point(440, 88);
+            buttonBrowseSource.Name = "buttonBrowseSource";
+            buttonBrowseSource.Size = new Size(100, 23);
+            buttonBrowseSource.TabIndex = 3;
+            buttonBrowseSource.UseVisualStyleBackColor = true;
+            buttonBrowseSource.Click += buttonBrowseSource_Click;
             // 
             // labelDestination
             // 
-            this.labelDestination.AutoSize = true;
-            this.labelDestination.Location = new System.Drawing.Point(30, 130);
-            this.labelDestination.Name = "labelDestination";
-            this.labelDestination.Size = new System.Drawing.Size(63, 13);
-            this.labelDestination.TabIndex = 4;
-            this.labelDestination.Text = GetTranslation(GetCurrentLanguage(), "destination_folder_designer_backupmanager");
+            labelDestination.AutoSize = true;
+            labelDestination.Location = new Point(30, 130);
+            labelDestination.Name = "labelDestination";
+            labelDestination.Size = new Size(0, 15);
+            labelDestination.TabIndex = 4;
             // 
             // textBoxDestinationFolder
             // 
-            this.textBoxDestinationFolder.Location = new System.Drawing.Point(30, 150);
-            this.textBoxDestinationFolder.Name = "textBoxDestinationFolder";
-            this.textBoxDestinationFolder.Size = new System.Drawing.Size(400, 20);
-            this.textBoxDestinationFolder.TabIndex = 5;
+            textBoxDestinationFolder.Location = new Point(30, 150);
+            textBoxDestinationFolder.Name = "textBoxDestinationFolder";
+            textBoxDestinationFolder.Size = new Size(400, 23);
+            textBoxDestinationFolder.TabIndex = 5;
             // 
             // buttonBrowseDestination
             // 
-            this.buttonBrowseDestination.Location = new System.Drawing.Point(440, 148);
-            this.buttonBrowseDestination.Name = "buttonBrowseDestination";
-            this.buttonBrowseDestination.Size = new System.Drawing.Size(100, 23);
-            this.buttonBrowseDestination.TabIndex = 6;
-            this.buttonBrowseDestination.Text = GetTranslation(GetCurrentLanguage(), "searching_designer_backupmanager");
-            this.buttonBrowseDestination.UseVisualStyleBackColor = true;
-            this.buttonBrowseDestination.Click += new System.EventHandler(this.buttonBrowseDestination_Click);
+            buttonBrowseDestination.Location = new Point(440, 148);
+            buttonBrowseDestination.Name = "buttonBrowseDestination";
+            buttonBrowseDestination.Size = new Size(100, 23);
+            buttonBrowseDestination.TabIndex = 6;
+            buttonBrowseDestination.UseVisualStyleBackColor = true;
+            buttonBrowseDestination.Click += buttonBrowseDestination_Click;
             // 
             // labelBackupType
             // 
-            this.labelBackupType.AutoSize = true;
-            this.labelBackupType.Location = new System.Drawing.Point(30, 190);
-            this.labelBackupType.Name = "labelBackupType";
-            this.labelBackupType.Size = new System.Drawing.Size(64, 13);
-            this.labelBackupType.TabIndex = 7;
-            this.labelBackupType.Text = GetTranslation(GetCurrentLanguage(), "backuptype_designer_backupmanager");
+            labelBackupType.AutoSize = true;
+            labelBackupType.Location = new Point(30, 190);
+            labelBackupType.Name = "labelBackupType";
+            labelBackupType.Size = new Size(0, 15);
+            labelBackupType.TabIndex = 7;
             // 
             // comboBoxBackupType
             // 
-            this.comboBoxBackupType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxBackupType.FormattingEnabled = true;
-            this.comboBoxBackupType.Items.AddRange(new object[] {
-            GetTranslation(GetCurrentLanguage(), "complete_backuptype_backupmanager"),
-            GetTranslation(GetCurrentLanguage(), "incremental_backuptype_backupmanager"),
-            GetTranslation(GetCurrentLanguage(), "differential_backuptype_backupmanager"),
-            GetTranslation(GetCurrentLanguage(), "synchronize_backuptype_backupmanager")});
-            this.comboBoxBackupType.Location = new System.Drawing.Point(30, 210);
-            this.comboBoxBackupType.Name = "comboBoxBackupType";
-            this.comboBoxBackupType.Size = new System.Drawing.Size(200, 21);
-            this.comboBoxBackupType.TabIndex = 8;
+            comboBoxBackupType.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxBackupType.FormattingEnabled = true;
+            comboBoxBackupType.Location = new Point(30, 210);
+            comboBoxBackupType.Name = "comboBoxBackupType";
+            comboBoxBackupType.Size = new Size(200, 23);
+            comboBoxBackupType.TabIndex = 8;
             // 
             // labelAutomation
             // 
-            this.labelAutomation.AutoSize = true;
-            this.labelAutomation.Location = new System.Drawing.Point(30, 250);
-            this.labelAutomation.Name = "labelAutomation";
-            this.labelAutomation.Size = new System.Drawing.Size(80, 13);
-            this.labelAutomation.TabIndex = 9;
-            this.labelAutomation.Text = GetTranslation(GetCurrentLanguage(), "automation_designer_backupmanager");
+            labelAutomation.AutoSize = true;
+            labelAutomation.Location = new Point(30, 250);
+            labelAutomation.Name = "labelAutomation";
+            labelAutomation.Size = new Size(0, 15);
+            labelAutomation.TabIndex = 9;
             // 
             // comboBoxAutomation
             // 
-            this.comboBoxAutomation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxAutomation.FormattingEnabled = true;
-            this.comboBoxAutomation.Items.AddRange(new object[] {
-            GetTranslation(GetCurrentLanguage(), "manual_automationmethod_backupmanager"),
-            GetTranslation(GetCurrentLanguage(), "scheduled_automationmethod_backupmanager"),
-            GetTranslation(GetCurrentLanguage(), "realtime_automationmethod_backupmanager")});
-            this.comboBoxAutomation.Location = new System.Drawing.Point(30, 270);
-            this.comboBoxAutomation.Name = "comboBoxAutomation";
-            this.comboBoxAutomation.Size = new System.Drawing.Size(200, 21);
-            this.comboBoxAutomation.TabIndex = 10;
+            comboBoxAutomation.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxAutomation.FormattingEnabled = true;
+            comboBoxAutomation.Location = new Point(30, 270);
+            comboBoxAutomation.Name = "comboBoxAutomation";
+            comboBoxAutomation.Size = new Size(200, 23);
+            comboBoxAutomation.TabIndex = 10;
             // 
             // buttonBackupStart
             // 
-            this.buttonBackupStart.Location = new System.Drawing.Point(30, 310);
-            this.buttonBackupStart.Name = "buttonBackupStart";
-            this.buttonBackupStart.Size = new System.Drawing.Size(120, 30);
-            this.buttonBackupStart.TabIndex = 11;
-            this.buttonBackupStart.Text = GetTranslation(GetCurrentLanguage(), "startbackup_designer_backupmanager");
-            this.buttonBackupStart.UseVisualStyleBackColor = true;
-            this.buttonBackupStart.Click += new System.EventHandler(this.buttonBackupStart_Click);
-            // 
-            // buttonStopAutomation
-            // 
-            
-            //this.buttonStopAutomation.Click += new System.EventHandler(this.buttonStopAutomation_Click);
+            buttonBackupStart.Location = new Point(30, 310);
+            buttonBackupStart.Name = "buttonBackupStart";
+            buttonBackupStart.Size = new Size(120, 30);
+            buttonBackupStart.TabIndex = 11;
+            buttonBackupStart.UseVisualStyleBackColor = true;
+            buttonBackupStart.Click += buttonBackupStart_Click;
             // 
             // listViewActiveTasks
             // 
-            this.listViewActiveTasks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeaderTaskId,
-            this.columnHeaderSource,
-            this.columnHeaderDestination,
-            this.columnHeaderBackupType,
-            this.columnHeaderAutomation});
-            this.listViewActiveTasks.FullRowSelect = true;
-            this.listViewActiveTasks.GridLines = true;
-            this.listViewActiveTasks.HideSelection = false;
-            this.listViewActiveTasks.Location = new System.Drawing.Point(30, 350);
-            this.listViewActiveTasks.Name = "listViewActiveTasks";
-            this.listViewActiveTasks.Size = new System.Drawing.Size(510, 150);
-            this.listViewActiveTasks.TabIndex = 13;
-            this.listViewActiveTasks.UseCompatibleStateImageBehavior = false;
-            this.listViewActiveTasks.View = System.Windows.Forms.View.Details;
+            listViewActiveTasks.Columns.AddRange(new ColumnHeader[] { columnHeaderTaskId, columnHeaderSource, columnHeaderDestination, columnHeaderBackupType, columnHeaderAutomation });
+            listViewActiveTasks.FullRowSelect = true;
+            listViewActiveTasks.GridLines = true;
+            listViewActiveTasks.Location = new Point(30, 350);
+            listViewActiveTasks.Name = "listViewActiveTasks";
+            listViewActiveTasks.Size = new Size(510, 150);
+            listViewActiveTasks.TabIndex = 13;
+            listViewActiveTasks.UseCompatibleStateImageBehavior = false;
+            listViewActiveTasks.View = View.Details;
             // 
             // columnHeaderTaskId
             // 
-            this.columnHeaderTaskId.Text = GetTranslation(GetCurrentLanguage(), "taskid_designer_backupmanager");
-            this.columnHeaderTaskId.Width = 150;
+            columnHeaderTaskId.Width = 150;
             // 
             // columnHeaderSource
             // 
-            this.columnHeaderSource.Text = GetTranslation(GetCurrentLanguage(), "source_designer_backupmanager");
-            this.columnHeaderSource.Width = 100;
+            columnHeaderSource.Width = 100;
             // 
             // columnHeaderDestination
             // 
-            this.columnHeaderDestination.Text = GetTranslation(GetCurrentLanguage(), "desti_designer_backupmanager");
-            this.columnHeaderDestination.Width = 100;
+            columnHeaderDestination.Width = 100;
             // 
             // columnHeaderBackupType
             // 
-            this.columnHeaderBackupType.Text = GetTranslation(GetCurrentLanguage(), "btype_designer_backupmanager");
-            this.columnHeaderBackupType.Width = 75;
+            columnHeaderBackupType.Width = 75;
             // 
             // columnHeaderAutomation
             // 
-            this.columnHeaderAutomation.Text = GetTranslation(GetCurrentLanguage(), "bauto_designer_backupmanager");
-            this.columnHeaderAutomation.Width = 75;
+            columnHeaderAutomation.Width = 75;
             // 
             // buttonStopSelectedTask
             // 
-            this.buttonStopSelectedTask.Location = new System.Drawing.Point(30, 520);
-            this.buttonStopSelectedTask.Name = "buttonStopSelectedTask";
-            this.buttonStopSelectedTask.Size = new System.Drawing.Size(150, 30);
-            this.buttonStopSelectedTask.TabIndex = 14;
-            this.buttonStopSelectedTask.Text = GetTranslation(GetCurrentLanguage(), "stopseltask_designer_backupmanager");
-            this.buttonStopSelectedTask.UseVisualStyleBackColor = true;
-            this.buttonStopSelectedTask.Click += new System.EventHandler(this.buttonStopSelectedTask_Click);
+            buttonStopSelectedTask.Location = new Point(30, 520);
+            buttonStopSelectedTask.Name = "buttonStopSelectedTask";
+            buttonStopSelectedTask.Size = new Size(150, 30);
+            buttonStopSelectedTask.TabIndex = 14;
+            buttonStopSelectedTask.UseVisualStyleBackColor = true;
+            buttonStopSelectedTask.Click += buttonStopSelectedTask_Click;
             // 
             // buttonStopAllTasks
             // 
-            this.buttonStopAllTasks.Location = new System.Drawing.Point(200, 520);
-            this.buttonStopAllTasks.Name = "buttonStopAllTasks";
-            this.buttonStopAllTasks.Size = new System.Drawing.Size(150, 30);
-            this.buttonStopAllTasks.TabIndex = 15;
-            this.buttonStopAllTasks.Text = GetTranslation(GetCurrentLanguage(), "stopalltask_designer_backupmanager");
-            this.buttonStopAllTasks.UseVisualStyleBackColor = true;
-            this.buttonStopAllTasks.Click += new System.EventHandler(this.buttonStopAllTasks_Click);
+            buttonStopAllTasks.Location = new Point(200, 520);
+            buttonStopAllTasks.Name = "buttonStopAllTasks";
+            buttonStopAllTasks.Size = new Size(150, 30);
+            buttonStopAllTasks.TabIndex = 15;
+            buttonStopAllTasks.UseVisualStyleBackColor = true;
+            buttonStopAllTasks.Click += buttonStopAllTasks_Click;
             // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(584, 571);
-            this.Controls.Add(this.buttonStopAllTasks);
-            this.Controls.Add(this.buttonStopSelectedTask);
-            this.Controls.Add(this.listViewActiveTasks);
-            this.Controls.Add(this.buttonStopAutomation);
-            this.Controls.Add(this.buttonBackupStart);
-            this.Controls.Add(this.comboBoxAutomation);
-            this.Controls.Add(this.labelAutomation);
-            this.Controls.Add(this.comboBoxBackupType);
-            this.Controls.Add(this.labelBackupType);
-            this.Controls.Add(this.buttonBrowseDestination);
-            this.Controls.Add(this.textBoxDestinationFolder);
-            this.Controls.Add(this.labelDestination);
-            this.Controls.Add(this.buttonBrowseSource);
-            this.Controls.Add(this.textBoxSourceFolder);
-            this.Controls.Add(this.labelSource);
-            this.Controls.Add(this.labelTitle);
-            this.Name = "Form1";
-            this.Text = "Backup Tool";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            ClientSize = new Size(584, 571);
+            Controls.Add(buttonStopAllTasks);
+            Controls.Add(buttonStopSelectedTask);
+            Controls.Add(listViewActiveTasks);
+            Controls.Add(buttonBackupStart);
+            Controls.Add(comboBoxAutomation);
+            Controls.Add(labelAutomation);
+            Controls.Add(comboBoxBackupType);
+            Controls.Add(labelBackupType);
+            Controls.Add(buttonBrowseDestination);
+            Controls.Add(textBoxDestinationFolder);
+            Controls.Add(labelDestination);
+            Controls.Add(buttonBrowseSource);
+            Controls.Add(textBoxSourceFolder);
+            Controls.Add(labelSource);
+            Controls.Add(labelTitle);
+            Name = "Form1";
+            Text = "Backup Tool";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

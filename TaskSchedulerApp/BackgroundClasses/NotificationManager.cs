@@ -5,7 +5,7 @@ public class NotificationManager
 {
     public void SendNotification(string message)
     {
-        GetTranslation(GetCurrentLanguage(), message);
-        Console.WriteLine($"Notification: {message}");
+
+        Console.WriteLine(GetTranslation(GetCurrentLanguage(), message));
     }
 }

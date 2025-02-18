@@ -9,7 +9,7 @@ namespace BackupTool
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        // Steuerelemente
+        // Alte Steuerelemente
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Label labelSource;
         private System.Windows.Forms.TextBox textBoxSourceFolder;
@@ -23,6 +23,16 @@ namespace BackupTool
         private System.Windows.Forms.ComboBox comboBoxAutomation;
         private System.Windows.Forms.Button buttonBackupStart;
         private System.Windows.Forms.Button buttonStopAutomation;
+
+        // Neue Steuerelemente für die Multi-Task-Verwaltung
+        private System.Windows.Forms.ListView listViewActiveTasks;
+        private System.Windows.Forms.ColumnHeader columnHeaderTaskId;
+        private System.Windows.Forms.ColumnHeader columnHeaderSource;
+        private System.Windows.Forms.ColumnHeader columnHeaderDestination;
+        private System.Windows.Forms.ColumnHeader columnHeaderBackupType;
+        private System.Windows.Forms.ColumnHeader columnHeaderAutomation;
+        private System.Windows.Forms.Button buttonStopSelectedTask;
+        private System.Windows.Forms.Button buttonStopAllTasks;
 
         /// <summary>
         /// Verwendete Ressourcen bereinigen.
@@ -46,6 +56,7 @@ namespace BackupTool
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            // Alte Controls
             this.labelTitle = new System.Windows.Forms.Label();
             this.labelSource = new System.Windows.Forms.Label();
             this.textBoxSourceFolder = new System.Windows.Forms.TextBox();
@@ -59,6 +70,15 @@ namespace BackupTool
             this.comboBoxAutomation = new System.Windows.Forms.ComboBox();
             this.buttonBackupStart = new System.Windows.Forms.Button();
             this.buttonStopAutomation = new System.Windows.Forms.Button();
+            // Neue Controls
+            this.listViewActiveTasks = new System.Windows.Forms.ListView();
+            this.columnHeaderTaskId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderSource = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderDestination = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderBackupType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderAutomation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.buttonStopSelectedTask = new System.Windows.Forms.Button();
+            this.buttonStopAllTasks = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelTitle
@@ -180,17 +200,78 @@ namespace BackupTool
             // 
             // buttonStopAutomation
             // 
-            this.buttonStopAutomation.Location = new System.Drawing.Point(170, 310);
-            this.buttonStopAutomation.Name = "buttonStopAutomation";
-            this.buttonStopAutomation.Size = new System.Drawing.Size(120, 30);
-            this.buttonStopAutomation.TabIndex = 12;
-            this.buttonStopAutomation.Text = GetTranslation(GetCurrentLanguage(), "stopautomation_designer_backupmanager");
-            this.buttonStopAutomation.UseVisualStyleBackColor = true;
-            this.buttonStopAutomation.Click += new System.EventHandler(this.buttonStopAutomation_Click);
+            
+            //this.buttonStopAutomation.Click += new System.EventHandler(this.buttonStopAutomation_Click);
+            // 
+            // listViewActiveTasks
+            // 
+            this.listViewActiveTasks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderTaskId,
+            this.columnHeaderSource,
+            this.columnHeaderDestination,
+            this.columnHeaderBackupType,
+            this.columnHeaderAutomation});
+            this.listViewActiveTasks.FullRowSelect = true;
+            this.listViewActiveTasks.GridLines = true;
+            this.listViewActiveTasks.HideSelection = false;
+            this.listViewActiveTasks.Location = new System.Drawing.Point(30, 350);
+            this.listViewActiveTasks.Name = "listViewActiveTasks";
+            this.listViewActiveTasks.Size = new System.Drawing.Size(510, 150);
+            this.listViewActiveTasks.TabIndex = 13;
+            this.listViewActiveTasks.UseCompatibleStateImageBehavior = false;
+            this.listViewActiveTasks.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeaderTaskId
+            // 
+            this.columnHeaderTaskId.Text = GetTranslation(GetCurrentLanguage(), "taskid_designer_backupmanager");
+            this.columnHeaderTaskId.Width = 150;
+            // 
+            // columnHeaderSource
+            // 
+            this.columnHeaderSource.Text = GetTranslation(GetCurrentLanguage(), "source_designer_backupmanager");
+            this.columnHeaderSource.Width = 100;
+            // 
+            // columnHeaderDestination
+            // 
+            this.columnHeaderDestination.Text = GetTranslation(GetCurrentLanguage(), "desti_designer_backupmanager");
+            this.columnHeaderDestination.Width = 100;
+            // 
+            // columnHeaderBackupType
+            // 
+            this.columnHeaderBackupType.Text = GetTranslation(GetCurrentLanguage(), "btype_designer_backupmanager");
+            this.columnHeaderBackupType.Width = 75;
+            // 
+            // columnHeaderAutomation
+            // 
+            this.columnHeaderAutomation.Text = GetTranslation(GetCurrentLanguage(), "bauto_designer_backupmanager");
+            this.columnHeaderAutomation.Width = 75;
+            // 
+            // buttonStopSelectedTask
+            // 
+            this.buttonStopSelectedTask.Location = new System.Drawing.Point(30, 520);
+            this.buttonStopSelectedTask.Name = "buttonStopSelectedTask";
+            this.buttonStopSelectedTask.Size = new System.Drawing.Size(150, 30);
+            this.buttonStopSelectedTask.TabIndex = 14;
+            this.buttonStopSelectedTask.Text = GetTranslation(GetCurrentLanguage(), "stopseltask_designer_backupmanager");
+            this.buttonStopSelectedTask.UseVisualStyleBackColor = true;
+            this.buttonStopSelectedTask.Click += new System.EventHandler(this.buttonStopSelectedTask_Click);
+            // 
+            // buttonStopAllTasks
+            // 
+            this.buttonStopAllTasks.Location = new System.Drawing.Point(200, 520);
+            this.buttonStopAllTasks.Name = "buttonStopAllTasks";
+            this.buttonStopAllTasks.Size = new System.Drawing.Size(150, 30);
+            this.buttonStopAllTasks.TabIndex = 15;
+            this.buttonStopAllTasks.Text = GetTranslation(GetCurrentLanguage(), "stopalltask_designer_backupmanager");
+            this.buttonStopAllTasks.UseVisualStyleBackColor = true;
+            this.buttonStopAllTasks.Click += new System.EventHandler(this.buttonStopAllTasks_Click);
             // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(564, 361);
+            this.ClientSize = new System.Drawing.Size(584, 571);
+            this.Controls.Add(this.buttonStopAllTasks);
+            this.Controls.Add(this.buttonStopSelectedTask);
+            this.Controls.Add(this.listViewActiveTasks);
             this.Controls.Add(this.buttonStopAutomation);
             this.Controls.Add(this.buttonBackupStart);
             this.Controls.Add(this.comboBoxAutomation);
@@ -209,6 +290,7 @@ namespace BackupTool
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
         #endregion
     }
 }

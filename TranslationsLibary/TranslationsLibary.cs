@@ -87,8 +87,17 @@ namespace TranslationsLibrary
                     { "automation_designer_backupmanager", "Automatisierung:" },
                     { "startbackup_designer_backupmanager", "Backup starten" },
                     { "stopautomation_designer_backupmanager", "Automatisierung stoppen" },
-                    #endregion
+                    //Table
+                    { "taskid_designer_backupmanager", "Task ID" },
+                    { "source_designer_backupmanager", "Quelle" },
+                    { "desti_designer_backupmanager", "Ziel" },
+                    { "btype_designer_backupmanager", "Backup Typ" },
+                    { "bauto_designer_backupmanager", "Atomatisierung" },
 
+                    { "stopseltask_designer_backupmanager", "Task stoppen" },
+                    { "stopalltask_designer_backupmanager", "Alle Tasks stoppen" },
+
+                    #endregion
                     #region PreventShutdown
                     { "shutdown_prevented_preventshutdown", "Herunterfahren wird durch diese Anwendung verhindert." },
                     #endregion

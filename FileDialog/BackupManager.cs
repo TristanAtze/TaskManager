@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 using static TranslationsLibrary.TranslationManager;
@@ -7,17 +8,8 @@ namespace BackupTool
 {
     public partial class Form1 : Form
     {
-        // Timer für geplante Backups (Windows.Forms.Timer für den UI-Thread)
-        private System.Windows.Forms.Timer plannedTimer;
-
-        // Timer für Debounce bei Echtzeit-Überwachung
-        private System.Windows.Forms.Timer debounceTimer;
-
-        // FileSystemWatcher für Echtzeit-Backups
-        private FileSystemWatcher fileWatcher;
-
-        // Flag, um parallele Backup-Ausführungen zu verhindern
-        private bool isBackingUp = false;
+        // Liste für alle aktiven Backup-Tasks
+        private List<BackupTask> backupTasks = new List<BackupTask>();
 
         public Form1()
         {
@@ -26,12 +18,12 @@ namespace BackupTool
             // Setze Standardauswahlen
             comboBoxBackupType.SelectedIndex = 0;
             comboBoxAutomation.SelectedIndex = 0;
-            buttonStopAutomation.Enabled = false;
-
-            plannedTimer = new System.Windows.Forms.Timer();
-            debounceTimer = new System.Windows.Forms.Timer();
+            buttonStopSelectedTask.Enabled = false;
         }
 
+        /// <summary>
+        /// Startet einen neuen Backup-Task.
+        /// </summary>
         private void buttonBackupStart_Click(object sender, EventArgs e)
         {
             string sourceFolder = textBoxSourceFolder.Text;
@@ -41,132 +33,83 @@ namespace BackupTool
 
             if (string.IsNullOrWhiteSpace(sourceFolder) || string.IsNullOrWhiteSpace(destinationFolder))
             {
-                MessageBox.Show(GetTranslation(GetCurrentLanguage(), "specify_source_destination_folder_button_backup_start_click_backupmanager"), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(GetTranslation(GetCurrentLanguage(), "specify_source_destination_folder_button_backup_start_click_backupmanager"),
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (backupType == null || automationMethod == null)
+                return;
 
-            if (automationMethod == GetTranslation(GetCurrentLanguage(), "manual_automationmethod_backupmanager"))
-            {
-                // Bei manueller Ausführung: Einfaches Backup
-                PerformBackupSafe(sourceFolder, destinationFolder, backupType);
-            }
-            else if (automationMethod == GetTranslation(GetCurrentLanguage(), "scheduled_automationmethod_backupmanager"))
-            {
-                // Timer starten, falls noch nicht aktiv
-                if (!plannedTimer.Enabled)
-                {
-                    plannedTimer.Interval = 60000; // Intervall: 60 Sekunden
-                    plannedTimer.Tick += (s, args) => PerformBackupSafe(sourceFolder, destinationFolder, backupType);
-                    plannedTimer.Start();
-                    MessageBox.Show(GetTranslation(GetCurrentLanguage(), "scheduled_started_automationmethod_backupmanager"), "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    buttonBackupStart.Enabled = false;
-                    buttonStopAutomation.Enabled = true;
-                }
-            }
-            else if (automationMethod == GetTranslation(GetCurrentLanguage(), "realtime_automationmethod_backupmanager"))
-            {
-                if (fileWatcher == null)
-                {
-                    if (!plannedTimer.Enabled)
-                    {
-                        plannedTimer.Interval = 100; // Intervall: 60 Sekunden
-                        plannedTimer.Tick += (s, args) => PerformBackupSafe(sourceFolder, destinationFolder, backupType);
-                        plannedTimer.Start();
-                    }
-                    //fileWatcher.Changed += OnFileChanged;
-                    //fileWatcher.Created += OnFileChanged;
-                    //fileWatcher.Deleted += OnFileChanged;
-                    //fileWatcher.Renamed += OnFileChanged;
-                    //fileWatcher.EnableRaisingEvents = true;
-                    MessageBox.Show(GetTranslation(GetCurrentLanguage(), "realtime_started_automationmethod_backupmanager"), "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    buttonBackupStart.Enabled = false;
-                    buttonStopAutomation.Enabled = true;
-                }
-            }
+            // Neuen Task anlegen und starten
+            BackupTask task = new BackupTask(sourceFolder, destinationFolder, backupType, automationMethod);
+            backupTasks.Add(task);
+            task.Start();
 
+            UpdateTaskListView();
         }
 
         /// <summary>
-        /// Eventhandler für FileSystemWatcher-Änderungen (Echtzeit).
-        /// Mithilfe eines Debounce-Timers wird sichergestellt, dass nicht zu häufig ein Backup angestoßen wird.
+        /// Aktualisiert die Übersicht der aktiven Tasks.
         /// </summary>
-        private void OnFileChanged(object sender, FileSystemEventArgs e)
+        private void UpdateTaskListView()
         {
-            if (!debounceTimer.Enabled)
+            listViewActiveTasks.Items.Clear();
+            foreach (var task in backupTasks)
             {
-                debounceTimer.Interval = 5000; // 5 Sekunden warten, bis sich die Ereignisse beruhigen
-                debounceTimer.Tick += (s, args) =>
+                if (task.IsActive)
                 {
-                    debounceTimer.Stop();
-                    string sourceFolder = textBoxSourceFolder.Text;
-                    string destinationFolder = textBoxDestinationFolder.Text;
-                    string? backupType = comboBoxBackupType.SelectedItem?.ToString();
-                    PerformBackupSafe(sourceFolder, destinationFolder, backupType);
-                };
+                    var item = new ListViewItem(task.TaskId.ToString());
+                    item.SubItems.Add(task.SourceFolder);
+                    item.SubItems.Add(task.DestinationFolder);
+                    item.SubItems.Add(task.BackupType);
+                    item.SubItems.Add(task.AutomationMethod);
+                    listViewActiveTasks.Items.Add(item);
+                }
             }
-            debounceTimer.Stop();
-            debounceTimer.Start();
+            // Schalte den Button "Stop Selected Task" nur frei, wenn mindestens ein Eintrag ausgewählt ist
+            buttonStopSelectedTask.Enabled = listViewActiveTasks.SelectedItems.Count > 0;
         }
 
-
         /// <summary>
-        /// Führt das Backup aus, sofern gerade keines läuft.
+        /// Stoppt den aktuell im ListView ausgewählten Task.
         /// </summary>
-        private void PerformBackupSafe(string sourceFolder, string destinationFolder, string? backupType)
+        private void buttonStopSelectedTask_Click(object sender, EventArgs e)
         {
-            if(backupType != null)
+            if (listViewActiveTasks.SelectedItems.Count > 0)
             {
-                if (isBackingUp)
-                    return; // Verhindere parallele Backups
-
-                isBackingUp = true;
-                try
+                var selectedItem = listViewActiveTasks.SelectedItems[0];
+                Guid taskId = Guid.Parse(selectedItem.Text);
+                var task = backupTasks.Find(t => t.TaskId == taskId);
+                if (task != null)
                 {
-                    BackupManager.PerformBackup(sourceFolder, destinationFolder, backupType);
-                    // Optional: Hier könnte man ein Log oder eine Statusanzeige aktualisieren.
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(GetTranslation(GetCurrentLanguage(), "backupfailed_backupmanager") + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                finally
-                {
-                    isBackingUp = false;
+                    task.Stop();
+                    backupTasks.Remove(task);
+                    UpdateTaskListView();
                 }
             }
         }
 
         /// <summary>
-        /// Stoppt aktuell aktive Automatisierungen (geplante und Echtzeit).
+        /// Stoppt alle aktiven Tasks.
         /// </summary>
-        private void buttonStopAutomation_Click(object sender, EventArgs e)
+        private void buttonStopAllTasks_Click(object sender, EventArgs e)
         {
-            if (plannedTimer != null)
+            foreach (var task in backupTasks)
             {
-                plannedTimer.Stop();
-                plannedTimer.Dispose();
-                plannedTimer.Enabled = false;
+                task.Stop();
             }
-            if (fileWatcher != null)
-            {
-                fileWatcher.EnableRaisingEvents = false;
-                fileWatcher.Dispose();
-                fileWatcher = null;
-            }
-            MessageBox.Show(GetTranslation(GetCurrentLanguage(), "automation_stopped_backupmanager"), "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            buttonBackupStart.Enabled = true;
-            buttonStopAutomation.Enabled = false;
+            backupTasks.Clear();
+            UpdateTaskListView();
         }
 
         /// <summary>
-        /// Öffnet einen FolderBrowserDialog zur Auswahl des Quellordners.
+        /// Öffnet den FolderBrowserDialog zur Auswahl des Quellordners.
         /// </summary>
         private void buttonBrowseSource_Click(object sender, EventArgs e)
         {
             using (FolderBrowserDialog folderDialog = new FolderBrowserDialog())
             {
                 folderDialog.Description = GetTranslation(GetCurrentLanguage(), "choose_source_folder_backupmanager");
-                // Optional: Startverzeichnis vorschlagen, falls bereits ein Pfad eingetragen ist
                 if (!string.IsNullOrEmpty(textBoxSourceFolder.Text))
                     folderDialog.SelectedPath = textBoxSourceFolder.Text;
 
@@ -178,14 +121,13 @@ namespace BackupTool
         }
 
         /// <summary>
-        /// Öffnet einen FolderBrowserDialog zur Auswahl des Zielordners.
+        /// Öffnet den FolderBrowserDialog zur Auswahl des Zielordners.
         /// </summary>
         private void buttonBrowseDestination_Click(object sender, EventArgs e)
         {
             using (FolderBrowserDialog folderDialog = new FolderBrowserDialog())
             {
                 folderDialog.Description = GetTranslation(GetCurrentLanguage(), "choose_destination_folder_backupmanager");
-                // Optional: Startverzeichnis vorschlagen
                 if (!string.IsNullOrEmpty(textBoxDestinationFolder.Text))
                     folderDialog.SelectedPath = textBoxDestinationFolder.Text;
 
@@ -198,21 +140,119 @@ namespace BackupTool
     }
 
     /// <summary>
+    /// Repräsentiert einen einzelnen Backup-Task.
+    /// </summary>
+    public class BackupTask
+    {
+        public Guid TaskId { get; private set; }
+        public string SourceFolder { get; private set; }
+        public string DestinationFolder { get; private set; }
+        public string BackupType { get; private set; }
+        public string AutomationMethod { get; private set; }
+        public bool IsActive { get; private set; } = false;
+
+        private System.Windows.Forms.Timer plannedTimer;
+        private System.Windows.Forms.Timer debounceTimer;
+        private FileSystemWatcher fileWatcher;
+
+        public BackupTask(string source, string destination, string backupType, string automationMethod)
+        {
+            TaskId = Guid.NewGuid();
+            SourceFolder = source;
+            DestinationFolder = destination;
+            BackupType = backupType;
+            AutomationMethod = automationMethod;
+        }
+
+        /// <summary>
+        /// Startet den Backup-Task abhängig vom Automatisierungsmodus.
+        /// </summary>
+        public void Start()
+        {
+            if (AutomationMethod == GetTranslation(GetCurrentLanguage(), "manual_automationmethod_backupmanager"))
+            {
+                // Bei manueller Ausführung: einmaliges Backup
+                PerformBackup();
+                IsActive = false;
+            }
+            else if (AutomationMethod == GetTranslation(GetCurrentLanguage(), "scheduled_automationmethod_backupmanager"))
+            {
+                plannedTimer = new System.Windows.Forms.Timer();
+                plannedTimer.Interval = 60000; // 60 Sekunden
+                plannedTimer.Tick += (s, e) => PerformBackup();
+                plannedTimer.Start();
+                IsActive = true;
+            }
+            else if (AutomationMethod == GetTranslation(GetCurrentLanguage(), "realtime_automationmethod_backupmanager"))
+            {
+                plannedTimer = new System.Windows.Forms.Timer();
+                plannedTimer.Interval = 5000; // 5 Sekunden
+                plannedTimer.Tick += (s, e) => PerformBackup();
+                plannedTimer.Start();
+                IsActive = true;
+            }
+        }
+
+        private void OnFileChanged(object sender, FileSystemEventArgs e)
+        {
+            debounceTimer.Stop();
+            debounceTimer.Start();
+        }
+
+        /// <summary>
+        /// Stoppt den Task und gibt verwendete Ressourcen frei.
+        /// </summary>
+        public void Stop()
+        {
+            if (plannedTimer != null)
+            {
+                plannedTimer.Stop();
+                plannedTimer.Dispose();
+            }
+            if (fileWatcher != null)
+            {
+                fileWatcher.EnableRaisingEvents = false;
+                fileWatcher.Dispose();
+            }
+            if (debounceTimer != null)
+            {
+                debounceTimer.Stop();
+                debounceTimer.Dispose();
+            }
+            IsActive = false;
+        }
+
+        /// <summary>
+        /// Führt das Backup aus.
+        /// </summary>
+        private void PerformBackup()
+        {
+            try
+            {
+                BackupManager.PerformBackup(SourceFolder, DestinationFolder, BackupType);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(GetTranslation(GetCurrentLanguage(), "backupfailed_backupmanager") + ex.Message,
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+    }
+
+    /// <summary>
     /// BackupManager enthält die Logik für die unterschiedlichen Backup-Methoden.
+    /// (Unverändert aus Deinem ursprünglichen Code)
     /// </summary>
     public static class BackupManager
     {
-        // Dateiname für den Marker, der den Zeitpunkt des letzten Vollbackups speichert (für differenzielle Backups)
         private static string markerFileName = "fullBackupMarker.txt";
 
         public static void PerformBackup(string sourceFolder, string destinationFolder, string backupType)
         {
             if (!Directory.Exists(sourceFolder))
                 throw new Exception("Quellordner existiert nicht.");
-
             if (!Directory.Exists(destinationFolder))
                 Directory.CreateDirectory(destinationFolder);
-
 
             if (backupType == GetTranslation(GetCurrentLanguage(), "complete_backuptype_backupmanager"))
                 CopyAll(new DirectoryInfo(sourceFolder), new DirectoryInfo(destinationFolder));
@@ -226,18 +266,13 @@ namespace BackupTool
                 throw new Exception(GetTranslation(GetCurrentLanguage(), "unknown_backuptype_backupmanager"));
         }
 
-        /// <summary>
-        /// Führt ein Vollbackup durch (kopiert alle Dateien und Unterordner).
-        /// </summary>
         private static void CopyAll(DirectoryInfo source, DirectoryInfo target)
         {
-            // Kopiere alle Dateien
             foreach (FileInfo file in source.GetFiles())
             {
                 string targetFilePath = Path.Combine(target.FullName, file.Name);
                 file.CopyTo(targetFilePath, true);
             }
-            // Kopiere alle Unterordner rekursiv
             foreach (DirectoryInfo subDir in source.GetDirectories())
             {
                 DirectoryInfo nextTargetSubDir = target.CreateSubdirectory(subDir.Name);
@@ -245,9 +280,6 @@ namespace BackupTool
             }
         }
 
-        /// <summary>
-        /// Führt ein inkrementelles Backup durch: Nur Dateien, die neu oder geändert sind, werden kopiert.
-        /// </summary>
         private static void CopyIncremental(DirectoryInfo source, DirectoryInfo target)
         {
             foreach (FileInfo file in source.GetFiles())
@@ -273,11 +305,6 @@ namespace BackupTool
             }
         }
 
-        /// <summary>
-        /// Führt ein differenzielles Backup durch:
-        /// Falls kein Marker vorhanden ist, wird ein Vollbackup erstellt und der Marker gesetzt.
-        /// Andernfalls werden nur Dateien kopiert, die seit dem Marker-Zeitpunkt geändert wurden.
-        /// </summary>
         private static void CopyDifferential(DirectoryInfo source, DirectoryInfo target)
         {
             string markerPath = Path.Combine(target.FullName, markerFileName);
@@ -285,31 +312,24 @@ namespace BackupTool
 
             if (!File.Exists(markerPath))
             {
-                // Kein Marker vorhanden: Vollbackup ausführen und Marker setzen
                 CopyAll(source, target);
                 fullBackupTime = DateTime.Now;
-                File.WriteAllText(markerPath, fullBackupTime.ToString("o")); // ISO 8601 Format
+                File.WriteAllText(markerPath, fullBackupTime.ToString("o"));
             }
             else
             {
-                // Marker existiert: Lese den Zeitpunkt des letzten Vollbackups
                 string markerContent = File.ReadAllText(markerPath);
                 if (!DateTime.TryParse(markerContent, null, System.Globalization.DateTimeStyles.RoundtripKind, out fullBackupTime))
                 {
-                    // Bei ungültigem Marker, Vollbackup ausführen und Marker setzen
                     CopyAll(source, target);
                     fullBackupTime = DateTime.Now;
                     File.WriteAllText(markerPath, fullBackupTime.ToString("o"));
                     return;
                 }
-                // Kopiere nur Dateien, die seit dem Marker-Zeitpunkt geändert wurden
                 CopyDifferentialRecursive(source, target, fullBackupTime);
             }
         }
 
-        /// <summary>
-        /// Rekursive Methode für differenzielles Backup (kopiert nur geänderte Dateien).
-        /// </summary>
         private static void CopyDifferentialRecursive(DirectoryInfo source, DirectoryInfo target, DateTime fullBackupTime)
         {
             foreach (FileInfo file in source.GetFiles())
@@ -327,19 +347,10 @@ namespace BackupTool
             }
         }
 
-        /// <summary>
-        /// Synchronisiert den Zielordner mit dem Quellordner:
-        /// - Neue oder aktualisierte Dateien werden kopiert.
-        /// - Dateien, die im Quellordner gelöscht wurden, werden auch im Zielordner entfernt.
-        /// - Unterordner werden rekursiv synchronisiert.
-        /// </summary>
         private static void Synchronize(DirectoryInfo source, DirectoryInfo target)
         {
-            // Zielverzeichnis erstellen, falls nicht vorhanden.
             if (!target.Exists)
                 target.Create();
-
-            // 1. Dateien und Unterordner aus Quellordner kopieren oder aktualisieren.
             foreach (FileInfo sourceFile in source.GetFiles())
             {
                 string targetFilePath = Path.Combine(target.FullName, sourceFile.Name);
@@ -356,16 +367,12 @@ namespace BackupTool
                     }
                 }
             }
-
             foreach (DirectoryInfo sourceSubDir in source.GetDirectories())
             {
                 string targetSubDirPath = Path.Combine(target.FullName, sourceSubDir.Name);
                 DirectoryInfo targetSubDir = new DirectoryInfo(targetSubDirPath);
-                // Rekursiv synchronisieren
                 Synchronize(sourceSubDir, targetSubDir);
             }
-
-            // 2. Dateien im Ziel löschen, die nicht mehr im Quellordner existieren.
             foreach (FileInfo targetFile in target.GetFiles())
             {
                 string sourceFilePath = Path.Combine(source.FullName, targetFile.Name);
@@ -374,8 +381,6 @@ namespace BackupTool
                     targetFile.Delete();
                 }
             }
-
-            // 3. Unterordner im Ziel löschen, die nicht mehr im Quellordner vorhanden sind.
             foreach (DirectoryInfo targetSubDir in target.GetDirectories())
             {
                 string sourceSubDirPath = Path.Combine(source.FullName, targetSubDir.Name);

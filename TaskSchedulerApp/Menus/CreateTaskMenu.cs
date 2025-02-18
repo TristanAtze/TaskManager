@@ -24,7 +24,7 @@ class CreateTaskMenu : Menu
         [
             GetTranslation(GetCurrentLanguage(), "individualtask_createtaskmenu"),
             GetTranslation(GetCurrentLanguage(), "automatictask_createtaskmenu"),
-            GetTranslation(GetCurrentLanguage(), "backuptask_createtaskMenu"),
+            GetTranslation(GetCurrentLanguage(), "backuptask_createtaskmenu"),
             " ",
             GetTranslation(GetCurrentLanguage(), "return_createtaskmenu")
         ];

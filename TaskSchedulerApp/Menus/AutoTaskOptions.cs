@@ -24,7 +24,6 @@ class AutoTaskOptions : Menu
             GetTranslation(GetCurrentLanguage(), "email_autotaskmenu"),
             GetTranslation(GetCurrentLanguage(), "calc_autotaskmenu"),
             GetTranslation(GetCurrentLanguage(), "browser_autotaskmenu"),
-            GetTranslation(GetCurrentLanguage(), "screenlocker_autotaskmenu"),
             " ",
             GetTranslation(GetCurrentLanguage(), "return_autotaskmenu")
         ];
@@ -43,11 +42,7 @@ class AutoTaskOptions : Menu
             case 2:
                 BasicTasks.Browser(Scheduler);
                 break;
-            case 3:
-                
-                BasicTasks.LockInactive(Scheduler);
-                break;
-            case 5:
+            case 4:
                 KeepGoing = false;
                 break;
             default:

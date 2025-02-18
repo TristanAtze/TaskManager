@@ -41,6 +41,8 @@ namespace FileDialog
             filePath = new TextBox();
             saveButton = new Button();
             cancelButton = new Button();
+            conditions = new ComboBox();
+            label1 = new Label();
             SuspendLayout();
             // 
             // name
@@ -49,13 +51,12 @@ namespace FileDialog
             name.Name = "name";
             name.Size = new Size(323, 23);
             name.TabIndex = 0;
-            name.Text = GetTranslation(GetCurrentLanguage(), "name_designer_taskcreator");
             name.TextChanged += Name_TextChanged;
             // 
             // interval
             // 
             interval.Enabled = false;
-            interval.Location = new Point(130, 124);
+            interval.Location = new Point(130, 159);
             interval.Name = "interval";
             interval.Size = new Size(116, 23);
             interval.TabIndex = 0;
@@ -68,14 +69,13 @@ namespace FileDialog
             actionButton.Name = "actionButton";
             actionButton.Size = new Size(100, 25);
             actionButton.TabIndex = 0;
-            actionButton.Text = GetTranslation(GetCurrentLanguage(), "choise_designer_taskcreator");
             actionButton.MouseClick += ActionButton_MouseClick;
             // 
             // date
             // 
             date.CustomFormat = "MM/dd/yyyy hh:mm:ss";
             date.Format = DateTimePickerFormat.Custom;
-            date.Location = new Point(150, 90);
+            date.Location = new Point(150, 125);
             date.Name = "date";
             date.Size = new Size(180, 23);
             date.TabIndex = 0;
@@ -84,7 +84,7 @@ namespace FileDialog
             // priority
             // 
             priority.DropDownStyle = ComboBoxStyle.DropDownList;
-            priority.Location = new Point(7, 90);
+            priority.Location = new Point(7, 125);
             priority.Name = "priority";
             priority.Size = new Size(121, 23);
             priority.TabIndex = 0;
@@ -94,18 +94,17 @@ namespace FileDialog
             // isRecurring
             // 
             isRecurring.Font = new Font("Segoe UI", 8F);
-            isRecurring.Location = new Point(7, 124);
+            isRecurring.Location = new Point(7, 159);
             isRecurring.Name = "isRecurring";
             isRecurring.Size = new Size(104, 24);
             isRecurring.TabIndex = 0;
-            isRecurring.Text = GetTranslation(GetCurrentLanguage(), "recurring_designer_taskcreator");
             isRecurring.MouseClick += IsRecurring_MouseClick;
             // 
             // units
             // 
             units.DropDownStyle = ComboBoxStyle.DropDownList;
             units.Enabled = false;
-            units.Location = new Point(244, 124);
+            units.Location = new Point(244, 159);
             units.Name = "units";
             units.Size = new Size(86, 23);
             units.TabIndex = 1;
@@ -119,36 +118,52 @@ namespace FileDialog
             filePath.ReadOnly = true;
             filePath.Size = new Size(208, 23);
             filePath.TabIndex = 2;
-            filePath.Text = GetTranslation(GetCurrentLanguage(), "filePath_designer_taskcreator");
             filePath.TextChanged += FilePath_TextChanged;
             // 
             // saveButton
             // 
             saveButton.FlatStyle = FlatStyle.Flat;
-            saveButton.Location = new Point(215, 176);
+            saveButton.Location = new Point(215, 211);
             saveButton.Name = "saveButton";
             saveButton.Size = new Size(75, 23);
             saveButton.TabIndex = 3;
-            saveButton.Text = GetTranslation(GetCurrentLanguage(), "save_designer_taskcreator");
             saveButton.UseVisualStyleBackColor = true;
             saveButton.MouseClick += SaveButton_MouseClick;
             // 
             // cancelButton
             // 
             cancelButton.FlatStyle = FlatStyle.Flat;
-            cancelButton.Location = new Point(47, 176);
+            cancelButton.Location = new Point(47, 211);
             cancelButton.Name = "cancelButton";
             cancelButton.Size = new Size(75, 23);
             cancelButton.TabIndex = 4;
-            cancelButton.Text = GetTranslation(GetCurrentLanguage(), "cancel_designer_taskcreator");
             cancelButton.UseVisualStyleBackColor = true;
             cancelButton.MouseClick += CancelButton_MouseClick;
+            // 
+            // conditions
+            // 
+            conditions.FormattingEnabled = true;
+            conditions.Location = new Point(7, 91);
+            conditions.Name = "conditions";
+            conditions.Size = new Size(323, 23);
+            conditions.TabIndex = 5;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(5, 74);
+            label1.Name = "label1";
+            label1.Size = new Size(71, 15);
+            label1.TabIndex = 6;
+            label1.Text = "Bedingung :";
             // 
             // TaskCreator
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(338, 219);
+            ClientSize = new Size(338, 264);
+            Controls.Add(label1);
+            Controls.Add(conditions);
             Controls.Add(cancelButton);
             Controls.Add(saveButton);
             Controls.Add(filePath);
@@ -161,7 +176,6 @@ namespace FileDialog
             Controls.Add(date);
             Margin = new Padding(0);
             Name = "TaskCreator";
-            Text = GetTranslation(GetCurrentLanguage(), "create_designer_taskcreator");
             ResumeLayout(false);
             PerformLayout();
         }
@@ -179,5 +193,8 @@ namespace FileDialog
         private Button saveButton;
         private Button cancelButton;
         #endregion
+
+        private ComboBox conditions;
+        private Label label1;
     }
 }

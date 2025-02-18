@@ -18,7 +18,9 @@ public partial class TaskCreator : Form
         GetTranslation(GetCurrentLanguage(), "leastimportant_prioritys_taskcreator")
     };
 
-
+    /// <summary>
+    /// Dictionary ür alle zeitlichen Einheiten und den Umrechnungsfaktor in Sekunden.
+    /// </summary>
     private readonly Dictionary<string, int> _units = new Dictionary<string, int>()
     {
         {GetTranslation(GetCurrentLanguage(), "seconds_taskcreator"), 1 },
@@ -26,6 +28,14 @@ public partial class TaskCreator : Form
         {GetTranslation(GetCurrentLanguage(), "hours_taskcreator"), 3600 },
         {GetTranslation(GetCurrentLanguage(), "days_taskcreator"), 86400 },
         {GetTranslation(GetCurrentLanguage(), "weeks_taskcreator"), 604800 }
+    };
+
+    private readonly string[] _conditions =
+    {
+        GetTranslation(GetCurrentLanguage(), "cpuusage_taskcreator"),
+        GetTranslation(GetCurrentLanguage(), "afterboot_taskcreator"),
+        GetTranslation(GetCurrentLanguage(), "beforeshutdown_taskcreator"),
+        GetTranslation(GetCurrentLanguage(), "nocondition_taskcreator")
     };
 
     /// <summary>
@@ -65,6 +75,13 @@ public partial class TaskCreator : Form
         foreach (var item in _units)
         {
             units.Items.Add(item.Key);
+        }
+        #endregion
+
+        #region Fill Conditions
+        foreach(var item in _conditions)
+        {
+            conditions.Items.Add(item);
         }
         #endregion
 

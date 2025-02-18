@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZyNi0ks8Eis=",
+  "dgSpecHash": "27qyDOYIaPM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\MoreTranslation\\TaskSchedulerApp\\TaskSchedulerApp.csproj",
+  "projectFilePath": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Conditions\\TaskSchedulerApp\\TaskSchedulerApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lorenz.kupfer\\.nuget\\packages\\crc32.net\\1.2.0\\crc32.net.1.2.0.nupkg.sha512",
     "C:\\Users\\lorenz.kupfer\\.nuget\\packages\\jose-jwt\\3.1.1\\jose-jwt.3.1.1.nupkg.sha512",

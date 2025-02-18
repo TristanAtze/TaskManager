@@ -88,3 +88,7 @@ Timestamp,TaskName,Message
 18.02.2025 13:26:28,StartMonitoring,uptimeMilliseconds successfully executed.
 18.02.2025 13:26:54,StartMonitoring,Process.GetProcesses successfully executed.
 18.02.2025 13:27:24,StartMonitoring,PerformanceCounter successfully executed.
+18.02.2025 15:39:55,StartMonitoring,uptimeMilliseconds successfully executed.
+18.02.2025 15:40:55,StartMonitoring,LASTINPUTINFO successfully executed.
+18.02.2025 15:40:55,StartMonitoring,uptimeMilliseconds successfully executed.
+18.02.2025 15:55:43,StartMonitoring,uptimeMilliseconds successfully executed.

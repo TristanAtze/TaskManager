@@ -52,7 +52,6 @@ namespace TranslationsLibrary
                     {"email_autotaskmenu", "[ E-Mail ]" },
                     {"calc_autotaskmenu", "[ Taschenrechner ]" },
                     {"browser_autotaskmenu", "[ Browser ]" },
-                    {"screenlocker_autotaskmenu", "[ Bildschirm sperren ]" },
                     {"return_autotaskmenu", "[ zurück ]" },
                     #endregion
 
@@ -150,14 +149,12 @@ namespace TranslationsLibrary
                     {"hours_taskcreator", "Stunden" },
                     {"days_taskcreator", "Tage" },
                     {"weeks_taskcreator", "Wochen" },
-                    #endregion
 
-                    #region Enum UnitFactors
-                    { "seconds_unitfactors_designer_taskcreator", "Sekunden" },
-                    { "minutes_unitfactors_designer_taskcreator", "Minuten" },
-                    { "hours_unitfactors_designer_taskcreator", "Stunden" },
-                    { "days_unitfactors_designer_taskcreator", "Tage" },
-                    { "weeks_unitfactors_designer_taskcreator", "Wochen" },
+                    //Bedingungen
+                    {"cpuusage_taskcreator", "CPU-Auslastung" },
+                    {"afterboot_taskcreator", "nach Boot-Vorgang" },
+                    {"beforeshutdown_taskcreator", "vor Shutdown" },
+                    {"nocondition_taskcreator", "keine Bedingung" },
                     #endregion
                 }
             },
@@ -195,7 +192,6 @@ namespace TranslationsLibrary
                     { "email_autotaskmenu", "[ Email ]" },
                     { "calc_autotaskmenu", "[ Calculator ]" },
                     { "browser_autotaskmenu", "[ Browser ]" },
-                    {"screenlocker_autotaskmenu", "[ Lock screen ]" },
                     { "return_autotaskmenu", "[ Back ]" },
                     #endregion
 
@@ -280,14 +276,12 @@ namespace TranslationsLibrary
                     {"hours_taskcreator", "Hours" },
                     {"days_taskcreator", "Days" },
                     {"weeks_taskcreator", "Weeks" },
-                    #endregion
 
-                    #region Enum UnitFactors
-                    { "seconds_unitfactors_designer_taskcreator", "Seconds" },
-                    { "minutes_unitfactors_designer_taskcreator", "Minutes" },
-                    { "hours_unitfactors_designer_taskcreator", "Hours" },
-                    { "days_unitfactors_designer_taskcreator", "Days" },
-                    { "weeks_unitfactors_designer_taskcreator", "Weeks" },
+                    //Bedingungen
+                    {"cpuusage_taskcreator", "CPU usage" },
+                    {"afterboot_taskcreator", "after boot" },
+                    {"beforeshutdown_taskcreator", "before shutdown" },
+                    {"nocondition_taskcreator", "No condition" },
                     #endregion
                 }
             },
@@ -325,7 +319,6 @@ namespace TranslationsLibrary
                     { "email_autotaskmenu", "[ E-mail ]" },
                     { "calc_autotaskmenu", "[ Calculatrice ]" },
                     { "browser_autotaskmenu", "[ Navigateur ]" },
-                    {"screenlocker_autotaskmenu", "[ Verrouiller l'écran ]" },
                     { "return_autotaskmenu", "[ Retour ]" },
                     #endregion
 
@@ -410,14 +403,12 @@ namespace TranslationsLibrary
                     {"hours_taskcreator", "Heures" },
                     {"days_taskcreator", "Jours" },
                     {"weeks_taskcreator", "Semaines" },
-                    #endregion
 
-                    #region Enum UnitFactors
-                    { "seconds_unitfactors_designer_taskcreator", "Secondes" },
-                    { "minutes_unitfactors_designer_taskcreator", "Minutes" },
-                    { "hours_unitfactors_designer_taskcreator", "Heures" },
-                    { "days_unitfactors_designer_taskcreator", "Jours" },
-                    { "weeks_unitfactors_designer_taskcreator", "Semaines" },
+                    //Bedingungen
+                    {"cpuusage_taskcreator", "Utilisation CPU" },
+                    {"afterboot_taskcreator", "après le démarrage" },
+                    {"beforeshutdown_taskcreator", "avant l'arrêt" },
+                    {"nocondition_taskcreator", "Aucune condition" },
                     #endregion
                 }
             },
@@ -455,7 +446,6 @@ namespace TranslationsLibrary
                     { "email_autotaskmenu", "[ E-mail ]" },
                     { "calc_autotaskmenu", "[ Calcolatrice ]" },
                     { "browser_autotaskmenu", "[ Browser ]" },
-                    {"screenlocker_autotaskmenu", "[ Bloccare lo schermo ]" },
                     { "return_autotaskmenu", "[ Indietro ]" },
                     #endregion
 
@@ -540,14 +530,12 @@ namespace TranslationsLibrary
                     {"hours_taskcreator", "Ore" },
                     {"days_taskcreator", "Giorni" },
                     {"weeks_taskcreator", "Settimane" },
-                    #endregion
 
-                    #region Enum UnitFactors
-                    { "seconds_unitfactors_designer_taskcreator", "Secondi" },
-                    { "minutes_unitfactors_designer_taskcreator", "Minuti" },
-                    { "hours_unitfactors_designer_taskcreator", "Ore" },
-                    { "days_unitfactors_designer_taskcreator", "Giorni" },
-                    { "weeks_unitfactors_designer_taskcreator", "Settimane" },
+                    //Bedingungen
+                    {"cpuusage_taskcreator", "Utilizzo CPU" },
+                    {"afterboot_taskcreator", "dopo l'avvio" },
+                    {"beforeshutdown_taskcreator", "prima dello spegnimento" },
+                    {"nocondition_taskcreator", "Nessuna condizione" },
                     #endregion
                 }
             },
@@ -585,7 +573,6 @@ namespace TranslationsLibrary
                     { "email_autotaskmenu", "[ Correo electrónico ]" },
                     { "calc_autotaskmenu", "[ Calculadora ]" },
                     { "browser_autotaskmenu", "[ Navegador ]" },
-                    {"screenlocker_autotaskmenu", "[ Bloquear la pantalla ]" },
                     { "return_autotaskmenu", "[ Volver ]" },
                     #endregion
 
@@ -670,14 +657,12 @@ namespace TranslationsLibrary
                     {"hours_taskcreator", "Horas" },
                     {"days_taskcreator", "Días" },
                     {"weeks_taskcreator", "Semanas" },
-                    #endregion
 
-                    #region Enum UnitFactors
-                    { "seconds_unitfactors_designer_taskcreator", "Segundos" },
-                    { "minutes_unitfactors_designer_taskcreator", "Minutos" },
-                    { "hours_unitfactors_designer_taskcreator", "Horas" },
-                    { "days_unitfactors_designer_taskcreator", "Días" },
-                    { "weeks_unitfactors_designer_taskcreator", "Semanas" },
+                    //Bedingungen
+                    {"cpuusage_taskcreator", "Uso de CPU" },
+                    {"afterboot_taskcreator", "después del arranque" },
+                    {"beforeshutdown_taskcreator", "antes del apagado" },
+                    {"nocondition_taskcreator", "Ninguna condición" },
                     #endregion
                 }
             },
@@ -715,7 +700,6 @@ namespace TranslationsLibrary
                     { "email_autotaskmenu", "[ 电子邮件 ]" },
                     { "calc_autotaskmenu", "[ 计算器 ]" },
                     { "browser_autotaskmenu", "[ 浏览器 ]" },
-                    {"screenlocker_autotaskmenu", "[ 锁定屏幕 ]" },
                     { "return_autotaskmenu", "[ 返回 ]" },
                     #endregion
 
@@ -800,14 +784,12 @@ namespace TranslationsLibrary
                     {"hours_taskcreator", "小时" },
                     {"days_taskcreator", "天" },
                     {"weeks_taskcreator", "周" },
-                    #endregion
 
-                    #region Enum UnitFactors
-                    { "seconds_unitfactors_designer_taskcreator", "秒" },
-                    { "minutes_unitfactors_designer_taskcreator", "分钟" },
-                    { "hours_unitfactors_designer_taskcreator", "小时" },
-                    { "days_unitfactors_designer_taskcreator", "天" },
-                    { "weeks_unitfactors_designer_taskcreator", "周" },
+                    //Bedingungen
+                    {"cpuusage_taskcreator", "CPU-使用率" },
+                    {"afterboot_taskcreator", "启动后" },
+                    {"beforeshutdown_taskcreator", "关机前" },
+                    {"nocondition_taskcreator", "无条件" },
                     #endregion
                 }
             },
@@ -844,7 +826,6 @@ namespace TranslationsLibrary
                     { "email_autotaskmenu", "[ ई-मेल ]" },
                     { "calc_autotaskmenu", "[ कैलकुलेटर ]" },
                     { "browser_autotaskmenu", "[ ब्राउज़र ]" },
-                    {"screenlocker_autotaskmenu", "[ 锁定屏幕 ]" },
                     { "return_autotaskmenu", "[ स्क्रीन लॉक करें ]" },
                     #endregion
 
@@ -929,14 +910,12 @@ namespace TranslationsLibrary
                     {"hours_taskcreator", "घंटे" },
                     {"days_taskcreator", "दिन" },
                     {"weeks_taskcreator", "सप्ताह" },
-                    #endregion
 
-                    #region Enum UnitFactors
-                    { "seconds_unitfactors_designer_taskcreator", "सेकंड" },
-                    { "minutes_unitfactors_designer_taskcreator", "मिनट" },
-                    { "hours_unitfactors_designer_taskcreator", "घंटे" },
-                    { "days_unitfactors_designer_taskcreator", "दिन" },
-                    { "weeks_unitfactors_designer_taskcreator", "हफ्ते" },
+                    //Bedingungen
+                    {"cpuusage_taskcreator", "CPU-उपयोग" },
+                    {"afterboot_taskcreator", "बूट के बाद" },
+                    {"beforeshutdown_taskcreator", "शटडाउन से पहले" },
+                    {"nocondition_taskcreator", "कोई शर्त नहीं " },
                     #endregion
                 }
             },
@@ -1020,13 +999,6 @@ namespace TranslationsLibrary
                    { "filePath_designer_taskcreator", "Stirnpfad" },
                    { "save_designer_taskcreator", "Nasenbeinen" },
                    { "cancel_designer_taskcreator", "Auskippen" },
-                   #endregion
-                   #region Enum UnitFactors
-                   { "seconds_unitfactors_designer_taskcreator", "Deutsche Sekunden" },
-                   { "minutes_unitfactors_designer_taskcreator", "Deutsche Minuten" },
-                   { "hours_unitfactors_designer_taskcreator", "Deutsche Stunden" },
-                   { "days_unitfactors_designer_taskcreator", "Deutsche Tage" },
-                   { "weeks_unitfactors_designer_taskcreator", "Deutsche Wochen" },
                    #endregion
                }
             }

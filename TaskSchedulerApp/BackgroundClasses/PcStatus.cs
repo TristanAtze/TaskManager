@@ -45,140 +45,155 @@ namespace TaskSchedulerApp.BackgroundClasses
             _cts = new CancellationTokenSource();
             CancellationToken token = _cts.Token;
 
-            _ = Task.Run(async () =>
-            {
-                var logger = new Logger("task_logs.csv");
-                logger.Log("StartMonitoring", "uptimeMilliseconds successfully executed.");
-                while (!token.IsCancellationRequested)
-                {
-                    long uptimeMilliseconds = Environment.TickCount64;
-                    IsJustBooted = uptimeMilliseconds < bootThreshold.TotalMilliseconds;
-                    await Task.Delay(1000, token);
-                }
-            }, token);
+            _ = Task.Run(() => TestIfJustBooted(bootThreshold, token));
 
-            _ = Task.Run(async () =>
-            {
-                var logger = new Logger("task_logs.csv");
-                logger.Log("StartMonitoring", "LASTINPUTINFO successfully executed.");
-                while (!token.IsCancellationRequested)
-                {
-                    try
-                    {
-                        LASTINPUTINFO lastInputInfo = new LASTINPUTINFO();
-                        lastInputInfo.cbSize = (uint)Marshal.SizeOf(typeof(LASTINPUTINFO));
-
-                        // Ruft die Zeit der letzten Eingabe ab
-                        if (!GetLastInputInfo(ref lastInputInfo))
-                        {
-                            throw new Exception("Fehler beim Aufrufen von GetLastInputInfo.");
-                        }
-
-                        // Berechnet die seit der letzten Eingabe vergangene Zeit in Millisekunden
-                        uint letzteEingabe = lastInputInfo.dwTime;
-                        uint aktuelleZeit = (uint)Environment.TickCount;
-                        uint inaktiveZeitInMillisekunden = aktuelleZeit - letzteEingabe;
-
-                        // Prüft, ob die inaktive Zeit die angegebene Schwelle überschreitet
-                        IsUserInactive = (inaktiveZeitInMillisekunden / 1000) >= 5;
-                    }
-                    catch 
-                    {
-                        Environment.Exit(0);
-                    }
-                    await Task.Delay(1000, token);
-                }
-            }, token);
+            _ = Task.Run(() => TestIfUserInactive(token));
 
             //_ = Task.Run(async () =>
             //{
             //    IsUserInactive = true;
             //}, token);
 
-            _ = Task.Run(async () =>
-            {
-                var logger = new Logger("task_logs.csv");
-                logger.Log("StartMonitoring", "PerformanceCounter successfully executed.");
-                while (!token.IsCancellationRequested)
-                {
-                    try
-                    {
-                        using (PerformanceCounter cpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total"))
-                        {
-                            // Initialer Aufruf liefert oft 0, daher kurzes Warten
-                            cpuCounter.NextValue();
-                            await Task.Delay(1000, token);
-                            float currentCpuUsage = cpuCounter.NextValue();
-                            IsPcLightlyLoaded = currentCpuUsage < cpuUsageThreshold;
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        Debug.WriteLine("Fehler beim Abrufen der CPU-Auslastung: " + ex.Message);
-                        IsPcLightlyLoaded = false;
-                    }
-                    await Task.Delay(1000, token);
-                }
-            }, token);
+            _ = Task.Run(() => TestIfPcIsLightlyLoaded(cpuUsageThreshold, token));
 
-            _ = Task.Run(async () =>
-            {
-                var logger = new Logger("task_logs.csv");
-                logger.Log("StartMonitoring", "Process.GetProcesses successfully executed.");
-                while (!token.IsCancellationRequested)
-                {
-                    bool open = false;
-                    try
-                    {
-                        var processes = Process.GetProcesses();
-                        foreach (var proc in processes)
-                        {
-                            try
-                            {
-                                string procName = proc.ProcessName;
-                                foreach (string target in processNames)
-                                {
-                                    string targetName = Path.GetFileNameWithoutExtension(target);
-                                    if (string.Equals(procName, targetName, StringComparison.OrdinalIgnoreCase))
-                                    {
-                                        open = true;
-                                        break;
-                                    }
-                                }
-                                if (open)
-                                    break;
-                            }
-                            catch { continue; }
-                        }
-                    }
-                    catch { /* Fehler ggf. loggen */ }
-                    AreProgramsOpen = open;
-                    await Task.Delay(1000, token);
-                }
-            }, token);
+            _ = Task.Run(() => TestIfProgrammsAreOpen(processNames, token));
 
-            _ = Task.Run(async () =>
-            {
-                var logger = new Logger("task_logs.csv");
-                logger.Log("StartMonitoring", "Process.GetProcessesByName successfully executed.");
-                while (!token.IsCancellationRequested)
-                {
-                    bool open = false;
-                    try
-                    {
-                        // Sucht nach einem bestimmten Prozess
-                        var processes = Process.GetProcessesByName(Path.GetFileNameWithoutExtension(specificProgramName));
-                        open = processes.Any();
-                    }
-                    catch { /* Fehler ggf. loggen */ }
-                    IsProgramOpen = open;
-                    await Task.Delay(1000, token);
-                }
-            }, token);
+            _ = Task.Run(() => TestIfProgrammOpen(specificProgramName, token));
 
             // Hinweis: Da die Tasks in Dauerschleifen laufen, beendet sich diese Methode nicht von selbst.
             // Sie kann ggf. als Starter-Methode betrachtet werden.
             await Task.CompletedTask;
+        }
+
+        async static void TestIfProgrammOpen(string specificProgramName, CancellationToken token)
+        {
+            var logger = new Logger("task_logs.csv");
+            logger.Log("StartMonitoring", "Process.GetProcessesByName successfully executed.");
+
+            while (!token.IsCancellationRequested)
+            {
+                bool open = false;
+                try
+                {
+                    // Sucht nach einem bestimmten Prozess
+                    var processes = Process.GetProcessesByName(Path.GetFileNameWithoutExtension(specificProgramName));
+                    open = processes.Any();
+                }
+                catch { /* Fehler ggf. loggen */ }
+                IsProgramOpen = open;
+                await Task.Delay(1000, token);
+            }
+        }
+
+        async static void TestIfProgrammsAreOpen(string[] processNames, CancellationToken token)
+        {
+            var logger = new Logger("task_logs.csv");
+            logger.Log("StartMonitoring", "Process.GetProcesses successfully executed.");
+
+            while (!token.IsCancellationRequested)
+            {
+                bool open = false;
+                try
+                {
+                    var processes = Process.GetProcesses();
+                    foreach (var proc in processes)
+                    {
+                        try
+                        {
+                            string procName = proc.ProcessName;
+                            foreach (string target in processNames)
+                            {
+                                string targetName = Path.GetFileNameWithoutExtension(target);
+                                if (string.Equals(procName, targetName, StringComparison.OrdinalIgnoreCase))
+                                {
+                                    open = true;
+                                    break;
+                                }
+                            }
+                            if (open)
+                                break;
+                        }
+                        catch { continue; }
+                    }
+                }
+                catch { /* Fehler ggf. loggen */ }
+                AreProgramsOpen = open;
+                await Task.Delay(1000, token);
+            }
+        }
+
+        async static void TestIfPcIsLightlyLoaded(float cpuUsageThreshold, CancellationToken token)
+        {
+            var logger = new Logger("task_logs.csv");
+            logger.Log("StartMonitoring", "PerformanceCounter successfully executed.");
+
+            while (!token.IsCancellationRequested)
+            {
+                try
+                {
+                    using (PerformanceCounter cpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total"))
+                    {
+                        // Initialer Aufruf liefert oft 0, daher kurzes Warten
+                        cpuCounter.NextValue();
+                        await Task.Delay(1000, token);
+                        float currentCpuUsage = cpuCounter.NextValue();
+                        IsPcLightlyLoaded = currentCpuUsage < cpuUsageThreshold;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine("Fehler beim Abrufen der CPU-Auslastung: " + ex.Message);
+                    IsPcLightlyLoaded = false;
+                }
+                await Task.Delay(1000, token);
+            }
+        }
+
+        async static void TestIfUserInactive(CancellationToken token)
+        {
+            var logger = new Logger("task_logs.csv");
+            logger.Log("StartMonitoring", "LASTINPUTINFO successfully executed.");
+
+            while (!token.IsCancellationRequested)
+            {
+                try
+                {
+                    LASTINPUTINFO lastInputInfo = new LASTINPUTINFO();
+                    lastInputInfo.cbSize = (uint)Marshal.SizeOf(typeof(LASTINPUTINFO));
+
+                    // Ruft die Zeit der letzten Eingabe ab
+                    if (!GetLastInputInfo(ref lastInputInfo))
+                    {
+                        throw new Exception("Fehler beim Aufrufen von GetLastInputInfo.");
+                    }
+
+                    // Berechnet die seit der letzten Eingabe vergangene Zeit in Millisekunden
+                    uint letzteEingabe = lastInputInfo.dwTime;
+                    uint aktuelleZeit = (uint)Environment.TickCount;
+                    uint inaktiveZeitInMillisekunden = aktuelleZeit - letzteEingabe;
+
+                    // Prüft, ob die inaktive Zeit die angegebene Schwelle überschreitet
+                    IsUserInactive = (inaktiveZeitInMillisekunden / 1000) >= 5;
+                }
+                catch
+                {
+                    Environment.Exit(0);
+                }
+                await Task.Delay(1000, token);
+            }
+        }
+
+        async static void TestIfJustBooted(TimeSpan bootThreshold, CancellationToken token)
+        {
+            var logger = new Logger("task_logs.csv");
+            logger.Log("StartMonitoring", "uptimeMilliseconds successfully executed.");
+
+            while (!token.IsCancellationRequested)
+            {
+                long uptimeMilliseconds = Environment.TickCount64;
+                IsJustBooted = uptimeMilliseconds < bootThreshold.TotalMilliseconds;
+                await Task.Delay(1000, token);
+            }
         }
 
         #region Systemereignis-Handler

@@ -15,8 +15,6 @@ public class Program
 
         var mainMenu = new MainMenu(taskScheduler);
         mainMenu.Start();
-
-        
     }
 
     //public static async Task PreventShutdownStart()

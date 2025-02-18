@@ -11,10 +11,9 @@ public class Logger
 
         if (!File.Exists(_logFilePath))
         {
-            using (var writer = new StreamWriter(_logFilePath, append: false))
-            {
-                writer.WriteLine("Timestamp,TaskName,Message");  // CSV-Header
-            }
+            using var writer = new StreamWriter(_logFilePath, append: false);
+            writer.WriteLine("Timestamp,TaskName,Message");  // CSV-Header
+            writer.Close();
         }
     }
 
@@ -22,9 +21,8 @@ public class Logger
     {
         string logEntry = $"{DateTime.Now},{taskName},{message}";
 
-        using (var writer = new StreamWriter(_logFilePath, append: true))
-        {
-            writer.WriteLine(logEntry);
-        }
+        using var writer = new StreamWriter(_logFilePath, append: true);
+        writer.WriteLine(logEntry);
+        writer.Close();
     }
 }

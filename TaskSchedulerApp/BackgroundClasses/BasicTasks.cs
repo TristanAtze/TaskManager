@@ -77,42 +77,4 @@ public class BasicTasks
 
         taskScheduler.ScheduleTask(Browser);
     }
-<<<<<<< HEAD
-
-    public static void LockInactive(TaskScheduler taskScheduler)
-    {
-        var notificationManager = new NotificationManager();
-        var logger = new Logger("task_logs.csv");
-
-        var LockInactive = new PreTask("LockInactive", () =>
-        {
-            notificationManager.SendNotification("LockInactive executed.");
-            logger.Log("LockInactive", "Task successfully executed.");
-            Task.Run(async () =>
-            {
-                while (true)
-                {
-                    Console.WriteLine("Test");
-                    //Asynchrone Prüfung, ob der Nutzer mindestens 1 Minute inaktiv ist
-                    bool inactive = PcStatus.IsUserInactive;
-                    if (inactive)
-                    {
-                        notificationManager.SendNotification("Nutzer inaktiv: PC wird gesperrt.");
-                        logger.Log("LockPC", "Nutzer inaktiv. PC wird sofort gesperrt.");
-                        SystemControl.LockWorkStation();
-                        break; // Nach dem Sperren beenden wir die Überwachungsschleife.
-                    }
-                    //Überprüfe alle 5 Sekunden erneut
-                    await Task.Delay(TimeSpan.FromSeconds(5));
-                }
-            });
-
-        }, DateTime.Now.AddSeconds(5), priority: 1);
-
-        taskScheduler.ScheduleTask(LockInactive);
-    }
-
-
-=======
->>>>>>> EvenMoreTranslations
 }

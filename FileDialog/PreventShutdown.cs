@@ -44,7 +44,7 @@ namespace ShutdownBlocker
 
         private void HiddenForm_Shown(object sender, EventArgs e)
         {
-            ShutdownBlockReasonCreate(this.Handle, "Herunterfahren wird durch diese Anwendung verhindert.");
+            ShutdownBlockReasonCreate(this.Handle, GetTranslation(GetCurrentLanguage(), "shutdown_prevented_preventshutdown"));
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)

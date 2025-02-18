@@ -11,11 +11,11 @@ public partial class TaskCreator : Form
     /// </summary>
     private string[] _prioritys =
     {
-        "sehr wichtig",
-        "wichtig",
-        "normal",
-        "unwichtig",
-        "sehr unwichtig"
+        GetTranslation(GetCurrentLanguage(), "veryimportant_prioritys_taskcreator"),
+        GetTranslation(GetCurrentLanguage(), "important_prioritys_taskcreator"),
+        GetTranslation(GetCurrentLanguage(), "normalimportant_prioritys_taskcreator"),
+        GetTranslation(GetCurrentLanguage(), "lessimportant_prioritys_taskcreator"),
+        GetTranslation(GetCurrentLanguage(), "leastimportant_prioritys_taskcreator")
     };
 
     /// <summary>
@@ -23,6 +23,7 @@ public partial class TaskCreator : Form
     /// </summary>
     private UnitFactors[] _units =
     {
+        //TODO Enums mit in übersetzung einbinden.
         UnitFactors.Sekunden,
         UnitFactors.Minuten,
         UnitFactors.Stunden,
@@ -122,27 +123,16 @@ public partial class TaskCreator : Form
     private int ConvertPriority(string selectedPriority)
     {
         int result = 3;
-
-        switch (selectedPriority)
-        {
-            case "sehr wichtig":
-                result = 1;
-                break;
-            case "wichtig":
-                result = 2;
-                break;
-            case "normal":
-                result = 3;
-                break;
-            case "unwichtig":
-                result = 4;
-                break;
-            case "sehr unwichtig":
-                result = 5;
-                break;
-            default:
-                break;
-        }
+        if (selectedPriority == GetTranslation(GetCurrentLanguage(), "veryimportant_prioritys_taskcreator"))
+            result = 1;
+        else if (selectedPriority == GetTranslation(GetCurrentLanguage(), "important_prioritys_taskcreator"))
+            result = 2;
+        else if (selectedPriority == GetTranslation(GetCurrentLanguage(), "normalimportant_prioritys_taskcreator"))
+            result = 3;
+        else if (selectedPriority == GetTranslation(GetCurrentLanguage(), "lessimportant_prioritys_taskcreator"))
+            result = 4;
+        else if (selectedPriority == GetTranslation(GetCurrentLanguage(), "leastimportant_prioritys_taskcreator"))
+            result = 5;
 
         return result;
     }
@@ -163,12 +153,12 @@ public partial class TaskCreator : Form
 
     private void Priority_DropDown(object sender, EventArgs e)
     {
-        priority.Items.Remove("Priorität");
+        priority.Items.Remove(GetTranslation(GetCurrentLanguage(), "priority_taskcreator"));
     }
 
     private void Units_DropDown(object sender, EventArgs e)
     {
-        units.Items.Remove("Einheit");
+        units.Items.Remove(GetTranslation(GetCurrentLanguage(), "unit_taskcreator"));
     }
 
     private void IsRecurring_MouseClick(object sender, MouseEventArgs e)

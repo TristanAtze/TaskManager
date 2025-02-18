@@ -49,7 +49,7 @@ namespace FileDialog
             name.Name = "name";
             name.Size = new Size(323, 23);
             name.TabIndex = 0;
-            name.Text = "Name";
+            name.Text = GetTranslation(GetCurrentLanguage(), "name_designer_taskcreator");
             name.TextChanged += Name_TextChanged;
             // 
             // interval
@@ -68,7 +68,7 @@ namespace FileDialog
             actionButton.Name = "actionButton";
             actionButton.Size = new Size(100, 25);
             actionButton.TabIndex = 0;
-            actionButton.Text = "Auswählen";
+            actionButton.Text = GetTranslation(GetCurrentLanguage(), "choise_designer_taskcreator");
             actionButton.MouseClick += ActionButton_MouseClick;
             // 
             // date
@@ -98,7 +98,7 @@ namespace FileDialog
             isRecurring.Name = "isRecurring";
             isRecurring.Size = new Size(104, 24);
             isRecurring.TabIndex = 0;
-            isRecurring.Text = "wiederkehrend";
+            isRecurring.Text = GetTranslation(GetCurrentLanguage(), "recurring_designer_taskcreator");
             isRecurring.MouseClick += IsRecurring_MouseClick;
             // 
             // units
@@ -119,7 +119,7 @@ namespace FileDialog
             filePath.ReadOnly = true;
             filePath.Size = new Size(208, 23);
             filePath.TabIndex = 2;
-            filePath.Text = "Dateipfad";
+            filePath.Text = GetTranslation(GetCurrentLanguage(), "filePath_designer_taskcreator");
             filePath.TextChanged += FilePath_TextChanged;
             // 
             // saveButton
@@ -129,7 +129,7 @@ namespace FileDialog
             saveButton.Name = "saveButton";
             saveButton.Size = new Size(75, 23);
             saveButton.TabIndex = 3;
-            saveButton.Text = "Speichern";
+            saveButton.Text = GetTranslation(GetCurrentLanguage(), "save_designer_taskcreator");
             saveButton.UseVisualStyleBackColor = true;
             saveButton.MouseClick += SaveButton_MouseClick;
             // 
@@ -140,7 +140,7 @@ namespace FileDialog
             cancelButton.Name = "cancelButton";
             cancelButton.Size = new Size(75, 23);
             cancelButton.TabIndex = 4;
-            cancelButton.Text = "Abbrechen";
+            cancelButton.Text = GetTranslation(GetCurrentLanguage(), "cancel_designer_taskcreator");
             cancelButton.UseVisualStyleBackColor = true;
             cancelButton.MouseClick += CancelButton_MouseClick;
             // 
@@ -161,7 +161,7 @@ namespace FileDialog
             Controls.Add(date);
             Margin = new Padding(0);
             Name = "TaskCreator";
-            Text = "Task erstellen";
+            Text = GetTranslation(GetCurrentLanguage(), "create_designer_taskcreator");
             ResumeLayout(false);
             PerformLayout();
         }

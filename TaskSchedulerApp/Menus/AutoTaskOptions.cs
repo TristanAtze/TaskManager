@@ -18,15 +18,15 @@ class AutoTaskOptions : Menu
     {
         Scheduler = taskScheduler;
 
-        Headline = "Automatische Tasks";
+        Headline = GetTranslation(GetCurrentLanguage(), "headline_autotaskmenu");
         Options =
         [
-            "[ E-Mail ]",
-            "[ Taschenrechner ]",
-            "[ Browser ]",
-            "[ Bildschirm-Sperre bei Inaktivität ]",
+            GetTranslation(GetCurrentLanguage(), "email_autotaskmenu"),
+            GetTranslation(GetCurrentLanguage(), "calc_autotaskmenu"),
+            GetTranslation(GetCurrentLanguage(), "browser_autotaskmenu"),
+            GetTranslation(GetCurrentLanguage(), "screenlocker_autotaskmenu"),
             " ",
-            "[ zurück ]"
+            GetTranslation(GetCurrentLanguage(), "return_autotaskmenu")
         ];
     }
 

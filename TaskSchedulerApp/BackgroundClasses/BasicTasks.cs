@@ -12,11 +12,11 @@ public class BasicTasks
 
         var OpenEmail = new PreTask("OpenMail", () =>
         {
-            notificationManager.SendNotification("OpenMail executed.");
+            notificationManager.SendNotification("openmail_executed_mail_basictasks");
             logger.Log("OpenMail", "Task successfully executed.");
-            string email = "empfaenger@example.com";
-            string subject = Uri.EscapeDataString("Betreff der E-Mail");
-            string body = Uri.EscapeDataString("Hallo,\n\nDas ist eine vorgefertigte Nachricht.");
+            string email = GetTranslation(GetCurrentLanguage(), "reciever_mail_basictasks");
+            string subject = Uri.EscapeDataString(GetTranslation(GetCurrentLanguage(), "subject_mail_basictasks"));
+            string body = Uri.EscapeDataString(GetTranslation(GetCurrentLanguage(), "text_mail_basictasks"));
 
             string mailto = $"mailto:{email}?subject={subject}&body={body}";
 
@@ -26,7 +26,7 @@ public class BasicTasks
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Fehler beim Öffnen des E-Mail-Clients: " + ex.Message);
+                MessageBox.Show(GetTranslation(GetCurrentLanguage(), "openmail_error_executed_mail_basictasks") + ex.Message);
             }
 
         }, DateTime.Now.AddSeconds(5), priority: 1);
@@ -41,7 +41,7 @@ public class BasicTasks
 
         var Calculator = new PreTask("Calculator", () =>
         {
-            notificationManager.SendNotification("Calculator executed.");
+            notificationManager.SendNotification(GetTranslation(GetCurrentLanguage(), "opencalc_executed_calculator_basictasks"));
             logger.Log("Calculator", "Task successfully executed.");
             try
             {
@@ -49,7 +49,7 @@ public class BasicTasks
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Fehler beim Öffnen des Taschenrechners: " + ex.Message);
+                MessageBox.Show(GetTranslation(GetCurrentLanguage(), "opencalc_error_executed_calculator_basictasks") + ex.Message);
             }
 
         }, DateTime.Now.AddSeconds(5), priority: 1);
@@ -64,7 +64,7 @@ public class BasicTasks
 
         var Browser = new PreTask("Browser", () =>
         {
-            notificationManager.SendNotification("Browser executed.");
+            notificationManager.SendNotification(GetTranslation(GetCurrentLanguage(), "openbrowser_executed_browser_basictasks"));
             logger.Log("Browser", "Task successfully executed.");
             ProcessStartInfo psi = new ProcessStartInfo
             {
@@ -77,6 +77,7 @@ public class BasicTasks
 
         taskScheduler.ScheduleTask(Browser);
     }
+<<<<<<< HEAD
 
     public static void LockInactive(TaskScheduler taskScheduler)
     {
@@ -112,4 +113,6 @@ public class BasicTasks
     }
 
 
+=======
+>>>>>>> EvenMoreTranslations
 }

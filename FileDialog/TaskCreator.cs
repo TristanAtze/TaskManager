@@ -9,7 +9,7 @@ public partial class TaskCreator : Form
     /// <summary>
     /// Array mit allen möglichen Prioritäten, die zur Auswahl stehen.
     /// </summary>
-    private string[] _prioritys =
+    private readonly string[] _prioritys =
     {
         GetTranslation(GetCurrentLanguage(), "veryimportant_prioritys_taskcreator"),
         GetTranslation(GetCurrentLanguage(), "important_prioritys_taskcreator"),
@@ -18,17 +18,14 @@ public partial class TaskCreator : Form
         GetTranslation(GetCurrentLanguage(), "leastimportant_prioritys_taskcreator")
     };
 
-    /// <summary>
-    /// Array mit allen möglichen Zeit-Einheiten, welche zur Auswahl stehen.
-    /// </summary>
-    private UnitFactors[] _units =
+
+    private readonly Dictionary<string, int> _units = new Dictionary<string, int>()
     {
-        //TODO Enums mit in übersetzung einbinden.
-        UnitFactors.Sekunden,
-        UnitFactors.Minuten,
-        UnitFactors.Stunden,
-        UnitFactors.Tage,
-        UnitFactors.Wochen
+        {GetTranslation(GetCurrentLanguage(), "seconds_taskcreator"), 1 },
+        {GetTranslation(GetCurrentLanguage(), "minutes_taskcreator"), 60 },
+        {GetTranslation(GetCurrentLanguage(), "hours_taskcreator"), 3600 },
+        {GetTranslation(GetCurrentLanguage(), "days_taskcreator"), 86400 },
+        {GetTranslation(GetCurrentLanguage(), "weeks_taskcreator"), 604800 }
     };
 
     /// <summary>
@@ -67,24 +64,12 @@ public partial class TaskCreator : Form
         #region Fill Units
         foreach (var item in _units)
         {
-            units.Items.Add(item);
+            units.Items.Add(item.Key);
         }
         #endregion
 
         _taskDateTime = date.Value;
         saveButton.Enabled = false;
-    }
-
-    /// <summary>
-    /// Enumeration für alle möglichen Zeit-Einheiten.
-    /// </summary>
-    private enum UnitFactors
-    {
-        Sekunden = 1,
-        Minuten = 60,
-        Stunden = 3600,
-        Tage = 86400,
-        Wochen = 604800
     }
 
     /// <summary>
@@ -205,6 +190,7 @@ public partial class TaskCreator : Form
             _taskInterval);
 
         Scheduler.ScheduleTask(task);
+        Application.Exit();
     }
 
     private void DateTime_ValueChanged(object sender, EventArgs e)
@@ -225,7 +211,7 @@ public partial class TaskCreator : Form
     {
         if (units.SelectedItem != null && int.TryParse(interval.Text, out int value))
         {
-            int interval = value * (int)units.SelectedItem;
+            int interval = value * _units[units.SelectedItem.ToString()];
 
             _taskInterval = new TimeSpan(interval * 1000000000);
         }
@@ -237,7 +223,7 @@ public partial class TaskCreator : Form
     {
         if (units.SelectedItem != null && int.TryParse(interval.Text, out int value))
         {
-            int interval = value * (int)units.SelectedItem;
+            int interval = value * _units[units.SelectedItem.ToString()];
 
             _taskInterval = new TimeSpan(interval * 1000000000);
         }

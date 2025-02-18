@@ -10,3 +10,15 @@ C:\Users\ben.sowieja\source\repos\TaskManager\TranslationsLibary\obj\Debug\net9.
 C:\Users\ben.sowieja\source\repos\TaskManager\TranslationsLibary\obj\Debug\net9.0\refint\TranslationsLibary.dll
 C:\Users\ben.sowieja\source\repos\TaskManager\TranslationsLibary\obj\Debug\net9.0\TranslationsLibary.pdb
 C:\Users\ben.sowieja\source\repos\TaskManager\TranslationsLibary\obj\Debug\net9.0\ref\TranslationsLibary.dll
+C:\Users\lorenz.kupfer\source\OwnRepos\TaskManager\MoreTranslation\TranslationsLibary\bin\Debug\net9.0\TranslationsLibary.deps.json
+C:\Users\lorenz.kupfer\source\OwnRepos\TaskManager\MoreTranslation\TranslationsLibary\bin\Debug\net9.0\TranslationsLibary.dll
+C:\Users\lorenz.kupfer\source\OwnRepos\TaskManager\MoreTranslation\TranslationsLibary\bin\Debug\net9.0\TranslationsLibary.pdb
+C:\Users\lorenz.kupfer\source\OwnRepos\TaskManager\MoreTranslation\TranslationsLibary\obj\Debug\net9.0\TranslationsLibary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lorenz.kupfer\source\OwnRepos\TaskManager\MoreTranslation\TranslationsLibary\obj\Debug\net9.0\TranslationsLibary.AssemblyInfoInputs.cache
+C:\Users\lorenz.kupfer\source\OwnRepos\TaskManager\MoreTranslation\TranslationsLibary\obj\Debug\net9.0\TranslationsLibary.AssemblyInfo.cs
+C:\Users\lorenz.kupfer\source\OwnRepos\TaskManager\MoreTranslation\TranslationsLibary\obj\Debug\net9.0\TranslationsLibary.csproj.CoreCompileInputs.cache
+C:\Users\lorenz.kupfer\source\OwnRepos\TaskManager\MoreTranslation\TranslationsLibary\obj\Debug\net9.0\TranslationsLibary.sourcelink.json
+C:\Users\lorenz.kupfer\source\OwnRepos\TaskManager\MoreTranslation\TranslationsLibary\obj\Debug\net9.0\TranslationsLibary.dll
+C:\Users\lorenz.kupfer\source\OwnRepos\TaskManager\MoreTranslation\TranslationsLibary\obj\Debug\net9.0\refint\TranslationsLibary.dll
+C:\Users\lorenz.kupfer\source\OwnRepos\TaskManager\MoreTranslation\TranslationsLibary\obj\Debug\net9.0\TranslationsLibary.pdb
+C:\Users\lorenz.kupfer\source\OwnRepos\TaskManager\MoreTranslation\TranslationsLibary\obj\Debug\net9.0\ref\TranslationsLibary.dll

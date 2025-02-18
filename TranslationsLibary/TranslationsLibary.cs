@@ -52,6 +52,7 @@ namespace TranslationsLibrary
                     {"email_autotaskmenu", "[ E-Mail ]" },
                     {"calc_autotaskmenu", "[ Taschenrechner ]" },
                     {"browser_autotaskmenu", "[ Browser ]" },
+                    {"screenlocker_autotaskmenu", "[ Bildschirm sperren ]" },
                     {"return_autotaskmenu", "[ zurück ]" },
                     #endregion
 
@@ -63,11 +64,11 @@ namespace TranslationsLibrary
                     #endregion
 
                     #region Basic Tasks (E-Mail)
-                    { "openmail_executed_mail_basictasks", "Email Programm wurde gestartet" },
+                    { "openmail_executed_mail_basictasks", "E-Mail Programm wurde gestartet" },
                     { "reciever_mail_basictasks", "empfänger@example.com" },
                     { "subject_mail_basictasks", "Betreff der E-Mail" },
-                    { "text_mail_basictasks", "Hallo,\n\nDas ist eine vorgefertigte Nachricht." },
-                    { "openmail_error_executed_mail_basictasks", "Fehler beim öffnen des E-Mail Clients: " },
+                    { "text_mail_basictasks", "Hallo,\n\nDies ist eine vorgefertigte Nachricht." },
+                    { "openmail_error_executed_mail_basictasks", "Fehler beim Öffnen des E-Mail Clients: " },
                     #endregion
 
                     #region Basic Tasks (Calculator)
@@ -119,6 +120,7 @@ namespace TranslationsLibrary
                     { "stopalltask_designer_backupmanager", "Alle Tasks stoppen" },
 
                     #endregion
+
                     #region PreventShutdown
                     { "shutdown_prevented_preventshutdown", "Herunterfahren wird durch diese Anwendung verhindert." },
                     #endregion
@@ -141,6 +143,13 @@ namespace TranslationsLibrary
                     { "save_designer_taskcreator", "Speichern" },
                     { "cancel_designer_taskcreator", "Abbrechen" },
                     { "create_designer_taskcreator", "Task erstellen" },
+
+                    //Zeiteinheiten
+                    {"seconds_taskcreator", "Sekunden" },
+                    {"minutes_taskcreator", "Minuten" },
+                    {"hours_taskcreator", "Stunden" },
+                    {"days_taskcreator", "Tage" },
+                    {"weeks_taskcreator", "Wochen" },
                     #endregion
 
                     #region Enum UnitFactors
@@ -186,6 +195,7 @@ namespace TranslationsLibrary
                     { "email_autotaskmenu", "[ Email ]" },
                     { "calc_autotaskmenu", "[ Calculator ]" },
                     { "browser_autotaskmenu", "[ Browser ]" },
+                    {"screenlocker_autotaskmenu", "[ Lock screen ]" },
                     { "return_autotaskmenu", "[ Back ]" },
                     #endregion
 
@@ -263,6 +273,13 @@ namespace TranslationsLibrary
                     { "filePath_designer_taskcreator", "File path" },
                     { "save_designer_taskcreator", "Save" },
                     { "cancel_designer_taskcreator", "Cancel" },
+
+                    //Zeiteinheiten
+                    {"seconds_taskcreator", "Seconds" },
+                    {"minutes_taskcreator", "Minutes" },
+                    {"hours_taskcreator", "Hours" },
+                    {"days_taskcreator", "Days" },
+                    {"weeks_taskcreator", "Weeks" },
                     #endregion
 
                     #region Enum UnitFactors
@@ -303,10 +320,12 @@ namespace TranslationsLibrary
                     { "backuptask_createtaskmenu", "[ Tâche de sauvegarde ]" },
                     { "return_createtaskmenu", "[ Retour ]" },
 
-                    //AutoMenu-Optionen{ "headline_autotaskmenu", "Tâches automatiques" },
+                    //AutoMenu-Optionen
+                    { "headline_autotaskmenu", "Tâches automatiques" },
                     { "email_autotaskmenu", "[ E-mail ]" },
                     { "calc_autotaskmenu", "[ Calculatrice ]" },
                     { "browser_autotaskmenu", "[ Navigateur ]" },
+                    {"screenlocker_autotaskmenu", "[ Verrouiller l'écran ]" },
                     { "return_autotaskmenu", "[ Retour ]" },
                     #endregion
 
@@ -384,6 +403,13 @@ namespace TranslationsLibrary
                     { "filePath_designer_taskcreator", "Chemin du fichier" },
                     { "save_designer_taskcreator", "Enregistrer" },
                     { "cancel_designer_taskcreator", "Annuler" },
+
+                    //Zeiteinheiten
+                    {"seconds_taskcreator", "Secondes" },
+                    {"minutes_taskcreator", "Minutes" },
+                    {"hours_taskcreator", "Heures" },
+                    {"days_taskcreator", "Jours" },
+                    {"weeks_taskcreator", "Semaines" },
                     #endregion
 
                     #region Enum UnitFactors
@@ -429,6 +455,7 @@ namespace TranslationsLibrary
                     { "email_autotaskmenu", "[ E-mail ]" },
                     { "calc_autotaskmenu", "[ Calcolatrice ]" },
                     { "browser_autotaskmenu", "[ Browser ]" },
+                    {"screenlocker_autotaskmenu", "[ Bloccare lo schermo ]" },
                     { "return_autotaskmenu", "[ Indietro ]" },
                     #endregion
 
@@ -506,6 +533,13 @@ namespace TranslationsLibrary
                     { "filePath_designer_taskcreator", "Percorso del file" },
                     { "save_designer_taskcreator", "Salva" },
                     { "cancel_designer_taskcreator", "Annulla" },
+
+                    //Zeiteinheiten
+                    {"seconds_taskcreator", "Secondi" },
+                    {"minutes_taskcreator", "Minuti" },
+                    {"hours_taskcreator", "Ore" },
+                    {"days_taskcreator", "Giorni" },
+                    {"weeks_taskcreator", "Settimane" },
                     #endregion
 
                     #region Enum UnitFactors
@@ -551,6 +585,7 @@ namespace TranslationsLibrary
                     { "email_autotaskmenu", "[ Correo electrónico ]" },
                     { "calc_autotaskmenu", "[ Calculadora ]" },
                     { "browser_autotaskmenu", "[ Navegador ]" },
+                    {"screenlocker_autotaskmenu", "[ Bloquear la pantalla ]" },
                     { "return_autotaskmenu", "[ Volver ]" },
                     #endregion
 
@@ -628,6 +663,13 @@ namespace TranslationsLibrary
                     { "filePath_designer_taskcreator", "Ruta del archivo" },
                     { "save_designer_taskcreator", "Guardar" },
                     { "cancel_designer_taskcreator", "Cancelar" },
+
+                    //Zeiteinheiten
+                    {"seconds_taskcreator", "Segundos" },
+                    {"minutes_taskcreator", "Minutos" },
+                    {"hours_taskcreator", "Horas" },
+                    {"days_taskcreator", "Días" },
+                    {"weeks_taskcreator", "Semanas" },
                     #endregion
 
                     #region Enum UnitFactors
@@ -673,6 +715,7 @@ namespace TranslationsLibrary
                     { "email_autotaskmenu", "[ 电子邮件 ]" },
                     { "calc_autotaskmenu", "[ 计算器 ]" },
                     { "browser_autotaskmenu", "[ 浏览器 ]" },
+                    {"screenlocker_autotaskmenu", "[ 锁定屏幕 ]" },
                     { "return_autotaskmenu", "[ 返回 ]" },
                     #endregion
 
@@ -750,6 +793,13 @@ namespace TranslationsLibrary
                     { "filePath_designer_taskcreator", "文件路径" },
                     { "save_designer_taskcreator", "保存" },
                     { "cancel_designer_taskcreator", "取消" },
+
+                    //Zeiteinheiten
+                    {"seconds_taskcreator", "秒" },
+                    {"minutes_taskcreator", "分钟" },
+                    {"hours_taskcreator", "小时" },
+                    {"days_taskcreator", "天" },
+                    {"weeks_taskcreator", "周" },
                     #endregion
 
                     #region Enum UnitFactors
@@ -794,7 +844,8 @@ namespace TranslationsLibrary
                     { "email_autotaskmenu", "[ ई-मेल ]" },
                     { "calc_autotaskmenu", "[ कैलकुलेटर ]" },
                     { "browser_autotaskmenu", "[ ब्राउज़र ]" },
-                    { "return_autotaskmenu", "[ वापस ]" },
+                    {"screenlocker_autotaskmenu", "[ 锁定屏幕 ]" },
+                    { "return_autotaskmenu", "[ स्क्रीन लॉक करें ]" },
                     #endregion
 
                     #region Settingsmenu
@@ -871,6 +922,13 @@ namespace TranslationsLibrary
                     { "filePath_designer_taskcreator", "फ़ाइल पथ" },
                     { "save_designer_taskcreator", "सहेजें" },
                     { "cancel_designer_taskcreator", "रद्द करें" },
+
+                    //Zeiteinheiten
+                    {"seconds_taskcreator", "सेकंड" },
+                    {"minutes_taskcreator", "मिनट" },
+                    {"hours_taskcreator", "घंटे" },
+                    {"days_taskcreator", "दिन" },
+                    {"weeks_taskcreator", "सप्ताह" },
                     #endregion
 
                     #region Enum UnitFactors

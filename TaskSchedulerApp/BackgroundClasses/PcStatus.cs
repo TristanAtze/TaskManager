@@ -47,6 +47,8 @@ namespace TaskSchedulerApp.BackgroundClasses
 
             _ = Task.Run(async () =>
             {
+                var logger = new Logger("task_logs.csv");
+                logger.Log("StartMonitoring", "uptimeMilliseconds successfully executed.");
                 while (!token.IsCancellationRequested)
                 {
                     long uptimeMilliseconds = Environment.TickCount64;
@@ -57,6 +59,8 @@ namespace TaskSchedulerApp.BackgroundClasses
 
             _ = Task.Run(async () =>
             {
+                var logger = new Logger("task_logs.csv");
+                logger.Log("StartMonitoring", "LASTINPUTINFO successfully executed.");
                 while (!token.IsCancellationRequested)
                 {
                     try
@@ -77,6 +81,8 @@ namespace TaskSchedulerApp.BackgroundClasses
 
             _ = Task.Run(async () =>
             {
+                var logger = new Logger("task_logs.csv");
+                logger.Log("StartMonitoring", "PerformanceCounter successfully executed.");
                 while (!token.IsCancellationRequested)
                 {
                     try
@@ -101,6 +107,8 @@ namespace TaskSchedulerApp.BackgroundClasses
 
             _ = Task.Run(async () =>
             {
+                var logger = new Logger("task_logs.csv");
+                logger.Log("StartMonitoring", "Process.GetProcesses successfully executed.");
                 while (!token.IsCancellationRequested)
                 {
                     bool open = false;
@@ -135,6 +143,8 @@ namespace TaskSchedulerApp.BackgroundClasses
 
             _ = Task.Run(async () =>
             {
+                var logger = new Logger("task_logs.csv");
+                logger.Log("StartMonitoring", "Process.GetProcessesByName successfully executed.");
                 while (!token.IsCancellationRequested)
                 {
                     bool open = false;
@@ -189,6 +199,8 @@ namespace TaskSchedulerApp.BackgroundClasses
         /// </summary>
         public static void StopMonitoring()
         {
+            var logger = new Logger("task_logs.csv");
+            logger.Log("StopMonitoring()", "StopMonitoring() successfully executed.");
             if (_cts != null)
             {
                 _cts.Cancel();

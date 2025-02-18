@@ -8,7 +8,7 @@ public class BasicTasks
     public static void Email(TaskScheduler taskScheduler)
     {
         var notificationManager = new NotificationManager();
-        var logger = new Logger("task_logs.csv");
+        var logger = new Logger("task_logs.csv"); 
 
         var OpenEmail = new PreTask("OpenMail", () =>
         {

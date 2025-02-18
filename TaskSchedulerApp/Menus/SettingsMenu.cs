@@ -29,7 +29,7 @@ public class SettingsMenu : Menu
                 //todo Config ändern verknüpfen
                 break;
             case 1:
-                //todo Sprache ändern
+                ChangeLanguage();
                 break;
             case 3:
                 KeepGoing = false;

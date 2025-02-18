@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{67602EEF-CDEB-4A05-AFFE-C46E2C1FD836}|FileDialog\\WindowsForms.csproj|c:\\users\\ben.sowieja\\source\\repos\\taskmanager\\filedialog\\backupmanager.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67602EEF-CDEB-4A05-AFFE-C46E2C1FD836}|FileDialog\\WindowsForms.csproj|solutionrelative:filedialog\\backupmanager.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{67602EEF-CDEB-4A05-AFFE-C46E2C1FD836}|FileDialog\\WindowsForms.csproj|c:\\users\\ben.sowieja\\source\\repos\\taskmanager\\filedialog\\backupmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{67602EEF-CDEB-4A05-AFFE-C46E2C1FD836}|FileDialog\\WindowsForms.csproj|solutionrelative:filedialog\\backupmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{67602EEF-CDEB-4A05-AFFE-C46E2C1FD836}|FileDialog\\WindowsForms.csproj|C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\filedialog\\backupmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{67602EEF-CDEB-4A05-AFFE-C46E2C1FD836}|FileDialog\\WindowsForms.csproj|solutionrelative:filedialog\\backupmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67602EEF-CDEB-4A05-AFFE-C46E2C1FD836}|FileDialog\\WindowsForms.csproj|c:\\users\\ben.sowieja\\source\\repos\\taskmanager\\filedialog\\backupmanager.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67602EEF-CDEB-4A05-AFFE-C46E2C1FD836}|FileDialog\\WindowsForms.csproj|solutionrelative:filedialog\\backupmanager.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|c:\\users\\ben.sowieja\\source\\repos\\taskmanager\\taskschedulerapp\\backgroundclasses\\config.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -102,7 +102,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 28,
+          "SelectedChildIndex": 30,
           "Children": [
             {
               "$type": "Bookmark",
@@ -154,12 +154,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "BackupManager.cs [Design]",
               "DocumentMoniker": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\FileDialog\\BackupManager.cs",
               "RelativeDocumentMoniker": "FileDialog\\BackupManager.cs",
-              "ToolTip": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\FileDialog\\BackupManager.cs [Design]*",
-              "RelativeToolTip": "FileDialog\\BackupManager.cs [Design]*",
+              "ToolTip": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\FileDialog\\BackupManager.cs [Design]",
+              "RelativeToolTip": "FileDialog\\BackupManager.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-18T09:25:45.212Z",
               "EditorCaption": " [Design]"
@@ -346,28 +346,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "BackupManager.cs",
               "DocumentMoniker": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\FileDialog\\BackupManager.cs",
               "RelativeDocumentMoniker": "FileDialog\\BackupManager.cs",
-              "ToolTip": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\FileDialog\\BackupManager.cs*",
-              "RelativeToolTip": "FileDialog\\BackupManager.cs*",
-              "ViewState": "AgIAAIwAAAAAAAAAAAAuwL0AAAA/AAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\FileDialog\\BackupManager.cs",
+              "RelativeToolTip": "FileDialog\\BackupManager.cs",
+              "ViewState": "AgIAAIwAAAAAAAAAAAAuwJAAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-18T07:21:52.119Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "BackupManager.Designer.cs",
               "DocumentMoniker": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\FileDialog\\BackupManager.Designer.cs",
               "RelativeDocumentMoniker": "FileDialog\\BackupManager.Designer.cs",
               "ToolTip": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\FileDialog\\BackupManager.Designer.cs",
               "RelativeToolTip": "FileDialog\\BackupManager.Designer.cs",
-              "ViewState": "AgIAAOQAAAAAAAAAAAAUwNAAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAA4BAAAAAAAAAAAUwBwBAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T07:21:47.567Z"
+              "WhenOpened": "2025-02-18T07:21:47.567Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

@@ -1,6 +1,7 @@
 ﻿using FileDialog;
 using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,7 +38,7 @@ public class MainMenu : Menu
                 createTask.Start();
                 break;
             case 1:
-                //todo Tasks anzeigen verknüpfen
+                PrintTasks();
                 break;
             case 3:
                 //todo Config laden verknüpfen
@@ -52,5 +53,31 @@ public class MainMenu : Menu
             default:
                 break;
         }
+    }
+
+    void PrintTasks()
+    {
+        Console.WriteLine("\nAusstehende Tasks:\n------------------\n");
+
+        foreach(var item in Scheduler.TaskQueue.TaskList)
+        {
+            Console.WriteLine("[ Name ] = " + item.Name);
+            Console.WriteLine("[ Priorität ] = " + item.Priority);
+            Console.WriteLine("[ Datum ] = " + item.ScheduledTime);
+
+            if (item.IsRecurring)
+            {
+                Console.WriteLine("[ Intervall ] = " + item.Interval);
+            }
+            else
+            {
+                Console.WriteLine("[ Intervall ]");
+            }
+
+            Console.WriteLine();
+        }
+
+        Console.ReadKey(true);
+        Console.Clear();
     }
 }

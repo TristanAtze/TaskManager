@@ -41,6 +41,7 @@ namespace FileDialog
             filePath = new TextBox();
             saveButton = new Button();
             cancelButton = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // name
@@ -55,7 +56,7 @@ namespace FileDialog
             // interval
             // 
             interval.Enabled = false;
-            interval.Location = new Point(130, 124);
+            interval.Location = new Point(130, 159);
             interval.Name = "interval";
             interval.Size = new Size(116, 23);
             interval.TabIndex = 0;
@@ -75,7 +76,7 @@ namespace FileDialog
             // 
             date.CustomFormat = "MM/dd/yyyy hh:mm:ss";
             date.Format = DateTimePickerFormat.Custom;
-            date.Location = new Point(150, 90);
+            date.Location = new Point(150, 125);
             date.Name = "date";
             date.Size = new Size(180, 23);
             date.TabIndex = 0;
@@ -84,7 +85,7 @@ namespace FileDialog
             // priority
             // 
             priority.DropDownStyle = ComboBoxStyle.DropDownList;
-            priority.Location = new Point(7, 90);
+            priority.Location = new Point(7, 125);
             priority.Name = "priority";
             priority.Size = new Size(121, 23);
             priority.TabIndex = 0;
@@ -94,7 +95,7 @@ namespace FileDialog
             // isRecurring
             // 
             isRecurring.Font = new Font("Segoe UI", 8F);
-            isRecurring.Location = new Point(7, 124);
+            isRecurring.Location = new Point(7, 159);
             isRecurring.Name = "isRecurring";
             isRecurring.Size = new Size(104, 24);
             isRecurring.TabIndex = 0;
@@ -105,7 +106,7 @@ namespace FileDialog
             // 
             units.DropDownStyle = ComboBoxStyle.DropDownList;
             units.Enabled = false;
-            units.Location = new Point(244, 124);
+            units.Location = new Point(244, 159);
             units.Name = "units";
             units.Size = new Size(86, 23);
             units.TabIndex = 1;
@@ -125,7 +126,7 @@ namespace FileDialog
             // saveButton
             // 
             saveButton.FlatStyle = FlatStyle.Flat;
-            saveButton.Location = new Point(215, 176);
+            saveButton.Location = new Point(215, 211);
             saveButton.Name = "saveButton";
             saveButton.Size = new Size(75, 23);
             saveButton.TabIndex = 3;
@@ -136,7 +137,7 @@ namespace FileDialog
             // cancelButton
             // 
             cancelButton.FlatStyle = FlatStyle.Flat;
-            cancelButton.Location = new Point(47, 176);
+            cancelButton.Location = new Point(47, 211);
             cancelButton.Name = "cancelButton";
             cancelButton.Size = new Size(75, 23);
             cancelButton.TabIndex = 4;
@@ -148,7 +149,9 @@ namespace FileDialog
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(338, 219);
+            ClientSize = new Size(338, 264);
+            Controls.Add(label1);
+            Controls.Add(conditions);
             Controls.Add(cancelButton);
             Controls.Add(saveButton);
             Controls.Add(filePath);
@@ -178,6 +181,7 @@ namespace FileDialog
         private TextBox filePath;
         private Button saveButton;
         private Button cancelButton;
+
         #endregion
     }
 }

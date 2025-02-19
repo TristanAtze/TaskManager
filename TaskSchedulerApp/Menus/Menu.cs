@@ -63,6 +63,13 @@ public abstract class Menu
                     break;
             }
 
+            if(ck is ConsoleKey.Escape)
+            {
+                KeepGoing = false;
+                ChoiceIndex = Options.Length - 1;
+                break;
+            }
+
         } while (ck is not ConsoleKey.Enter);
     }
 

@@ -152,12 +152,12 @@ namespace TranslationsLibrary
                     {"weeks_taskcreator", "Wochen" },
                     #endregion
 
-                    #region Enum UnitFactors
-                    { "seconds_unitfactors_designer_taskcreator", "Sekunden" },
-                    { "minutes_unitfactors_designer_taskcreator", "Minuten" },
-                    { "hours_unitfactors_designer_taskcreator", "Stunden" },
-                    { "days_unitfactors_designer_taskcreator", "Tage" },
-                    { "weeks_unitfactors_designer_taskcreator", "Wochen" },
+                    //Bedingungen
+                    {"condition_taskcreator", "Bedingung" },
+                    {"cpuusage_taskcreator", "CPU-Auslastung" },
+                    {"afterboot_taskcreator", "nach Boot-Vorgang" },
+                    {"beforeshutdown_taskcreator", "vor Shutdown" },
+                    {"nocondition_taskcreator", "keine Bedingung" },
                     #endregion
                 }
             },
@@ -282,12 +282,12 @@ namespace TranslationsLibrary
                     {"weeks_taskcreator", "Weeks" },
                     #endregion
 
-                    #region Enum UnitFactors
-                    { "seconds_unitfactors_designer_taskcreator", "Seconds" },
-                    { "minutes_unitfactors_designer_taskcreator", "Minutes" },
-                    { "hours_unitfactors_designer_taskcreator", "Hours" },
-                    { "days_unitfactors_designer_taskcreator", "Days" },
-                    { "weeks_unitfactors_designer_taskcreator", "Weeks" },
+                    //Bedingungen
+                    {"condition_taskcreator", "Condition" },
+                    {"cpuusage_taskcreator", "CPU usage" },
+                    {"afterboot_taskcreator", "after boot" },
+                    {"beforeshutdown_taskcreator", "before shutdown" },
+                    {"nocondition_taskcreator", "No condition" },
                     #endregion
                 }
             },
@@ -412,12 +412,12 @@ namespace TranslationsLibrary
                     {"weeks_taskcreator", "Semaines" },
                     #endregion
 
-                    #region Enum UnitFactors
-                    { "seconds_unitfactors_designer_taskcreator", "Secondes" },
-                    { "minutes_unitfactors_designer_taskcreator", "Minutes" },
-                    { "hours_unitfactors_designer_taskcreator", "Heures" },
-                    { "days_unitfactors_designer_taskcreator", "Jours" },
-                    { "weeks_unitfactors_designer_taskcreator", "Semaines" },
+                    //Bedingungen
+                    {"condition_taskcreator", "Condition" },
+                    {"cpuusage_taskcreator", "Utilisation CPU" },
+                    {"afterboot_taskcreator", "après le démarrage" },
+                    {"beforeshutdown_taskcreator", "avant l'arrêt" },
+                    {"nocondition_taskcreator", "Aucune condition" },
                     #endregion
                 }
             },
@@ -542,12 +542,12 @@ namespace TranslationsLibrary
                     {"weeks_taskcreator", "Settimane" },
                     #endregion
 
-                    #region Enum UnitFactors
-                    { "seconds_unitfactors_designer_taskcreator", "Secondi" },
-                    { "minutes_unitfactors_designer_taskcreator", "Minuti" },
-                    { "hours_unitfactors_designer_taskcreator", "Ore" },
-                    { "days_unitfactors_designer_taskcreator", "Giorni" },
-                    { "weeks_unitfactors_designer_taskcreator", "Settimane" },
+                    //Bedingungen
+                    {"condition_taskcreator", "Condizione" },
+                    {"cpuusage_taskcreator", "Utilizzo CPU" },
+                    {"afterboot_taskcreator", "dopo l'avvio" },
+                    {"beforeshutdown_taskcreator", "prima dello spegnimento" },
+                    {"nocondition_taskcreator", "Nessuna condizione" },
                     #endregion
                 }
             },
@@ -672,12 +672,12 @@ namespace TranslationsLibrary
                     {"weeks_taskcreator", "Semanas" },
                     #endregion
 
-                    #region Enum UnitFactors
-                    { "seconds_unitfactors_designer_taskcreator", "Segundos" },
-                    { "minutes_unitfactors_designer_taskcreator", "Minutos" },
-                    { "hours_unitfactors_designer_taskcreator", "Horas" },
-                    { "days_unitfactors_designer_taskcreator", "Días" },
-                    { "weeks_unitfactors_designer_taskcreator", "Semanas" },
+                    //Bedingungen
+                    {"condition_taskcreator", "Condición" },
+                    {"cpuusage_taskcreator", "Uso de CPU" },
+                    {"afterboot_taskcreator", "después del arranque" },
+                    {"beforeshutdown_taskcreator", "antes del apagado" },
+                    {"nocondition_taskcreator", "Ninguna condición" },
                     #endregion
                 }
             },
@@ -802,12 +802,12 @@ namespace TranslationsLibrary
                     {"weeks_taskcreator", "周" },
                     #endregion
 
-                    #region Enum UnitFactors
-                    { "seconds_unitfactors_designer_taskcreator", "秒" },
-                    { "minutes_unitfactors_designer_taskcreator", "分钟" },
-                    { "hours_unitfactors_designer_taskcreator", "小时" },
-                    { "days_unitfactors_designer_taskcreator", "天" },
-                    { "weeks_unitfactors_designer_taskcreator", "周" },
+                    //Bedingungen
+                    {"condition_taskcreator", "条件" },
+                    {"cpuusage_taskcreator", "CPU-使用率" },
+                    {"afterboot_taskcreator", "启动后" },
+                    {"beforeshutdown_taskcreator", "关机前" },
+                    {"nocondition_taskcreator", "无条件" },
                     #endregion
                 }
             },
@@ -931,12 +931,12 @@ namespace TranslationsLibrary
                     {"weeks_taskcreator", "सप्ताह" },
                     #endregion
 
-                    #region Enum UnitFactors
-                    { "seconds_unitfactors_designer_taskcreator", "सेकंड" },
-                    { "minutes_unitfactors_designer_taskcreator", "मिनट" },
-                    { "hours_unitfactors_designer_taskcreator", "घंटे" },
-                    { "days_unitfactors_designer_taskcreator", "दिन" },
-                    { "weeks_unitfactors_designer_taskcreator", "हफ्ते" },
+                    //Bedingungen
+                    {"condition_taskcreator", "शर्त" },
+                    {"cpuusage_taskcreator", "CPU-उपयोग" },
+                    {"afterboot_taskcreator", "बूट के बाद" },
+                    {"beforeshutdown_taskcreator", "शटडाउन से पहले" },
+                    {"nocondition_taskcreator", "कोई शर्त नहीं " },
                     #endregion
                 }
             },

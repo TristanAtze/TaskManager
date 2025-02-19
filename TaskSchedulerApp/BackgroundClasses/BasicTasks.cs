@@ -5,13 +5,15 @@ using TaskClasses;
 using static TranslationsLibrary.TranslationManager;
 public class BasicTasks
 {
-    public static void Email(TaskScheduler taskScheduler)
+    //Time ist hier Tatsächlich die zeit bis zur ausführung (in Sekunden)
+    public static void Email(TaskScheduler taskScheduler, double time)
     {
         var notificationManager = new NotificationManager();
         var logger = new Logger("task_logs.csv"); 
 
         var OpenEmail = new PreTask("OpenMail", () =>
         {
+            
             notificationManager.SendNotification("openmail_executed_mail_basictasks");
             logger.Log("OpenMail", "Task successfully executed.");
             string email = GetTranslation(GetCurrentLanguage(), "reciever_mail_basictasks");
@@ -29,12 +31,12 @@ public class BasicTasks
                 MessageBox.Show(GetTranslation(GetCurrentLanguage(), "openmail_error_executed_mail_basictasks") + ex.Message);
             }
 
-        }, DateTime.Now.AddSeconds(5), priority: 1);
+        }, DateTime.Now.AddSeconds(time), priority: 1);
 
         taskScheduler.ScheduleTask(OpenEmail);
     }
 
-    public static void Calculator(TaskScheduler taskScheduler)
+    public static void Calculator(TaskScheduler taskScheduler, double time)
     {
         var notificationManager = new NotificationManager();
         var logger = new Logger("task_logs.csv");
@@ -52,12 +54,12 @@ public class BasicTasks
                 MessageBox.Show(GetTranslation(GetCurrentLanguage(), "opencalc_error_executed_calculator_basictasks") + ex.Message);
             }
 
-        }, DateTime.Now.AddSeconds(5), priority: 1);
+        }, DateTime.Now.AddSeconds(time), priority: 1);
 
         taskScheduler.ScheduleTask(Calculator);
     }
 
-    public static void Browser(TaskScheduler taskScheduler)
+    public static void Browser(TaskScheduler taskScheduler, double time)
     {
         var notificationManager = new NotificationManager();
         var logger = new Logger("task_logs.csv");
@@ -73,7 +75,7 @@ public class BasicTasks
             };
             Process.Start(psi);
 
-        }, DateTime.Now.AddSeconds(5), priority: 1);
+        }, DateTime.Now.AddSeconds(time), priority: 1);
 
         taskScheduler.ScheduleTask(Browser);
     }
@@ -91,7 +93,7 @@ public class BasicTasks
             {
                 while (true)
                 {
-                    Console.WriteLine("Test");
+                    //Console.WriteLine("Test");
                     //Asynchrone Prüfung, ob der Nutzer mindestens 1 Minute inaktiv ist
                     bool inactive = PcStatus.IsUserInactive;
                     if (inactive)
@@ -107,7 +109,6 @@ public class BasicTasks
             });
 
         }, DateTime.Now.AddSeconds(5), priority: 1);
-
         taskScheduler.ScheduleTask(LockInactive);
     }
 }

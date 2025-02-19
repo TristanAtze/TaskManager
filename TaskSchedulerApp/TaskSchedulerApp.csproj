@@ -17,4 +17,8 @@
     <ProjectReference Include="..\TranslationsLibary\TranslationsLibary.csproj" />
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="if exist &quot;$(TargetPath)&quot; (&#xA;    if not exist &quot;C:\Users\ben.sowieja\source\repos\TaskManager\RestartApp\bin\Debug\&quot; mkdir &quot;C:\Users\ben.sowieja\source\repos\TaskManager\RestartApp\bin\Debug\&quot;&#xA;    copy /Y &quot;$(TargetPath)&quot; &quot;C:\Users\ben.sowieja\source\repos\TaskManager\RestartApp\bin\Debug\&quot;&#xA;) else (&#xA;    echo &quot;Fehler: Datei nicht gefunden: $(TargetPath)&quot;&#xA;    exit 1&#xA;)" />
+  </Target>
+
 </Project>

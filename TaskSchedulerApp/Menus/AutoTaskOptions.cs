@@ -35,16 +35,16 @@ class AutoTaskOptions : Menu
         switch (ChoiceIndex)
         {
             case 0:
-                BasicTasks.Email(Scheduler);
+                BasicTasks.Email(Scheduler, GetInput());
                 break;
             case 1:
-                BasicTasks.Calculator(Scheduler);
+                BasicTasks.Calculator(Scheduler, GetInput());
                 break;
             case 2:
-                BasicTasks.Browser(Scheduler);
+                BasicTasks.Browser(Scheduler, GetInput());
                 break;
             case 3:
-                
+
                 BasicTasks.LockInactive(Scheduler);
                 break;
             case 5:
@@ -52,6 +52,26 @@ class AutoTaskOptions : Menu
                 break;
             default:
                 break;
+        }
+    }
+
+    /// <summary>
+    /// Ist nur Temporär entsprechend weder eine Richtige beschreibung noch eine übersetzung
+    /// </summary>
+    /// <returns>hat als rückgabe wert einen double</returns>
+    public static double GetInput()
+    {
+        try
+        {
+            //NUR TEMPORÄR
+            Console.WriteLine("Bitte gebe an wie lange es dauern soll bis der Task Ausgeführt wird");
+            string input = Console.ReadLine();
+            double num = Convert.ToDouble(input);
+            return num;
+        }
+        catch
+        {
+            return 0;
         }
     }
 }

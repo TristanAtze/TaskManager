@@ -365,3 +365,4 @@ FodyWeavers.xsd
 
 #Resharper
 *.idea
+/FileDialog/bin/Debug/net9.0-windows/TranslationsLibary.dll

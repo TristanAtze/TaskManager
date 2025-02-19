@@ -88,3 +88,14 @@ Timestamp,TaskName,Message
 18.02.2025 13:26:28,StartMonitoring,uptimeMilliseconds successfully executed.
 18.02.2025 13:26:54,StartMonitoring,Process.GetProcesses successfully executed.
 18.02.2025 13:27:24,StartMonitoring,PerformanceCounter successfully executed.
+18.02.2025 14:00:13,StartMonitoring,Process.GetProcesses successfully executed.
+18.02.2025 14:01:07,StartMonitoring,LASTINPUTINFO successfully executed.
+18.02.2025 14:04:17,StartMonitoring,PerformanceCounter successfully executed.
+18.02.2025 14:04:27,StartMonitoring,PerformanceCounter successfully executed.
+18.02.2025 16:23:15,StartMonitoring,LASTINPUTINFO successfully executed.
+18.02.2025 16:23:15,StartMonitoring,PerformanceCounter successfully executed.
+18.02.2025 16:23:35,StartMonitoring,uptimeMilliseconds successfully executed.
+18.02.2025 16:25:04,StartMonitoring,PerformanceCounter successfully executed.
+18.02.2025 16:25:17,StartMonitoring,PerformanceCounter successfully executed.
+18.02.2025 16:25:17,StartMonitoring,LASTINPUTINFO successfully executed.
+18.02.2025 16:25:30,StartMonitoring,Process.GetProcessesByName successfully executed.

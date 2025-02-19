@@ -16,8 +16,8 @@ namespace BackupTool
             InitializeComponent();
 
             // Setze Standardauswahlen
-            comboBoxBackupType.SelectedIndex = 0;
-            comboBoxAutomation.SelectedIndex = 0;
+            comboBoxBackupType.SelectedIndex = -1;
+            comboBoxAutomation.SelectedIndex = -1;
             buttonStopSelectedTask.Enabled = false;
         }
 

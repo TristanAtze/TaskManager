@@ -77,7 +77,6 @@ public class BasicTasks
 
         taskScheduler.ScheduleTask(Browser);
     }
-<<<<<<< HEAD
 
     public static void LockInactive(TaskScheduler taskScheduler)
     {
@@ -113,6 +112,5 @@ public class BasicTasks
     }
 
 
-=======
->>>>>>> EvenMoreTranslations
+
 }

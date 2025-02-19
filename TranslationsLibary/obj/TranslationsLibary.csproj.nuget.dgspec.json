@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\MoreTranslation\\TranslationsLibary\\TranslationsLibary.csproj": {}
+    "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Conditions\\TranslationsLibary\\TranslationsLibary.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\MoreTranslation\\TranslationsLibary\\TranslationsLibary.csproj": {
+    "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Conditions\\TranslationsLibary\\TranslationsLibary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\MoreTranslation\\TranslationsLibary\\TranslationsLibary.csproj",
+        "projectUniqueName": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Conditions\\TranslationsLibary\\TranslationsLibary.csproj",
         "projectName": "TranslationsLibary",
-        "projectPath": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\MoreTranslation\\TranslationsLibary\\TranslationsLibary.csproj",
+        "projectPath": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Conditions\\TranslationsLibary\\TranslationsLibary.csproj",
         "packagesPath": "C:\\Users\\lorenz.kupfer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\MoreTranslation\\TranslationsLibary\\obj\\",
+        "outputPath": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Conditions\\TranslationsLibary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

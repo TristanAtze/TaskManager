@@ -4511,11 +4511,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\MoreTranslation\\TaskSchedulerApp\\TaskSchedulerApp.csproj",
+      "projectUniqueName": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Conditions\\TaskSchedulerApp\\TaskSchedulerApp.csproj",
       "projectName": "TaskSchedulerApp",
-      "projectPath": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\MoreTranslation\\TaskSchedulerApp\\TaskSchedulerApp.csproj",
+      "projectPath": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Conditions\\TaskSchedulerApp\\TaskSchedulerApp.csproj",
       "packagesPath": "C:\\Users\\lorenz.kupfer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\MoreTranslation\\TaskSchedulerApp\\obj\\",
+      "outputPath": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Conditions\\TaskSchedulerApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -4536,14 +4536,14 @@
         "net9.0-windows7.0": {
           "targetAlias": "net9.0-windows",
           "projectReferences": {
-            "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\MoreTranslation\\FileDialog\\WindowsForms.csproj": {
-              "projectPath": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\MoreTranslation\\FileDialog\\WindowsForms.csproj"
+            "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Conditions\\FileDialog\\WindowsForms.csproj": {
+              "projectPath": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Conditions\\FileDialog\\WindowsForms.csproj"
             },
-            "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\MoreTranslation\\TaskClasses\\TaskClasses.csproj": {
-              "projectPath": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\MoreTranslation\\TaskClasses\\TaskClasses.csproj"
+            "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Conditions\\TaskClasses\\TaskClasses.csproj": {
+              "projectPath": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Conditions\\TaskClasses\\TaskClasses.csproj"
             },
-            "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\MoreTranslation\\TranslationsLibary\\TranslationsLibary.csproj": {
-              "projectPath": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\MoreTranslation\\TranslationsLibary\\TranslationsLibary.csproj"
+            "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Conditions\\TranslationsLibary\\TranslationsLibary.csproj": {
+              "projectPath": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Conditions\\TranslationsLibary\\TranslationsLibary.csproj"
             }
           }
         }

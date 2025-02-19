@@ -1,20 +1,26 @@
 ﻿using TaskSchedulerApp.BackgroundClasses;
 using System.Runtime.InteropServices;
 using TaskSchedulerApp.Menus;
+using MiNET.LevelDB;
+using FileDialog;
+using System.Windows.Forms;
 
 public class Program
 {
     [STAThread]
     public static void Main()
     {
-        Console.CursorVisible = false;
-        Task.Run(() => PcStatus.StartMonitoring(TimeSpan.FromMinutes(1), TimeSpan.FromMinutes(1), 20.0f, ["test"], "test"));
-        var taskScheduler = new TaskScheduler();
+        var creator = new TaskCreator(new TaskScheduler());
+        Application.Run(creator);
 
-        Task.Run(taskScheduler.Start);
+        //Console.CursorVisible = false;
+        //Task.Run(() => PcStatus.StartMonitoring(TimeSpan.FromMinutes(1), TimeSpan.FromMinutes(1), 20.0f, ["test"], "test"));
+        //var taskScheduler = new TaskScheduler();
 
-        var mainMenu = new MainMenu(taskScheduler);
-        mainMenu.Start();
+        //Task.Run(taskScheduler.Start);
+
+        //var mainMenu = new MainMenu(taskScheduler);
+        //mainMenu.Start();
 
         
     }

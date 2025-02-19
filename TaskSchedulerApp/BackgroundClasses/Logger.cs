@@ -21,8 +21,8 @@ public class Logger
     {
         //string logEntry = $"{DateTime.Now},{taskName},{message}";
 
-        using var writer = new StreamWriter(_logFilePath, append: true);
-        writer.WriteLine(logEntry);
-        writer.Close();
+        //using var writer = new StreamWriter(_logFilePath, append: true);
+        //writer.WriteLine(logEntry);
+        //writer.Close();
     }
 }

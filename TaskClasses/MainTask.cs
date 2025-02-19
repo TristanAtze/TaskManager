@@ -38,6 +38,21 @@ namespace TaskClasses
         public TimeSpan? Interval { get; set; } // Für wiederkehrende Aufgaben
 
         /// <summary>
+        /// Wahrheitswert, der angibt ob der task von der CPU-Auslastung abhängig ist.
+        /// </summary>
+        public bool ConditionCPUUsage { get; set; }
+
+        /// <summary>
+        /// Wahrheitswert, der angibt ob der Task nur nach Starten des PC's ausgeführt wird.
+        /// </summary>
+        public bool ConditionJustBooted { get; set; }
+
+        /// <summary>
+        /// Wahrheitswert, der angibt ob der Task nur vor Herunterfahren ausgeführt wird.
+        /// </summary>
+        public bool ConditionShuttingDown { get; set; }
+
+        /// <summary>
         /// Die spezifische Art und Weise, wie eine Task ausgeführt werden soll
         /// </summary>
         public abstract void Execute();

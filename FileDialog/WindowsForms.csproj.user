@@ -4,6 +4,9 @@
     <Compile Update="BackupManager.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ConditionManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="TaskCreator.cs">
       <SubType>Form</SubType>
     </Compile>

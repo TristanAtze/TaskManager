@@ -1,123 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\MoreTranslation\\",
+  "WorkspaceRootPath": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Conditions\\",
   "Documents": [
     {
-<<<<<<< HEAD
-      "AbsoluteMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|c:\\users\\ben.sowieja\\source\\repos\\taskmanager\\taskschedulerapp\\menus\\createtaskmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|solutionrelative:taskschedulerapp\\menus\\createtaskmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|c:\\users\\ben.sowieja\\source\\repos\\taskmanager\\taskschedulerapp\\menus\\autotaskoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|solutionrelative:taskschedulerapp\\menus\\autotaskoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|c:\\users\\ben.sowieja\\source\\repos\\taskmanager\\taskschedulerapp\\backgroundclasses\\pcstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|solutionrelative:taskschedulerapp\\backgroundclasses\\pcstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|c:\\users\\ben.sowieja\\source\\repos\\taskmanager\\taskschedulerapp\\backgroundclasses\\basictasks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|solutionrelative:taskschedulerapp\\backgroundclasses\\basictasks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|c:\\users\\ben.sowieja\\source\\repos\\taskmanager\\taskschedulerapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|solutionrelative:taskschedulerapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|c:\\users\\ben.sowieja\\source\\repos\\taskmanager\\taskschedulerapp\\backgroundclasses\\logger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|solutionrelative:taskschedulerapp\\backgroundclasses\\logger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{35828C79-C406-403E-8CF0-15B2951D2053}|TaskClasses\\TaskClasses.csproj|c:\\users\\ben.sowieja\\source\\repos\\taskmanager\\taskclasses\\tasks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{35828C79-C406-403E-8CF0-15B2951D2053}|TaskClasses\\TaskClasses.csproj|solutionrelative:taskclasses\\tasks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{35828C79-C406-403E-8CF0-15B2951D2053}|TaskClasses\\TaskClasses.csproj|c:\\users\\ben.sowieja\\source\\repos\\taskmanager\\taskclasses\\maintask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{35828C79-C406-403E-8CF0-15B2951D2053}|TaskClasses\\TaskClasses.csproj|solutionrelative:taskclasses\\maintask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|c:\\users\\ben.sowieja\\source\\repos\\taskmanager\\taskschedulerapp\\menus\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|solutionrelative:taskschedulerapp\\menus\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|c:\\users\\ben.sowieja\\source\\repos\\taskmanager\\taskschedulerapp\\menus\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|solutionrelative:taskschedulerapp\\menus\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{35828C79-C406-403E-8CF0-15B2951D2053}|TaskClasses\\TaskClasses.csproj|c:\\users\\ben.sowieja\\source\\repos\\taskmanager\\taskclasses\\taskscheduler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{35828C79-C406-403E-8CF0-15B2951D2053}|TaskClasses\\TaskClasses.csproj|solutionrelative:taskclasses\\taskscheduler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{35828C79-C406-403E-8CF0-15B2951D2053}|TaskClasses\\TaskClasses.csproj|c:\\users\\ben.sowieja\\source\\repos\\taskmanager\\taskclasses\\taskqueue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{35828C79-C406-403E-8CF0-15B2951D2053}|TaskClasses\\TaskClasses.csproj|solutionrelative:taskclasses\\taskqueue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E9E2F67A-9B63-4AF3-A0A9-59E070DE8E3E}|TranslationsLibary\\TranslationsLibary.csproj|c:\\users\\ben.sowieja\\source\\repos\\taskmanager\\translationslibary\\translationslibary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E9E2F67A-9B63-4AF3-A0A9-59E070DE8E3E}|TranslationsLibary\\TranslationsLibary.csproj|solutionrelative:translationslibary\\translationslibary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67602EEF-CDEB-4A05-AFFE-C46E2C1FD836}|FileDialog\\WindowsForms.csproj|C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\filedialog\\backupmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{67602EEF-CDEB-4A05-AFFE-C46E2C1FD836}|FileDialog\\WindowsForms.csproj|solutionrelative:filedialog\\backupmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67602EEF-CDEB-4A05-AFFE-C46E2C1FD836}|FileDialog\\WindowsForms.csproj|c:\\users\\ben.sowieja\\source\\repos\\taskmanager\\filedialog\\backupmanager.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67602EEF-CDEB-4A05-AFFE-C46E2C1FD836}|FileDialog\\WindowsForms.csproj|solutionrelative:filedialog\\backupmanager.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|c:\\users\\ben.sowieja\\source\\repos\\taskmanager\\taskschedulerapp\\menus\\settingsmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|solutionrelative:taskschedulerapp\\menus\\settingsmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|c:\\users\\ben.sowieja\\source\\repos\\taskmanager\\taskschedulerapp\\backgroundclasses\\notificationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|solutionrelative:taskschedulerapp\\backgroundclasses\\notificationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|c:\\users\\ben.sowieja\\source\\repos\\taskmanager\\taskschedulerapp\\backgroundclasses\\config.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|solutionrelative:taskschedulerapp\\backgroundclasses\\config.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67602EEF-CDEB-4A05-AFFE-C46E2C1FD836}|FileDialog\\WindowsForms.csproj|c:\\users\\ben.sowieja\\source\\repos\\taskmanager\\filedialog\\preventshutdown.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67602EEF-CDEB-4A05-AFFE-C46E2C1FD836}|FileDialog\\WindowsForms.csproj|solutionrelative:filedialog\\preventshutdown.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67602EEF-CDEB-4A05-AFFE-C46E2C1FD836}|FileDialog\\WindowsForms.csproj|c:\\users\\ben.sowieja\\source\\repos\\taskmanager\\filedialog\\backupmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67602EEF-CDEB-4A05-AFFE-C46E2C1FD836}|FileDialog\\WindowsForms.csproj|solutionrelative:filedialog\\backupmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67602EEF-CDEB-4A05-AFFE-C46E2C1FD836}|FileDialog\\WindowsForms.csproj|c:\\users\\ben.sowieja\\source\\repos\\taskmanager\\filedialog\\taskcreator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{67602EEF-CDEB-4A05-AFFE-C46E2C1FD836}|FileDialog\\WindowsForms.csproj|c:\\users\\lorenz.kupfer\\source\\ownrepos\\taskmanager\\conditions\\filedialog\\taskcreator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{67602EEF-CDEB-4A05-AFFE-C46E2C1FD836}|FileDialog\\WindowsForms.csproj|solutionrelative:filedialog\\taskcreator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|c:\\users\\ben.sowieja\\source\\repos\\taskmanager\\taskschedulerapp\\sonstiges\\asyncmethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|solutionrelative:taskschedulerapp\\sonstiges\\asyncmethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{67602EEF-CDEB-4A05-AFFE-C46E2C1FD836}|FileDialog\\WindowsForms.csproj|c:\\users\\lorenz.kupfer\\source\\ownrepos\\taskmanager\\conditions\\filedialog\\conditionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67602EEF-CDEB-4A05-AFFE-C46E2C1FD836}|FileDialog\\WindowsForms.csproj|solutionrelative:filedialog\\conditionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{67602EEF-CDEB-4A05-AFFE-C46E2C1FD836}|FileDialog\\WindowsForms.csproj|c:\\users\\ben.sowieja\\source\\repos\\taskmanager\\filedialog\\taskcreator.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{67602EEF-CDEB-4A05-AFFE-C46E2C1FD836}|FileDialog\\WindowsForms.csproj|c:\\users\\lorenz.kupfer\\source\\ownrepos\\taskmanager\\conditions\\filedialog\\conditionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{67602EEF-CDEB-4A05-AFFE-C46E2C1FD836}|FileDialog\\WindowsForms.csproj|solutionrelative:filedialog\\conditionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67602EEF-CDEB-4A05-AFFE-C46E2C1FD836}|FileDialog\\WindowsForms.csproj|c:\\users\\lorenz.kupfer\\source\\ownrepos\\taskmanager\\conditions\\filedialog\\taskcreator.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{67602EEF-CDEB-4A05-AFFE-C46E2C1FD836}|FileDialog\\WindowsForms.csproj|solutionrelative:filedialog\\taskcreator.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{35828C79-C406-403E-8CF0-15B2951D2053}|TaskClasses\\TaskClasses.csproj|c:\\users\\ben.sowieja\\source\\repos\\taskmanager\\taskclasses\\taskclasses.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{35828C79-C406-403E-8CF0-15B2951D2053}|TaskClasses\\TaskClasses.csproj|solutionrelative:taskclasses\\taskclasses.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-=======
-      "AbsoluteMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|c:\\users\\lorenz.kupfer\\source\\ownrepos\\taskmanager\\moretranslation\\taskschedulerapp\\menus\\createtaskmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|solutionrelative:taskschedulerapp\\menus\\createtaskmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E9E2F67A-9B63-4AF3-A0A9-59E070DE8E3E}|TranslationsLibary\\TranslationsLibary.csproj|c:\\users\\lorenz.kupfer\\source\\ownrepos\\taskmanager\\moretranslation\\translationslibary\\translationslibary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E9E2F67A-9B63-4AF3-A0A9-59E070DE8E3E}|TranslationsLibary\\TranslationsLibary.csproj|c:\\users\\lorenz.kupfer\\source\\ownrepos\\taskmanager\\conditions\\translationslibary\\translationslibary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E9E2F67A-9B63-4AF3-A0A9-59E070DE8E3E}|TranslationsLibary\\TranslationsLibary.csproj|solutionrelative:translationslibary\\translationslibary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{67602EEF-CDEB-4A05-AFFE-C46E2C1FD836}|FileDialog\\WindowsForms.csproj|c:\\users\\lorenz.kupfer\\source\\ownrepos\\taskmanager\\moretranslation\\filedialog\\taskcreator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67602EEF-CDEB-4A05-AFFE-C46E2C1FD836}|FileDialog\\WindowsForms.csproj|solutionrelative:filedialog\\taskcreator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{67602EEF-CDEB-4A05-AFFE-C46E2C1FD836}|FileDialog\\WindowsForms.csproj|c:\\users\\lorenz.kupfer\\source\\ownrepos\\taskmanager\\conditions\\filedialog\\taskcreator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{67602EEF-CDEB-4A05-AFFE-C46E2C1FD836}|FileDialog\\WindowsForms.csproj|solutionrelative:filedialog\\taskcreator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|c:\\users\\lorenz.kupfer\\source\\ownrepos\\taskmanager\\moretranslation\\taskschedulerapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|c:\\users\\lorenz.kupfer\\source\\ownrepos\\taskmanager\\conditions\\taskschedulerapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|solutionrelative:taskschedulerapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|c:\\users\\lorenz.kupfer\\source\\ownrepos\\taskmanager\\moretranslation\\taskschedulerapp\\menus\\autotaskoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90A6A459-B916-494C-8CA0-978DEB27B69B}|TaskSchedulerApp\\TaskSchedulerApp.csproj|solutionrelative:taskschedulerapp\\menus\\autotaskoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
->>>>>>> EvenMoreTranslations
+      "AbsoluteMoniker": "D:0:0:{67602EEF-CDEB-4A05-AFFE-C46E2C1FD836}|FileDialog\\WindowsForms.csproj|c:\\users\\lorenz.kupfer\\source\\ownrepos\\taskmanager\\conditions\\filedialog\\conditionmanager.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67602EEF-CDEB-4A05-AFFE-C46E2C1FD836}|FileDialog\\WindowsForms.csproj|solutionrelative:filedialog\\conditionmanager.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -127,11 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-<<<<<<< HEAD
-          "SelectedChildIndex": 23,
-=======
-          "SelectedChildIndex": 12,
->>>>>>> EvenMoreTranslations
+          "SelectedChildIndex": 15,
           "Children": [
             {
               "$type": "Bookmark",
@@ -179,345 +90,91 @@
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 13,
-              "Title": "BackupManager.cs [Entwurf]",
-              "DocumentMoniker": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\FileDialog\\BackupManager.cs",
-              "RelativeDocumentMoniker": "FileDialog\\BackupManager.cs",
-              "ToolTip": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\FileDialog\\BackupManager.cs [Entwurf]",
-              "RelativeToolTip": "FileDialog\\BackupManager.cs [Entwurf]",
+              "DocumentIndex": 3,
+              "Title": "TaskCreator.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Conditions\\FileDialog\\TaskCreator.Designer.cs",
+              "RelativeDocumentMoniker": "FileDialog\\TaskCreator.Designer.cs",
+              "ToolTip": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Conditions\\FileDialog\\TaskCreator.Designer.cs",
+              "RelativeToolTip": "FileDialog\\TaskCreator.Designer.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAjwFgAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T09:25:45.212Z",
-              "EditorCaption": " [Entwurf]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "TaskClasses.csproj",
-              "DocumentMoniker": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskClasses\\TaskClasses.csproj",
-              "RelativeDocumentMoniker": "TaskClasses\\TaskClasses.csproj",
-              "ToolTip": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskClasses\\TaskClasses.csproj",
-              "RelativeToolTip": "TaskClasses\\TaskClasses.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-02-18T07:29:32.055Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MainTask.cs",
-              "DocumentMoniker": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskClasses\\MainTask.cs",
-              "RelativeDocumentMoniker": "TaskClasses\\MainTask.cs",
-              "ToolTip": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskClasses\\MainTask.cs",
-              "RelativeToolTip": "TaskClasses\\MainTask.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T07:23:20.749Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "TaskQueue.cs",
-              "DocumentMoniker": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskClasses\\TaskQueue.cs",
-              "RelativeDocumentMoniker": "TaskClasses\\TaskQueue.cs",
-              "ToolTip": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskClasses\\TaskQueue.cs",
-              "RelativeToolTip": "TaskClasses\\TaskQueue.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAApwBgAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T07:23:18.683Z",
+              "WhenOpened": "2025-02-19T13:09:44.235Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "Tasks.cs",
-              "DocumentMoniker": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskClasses\\Tasks.cs",
-              "RelativeDocumentMoniker": "TaskClasses\\Tasks.cs",
-              "ToolTip": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskClasses\\Tasks.cs",
-              "RelativeToolTip": "TaskClasses\\Tasks.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAApwBMAAAAEAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Conditions\\TaskSchedulerApp\\Program.cs",
+              "RelativeDocumentMoniker": "TaskSchedulerApp\\Program.cs",
+              "ToolTip": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Conditions\\TaskSchedulerApp\\Program.cs",
+              "RelativeToolTip": "TaskSchedulerApp\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T07:23:15.316Z",
+              "WhenOpened": "2025-02-19T13:05:07.353Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BasicTasks.cs",
-              "DocumentMoniker": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskSchedulerApp\\BackgroundClasses\\BasicTasks.cs",
-              "RelativeDocumentMoniker": "TaskSchedulerApp\\BackgroundClasses\\BasicTasks.cs",
-              "ToolTip": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskSchedulerApp\\BackgroundClasses\\BasicTasks.cs",
-              "RelativeToolTip": "TaskSchedulerApp\\BackgroundClasses\\BasicTasks.cs",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAIwGoAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T07:23:09.012Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Config.cs",
-              "DocumentMoniker": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskSchedulerApp\\BackgroundClasses\\Config.cs",
-              "RelativeDocumentMoniker": "TaskSchedulerApp\\BackgroundClasses\\Config.cs",
-              "ToolTip": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskSchedulerApp\\BackgroundClasses\\Config.cs",
-              "RelativeToolTip": "TaskSchedulerApp\\BackgroundClasses\\Config.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T07:23:06.604Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Logger.cs",
-              "DocumentMoniker": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskSchedulerApp\\BackgroundClasses\\Logger.cs",
-              "RelativeDocumentMoniker": "TaskSchedulerApp\\BackgroundClasses\\Logger.cs",
-              "ToolTip": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskSchedulerApp\\BackgroundClasses\\Logger.cs",
-              "RelativeToolTip": "TaskSchedulerApp\\BackgroundClasses\\Logger.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T07:23:03.876Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "NotificationManager.cs",
-              "DocumentMoniker": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskSchedulerApp\\BackgroundClasses\\NotificationManager.cs",
-              "RelativeDocumentMoniker": "TaskSchedulerApp\\BackgroundClasses\\NotificationManager.cs",
-              "ToolTip": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskSchedulerApp\\BackgroundClasses\\NotificationManager.cs",
-              "RelativeToolTip": "TaskSchedulerApp\\BackgroundClasses\\NotificationManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T07:22:54.869Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PcStatus.cs",
-              "DocumentMoniker": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskSchedulerApp\\BackgroundClasses\\PcStatus.cs",
-              "RelativeDocumentMoniker": "TaskSchedulerApp\\BackgroundClasses\\PcStatus.cs",
-              "ToolTip": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskSchedulerApp\\BackgroundClasses\\PcStatus.cs",
-              "RelativeToolTip": "TaskSchedulerApp\\BackgroundClasses\\PcStatus.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAhwCsAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T07:22:47.893Z",
-=======
-              "DocumentIndex": 0,
-              "Title": "CreateTaskMenu.cs",
-              "DocumentMoniker": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\MoreTranslation\\TaskSchedulerApp\\Menus\\CreateTaskMenu.cs",
-              "RelativeDocumentMoniker": "TaskSchedulerApp\\Menus\\CreateTaskMenu.cs",
-              "ToolTip": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\MoreTranslation\\TaskSchedulerApp\\Menus\\CreateTaskMenu.cs*",
-              "RelativeToolTip": "TaskSchedulerApp\\Menus\\CreateTaskMenu.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T12:33:39.315Z",
->>>>>>> EvenMoreTranslations
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 1,
-              "Title": "AutoTaskOptions.cs",
-              "DocumentMoniker": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskSchedulerApp\\Menus\\AutoTaskOptions.cs",
-              "RelativeDocumentMoniker": "TaskSchedulerApp\\Menus\\AutoTaskOptions.cs",
-              "ToolTip": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskSchedulerApp\\Menus\\AutoTaskOptions.cs",
-              "RelativeToolTip": "TaskSchedulerApp\\Menus\\AutoTaskOptions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T07:22:44.453Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CreateTaskMenu.cs",
-              "DocumentMoniker": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskSchedulerApp\\Menus\\CreateTaskMenu.cs",
-              "RelativeDocumentMoniker": "TaskSchedulerApp\\Menus\\CreateTaskMenu.cs",
-              "ToolTip": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskSchedulerApp\\Menus\\CreateTaskMenu.cs*",
-              "RelativeToolTip": "TaskSchedulerApp\\Menus\\CreateTaskMenu.cs*",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAQwBoAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T07:22:41.429Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "MainMenu.cs",
-              "DocumentMoniker": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskSchedulerApp\\Menus\\MainMenu.cs",
-              "RelativeDocumentMoniker": "TaskSchedulerApp\\Menus\\MainMenu.cs",
-              "ToolTip": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskSchedulerApp\\Menus\\MainMenu.cs",
-              "RelativeToolTip": "TaskSchedulerApp\\Menus\\MainMenu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T07:22:28.494Z",
-=======
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\MoreTranslation\\TaskSchedulerApp\\Program.cs",
-              "RelativeDocumentMoniker": "TaskSchedulerApp\\Program.cs",
-              "ToolTip": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\MoreTranslation\\TaskSchedulerApp\\Program.cs",
-              "RelativeToolTip": "TaskSchedulerApp\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T12:29:07.859Z",
->>>>>>> EvenMoreTranslations
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 9,
-              "Title": "Menu.cs",
-              "DocumentMoniker": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskSchedulerApp\\Menus\\Menu.cs",
-              "RelativeDocumentMoniker": "TaskSchedulerApp\\Menus\\Menu.cs",
-              "ToolTip": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskSchedulerApp\\Menus\\Menu.cs",
-              "RelativeToolTip": "TaskSchedulerApp\\Menus\\Menu.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAhwDMAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T07:22:25.438Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "SettingsMenu.cs",
-              "DocumentMoniker": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskSchedulerApp\\Menus\\SettingsMenu.cs",
-              "RelativeDocumentMoniker": "TaskSchedulerApp\\Menus\\SettingsMenu.cs",
-              "ToolTip": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskSchedulerApp\\Menus\\SettingsMenu.cs",
-              "RelativeToolTip": "TaskSchedulerApp\\Menus\\SettingsMenu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T07:22:20.254Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "AsyncMethods.cs",
-              "DocumentMoniker": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskSchedulerApp\\Sonstiges\\AsyncMethods.cs",
-              "RelativeDocumentMoniker": "TaskSchedulerApp\\Sonstiges\\AsyncMethods.cs",
-              "ToolTip": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskSchedulerApp\\Sonstiges\\AsyncMethods.cs",
-              "RelativeToolTip": "TaskSchedulerApp\\Sonstiges\\AsyncMethods.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T07:22:18.766Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "BackupManager.cs",
-              "DocumentMoniker": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\FileDialog\\BackupManager.cs",
-              "RelativeDocumentMoniker": "FileDialog\\BackupManager.cs",
-              "ToolTip": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\FileDialog\\BackupManager.cs",
-              "RelativeToolTip": "FileDialog\\BackupManager.cs",
-              "ViewState": "AgIAAIwAAAAAAAAAAAAuwJAAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T07:21:52.119Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "BackupManager.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\FileDialog\\BackupManager.Designer.cs",
-              "RelativeDocumentMoniker": "FileDialog\\BackupManager.Designer.cs",
-              "ToolTip": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\FileDialog\\BackupManager.Designer.cs",
-              "RelativeToolTip": "FileDialog\\BackupManager.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T07:21:47.567Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "PreventShutdown.cs",
-              "DocumentMoniker": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\FileDialog\\PreventShutdown.cs",
-              "RelativeDocumentMoniker": "FileDialog\\PreventShutdown.cs",
-              "ToolTip": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\FileDialog\\PreventShutdown.cs",
-              "RelativeToolTip": "FileDialog\\PreventShutdown.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAB+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T07:21:40.216Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "TaskCreator.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\FileDialog\\TaskCreator.Designer.cs",
-              "RelativeDocumentMoniker": "FileDialog\\TaskCreator.Designer.cs",
-              "ToolTip": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\FileDialog\\TaskCreator.Designer.cs",
-              "RelativeToolTip": "FileDialog\\TaskCreator.Designer.cs",
-              "ViewState": "AgIAAIQAAAAAAAAAAAAowKMAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T07:19:26.485Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "TranslationsLibary.cs",
-              "DocumentMoniker": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TranslationsLibary\\TranslationsLibary.cs",
-              "RelativeDocumentMoniker": "TranslationsLibary\\TranslationsLibary.cs",
-              "ToolTip": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TranslationsLibary\\TranslationsLibary.cs",
-              "RelativeToolTip": "TranslationsLibary\\TranslationsLibary.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T11:03:21.871Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-=======
-              "DocumentIndex": 2,
->>>>>>> EvenMoreTranslations
-              "Title": "TaskCreator.cs",
-              "DocumentMoniker": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\MoreTranslation\\FileDialog\\TaskCreator.cs",
+              "Title": "TaskCreator.cs [Entwurf]",
+              "DocumentMoniker": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Conditions\\FileDialog\\TaskCreator.cs",
               "RelativeDocumentMoniker": "FileDialog\\TaskCreator.cs",
-              "ToolTip": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\MoreTranslation\\FileDialog\\TaskCreator.cs",
+              "ToolTip": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Conditions\\FileDialog\\TaskCreator.cs [Entwurf]",
+              "RelativeToolTip": "FileDialog\\TaskCreator.cs [Entwurf]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T12:16:02.489Z",
+              "EditorCaption": " [Entwurf]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TaskCreator.cs",
+              "DocumentMoniker": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Conditions\\FileDialog\\TaskCreator.cs",
+              "RelativeDocumentMoniker": "FileDialog\\TaskCreator.cs",
+              "ToolTip": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Conditions\\FileDialog\\TaskCreator.cs",
               "RelativeToolTip": "FileDialog\\TaskCreator.cs",
-              "ViewState": "AgIAALIAAAAAAAAAAAAswMAAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAmwGQAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T12:00:19.133Z",
+              "WhenOpened": "2025-02-19T11:45:53.823Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 10,
-              "Title": "TaskScheduler.cs",
-              "DocumentMoniker": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskClasses\\TaskScheduler.cs",
-              "RelativeDocumentMoniker": "TaskClasses\\TaskScheduler.cs",
-              "ToolTip": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskClasses\\TaskScheduler.cs",
-              "RelativeToolTip": "TaskClasses\\TaskScheduler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAEAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "ConditionManager.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Conditions\\FileDialog\\ConditionManager.Designer.cs",
+              "RelativeDocumentMoniker": "FileDialog\\ConditionManager.Designer.cs",
+              "ToolTip": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Conditions\\FileDialog\\ConditionManager.Designer.cs",
+              "RelativeToolTip": "FileDialog\\ConditionManager.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T06:46:28.652Z",
+              "WhenOpened": "2025-02-19T09:52:09.267Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskSchedulerApp\\Program.cs",
-              "RelativeDocumentMoniker": "TaskSchedulerApp\\Program.cs",
-              "ToolTip": "C:\\Users\\ben.sowieja\\source\\repos\\TaskManager\\TaskSchedulerApp\\Program.cs",
-              "RelativeToolTip": "TaskSchedulerApp\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAABAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "ConditionManager.cs [Entwurf]",
+              "DocumentMoniker": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Conditions\\FileDialog\\ConditionManager.cs",
+              "RelativeDocumentMoniker": "FileDialog\\ConditionManager.cs",
+              "ToolTip": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Conditions\\FileDialog\\ConditionManager.cs [Entwurf]",
+              "RelativeToolTip": "FileDialog\\ConditionManager.cs [Entwurf]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T06:46:07.956Z",
-=======
-              "DocumentIndex": 4,
-              "Title": "AutoTaskOptions.cs",
-              "DocumentMoniker": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\MoreTranslation\\TaskSchedulerApp\\Menus\\AutoTaskOptions.cs",
-              "RelativeDocumentMoniker": "TaskSchedulerApp\\Menus\\AutoTaskOptions.cs",
-              "ToolTip": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\MoreTranslation\\TaskSchedulerApp\\Menus\\AutoTaskOptions.cs",
-              "RelativeToolTip": "TaskSchedulerApp\\Menus\\AutoTaskOptions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAABHAAAAAAAAAA==",
+              "WhenOpened": "2025-02-19T09:51:01.53Z",
+              "EditorCaption": " [Entwurf]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ConditionManager.cs",
+              "DocumentMoniker": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Conditions\\FileDialog\\ConditionManager.cs",
+              "RelativeDocumentMoniker": "FileDialog\\ConditionManager.cs",
+              "ToolTip": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Conditions\\FileDialog\\ConditionManager.cs",
+              "RelativeToolTip": "FileDialog\\ConditionManager.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAACsAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T11:37:32.838Z",
+              "WhenOpened": "2025-02-19T09:49:34.562Z",
               "EditorCaption": ""
             }
           ]
@@ -528,13 +185,13 @@
       "Orientation": 0,
       "VerticalTabListWidth": 256,
       "FloatingWindowState": {
-        "Id": "79dcda28-f5d3-430c-bbe5-c8c967d05c03",
+        "Id": "fdac5503-875a-4c2d-84bd-48b80e8b46cc",
         "Display": 1,
-        "X": 489,
-        "Y": 139,
+        "X": 717,
+        "Y": 41,
         "Width": 1458,
         "Height": 891,
-        "WindowState": 0
+        "WindowState": 2
       },
       "DocumentGroups": [
         {
@@ -543,16 +200,15 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "TranslationsLibary.cs",
-              "DocumentMoniker": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\MoreTranslation\\TranslationsLibary\\TranslationsLibary.cs",
+              "DocumentMoniker": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Conditions\\TranslationsLibary\\TranslationsLibary.cs",
               "RelativeDocumentMoniker": "TranslationsLibary\\TranslationsLibary.cs",
-              "ToolTip": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\MoreTranslation\\TranslationsLibary\\TranslationsLibary.cs",
+              "ToolTip": "C:\\Users\\lorenz.kupfer\\source\\OwnRepos\\TaskManager\\Conditions\\TranslationsLibary\\TranslationsLibary.cs",
               "RelativeToolTip": "TranslationsLibary\\TranslationsLibary.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwBEAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAADIEAAAAAAAAAAAowFcEAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T12:05:03.718Z",
->>>>>>> EvenMoreTranslations
+              "WhenOpened": "2025-02-19T09:54:50.374Z",
               "EditorCaption": ""
             }
           ]

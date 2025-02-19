@@ -150,14 +150,12 @@ namespace TranslationsLibrary
                     {"hours_taskcreator", "Stunden" },
                     {"days_taskcreator", "Tage" },
                     {"weeks_taskcreator", "Wochen" },
-                    #endregion
 
                     //Bedingungen
                     {"condition_taskcreator", "Bedingung" },
                     {"cpuusage_taskcreator", "CPU-Auslastung" },
                     {"afterboot_taskcreator", "nach Boot-Vorgang" },
                     {"beforeshutdown_taskcreator", "vor Shutdown" },
-                    {"nocondition_taskcreator", "keine Bedingung" },
                     #endregion
                 }
             },
@@ -280,14 +278,12 @@ namespace TranslationsLibrary
                     {"hours_taskcreator", "Hours" },
                     {"days_taskcreator", "Days" },
                     {"weeks_taskcreator", "Weeks" },
-                    #endregion
 
                     //Bedingungen
                     {"condition_taskcreator", "Condition" },
                     {"cpuusage_taskcreator", "CPU usage" },
                     {"afterboot_taskcreator", "after boot" },
                     {"beforeshutdown_taskcreator", "before shutdown" },
-                    {"nocondition_taskcreator", "No condition" },
                     #endregion
                 }
             },
@@ -410,14 +406,12 @@ namespace TranslationsLibrary
                     {"hours_taskcreator", "Heures" },
                     {"days_taskcreator", "Jours" },
                     {"weeks_taskcreator", "Semaines" },
-                    #endregion
 
                     //Bedingungen
                     {"condition_taskcreator", "Condition" },
                     {"cpuusage_taskcreator", "Utilisation CPU" },
                     {"afterboot_taskcreator", "après le démarrage" },
                     {"beforeshutdown_taskcreator", "avant l'arrêt" },
-                    {"nocondition_taskcreator", "Aucune condition" },
                     #endregion
                 }
             },
@@ -540,14 +534,12 @@ namespace TranslationsLibrary
                     {"hours_taskcreator", "Ore" },
                     {"days_taskcreator", "Giorni" },
                     {"weeks_taskcreator", "Settimane" },
-                    #endregion
 
                     //Bedingungen
                     {"condition_taskcreator", "Condizione" },
                     {"cpuusage_taskcreator", "Utilizzo CPU" },
                     {"afterboot_taskcreator", "dopo l'avvio" },
                     {"beforeshutdown_taskcreator", "prima dello spegnimento" },
-                    {"nocondition_taskcreator", "Nessuna condizione" },
                     #endregion
                 }
             },
@@ -670,14 +662,12 @@ namespace TranslationsLibrary
                     {"hours_taskcreator", "Horas" },
                     {"days_taskcreator", "Días" },
                     {"weeks_taskcreator", "Semanas" },
-                    #endregion
 
                     //Bedingungen
                     {"condition_taskcreator", "Condición" },
                     {"cpuusage_taskcreator", "Uso de CPU" },
                     {"afterboot_taskcreator", "después del arranque" },
                     {"beforeshutdown_taskcreator", "antes del apagado" },
-                    {"nocondition_taskcreator", "Ninguna condición" },
                     #endregion
                 }
             },
@@ -800,14 +790,12 @@ namespace TranslationsLibrary
                     {"hours_taskcreator", "小时" },
                     {"days_taskcreator", "天" },
                     {"weeks_taskcreator", "周" },
-                    #endregion
 
                     //Bedingungen
                     {"condition_taskcreator", "条件" },
                     {"cpuusage_taskcreator", "CPU-使用率" },
                     {"afterboot_taskcreator", "启动后" },
                     {"beforeshutdown_taskcreator", "关机前" },
-                    {"nocondition_taskcreator", "无条件" },
                     #endregion
                 }
             },
@@ -929,14 +917,12 @@ namespace TranslationsLibrary
                     {"hours_taskcreator", "घंटे" },
                     {"days_taskcreator", "दिन" },
                     {"weeks_taskcreator", "सप्ताह" },
-                    #endregion
 
                     //Bedingungen
                     {"condition_taskcreator", "शर्त" },
                     {"cpuusage_taskcreator", "CPU-उपयोग" },
                     {"afterboot_taskcreator", "बूट के बाद" },
                     {"beforeshutdown_taskcreator", "शटडाउन से पहले" },
-                    {"nocondition_taskcreator", "कोई शर्त नहीं " },
                     #endregion
                 }
             },

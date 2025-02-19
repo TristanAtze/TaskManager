@@ -38,10 +38,8 @@ public class TaskQueue
         return taskToExecute;
     }
 
-    public MainTask? ThrowTask(MainTask actualTask)
+    public void ThrowTask(MainTask actualTask)
     {
         TaskList.Add(actualTask);
-
-        return GetNextTask();
     }
 }

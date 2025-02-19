@@ -1,6 +1,9 @@
 ﻿using TaskSchedulerApp.BackgroundClasses;
 using System.Runtime.InteropServices;
 using TaskSchedulerApp.Menus;
+using MiNET.LevelDB;
+using FileDialog;
+using System.Windows.Forms;
 
 public class Program
 {
@@ -15,8 +18,6 @@ public class Program
 
         var mainMenu = new MainMenu(taskScheduler);
         mainMenu.Start();
-
-        
     }
 
     //public static async Task PreventShutdownStart()

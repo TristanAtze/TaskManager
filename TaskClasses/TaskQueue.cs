@@ -37,4 +37,9 @@ public class TaskQueue
         }
         return taskToExecute;
     }
+
+    public void ThrowTask(MainTask actualTask)
+    {
+        TaskList.Add(actualTask);
+    }
 }

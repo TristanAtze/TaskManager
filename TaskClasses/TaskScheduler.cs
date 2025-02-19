@@ -32,14 +32,29 @@ public class TaskScheduler
                     Thread.Sleep(delay);
                 }
 
-                nextTask.Execute();
-
-                if (nextTask.IsRecurring && nextTask.Interval.HasValue)
+                if (RequirementsMet(nextTask))
                 {
-                    nextTask.ScheduledTime = DateTime.Now.Add(nextTask.Interval.Value); // Neu planen
-                    ScheduleTask(nextTask); // Wieder hinzufügen
+                    //nextTask.Execute();
+
+                    if (nextTask.IsRecurring && nextTask.Interval.HasValue)
+                    {
+                        nextTask.ScheduledTime = DateTime.Now.Add(nextTask.Interval.Value); // Neu planen
+                        ScheduleTask(nextTask); // Wieder hinzufügen
+                    }
+                }
+                else
+                {
+                    TaskQueue.ThrowTask(nextTask);
                 }
             }
         }
+    }
+
+    bool RequirementsMet(MainTask task)
+    {
+        bool result = true;
+
+        if (task.ConditionCPUUsage && true) { }
+        return true;
     }
 }

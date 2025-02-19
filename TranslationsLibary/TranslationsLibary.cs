@@ -154,7 +154,6 @@ namespace TranslationsLibrary
                     {"cpuusage_taskcreator", "CPU-Auslastung" },
                     {"afterboot_taskcreator", "nach Boot-Vorgang" },
                     {"beforeshutdown_taskcreator", "vor Shutdown" },
-                    {"nocondition_taskcreator", "keine Bedingung" },
                     #endregion
 
                     #region RestartApp
@@ -283,17 +282,18 @@ namespace TranslationsLibrary
                     { "cancel_designer_taskcreator", "Cancel" },
                     { "create_designer_taskcreator", "Create task" },
 
-                    { "seconds_taskcreator", "Seconds" },
-                    { "minutes_taskcreator", "Minutes" },
-                    { "hours_taskcreator", "Hours" },
-                    { "days_taskcreator", "Days" },
-                    { "weeks_taskcreator", "Weeks" },
+                    //Zeiteinheiten
+                    {"seconds_taskcreator", "Seconds" },
+                    {"minutes_taskcreator", "Minutes" },
+                    {"hours_taskcreator", "Hours" },
+                    {"days_taskcreator", "Days" },
+                    {"weeks_taskcreator", "Weeks" },
 
-                    { "condition_taskcreator", "Condition" },
-                    { "cpuusage_taskcreator", "CPU usage" },
-                    { "afterboot_taskcreator", "After boot" },
-                    { "beforeshutdown_taskcreator", "Before shutdown" },
-                    { "nocondition_taskcreator", "No condition" },
+                    //Bedingungen
+                    {"condition_taskcreator", "Condition" },
+                    {"cpuusage_taskcreator", "CPU usage" },
+                    {"afterboot_taskcreator", "after boot" },
+                    {"beforeshutdown_taskcreator", "before shutdown" },
                     #endregion
 
                     #region RestartApp
@@ -422,17 +422,18 @@ namespace TranslationsLibrary
                     { "cancel_designer_taskcreator", "Annuler" },
                     { "create_designer_taskcreator", "Créer une tâche" },
 
-                    { "seconds_taskcreator", "Secondes" },
-                    { "minutes_taskcreator", "Minutes" },
-                    { "hours_taskcreator", "Heures" },
-                    { "days_taskcreator", "Jours" },
-                    { "weeks_taskcreator", "Semaines" },
+                    //Zeiteinheiten
+                    {"seconds_taskcreator", "Secondes" },
+                    {"minutes_taskcreator", "Minutes" },
+                    {"hours_taskcreator", "Heures" },
+                    {"days_taskcreator", "Jours" },
+                    {"weeks_taskcreator", "Semaines" },
 
-                    { "condition_taskcreator", "Condition" },
-                    { "cpuusage_taskcreator", "Utilisation CPU" },
-                    { "afterboot_taskcreator", "Après le démarrage" },
-                    { "beforeshutdown_taskcreator", "Avant l'arrêt" },
-                    { "nocondition_taskcreator", "Aucune condition" },
+                    //Bedingungen
+                    {"condition_taskcreator", "Condition" },
+                    {"cpuusage_taskcreator", "Utilisation CPU" },
+                    {"afterboot_taskcreator", "après le démarrage" },
+                    {"beforeshutdown_taskcreator", "avant l'arrêt" },
                     #endregion
 
                     #region RestartApp
@@ -561,17 +562,18 @@ namespace TranslationsLibrary
                     { "cancel_designer_taskcreator", "Annulla" },
                     { "create_designer_taskcreator", "Crea task" },
 
-                    { "seconds_taskcreator", "Secondi" },
-                    { "minutes_taskcreator", "Minuti" },
-                    { "hours_taskcreator", "Ore" },
-                    { "days_taskcreator", "Giorni" },
-                    { "weeks_taskcreator", "Settimane" },
+                    //Zeiteinheiten
+                    {"seconds_taskcreator", "Secondi" },
+                    {"minutes_taskcreator", "Minuti" },
+                    {"hours_taskcreator", "Ore" },
+                    {"days_taskcreator", "Giorni" },
+                    {"weeks_taskcreator", "Settimane" },
 
-                    { "condition_taskcreator", "Condizione" },
-                    { "cpuusage_taskcreator", "Utilizzo CPU" },
-                    { "afterboot_taskcreator", "Dopo l'avvio" },
-                    { "beforeshutdown_taskcreator", "Prima dello spegnimento" },
-                    { "nocondition_taskcreator", "Nessuna condizione" },
+                    //Bedingungen
+                    {"condition_taskcreator", "Condizione" },
+                    {"cpuusage_taskcreator", "Utilizzo CPU" },
+                    {"afterboot_taskcreator", "dopo l'avvio" },
+                    {"beforeshutdown_taskcreator", "prima dello spegnimento" },
                     #endregion
 
                     #region RestartApp
@@ -700,17 +702,18 @@ namespace TranslationsLibrary
                     { "cancel_designer_taskcreator", "Cancelar" },
                     { "create_designer_taskcreator", "Crear tarea" },
 
-                    { "seconds_taskcreator", "Segundos" },
-                    { "minutes_taskcreator", "Minutos" },
-                    { "hours_taskcreator", "Horas" },
-                    { "days_taskcreator", "Días" },
-                    { "weeks_taskcreator", "Semanas" },
+                    //Zeiteinheiten
+                    {"seconds_taskcreator", "Segundos" },
+                    {"minutes_taskcreator", "Minutos" },
+                    {"hours_taskcreator", "Horas" },
+                    {"days_taskcreator", "Días" },
+                    {"weeks_taskcreator", "Semanas" },
 
-                    { "condition_taskcreator", "Condición" },
-                    { "cpuusage_taskcreator", "Uso de CPU" },
-                    { "afterboot_taskcreator", "Después del arranque" },
-                    { "beforeshutdown_taskcreator", "Antes del apagado" },
-                    { "nocondition_taskcreator", "Sin condición" },
+                    //Bedingungen
+                    {"condition_taskcreator", "Condición" },
+                    {"cpuusage_taskcreator", "Uso de CPU" },
+                    {"afterboot_taskcreator", "después del arranque" },
+                    {"beforeshutdown_taskcreator", "antes del apagado" },
                     #endregion
 
                     #region RestartApp
@@ -839,17 +842,18 @@ namespace TranslationsLibrary
                     { "cancel_designer_taskcreator", "取消" },
                     { "create_designer_taskcreator", "创建任务" },
 
-                    { "seconds_taskcreator", "秒" },
-                    { "minutes_taskcreator", "分钟" },
-                    { "hours_taskcreator", "小时" },
-                    { "days_taskcreator", "天" },
-                    { "weeks_taskcreator", "周" },
+                    //Zeiteinheiten
+                    {"seconds_taskcreator", "秒" },
+                    {"minutes_taskcreator", "分钟" },
+                    {"hours_taskcreator", "小时" },
+                    {"days_taskcreator", "天" },
+                    {"weeks_taskcreator", "周" },
 
-                    { "condition_taskcreator", "条件" },
-                    { "cpuusage_taskcreator", "CPU 使用率" },
-                    { "afterboot_taskcreator", "启动后" },
-                    { "beforeshutdown_taskcreator", "关机前" },
-                    { "nocondition_taskcreator", "无条件" },
+                    //Bedingungen
+                    {"condition_taskcreator", "条件" },
+                    {"cpuusage_taskcreator", "CPU-使用率" },
+                    {"afterboot_taskcreator", "启动后" },
+                    {"beforeshutdown_taskcreator", "关机前" },
                     #endregion
 
                     #region RestartApp
@@ -978,17 +982,18 @@ namespace TranslationsLibrary
                     { "cancel_designer_taskcreator", "रद्द करें" },
                     { "create_designer_taskcreator", "कार्य बनाएँ" },
 
-                    { "seconds_taskcreator", "सेकंड" },
-                    { "minutes_taskcreator", "मिनट" },
-                    { "hours_taskcreator", "घंटे" },
-                    { "days_taskcreator", "दिन" },
-                    { "weeks_taskcreator", "सप्ताह" },
+                    //Zeiteinheiten
+                    {"seconds_taskcreator", "सेकंड" },
+                    {"minutes_taskcreator", "मिनट" },
+                    {"hours_taskcreator", "घंटे" },
+                    {"days_taskcreator", "दिन" },
+                    {"weeks_taskcreator", "सप्ताह" },
 
-                    { "condition_taskcreator", "शर्त" },
-                    { "cpuusage_taskcreator", "सीपीयू उपयोग" },
-                    { "afterboot_taskcreator", "बूट के बाद" },
-                    { "beforeshutdown_taskcreator", "शटडाउन से पहले" },
-                    { "nocondition_taskcreator", "कोई शर्त नहीं" },
+                    //Bedingungen
+                    {"condition_taskcreator", "शर्त" },
+                    {"cpuusage_taskcreator", "CPU-उपयोग" },
+                    {"afterboot_taskcreator", "बूट के बाद" },
+                    {"beforeshutdown_taskcreator", "शटडाउन से पहले" },
                     #endregion
 
                     #region RestartApp

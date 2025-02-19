@@ -3,6 +3,7 @@ using TaskClasses;
 using System.Diagnostics;
 using static TranslationsLibrary.TranslationManager;
 namespace FileDialog;
+using WindowsForms;
 
 public partial class TaskCreator : Form
 {
@@ -32,12 +33,16 @@ public partial class TaskCreator : Form
     /// Werte die für das Erstellen einer neuen Task gebraucht werden.
     /// </summary>
     #region Werte für neuen Task
-    private string _taskName = "";
-    private string _taskFilePath = "";
+    private string _taskName;
+    private string _taskFilePath;
     private DateTime _taskDateTime = DateTime.Now;
     private int _taskPriority = 3;
     private bool _taskIsRecurring = false;
     private TimeSpan? _taskInterval = null;
+
+    public bool CpuUsage = false;
+    public bool JustBooted = false;
+    public bool ShuttingDown = false;
     #endregion
 
     /// <summary>
@@ -54,6 +59,19 @@ public partial class TaskCreator : Form
 
         InitializeComponent();
 
+        MaximumSize = Size;
+        MinimumSize = Size;
+
+        #region Text bearbeiten
+        name.Text = GetTranslation(GetCurrentLanguage(), "name_designer_taskcreator");
+        actionButton.Text = GetTranslation(GetCurrentLanguage(), "choise_designer_taskcreator");
+        isRecurring.Text = GetTranslation(GetCurrentLanguage(), "recurring_designer_taskcreator");
+        filePath.Text = GetTranslation(GetCurrentLanguage(), "filePath_designer_taskcreator");
+        saveButton.Text = GetTranslation(GetCurrentLanguage(), "save_designer_taskcreator");
+        cancelButton.Text = GetTranslation(GetCurrentLanguage(), "cancel_designer_taskcreator");
+        conditions.Text = GetTranslation(GetCurrentLanguage(), "condition_taskcreator");
+        #endregion
+
         #region Fill Prioritys
         foreach (var item in _prioritys)
         {
@@ -68,6 +86,8 @@ public partial class TaskCreator : Form
         }
         #endregion
 
+        _taskName = "";
+        _taskFilePath = "";
         _taskDateTime = date.Value;
         saveButton.Enabled = false;
     }
@@ -81,8 +101,8 @@ public partial class TaskCreator : Form
         switch (_taskIsRecurring)
         {
             case true:
-                if (_taskName != null &&
-                    _taskFilePath != null &&
+                if (_taskName != "" &&
+                    _taskFilePath != "" &&
                     _taskInterval != null) saveButton.Enabled = true;
                 else
                 {
@@ -90,8 +110,8 @@ public partial class TaskCreator : Form
                 }
                 break;
             case false:
-                if (_taskName != null &&
-                    _taskFilePath != null) saveButton.Enabled = true;
+                if (_taskName != "" &&
+                    _taskFilePath != "") saveButton.Enabled = true;
                 else
                 {
                     saveButton.Enabled = false;
@@ -136,16 +156,6 @@ public partial class TaskCreator : Form
         UpdateSaveButton();
     }
 
-    private void Priority_DropDown(object sender, EventArgs e)
-    {
-        priority.Items.Remove(GetTranslation(GetCurrentLanguage(), "priority_taskcreator"));
-    }
-
-    private void Units_DropDown(object sender, EventArgs e)
-    {
-        units.Items.Remove(GetTranslation(GetCurrentLanguage(), "unit_taskcreator"));
-    }
-
     private void IsRecurring_MouseClick(object sender, MouseEventArgs e)
     {
         switch (_taskIsRecurring)
@@ -187,7 +197,12 @@ public partial class TaskCreator : Form
             _taskDateTime,
             _taskPriority,
             _taskIsRecurring,
-            _taskInterval);
+            _taskInterval)
+        {
+            ConditionCPUUsage = CpuUsage,
+            ConditionJustBooted = JustBooted,
+            ConditionShuttingDown = ShuttingDown
+        };
 
         Scheduler.ScheduleTask(task);
         Application.Exit();
@@ -229,5 +244,12 @@ public partial class TaskCreator : Form
         }
 
         UpdateSaveButton();
+    }
+
+    private void Conditions_MouseClick(object sender, MouseEventArgs e)
+    {
+        ConditionManager manager = new(this, Scheduler);
+
+        manager.ShowDialog();
     }
 }

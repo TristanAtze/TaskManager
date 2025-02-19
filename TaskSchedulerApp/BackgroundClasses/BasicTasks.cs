@@ -91,7 +91,7 @@ public class BasicTasks
             {
                 while (true)
                 {
-                    Console.WriteLine("Test");
+                    //Console.WriteLine("Test");
                     //Asynchrone Prüfung, ob der Nutzer mindestens 1 Minute inaktiv ist
                     bool inactive = PcStatus.IsUserInactive;
                     if (inactive)
@@ -107,10 +107,6 @@ public class BasicTasks
             });
 
         }, DateTime.Now.AddSeconds(5), priority: 1);
-
         taskScheduler.ScheduleTask(LockInactive);
     }
-
-
-
 }

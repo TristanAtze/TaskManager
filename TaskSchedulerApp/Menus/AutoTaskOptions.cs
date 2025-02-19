@@ -55,10 +55,15 @@ class AutoTaskOptions : Menu
         }
     }
 
+    /// <summary>
+    /// Ist nur Temporär entsprechend weder eine Richtige beschreibung noch eine übersetzung
+    /// </summary>
+    /// <returns>hat als rückgabe wert einen double</returns>
     public static double GetInput()
     {
         try
         {
+            //NUR TEMPORÄR
             Console.WriteLine("Bitte gebe an wie lange es dauern soll bis der Task Ausgeführt wird");
             string input = Console.ReadLine();
             double num = Convert.ToDouble(input);

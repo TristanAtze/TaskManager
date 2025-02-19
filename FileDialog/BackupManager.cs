@@ -22,7 +22,6 @@ namespace BackupTool
             labelAutomation.Text = GetTranslation(GetCurrentLanguage(), "automation_designer_backupmanager");
             labelBackupType.Text = GetTranslation(GetCurrentLanguage(), "backuptype_designer_backupmanager");
 
-
             comboBoxAutomation.Items.AddRange(new object[] { GetTranslation(GetCurrentLanguage(), "manual_automationmethod_backupmanager"), GetTranslation(GetCurrentLanguage(), "scheduled_automationmethod_backupmanager"), GetTranslation(GetCurrentLanguage(), "realtime_automationmethod_backupmanager") });
             buttonBackupStart.Text = GetTranslation(GetCurrentLanguage(), "startbackup_designer_backupmanager");
 
@@ -43,10 +42,12 @@ namespace BackupTool
             buttonStopSelectedTask.Text = GetTranslation(GetCurrentLanguage(), "stopseltask_designer_backupmanager");
             buttonStopAllTasks.Text = GetTranslation(GetCurrentLanguage(), "stopalltask_designer_backupmanager"); ;
 
-            // Setze Standardauswahlen
             comboBoxBackupType.SelectedIndex = -1;
             comboBoxAutomation.SelectedIndex = -1;
             buttonStopSelectedTask.Enabled = false;
+
+            MaximumSize = Size;
+            MinimumSize = Size;
         }
 
         /// <summary>

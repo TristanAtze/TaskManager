@@ -12,6 +12,7 @@ public class BasicTasks
 
         var OpenEmail = new PreTask("OpenMail", () =>
         {
+            
             notificationManager.SendNotification("openmail_executed_mail_basictasks");
             logger.Log("OpenMail", "Task successfully executed.");
             string email = GetTranslation(GetCurrentLanguage(), "reciever_mail_basictasks");

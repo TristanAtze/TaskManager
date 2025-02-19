@@ -19,7 +19,7 @@ public class Logger
 
     public void Log(string taskName, string message)
     {
-        //string logEntry = $"{DateTime.Now},{taskName},{message}";
+        string logEntry = $"{DateTime.Now},{taskName},{message}";
 
         using var writer = new StreamWriter(_logFilePath, append: true);
         writer.WriteLine(logEntry);

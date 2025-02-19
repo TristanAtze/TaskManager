@@ -14,6 +14,34 @@ namespace BackupTool
         public Form1()
         {
             InitializeComponent();
+            buttonBrowseSource.Text = GetTranslation(GetCurrentLanguage(), "searching_designer_backupmanager");
+            buttonBrowseDestination.Text = GetTranslation(GetCurrentLanguage(), "searching_designer_backupmanager");
+            labelSource.Text = GetTranslation(GetCurrentLanguage(), "source_designer_backupmanager");
+            labelDestination.Text = GetTranslation(GetCurrentLanguage(), "destination_folder_designer_backupmanager");
+            comboBoxBackupType.Items.AddRange(new object[] { GetTranslation(GetCurrentLanguage(), "complete_backuptype_backupmanager"), GetTranslation(GetCurrentLanguage(), "incremental_backuptype_backupmanager"), GetTranslation(GetCurrentLanguage(), "differential_backuptype_backupmanager"), GetTranslation(GetCurrentLanguage(), "synchronize_backuptype_backupmanager") });
+            labelAutomation.Text = GetTranslation(GetCurrentLanguage(), "automation_designer_backupmanager");
+            labelBackupType.Text = GetTranslation(GetCurrentLanguage(), "backuptype_designer_backupmanager");
+
+
+            comboBoxAutomation.Items.AddRange(new object[] { GetTranslation(GetCurrentLanguage(), "manual_automationmethod_backupmanager"), GetTranslation(GetCurrentLanguage(), "scheduled_automationmethod_backupmanager"), GetTranslation(GetCurrentLanguage(), "realtime_automationmethod_backupmanager") });
+            buttonBackupStart.Text = GetTranslation(GetCurrentLanguage(), "startbackup_designer_backupmanager");
+
+            columnHeaderTaskId.Text = GetTranslation(GetCurrentLanguage(), "taskid_designer_backupmanager");
+            columnHeaderTaskId.Width = 150;
+
+            columnHeaderSource.Text = GetTranslation(GetCurrentLanguage(), "source_designer_backupmanager"); 
+            columnHeaderSource.Width = 100;
+
+            columnHeaderDestination.Text = GetTranslation(GetCurrentLanguage(), "desti_designer_backupmanager");
+            columnHeaderDestination.Width = 100;
+
+            columnHeaderBackupType.Text = GetTranslation(GetCurrentLanguage(), "btype_designer_backupmanager");
+            columnHeaderBackupType.Width = 75;
+
+            columnHeaderAutomation.Text = GetTranslation(GetCurrentLanguage(), "bauto_designer_backupmanager");
+            columnHeaderAutomation.Width = 75;
+            buttonStopSelectedTask.Text = GetTranslation(GetCurrentLanguage(), "stopseltask_designer_backupmanager");
+            buttonStopAllTasks.Text = GetTranslation(GetCurrentLanguage(), "stopalltask_designer_backupmanager"); ;
 
             // Setze Standardauswahlen
             comboBoxBackupType.SelectedIndex = -1;
@@ -136,6 +164,11 @@ namespace BackupTool
                     textBoxDestinationFolder.Text = folderDialog.SelectedPath;
                 }
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 

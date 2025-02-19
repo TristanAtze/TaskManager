@@ -29,7 +29,8 @@ public class SettingsMenu : Menu
                 //todo Config ändern verknüpfen
                 break;
             case 1:
-                ChangeLanguage();
+                var settings = new LanguageMenu();
+                settings.Start();
                 break;
             case 3:
                 KeepGoing = false;

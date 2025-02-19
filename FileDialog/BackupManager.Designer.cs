@@ -107,6 +107,7 @@ namespace BackupTool
             buttonBrowseSource.Name = "buttonBrowseSource";
             buttonBrowseSource.Size = new Size(100, 23);
             buttonBrowseSource.TabIndex = 3;
+            
             buttonBrowseSource.UseVisualStyleBackColor = true;
             buttonBrowseSource.Click += buttonBrowseSource_Click;
             // 
@@ -131,6 +132,7 @@ namespace BackupTool
             buttonBrowseDestination.Name = "buttonBrowseDestination";
             buttonBrowseDestination.Size = new Size(100, 23);
             buttonBrowseDestination.TabIndex = 6;
+            
             buttonBrowseDestination.UseVisualStyleBackColor = true;
             buttonBrowseDestination.Click += buttonBrowseDestination_Click;
             // 
@@ -146,6 +148,7 @@ namespace BackupTool
             // 
             comboBoxBackupType.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxBackupType.FormattingEnabled = true;
+            
             comboBoxBackupType.Location = new Point(30, 210);
             comboBoxBackupType.Name = "comboBoxBackupType";
             comboBoxBackupType.Size = new Size(200, 23);
@@ -163,6 +166,7 @@ namespace BackupTool
             // 
             comboBoxAutomation.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxAutomation.FormattingEnabled = true;
+            
             comboBoxAutomation.Location = new Point(30, 270);
             comboBoxAutomation.Name = "comboBoxAutomation";
             comboBoxAutomation.Size = new Size(200, 23);
@@ -174,6 +178,7 @@ namespace BackupTool
             buttonBackupStart.Name = "buttonBackupStart";
             buttonBackupStart.Size = new Size(120, 30);
             buttonBackupStart.TabIndex = 11;
+            
             buttonBackupStart.UseVisualStyleBackColor = true;
             buttonBackupStart.Click += buttonBackupStart_Click;
             // 
@@ -191,23 +196,7 @@ namespace BackupTool
             // 
             // columnHeaderTaskId
             // 
-            columnHeaderTaskId.Width = 150;
-            // 
-            // columnHeaderSource
-            // 
-            columnHeaderSource.Width = 100;
-            // 
-            // columnHeaderDestination
-            // 
-            columnHeaderDestination.Width = 100;
-            // 
-            // columnHeaderBackupType
-            // 
-            columnHeaderBackupType.Width = 75;
-            // 
-            // columnHeaderAutomation
-            // 
-            columnHeaderAutomation.Width = 75;
+            
             // 
             // buttonStopSelectedTask
             // 
@@ -215,6 +204,7 @@ namespace BackupTool
             buttonStopSelectedTask.Name = "buttonStopSelectedTask";
             buttonStopSelectedTask.Size = new Size(150, 30);
             buttonStopSelectedTask.TabIndex = 14;
+           
             buttonStopSelectedTask.UseVisualStyleBackColor = true;
             buttonStopSelectedTask.Click += buttonStopSelectedTask_Click;
             // 
@@ -224,6 +214,7 @@ namespace BackupTool
             buttonStopAllTasks.Name = "buttonStopAllTasks";
             buttonStopAllTasks.Size = new Size(150, 30);
             buttonStopAllTasks.TabIndex = 15;
+            
             buttonStopAllTasks.UseVisualStyleBackColor = true;
             buttonStopAllTasks.Click += buttonStopAllTasks_Click;
             // 
@@ -247,9 +238,12 @@ namespace BackupTool
             Controls.Add(labelTitle);
             Name = "Form1";
             Text = "Backup Tool";
+            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
+
+
 
         #endregion
     }

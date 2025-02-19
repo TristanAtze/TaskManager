@@ -41,7 +41,7 @@ namespace FileDialog
             filePath = new TextBox();
             saveButton = new Button();
             cancelButton = new Button();
-            button1 = new Button();
+            //button1 = new Button();
             SuspendLayout();
             // 
             // name
@@ -150,8 +150,8 @@ namespace FileDialog
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(338, 264);
-            Controls.Add(label1);
-            Controls.Add(conditions);
+            //Controls.Add(label1);
+            //Controls.Add(conditions);
             Controls.Add(cancelButton);
             Controls.Add(saveButton);
             Controls.Add(filePath);

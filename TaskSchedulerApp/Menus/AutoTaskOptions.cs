@@ -56,9 +56,11 @@ class AutoTaskOptions : Menu
     }
 
     /// <summary>
-    /// Ist nur Temporär entsprechend weder eine Richtige beschreibung noch eine übersetzung
+    /// Liest eine Benutzereingabe von der Konsole, die angibt, wie lange es dauern soll, bis der Task ausgeführt wird.
+    /// Die Eingabe wird als Double-Wert zurückgegeben. Falls die Eingabe ungültig ist, wird 0 zurückgegeben.
+    /// <b>Hinweis:</b> Diese Methode ist nur temporär und dient nur zu Demonstrationszwecken.
     /// </summary>
-    /// <returns>hat als rückgabe wert einen double</returns>
+    /// <returns>Die eingegebene Zahl als Double-Wert. Im Fehlerfall wird 0 zurückgegeben.</returns>
     public static double GetInput()
     {
         try

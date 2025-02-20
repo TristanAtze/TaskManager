@@ -96,7 +96,8 @@ namespace BackupTool
                 }
             }
             // Schalte den Button "Stop Selected Task" nur frei, wenn mindestens ein Eintrag ausgewählt ist
-            buttonStopSelectedTask.Enabled = listViewActiveTasks.SelectedItems.Count > 0;
+
+            buttonStopSelectedTask.Enabled = true;
         }
 
         /// <summary>

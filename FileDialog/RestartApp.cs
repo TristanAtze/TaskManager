@@ -16,7 +16,7 @@ namespace RestartApp
 
         private async void MainForm_Load(object sender, EventArgs e)
         {
-            string processName = "TaskSchedulerApp"; // Name der EXE ohne ".exe"
+            string processName = "TaskSchedulerApp"; 
 
             // 1️ Beende alle laufenden Instanzen des Programms
             KillProcess(processName);

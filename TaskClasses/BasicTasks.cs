@@ -9,11 +9,11 @@ public class BasicTasks
     public static void Email(TaskScheduler taskScheduler, double time)
     {
         var notificationManager = new NotificationManager();
-        var logger = new Logger("task_logs.csv"); 
+        var logger = new Logger("task_logs.csv");
 
         var OpenEmail = new PreTask("OpenMail", () =>
         {
-            
+
             notificationManager.SendNotification("openmail_executed_mail_basictasks");
             logger.Log("OpenMail", "Task successfully executed.");
             string email = GetTranslation(GetCurrentLanguage(), "reciever_mail_basictasks");

@@ -28,7 +28,7 @@ namespace BackupTool
             columnHeaderTaskId.Text = GetTranslation(GetCurrentLanguage(), "taskid_designer_backupmanager");
             columnHeaderTaskId.Width = 150;
 
-            columnHeaderSource.Text = GetTranslation(GetCurrentLanguage(), "source_designer_backupmanager"); 
+            columnHeaderSource.Text = GetTranslation(GetCurrentLanguage(), "source_designer_backupmanager");
             columnHeaderSource.Width = 100;
 
             columnHeaderDestination.Text = GetTranslation(GetCurrentLanguage(), "desti_designer_backupmanager");
@@ -96,7 +96,6 @@ namespace BackupTool
                 }
             }
             // Schalte den Button "Stop Selected Task" nur frei, wenn mindestens ein Eintrag ausgewählt ist
-
             buttonStopSelectedTask.Enabled = true;
         }
 

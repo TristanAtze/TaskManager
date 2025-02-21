@@ -1,9 +1,8 @@
 ﻿using TaskSchedulerApp.BackgroundClasses;
 using System.Runtime.InteropServices;
 using TaskSchedulerApp.Menus;
-using MiNET.LevelDB;
-using FileDialog;
-using System.Windows.Forms;
+using System.Diagnostics;
+using TaskSchedulerApp.Sonstiges;
 
 public class Program
 {

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using static TranslationsLibrary.TranslationManager;
@@ -51,7 +51,7 @@ namespace ShutdownBlocker
         {
             if (e.CloseReason == CloseReason.WindowsShutDown)
             {
-                e.Cancel = true; 
+                e.Cancel = true;
             }
             base.OnFormClosing(e);
         }

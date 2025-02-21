@@ -63,7 +63,7 @@ public abstract class Menu
                     break;
             }
 
-            if(ck is ConsoleKey.Escape)
+            if (ck is ConsoleKey.Escape)
             {
                 KeepGoing = false;
                 ChoiceIndex = Options.Length - 1;

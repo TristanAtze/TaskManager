@@ -2,7 +2,12 @@
 using TaskClasses;
 using System.Diagnostics;
 using static TranslationsLibrary.TranslationManager;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace FileDialog;
+
+using System.Windows.Forms;
+
+using System.Xml.Linq;
 using WindowsForms;
 
 public partial class TaskCreator : Form
@@ -56,7 +61,6 @@ public partial class TaskCreator : Form
     public TaskCreator(TaskScheduler taskScheduler)
     {
         Scheduler = taskScheduler;
-
         InitializeComponent();
 
         MaximumSize = Size;

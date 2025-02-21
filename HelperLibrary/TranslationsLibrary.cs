@@ -1002,7 +1002,7 @@ namespace TranslationsLibrary
                     #endregion
                 }
             },
-            { 
+            {
                 "bd", new Dictionary<string, string>
                 {
                     // Vorhandene Einträge (bleiben unverändert)

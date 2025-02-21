@@ -9,42 +9,31 @@ namespace TaskSchedulerApp.Sonstiges;
 
 public static class AsyncMethods
 {
-    //public static void StartAsyncStatusTasks(TaskScheduler ts)
-    //{
-    //    Task.Run(PcStatus.PcStatusUpdate);
-    //    Task.Run(ts.Start);
-    //    Task.Run(async () =>
-    //    {
-    //        while (true)
-    //        {
-    //            // Rufe alle asynchronen Status-Abfragen parallel ab:
-    //            Task<bool> justBootedTask = PcStatus.IsJustBootedAsync(TimeSpan.FromMinutes(5));
-    //            Task<bool> shuttingDownTask = PcStatus.IsShuttingDownAsync();
-    //            Task<bool> goingToSleepTask = PcStatus.IsGoingToSleepAsync();
-    //            Task<bool> userInactiveTask = PcStatus.IsUserInactiveAsync(TimeSpan.FromSeconds(5));
-    //            Task<bool> lightlyLoadedTask = PcStatus.IsPcLightlyLoadedAsync(20.0f);
+    public static void StartAsyncStatusTasks()
+    {
+        Task.Run(async () => PcStatus.StartMonitoring(TimeSpan.FromHours(10), TimeSpan.FromSeconds(5), 100.0f, ["Test"], "Test"));
+        Task.Run(async () =>
+        {
+            while (true)
+            {
+                // Gib die aktuellen Statuswerte aus
+                Console.Clear();
+                Console.SetCursorPosition(0, 0);
+                Console.WriteLine("---- PC-Status Update ----");
+                Console.WriteLine($"JustBooted:     {PcStatus.IsJustBooted}");
+                Console.WriteLine($"ShuttingDown:   {PcStatus.IsShuttingDown}");
+                Console.WriteLine($"GoingToSleep:   {PcStatus.IsGoingToSleep}");
+                Console.WriteLine($"UserInactive:   {PcStatus.IsUserInactive}");
+                Console.WriteLine($"LightlyLoaded:  {PcStatus.IsPcLightlyLoaded}");
+                Console.WriteLine("--------------------------");
 
-    //            // Warte auf die Ergebnisse
-    //            bool isJustBooted = await justBootedTask;
-    //            bool isShuttingDown = await shuttingDownTask;
-    //            bool isGoingToSleep = await goingToSleepTask;
-    //            bool isUserInactive = await userInactiveTask;
-    //            bool isPcLightlyLoaded = await lightlyLoadedTask;
-
-    //            // Gib die aktuellen Statuswerte aus
-    //            Console.Clear();
-    //            Console.SetCursorPosition(0, 0);
-    //            Console.WriteLine("---- PC-Status Update ----");
-    //            Console.WriteLine($"JustBooted:     {isJustBooted}");
-    //            Console.WriteLine($"ShuttingDown:   {isShuttingDown}");
-    //            Console.WriteLine($"GoingToSleep:   {isGoingToSleep}");
-    //            Console.WriteLine($"UserInactive:   {isUserInactive}");
-    //            Console.WriteLine($"LightlyLoaded:  {isPcLightlyLoaded}");
-    //            Console.WriteLine("--------------------------");
-
-    //            // Warte 2 Sekunden bis zum nächsten Update
-    //            //await Task.Delay(2000);
-    //        }
-    //    });
-    //}
+                if (PcStatus.IsGoingToSleep)
+                {
+                    string settingsFilePath = "Bixt.txt";
+                    string settings = "Bixt.txt";
+                    File.WriteAllText(settingsFilePath, settings);
+                }
+            }
+        });
+    }
 }

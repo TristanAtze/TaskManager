@@ -32,12 +32,12 @@ namespace RestartApp
 
         private void KillProcess(string processName)
         {
-            int currentProcessId = Process.GetCurrentProcess().Id; 
+            int currentProcessId = Process.GetCurrentProcess().Id;
 
             foreach (var process in Process.GetProcessesByName(processName))
             {
                 if (process.Id == currentProcessId)
-                    continue; 
+                    continue;
 
                 try
                 {

@@ -61,7 +61,7 @@ public class MainMenu : Menu
     {
         Console.WriteLine(GetTranslation(GetCurrentLanguage(), "headline_printtasks_mainmenu"));
 
-        foreach(var item in Scheduler.TaskQueue.TaskList)
+        foreach (var item in Scheduler.TaskQueue.TaskList)
         {
             Console.WriteLine(GetTranslation(GetCurrentLanguage(), "name_printtasks_mainmenu") + item.Name);
             Console.WriteLine(GetTranslation(GetCurrentLanguage(), "priority_printtasks_mainmenu") + item.Priority);

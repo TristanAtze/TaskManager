@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -9,19 +8,20 @@ using System.Threading.Tasks;
 using Microsoft.Win32;
 using static TranslationsLibrary.TranslationManager;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace TaskSchedulerApp.BackgroundClasses
 {
     public static class PcStatus
     {
         // Öffentliche Felder für die Statuswerte
-        public static bool IsShuttingDown = false;
-        public static bool IsGoingToSleep = false;
-        public static bool IsProgramOpen = false;
-        public static bool IsJustBooted = false;
-        public static bool IsUserInactive = false;
-        public static bool IsPcLightlyLoaded = false;
-        public static bool AreProgramsOpen = false;
+        public static bool IsShuttingDown { get; set; } = false;
+        public static bool IsGoingToSleep { get; set; } = false;
+        public static bool IsProgramOpen { get; set; } = false;
+        public static bool IsJustBooted { get; set; } = false;
+        public static bool IsUserInactive { get; set; } = false;
+        public static bool IsPcLightlyLoaded { get; set; } = false;
+        public static bool AreProgramsOpen { get; set; } = false;
 
         // CancellationTokenSource, um alle Hintergrund-Tasks bei Bedarf zu stoppen.
         private static CancellationTokenSource _cts;
@@ -47,8 +47,6 @@ namespace TaskSchedulerApp.BackgroundClasses
 
             _ = Task.Run(async () =>
             {
-                var logger = new Logger("task_logs.csv");
-                logger.Log("StartMonitoring", "uptimeMilliseconds successfully executed.");
                 while (!token.IsCancellationRequested)
                 {
                     long uptimeMilliseconds = Environment.TickCount64;
@@ -59,8 +57,6 @@ namespace TaskSchedulerApp.BackgroundClasses
 
             _ = Task.Run(async () =>
             {
-                var logger = new Logger("task_logs.csv");
-                logger.Log("StartMonitoring", "LASTINPUTINFO successfully executed.");
                 while (!token.IsCancellationRequested)
                 {
                     try
@@ -97,8 +93,6 @@ namespace TaskSchedulerApp.BackgroundClasses
 
             _ = Task.Run(async () =>
             {
-                var logger = new Logger("task_logs.csv");
-                logger.Log("StartMonitoring", "PerformanceCounter successfully executed.");
                 while (!token.IsCancellationRequested)
                 {
                     try
@@ -123,8 +117,6 @@ namespace TaskSchedulerApp.BackgroundClasses
 
             _ = Task.Run(async () =>
             {
-                var logger = new Logger("task_logs.csv");
-                logger.Log("StartMonitoring", "Process.GetProcesses successfully executed.");
                 while (!token.IsCancellationRequested)
                 {
                     bool open = false;
@@ -159,8 +151,6 @@ namespace TaskSchedulerApp.BackgroundClasses
 
             _ = Task.Run(async () =>
             {
-                var logger = new Logger("task_logs.csv");
-                logger.Log("StartMonitoring", "Process.GetProcessesByName successfully executed.");
                 while (!token.IsCancellationRequested)
                 {
                     bool open = false;
@@ -215,8 +205,6 @@ namespace TaskSchedulerApp.BackgroundClasses
         /// </summary>
         public static void StopMonitoring()
         {
-            var logger = new Logger("task_logs.csv");
-            logger.Log("StopMonitoring()", "StopMonitoring() successfully executed.");
             if (_cts != null)
             {
                 _cts.Cancel();

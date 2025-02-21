@@ -35,19 +35,19 @@ class AutoTaskOptions : Menu
         {
             case 0:
                 BasicTaskScheduler.BasicTaskScheduler.Start();
-                BasicTasks.Email(TotalTime);
+                BasicTasks.Email(TotalTime, Priority);
                 break;
             case 1:
                 BasicTaskScheduler.BasicTaskScheduler.Start();
-                BasicTasks.Calculator( TotalTime);
+                BasicTasks.Calculator(TotalTime, Priority);
                 break;
             case 2:
                 BasicTaskScheduler.BasicTaskScheduler.Start();
-                BasicTasks.Browser(TotalTime);
+                BasicTasks.Browser(TotalTime, Priority);
                 break;
             case 3:
 
-                BasicTasks.LockInactive(TotalTime);
+                BasicTasks.LockInactive(TotalTime, Priority);
                 break;
             case 5:
                 KeepGoing = false;

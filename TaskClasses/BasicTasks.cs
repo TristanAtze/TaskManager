@@ -42,8 +42,6 @@ public class BasicTasks
 
     public static void Calculator(double time, int priority = 1)
     {
-        NotificationManager.SendNotification("Create Calc ausgeführt " + time + priority);
-        Console.WriteLine("Test");
         var Calculator = new PreTask("Calculator", () =>
         {
             //notificationManager.SendNotification(GetTranslation(GetCurrentLanguage(), "opencalc_executed_calculator_basictasks"));
@@ -57,7 +55,7 @@ public class BasicTasks
                 MessageBox.Show(GetTranslation(GetCurrentLanguage(), "opencalc_error_executed_calculator_basictasks") + ex.Message);
             }
             NotificationManager.SendNotification("opencalc_executed_calculator_basictasks");
-        }, DateTime.Now.AddSeconds(time), priority);
+        }, DateTime.Now.AddSeconds(5), priority);
 
         TaskScheduler.ScheduleTask(Calculator);
     }

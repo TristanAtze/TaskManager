@@ -63,6 +63,20 @@ public class MainMenu : Menu
     {
         Console.WriteLine(GetTranslation(GetCurrentLanguage(), "headline_printtasks_mainmenu"));
 
+        if(TaskScheduler.NextTask != null)
+        {
+            Console.WriteLine(GetTranslation(GetCurrentLanguage(), "name_printtasks_mainmenu") + TaskScheduler.NextTask.Name);
+            Console.WriteLine(GetTranslation(GetCurrentLanguage(), "priority_printtasks_mainmenu") + TaskScheduler.NextTask.Priority);
+            Console.WriteLine(GetTranslation(GetCurrentLanguage(), "date_printtasks_mainmenu") + TaskScheduler.NextTask.ScheduledTime);
+
+            if (TaskScheduler.NextTask.IsRecurring)
+            {
+                Console.WriteLine(GetTranslation(GetCurrentLanguage(), "interval_printtasks_mainmenu") + " = " + TaskScheduler.NextTask.Interval);
+            }
+
+            Console.WriteLine();
+        }
+
         foreach (var item in TaskScheduler.TaskQueue.TaskList)
         {
             Console.WriteLine(GetTranslation(GetCurrentLanguage(), "name_printtasks_mainmenu") + item.Name);
@@ -72,10 +86,6 @@ public class MainMenu : Menu
             if (item.IsRecurring)
             {
                 Console.WriteLine(GetTranslation(GetCurrentLanguage(), "interval_printtasks_mainmenu") + " = " + item.Interval);
-            }
-            else
-            {
-                Console.WriteLine(GetTranslation(GetCurrentLanguage(), "interval_printtasks_mainmenu"));
             }
 
             Console.WriteLine();

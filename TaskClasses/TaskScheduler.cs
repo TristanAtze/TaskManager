@@ -7,6 +7,8 @@ public static class TaskScheduler
 {
     public static TaskQueue TaskQueue { get; private set; } = new TaskQueue();
 
+    public static MainTask? NextTask { get; set; } = null;
+
     /// <summary>
     /// Fügt in der Warteschlange eine neue Task hinzu.
     /// </summary>
@@ -24,28 +26,28 @@ public static class TaskScheduler
     {
         while (true)
         {
-            var nextTask = TaskQueue.GetNextTask();
-            if (nextTask != null)
+            NextTask = TaskQueue.GetNextTask();
+            if (NextTask != null)
             {
-                var delay = nextTask.ScheduledTime - DateTime.Now;
+                var delay = NextTask.ScheduledTime - DateTime.Now;
                 if (delay.TotalMilliseconds > 0)
                 {
                     Thread.Sleep(delay);
                 }
 
-                if (RequirementsMet(nextTask))
+                if (RequirementsMet(NextTask))
                 {
-                    nextTask.Execute();
+                    NextTask.Execute();
 
-                    if (nextTask.IsRecurring && nextTask.Interval.HasValue)
+                    if (NextTask.IsRecurring && NextTask.Interval.HasValue)
                     {
-                        nextTask.ScheduledTime = DateTime.Now.Add(nextTask.Interval.Value); // Neu planen
-                        ScheduleTask(nextTask); // Wieder hinzufügen
+                        NextTask.ScheduledTime = DateTime.Now.Add(NextTask.Interval.Value); // Neu planen
+                        ScheduleTask(NextTask); // Wieder hinzufügen
                     }
                 }
                 else
                 {
-                    TaskQueue.ThrowTask(nextTask);
+                    TaskQueue.ThrowTask(NextTask);
                 }
             }
         }

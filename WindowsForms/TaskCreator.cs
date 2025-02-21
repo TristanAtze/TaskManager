@@ -53,7 +53,7 @@ public partial class TaskCreator : Form
     /// <summary>
     /// Das Scheduler-Objekt, für das eine neue Task erstellt wird.
     /// </summary>
-    private static TaskScheduler? Scheduler { get; set; }
+    private TaskScheduler Scheduler { get; set; }
 
     /// <summary>
     /// Konstruktor des Task-Erstellers.

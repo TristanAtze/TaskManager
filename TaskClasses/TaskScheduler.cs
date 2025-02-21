@@ -19,7 +19,7 @@ public class TaskScheduler
     /// Startet den Scheduler.
     /// </summary>
     /// <returns>Leerer Task</returns>
-    public async Task Start()
+    public static async Task Start()
     {
         while (true)
         {
@@ -50,7 +50,7 @@ public class TaskScheduler
         }
     }
 
-    bool RequirementsMet(MainTask task)
+    static bool RequirementsMet(MainTask task)
     {
         //bool result = true;
 

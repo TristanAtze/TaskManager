@@ -35,15 +35,15 @@ class AutoTaskOptions : Menu
         {
             case 0:
                 BasicTaskScheduler.BasicTaskScheduler.Start();
-                BasicTasks.Email(Scheduler, TotalTime, Priority);
+                BasicTasks.Email(Scheduler, TotalTime);
                 break;
             case 1:
                 BasicTaskScheduler.BasicTaskScheduler.Start();
-                BasicTasks.Calculator(Scheduler, TotalTime, Priority);
+                BasicTasks.Calculator(Scheduler, TotalTime);
                 break;
             case 2:
                 BasicTaskScheduler.BasicTaskScheduler.Start();
-                BasicTasks.Browser(Scheduler, TotalTime, Priority);
+                BasicTasks.Browser(Scheduler, TotalTime);
                 break;
             case 3:
 
@@ -55,5 +55,10 @@ class AutoTaskOptions : Menu
             default:
                 break;
         }
+    }
+
+    private static double getTime()
+    {
+        return TotalTime;
     }
 }

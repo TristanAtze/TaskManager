@@ -22,8 +22,6 @@ public class LanguageMenu : Menu
             "[ Français ]",
             "[ Italiano ]",
             "[ Español ]",
-            "[ 中文 (Mandarin) ]",
-            "[ हिंदी (Hindi) ]",
             "[ Baschding ]",
             " ",
             GetTranslation(GetCurrentLanguage(), "back_options_settingsmenu")
@@ -51,15 +49,9 @@ public class LanguageMenu : Menu
                 CurrentLanguage = "es";
                 break;
             case 5:
-                CurrentLanguage = "zh";
-                break;
-            case 6:
-                CurrentLanguage = "hi";
-                break;
-            case 7:
                 CurrentLanguage = "bd";
                 break;
-            case 9:
+            case 7:
                 getBack = true;
                 break;
             default:

@@ -52,7 +52,7 @@ public class TaskScheduler
 
     bool RequirementsMet(MainTask task)
     {
-        bool result = true;
+        //bool result = true;
 
         if (task.ConditionCPUUsage && true) { }
         return true;

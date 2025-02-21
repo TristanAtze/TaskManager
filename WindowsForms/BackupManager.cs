@@ -187,7 +187,7 @@ namespace BackupTool
 
         private System.Windows.Forms.Timer plannedTimer;
         private System.Windows.Forms.Timer debounceTimer;
-        private FileSystemWatcher fileWatcher;
+        private FileSystemWatcher fileWatcher { get; set; }
 
         public BackupTask(string source, string destination, string backupType, string automationMethod)
         {

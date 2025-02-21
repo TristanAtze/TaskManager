@@ -160,6 +160,7 @@ namespace TranslationsLibrary
                     {"programmrestarting_restartapp", "Das Programm wird neu gestartet." },
                     {"restart_restartapp", "Neustart" },
                     #endregion
+
                 }
             },
             {

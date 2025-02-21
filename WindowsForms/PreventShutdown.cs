@@ -8,7 +8,7 @@ namespace ShutdownBlocker
     public static class PreventShutdown
     {
         [STAThread]
-        public static void Main()
+        public static async void Start()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

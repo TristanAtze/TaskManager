@@ -66,7 +66,7 @@ class AutoTaskOptions : Menu
         {
             //NUR TEMPORÄR
             Console.WriteLine("Bitte gebe an wie lange es dauern soll bis der Task Ausgeführt wird");
-            string input = Console.ReadLine();
+            string? input = Console.ReadLine();
             double num = Convert.ToDouble(input);
             return num;
         }

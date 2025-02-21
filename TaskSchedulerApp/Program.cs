@@ -3,13 +3,16 @@ using System.Runtime.InteropServices;
 using TaskSchedulerApp.Menus;
 using System.Diagnostics;
 using TaskSchedulerApp.Sonstiges;
+using ShutdownBlocker;
 
 public class Program
 {
     [STAThread]
     public static void Main()
     {
+        NotificationManager.SendNotification("Test");
         Console.CursorVisible = false;
+        Task.Run(PreventShutdown.Start);
         Task.Run(() => PcStatus.StartMonitoring(TimeSpan.FromMinutes(1), TimeSpan.FromMinutes(1), 20.0f, ["test"], "test"));
         var taskScheduler = new TaskScheduler();
 
@@ -17,12 +20,8 @@ public class Program
 
         var mainMenu = new MainMenu(taskScheduler);
         mainMenu.Start();
-    }
 
-    //public static async Task PreventShutdownStart()
-    //{
-    //    System.Windows.Forms.Application.Run(new PreventShutdown());
-    //}
+    }
 }
 
 public static class SystemControl

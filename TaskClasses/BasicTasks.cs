@@ -3,19 +3,20 @@ using System.Windows;
 using TaskSchedulerApp.BackgroundClasses;
 using TaskClasses;
 using static TranslationsLibrary.TranslationManager;
+using System.Windows.Forms;
 public class BasicTasks
 {
     //Time ist hier Tatsächlich die zeit bis zur ausführung (in Sekunden)
     public static void Email(TaskScheduler taskScheduler, double time)
     {
-        var notificationManager = new NotificationManager();
-        var logger = new Logger("task_logs.csv");
+        //var notificationManager = new NotificationManager();
+        //var logger = new Logger("task_logs.csv");
 
         var OpenEmail = new PreTask("OpenMail", () =>
         {
 
-            notificationManager.SendNotification("openmail_executed_mail_basictasks");
-            logger.Log("OpenMail", "Task successfully executed.");
+            //notificationManager.SendNotification("openmail_executed_mail_basictasks");
+            //logger.Log("OpenMail", "Task successfully executed.");
             string email = GetTranslation(GetCurrentLanguage(), "reciever_mail_basictasks");
             string subject = Uri.EscapeDataString(GetTranslation(GetCurrentLanguage(), "subject_mail_basictasks"));
             string body = Uri.EscapeDataString(GetTranslation(GetCurrentLanguage(), "text_mail_basictasks"));
@@ -38,13 +39,13 @@ public class BasicTasks
 
     public static void Calculator(TaskScheduler taskScheduler, double time)
     {
-        var notificationManager = new NotificationManager();
-        var logger = new Logger("task_logs.csv");
+        //var notificationManager = new NotificationManager();
+        //var logger = new Logger("task_logs.csv");
 
         var Calculator = new PreTask("Calculator", () =>
         {
-            notificationManager.SendNotification(GetTranslation(GetCurrentLanguage(), "opencalc_executed_calculator_basictasks"));
-            logger.Log("Calculator", "Task successfully executed.");
+            //notificationManager.SendNotification(GetTranslation(GetCurrentLanguage(), "opencalc_executed_calculator_basictasks"));
+            //logger.Log("Calculator", "Task successfully executed.");
             try
             {
                 Process.Start(new ProcessStartInfo("calc.exe") { UseShellExecute = true });
@@ -61,13 +62,13 @@ public class BasicTasks
 
     public static void Browser(TaskScheduler taskScheduler, double time)
     {
-        var notificationManager = new NotificationManager();
-        var logger = new Logger("task_logs.csv");
+        //var notificationManager = new NotificationManager();
+        //var logger = new Logger("task_logs.csv");
 
         var Browser = new PreTask("Browser", () =>
         {
-            notificationManager.SendNotification(GetTranslation(GetCurrentLanguage(), "openbrowser_executed_browser_basictasks"));
-            logger.Log("Browser", "Task successfully executed.");
+            //notificationManager.SendNotification(GetTranslation(GetCurrentLanguage(), "openbrowser_executed_browser_basictasks"));
+            //logger.Log("Browser", "Task successfully executed.");
             ProcessStartInfo psi = new ProcessStartInfo
             {
                 FileName = "https://www.google.com",
@@ -82,13 +83,13 @@ public class BasicTasks
 
     public static void LockInactive(TaskScheduler taskScheduler)
     {
-        var notificationManager = new NotificationManager();
-        var logger = new Logger("task_logs.csv");
+        //var notificationManager = new NotificationManager();
+        //var logger = new Logger("task_logs.csv");
 
         var LockInactive = new PreTask("LockInactive", () =>
         {
-            notificationManager.SendNotification("LockInactive executed.");
-            logger.Log("LockInactive", "Task successfully executed.");
+            //notificationManager.SendNotification("LockInactive executed.");
+            //logger.Log("LockInactive", "Task successfully executed.");
             Task.Run(async () =>
             {
                 while (true)
@@ -98,9 +99,9 @@ public class BasicTasks
                     bool inactive = PcStatus.IsUserInactive;
                     if (inactive)
                     {
-                        notificationManager.SendNotification("Nutzer inaktiv: PC wird gesperrt.");
-                        logger.Log("LockPC", "Nutzer inaktiv. PC wird sofort gesperrt.");
-                        SystemControl.LockWorkStation();
+                        //notificationManager.SendNotification("Nutzer inaktiv: PC wird gesperrt.");
+                        //logger.Log("LockPC", "Nutzer inaktiv. PC wird sofort gesperrt.");
+                        //SystemControl.LockWorkStation();
                         break; // Nach dem Sperren beenden wir die Überwachungsschleife.
                     }
                     //Überprüfe alle 5 Sekunden erneut

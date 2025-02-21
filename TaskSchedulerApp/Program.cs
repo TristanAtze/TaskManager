@@ -1,6 +1,8 @@
 ﻿using TaskSchedulerApp.BackgroundClasses;
 using System.Runtime.InteropServices;
 using TaskSchedulerApp.Menus;
+using System.Diagnostics;
+using TaskSchedulerApp.Sonstiges;
 
 public class Program
 {

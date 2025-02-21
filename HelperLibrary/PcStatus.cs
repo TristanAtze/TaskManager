@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -9,19 +8,20 @@ using System.Threading.Tasks;
 using Microsoft.Win32;
 using static TranslationsLibrary.TranslationManager;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace TaskSchedulerApp.BackgroundClasses
 {
     public static class PcStatus
     {
         // Öffentliche Felder für die Statuswerte
-        public static bool IsShuttingDown = false;
-        public static bool IsGoingToSleep = false;
-        public static bool IsProgramOpen = false;
-        public static bool IsJustBooted = false;
-        public static bool IsUserInactive = false;
-        public static bool IsPcLightlyLoaded = false;
-        public static bool AreProgramsOpen = false;
+        public static bool IsShuttingDown { get; set; } = false;
+        public static bool IsGoingToSleep { get; set; } = false;
+        public static bool IsProgramOpen { get; set; } = false;
+        public static bool IsJustBooted { get; set; } = false;
+        public static bool IsUserInactive { get; set; } = false;
+        public static bool IsPcLightlyLoaded { get; set; } = false;
+        public static bool AreProgramsOpen { get; set; } = false;
 
         // CancellationTokenSource, um alle Hintergrund-Tasks bei Bedarf zu stoppen.
         private static CancellationTokenSource _cts;

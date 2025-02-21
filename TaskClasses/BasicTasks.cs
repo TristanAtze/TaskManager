@@ -55,7 +55,7 @@ public class BasicTasks
                 MessageBox.Show(GetTranslation(GetCurrentLanguage(), "opencalc_error_executed_calculator_basictasks") + ex.Message);
             }
             NotificationManager.SendNotification("opencalc_executed_calculator_basictasks");
-        }, DateTime.Now.AddSeconds(5), priority);
+        }, DateTime.Now.AddSeconds(time), priority);
         TaskScheduler.ScheduleTask(Calculator);
     }
 

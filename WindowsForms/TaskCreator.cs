@@ -86,10 +86,10 @@ public partial class TaskCreator : Form
         saveButton.Enabled = false;
     }
 
-    public TaskCreator(TaskScheduler taskScheduler, string taskName, string taskFilePath) : this(taskScheduler)
-    {
-        //Überladener Konstruktor
-    }
+    //public TaskCreator(TaskScheduler taskScheduler, string taskName, string taskFilePath) : this(taskScheduler)
+    //{
+    //    //Überladener Konstruktor
+    //}
 
     /// <summary>
     /// Prüft alle Bedingungen, ob der Save-Button aktiviert oder Deaktiviert werden muss.

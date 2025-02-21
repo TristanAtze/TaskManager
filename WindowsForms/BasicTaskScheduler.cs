@@ -93,23 +93,22 @@ namespace BasicTaskScheduler
             {
                 MessageBox.Show("Bitte geben Sie eine gültige Zahl für die Zeit ein.");
             }
-            Application.Exit();
+            Close();
         }
 
         // Wandelt die ausgewählte Priorität in einen int-Wert um.
         // Hier wird angenommen: "Sehr Wichtig" = 1 (höchste Priorität), "Sehr Unwichtig" = 5 (niedrigste Priorität)
         private int GetPriorityFromSelection(string selection)
         {
-
-            if (selection == GetTranslation(GetCurrentLanguage(), "seconds_taskcreator"))
+            if (selection == GetTranslation(GetCurrentLanguage(), "veryimportant_prioritys_taskcreator"))
                 return 1;
-            if (selection == GetTranslation(GetCurrentLanguage(), "minutes_taskcreator"))
+            if (selection == GetTranslation(GetCurrentLanguage(), "important_prioritys_taskcreator"))
                 return 2;
-            if (selection == GetTranslation(GetCurrentLanguage(), "hours_taskcreator"))
+            if (selection == GetTranslation(GetCurrentLanguage(), "normalimportant_prioritys_taskcreator"))
                 return 3;
-            if (selection == GetTranslation(GetCurrentLanguage(), "days_taskcreator"))
+            if (selection == GetTranslation(GetCurrentLanguage(), "lessimportant_prioritys_taskcreator"))
                 return 4;
-            if (selection == GetTranslation(GetCurrentLanguage(), "weeks_taskcreator"))
+            if (selection == GetTranslation(GetCurrentLanguage(), "leastimportant_prioritys_taskcreator"))
                 return 5;
 
             return 3;

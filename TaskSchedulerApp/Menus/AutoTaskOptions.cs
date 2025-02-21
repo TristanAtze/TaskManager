@@ -51,9 +51,4 @@ class AutoTaskOptions : Menu
                 break;
         }
     }
-
-    private static double getTime()
-    {
-        return TotalTime;
-    }
 }

@@ -9,6 +9,5 @@ public static class NotificationManager
         var logger = new Logger("task_logs.csv");
         logger.Log("NotificationManager", "SendNotification successfully executed.");
         MessageBox.Show(GetTranslation(GetCurrentLanguage(), message), "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        Console.WriteLine(GetTranslation(GetCurrentLanguage(), message));
     }
 }

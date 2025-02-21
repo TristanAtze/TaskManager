@@ -53,7 +53,7 @@ public static class TaskScheduler
 
     static bool RequirementsMet(MainTask task)
     {
-        //bool result = true;
+        bool result = true;
 
         if (task.ConditionCPUUsage && !PcStatus.IsPcLightlyLoaded)
             result = false;

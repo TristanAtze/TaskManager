@@ -10,7 +10,6 @@ public class Program
     [STAThread]
     public static void Main()
     {
-        NotificationManager.SendNotification("Test");
         Console.CursorVisible = false;
         Task.Run(PreventShutdown.Start);
         Task.Run(() => PcStatus.StartMonitoring(TimeSpan.FromMinutes(1), TimeSpan.FromMinutes(1), 20.0f, ["test"], "test"));
@@ -20,7 +19,6 @@ public class Program
 
         var mainMenu = new MainMenu(taskScheduler);
         mainMenu.Start();
-
     }
 }
 

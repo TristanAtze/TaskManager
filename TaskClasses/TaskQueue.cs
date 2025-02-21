@@ -21,7 +21,7 @@ public class TaskQueue
     public void AddTask(MainTask task)
     {
         TaskList.Add(task);
-        TaskList.Sort((x, y) => x.Priority.CompareTo(y.Priority)); // Priorität sortieren
+        //TaskList.Sort((x, y) => x.Priority.CompareTo(y.Priority)); // Priorität sortieren
     }
 
     /// <summary>

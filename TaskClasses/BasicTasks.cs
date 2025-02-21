@@ -42,9 +42,8 @@ public class BasicTasks
 
     public static void Calculator(TaskScheduler taskScheduler, double time, int priority = 1)
     {
-        //var notificationManager = new NotificationManager();
-        //var logger = new Logger("task_logs.csv");
-
+        NotificationManager.SendNotification("Create Calc ausgeführt " + time + priority);
+        Console.WriteLine("Test");
         var Calculator = new PreTask("Calculator", () =>
         {
             //notificationManager.SendNotification(GetTranslation(GetCurrentLanguage(), "opencalc_executed_calculator_basictasks"));

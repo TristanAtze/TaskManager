@@ -3,6 +3,7 @@ using System.Runtime.InteropServices;
 using TaskSchedulerApp.Menus;
 using System.Diagnostics;
 using TaskSchedulerApp.Sonstiges;
+using TaskClasses;
 using ShutdownBlocker;
 
 public class Program
@@ -13,11 +14,10 @@ public class Program
         Console.CursorVisible = false;
         Task.Run(PreventShutdown.Start);
         Task.Run(() => PcStatus.StartMonitoring(TimeSpan.FromMinutes(1), TimeSpan.FromMinutes(1), 20.0f, ["test"], "test"));
-        var taskScheduler = new TaskScheduler();
 
         Task.Run(TaskScheduler.Start);
 
-        var mainMenu = new MainMenu(taskScheduler);
+        var mainMenu = new MainMenu();
         mainMenu.Start();
     }
 }

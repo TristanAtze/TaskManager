@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Threading;
 using TaskClasses;
+using TaskSchedulerApp.BackgroundClasses;
 
-public class TaskScheduler
+public static class TaskScheduler
 {
     public static TaskQueue TaskQueue { get; private set; } = new TaskQueue();
 
@@ -34,7 +35,7 @@ public class TaskScheduler
 
                 if (RequirementsMet(nextTask))
                 {
-                    //nextTask.Execute();
+                    nextTask.Execute();
 
                     if (nextTask.IsRecurring && nextTask.Interval.HasValue)
                     {
@@ -54,7 +55,15 @@ public class TaskScheduler
     {
         //bool result = true;
 
-        if (task.ConditionCPUUsage && true) { }
-        return true;
+        if (task.ConditionCPUUsage && !PcStatus.IsPcLightlyLoaded)
+            result = false;
+
+        if (task.ConditionJustBooted && !PcStatus.IsJustBooted)
+            result = false;
+
+        if (task.ConditionShuttingDown && !PcStatus.IsShuttingDown)
+            result = false;
+
+        return result;
     }
 }

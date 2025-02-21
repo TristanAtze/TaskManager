@@ -161,6 +161,9 @@ namespace TranslationsLibrary
                     {"restart_restartapp", "Neustart" },
                     #endregion
 
+                    #region
+                    {"headline_deletetask", "Task entfernen" },
+                    #endregion
                 }
             },
             {
@@ -300,6 +303,10 @@ namespace TranslationsLibrary
                     #region RestartApp
                     { "programmrestarting_restartapp", "The program is restarting." },
                     { "restart_restartapp", "Restart" },
+                    #endregion
+
+                    #region
+                    {"headline_deletetask", "Remove task" },
                     #endregion
                 }
             },
@@ -441,6 +448,10 @@ namespace TranslationsLibrary
                     { "programmrestarting_restartapp", "Le programme redémarre." },
                     { "restart_restartapp", "Redémarrer" },
                     #endregion
+
+                    #region
+                    {"headline_deletetask", "Supprimer une tâche" },
+                    #endregion
                 }
             },
             {
@@ -581,6 +592,10 @@ namespace TranslationsLibrary
                     { "programmrestarting_restartapp", "Il programma si sta riavviando." },
                     { "restart_restartapp", "Riavvia" },
                     #endregion
+
+                    #region
+                    {"headline_deletetask", "Rimuovere attività" },
+                    #endregion
                 }
             },
             {
@@ -720,6 +735,10 @@ namespace TranslationsLibrary
                     #region RestartApp
                     { "programmrestarting_restartapp", "El programa se está reiniciando." },
                     { "restart_restartapp", "Reiniciar" },
+                    #endregion
+
+                    #region
+                    {"headline_deletetask", "Eliminar tarea" },
                     #endregion
                 }
             },

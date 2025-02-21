@@ -168,6 +168,7 @@ namespace FileDialog
             Name = "TaskCreator";
             ShowIcon = false;
             ShowInTaskbar = false;
+            Text = "TaskCreator";
             ResumeLayout(false);
             PerformLayout();
         }

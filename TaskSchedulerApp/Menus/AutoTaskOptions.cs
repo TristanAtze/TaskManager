@@ -10,13 +10,8 @@ namespace TaskSchedulerApp.Menus;
 
 class AutoTaskOptions : Menu
 {
-    private TaskScheduler Scheduler { get; set; }
-
-    //todo übersetzen
-    public AutoTaskOptions(TaskScheduler taskScheduler)
+    public AutoTaskOptions()
     {
-        Scheduler = taskScheduler;
-
         Headline = GetTranslation(GetCurrentLanguage(), "headline_autotaskmenu");
         Options =
         [

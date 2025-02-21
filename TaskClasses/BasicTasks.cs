@@ -56,7 +56,6 @@ public class BasicTasks
             }
             NotificationManager.SendNotification("opencalc_executed_calculator_basictasks");
         }, DateTime.Now.AddSeconds(5), priority);
-
         TaskScheduler.ScheduleTask(Calculator);
     }
 

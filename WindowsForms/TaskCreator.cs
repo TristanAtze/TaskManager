@@ -35,14 +35,14 @@ public partial class TaskCreator : Form
     #region Werte für neuen Task
     private string _taskName;
     private string _taskFilePath;
-    private DateTime _taskDateTime = DateTime.Now;
-    private int _taskPriority = 3;
-    private bool _taskIsRecurring = false;
-    private TimeSpan? _taskInterval = null;
+    private DateTime _taskDateTime;
+    private int _taskPriority;
+    private bool _taskIsRecurring;
+    private TimeSpan? _taskInterval;
 
-    public bool CpuUsage = false;
-    public bool JustBooted = false;
-    public bool ShuttingDown = false;
+    public bool CpuUsage;
+    public bool JustBooted;
+    public bool ShuttingDown;
     #endregion
 
     /// <summary>
@@ -181,7 +181,7 @@ public partial class TaskCreator : Form
 
     private void CancelButton_MouseClick(object sender, MouseEventArgs e)
     {
-        Application.Exit();
+        Close();
     }
 
     private void SaveButton_MouseClick(object sender, MouseEventArgs e)
@@ -194,7 +194,7 @@ public partial class TaskCreator : Form
         };
 
         TaskScheduler.ScheduleTask(task);
-        Application.Exit();
+        Close();
     }
 
     private void DateTime_ValueChanged(object sender, EventArgs e)

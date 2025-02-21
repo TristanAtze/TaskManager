@@ -31,7 +31,7 @@ class CreateTaskMenu : Menu
         switch (ChoiceIndex)
         {
             case 0:
-                TaskCreator creator = new ();
+                TaskCreator creator = new();
                 Application.Run(creator);
                 break;
             case 1:

@@ -24,7 +24,7 @@ namespace TaskSchedulerApp.BackgroundClasses
         public static bool AreProgramsOpen { get; set; } = false;
 
         // CancellationTokenSource, um alle Hintergrund-Tasks bei Bedarf zu stoppen.
-        private static CancellationTokenSource _cts;
+        private static CancellationTokenSource? _cts;
 
         /// <summary>
         /// Startet die asynchrone Überwachung aller relevanten PC-Statuswerte.

@@ -1,12 +1,14 @@
 ﻿using System;
+using System.Windows.Forms;
 using static TranslationsLibrary.TranslationManager;
 
-public class NotificationManager
+public static class NotificationManager
 {
-    public void SendNotification(string message)
+    public static void SendNotification(string message)
     {
         var logger = new Logger("task_logs.csv");
         logger.Log("NotificationManager", "SendNotification successfully executed.");
+        MessageBox.Show(GetTranslation(GetCurrentLanguage(), message), "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         Console.WriteLine(GetTranslation(GetCurrentLanguage(), message));
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TaskClasses;
 using static TranslationsLibrary.TranslationManager;
-
+using static BasicTaskScheduler.BasicTaskScheduler;
 namespace TaskSchedulerApp.Menus;
 
 class AutoTaskOptions : Menu
@@ -29,16 +29,20 @@ class AutoTaskOptions : Menu
         switch (ChoiceIndex)
         {
             case 0:
-                BasicTasks.Email(GetInput());
+                BasicTaskScheduler.BasicTaskScheduler.Start();
+                BasicTasks.Email(TotalTime, Priority);
                 break;
             case 1:
-                BasicTasks.Calculator(GetInput());
+                BasicTaskScheduler.BasicTaskScheduler.Start();
+                BasicTasks.Calculator(TotalTime, Priority);
                 break;
             case 2:
-                BasicTasks.Browser(GetInput());
+                BasicTaskScheduler.BasicTaskScheduler.Start();
+                BasicTasks.Browser(TotalTime, Priority);
                 break;
             case 3:
-                BasicTasks.LockInactive();
+
+                BasicTasks.LockInactive(TotalTime, Priority);
                 break;
             case 5:
                 KeepGoing = false;
@@ -48,25 +52,8 @@ class AutoTaskOptions : Menu
         }
     }
 
-    /// <summary>
-    /// Liest eine Benutzereingabe von der Konsole, die angibt, wie lange es dauern soll, bis der Task ausgeführt wird.
-    /// Die Eingabe wird als Double-Wert zurückgegeben. Falls die Eingabe ungültig ist, wird 0 zurückgegeben.
-    /// <b>Hinweis:</b> Diese Methode ist nur temporär und dient nur zu Demonstrationszwecken.
-    /// </summary>
-    /// <returns>Die eingegebene Zahl als Double-Wert. Im Fehlerfall wird 0 zurückgegeben.</returns>
-    public static double GetInput()
+    private static double getTime()
     {
-        try
-        {
-            //NUR TEMPORÄR
-            Console.WriteLine("Bitte gebe an wie lange es dauern soll bis der Task Ausgeführt wird");
-            string input = Console.ReadLine();
-            double num = Convert.ToDouble(input);
-            return num;
-        }
-        catch
-        {
-            return 0;
-        }
+        return TotalTime;
     }
 }

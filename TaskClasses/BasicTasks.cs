@@ -4,11 +4,12 @@ using TaskSchedulerApp.BackgroundClasses;
 using TaskClasses;
 using static TranslationsLibrary.TranslationManager;
 using System.Windows.Forms;
+
 public class BasicTasks
 {
     //Time ist hier Tatsächlich die zeit bis zur ausführung (in Sekunden)
-    public static void Email(double time)
-{
+    public static void Email(double time, int priority = 1)
+    {
         //var notificationManager = new NotificationManager();
         //var logger = new Logger("task_logs.csv");
 
@@ -26,22 +27,21 @@ public class BasicTasks
             try
             {
                 Process.Start(new ProcessStartInfo(mailto) { UseShellExecute = true });
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(GetTranslation(GetCurrentLanguage(), "openmail_error_executed_mail_basictasks") + ex.Message);
             }
+            NotificationManager.SendNotification("openmail_executed_mail_basictasks");
 
-        }, DateTime.Now.AddSeconds(time), priority: 1);
+        }, DateTime.Now.AddSeconds(time), priority);
 
         TaskScheduler.ScheduleTask(OpenEmail);
     }
 
-    public static void Calculator(double time)
+    public static void Calculator(double time, int priority = 1)
     {
-        //var notificationManager = new NotificationManager();
-        //var logger = new Logger("task_logs.csv");
-
         var Calculator = new PreTask("Calculator", () =>
         {
             //notificationManager.SendNotification(GetTranslation(GetCurrentLanguage(), "opencalc_executed_calculator_basictasks"));
@@ -54,13 +54,12 @@ public class BasicTasks
             {
                 MessageBox.Show(GetTranslation(GetCurrentLanguage(), "opencalc_error_executed_calculator_basictasks") + ex.Message);
             }
-
-        }, DateTime.Now.AddSeconds(time), priority: 1);
-
+            NotificationManager.SendNotification("opencalc_executed_calculator_basictasks");
+        }, DateTime.Now.AddSeconds(5), priority);
         TaskScheduler.ScheduleTask(Calculator);
     }
 
-    public static void Browser(double time)
+    public static void Browser(double time, int priority = 1)
     {
         //var notificationManager = new NotificationManager();
         //var logger = new Logger("task_logs.csv");
@@ -75,13 +74,13 @@ public class BasicTasks
                 UseShellExecute = true
             };
             Process.Start(psi);
-
-        }, DateTime.Now.AddSeconds(time), priority: 1);
+            NotificationManager.SendNotification("openbrowser_executed_browser_basictasks");
+        }, DateTime.Now.AddSeconds(time), priority);
 
         TaskScheduler.ScheduleTask(Browser);
     }
 
-    public static void LockInactive()
+    public static void LockInactive(double time, int priority = 1)
     {
         //var notificationManager = new NotificationManager();
         //var logger = new Logger("task_logs.csv");
@@ -109,7 +108,7 @@ public class BasicTasks
                 }
             });
 
-        }, DateTime.Now.AddSeconds(5), priority: 1);
+        }, DateTime.Now.AddSeconds(time), priority);
         TaskScheduler.ScheduleTask(LockInactive);
     }
 }

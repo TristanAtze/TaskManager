@@ -4,10 +4,11 @@ using TaskSchedulerApp.BackgroundClasses;
 using TaskClasses;
 using static TranslationsLibrary.TranslationManager;
 using System.Windows.Forms;
+
 public class BasicTasks
 {
     //Time ist hier Tatsächlich die zeit bis zur ausführung (in Sekunden)
-    public static void Email(TaskScheduler taskScheduler, double time)
+    public static void Email(TaskScheduler taskScheduler, double time, int priority = 1)
     {
         //var notificationManager = new NotificationManager();
         //var logger = new Logger("task_logs.csv");
@@ -26,18 +27,20 @@ public class BasicTasks
             try
             {
                 Process.Start(new ProcessStartInfo(mailto) { UseShellExecute = true });
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(GetTranslation(GetCurrentLanguage(), "openmail_error_executed_mail_basictasks") + ex.Message);
             }
+            NotificationManager.SendNotification("openmail_executed_mail_basictasks");
 
-        }, DateTime.Now.AddSeconds(time), priority: 1);
+        }, DateTime.Now.AddSeconds(time), priority);
 
         taskScheduler.ScheduleTask(OpenEmail);
     }
 
-    public static void Calculator(TaskScheduler taskScheduler, double time)
+    public static void Calculator(TaskScheduler taskScheduler, double time, int priority = 1)
     {
         //var notificationManager = new NotificationManager();
         //var logger = new Logger("task_logs.csv");
@@ -54,13 +57,13 @@ public class BasicTasks
             {
                 MessageBox.Show(GetTranslation(GetCurrentLanguage(), "opencalc_error_executed_calculator_basictasks") + ex.Message);
             }
-
-        }, DateTime.Now.AddSeconds(time), priority: 1);
+            NotificationManager.SendNotification("opencalc_executed_calculator_basictasks");
+        }, DateTime.Now.AddSeconds(time), priority);
 
         taskScheduler.ScheduleTask(Calculator);
     }
 
-    public static void Browser(TaskScheduler taskScheduler, double time)
+    public static void Browser(TaskScheduler taskScheduler, double time, int priority = 1)
     {
         //var notificationManager = new NotificationManager();
         //var logger = new Logger("task_logs.csv");
@@ -75,8 +78,8 @@ public class BasicTasks
                 UseShellExecute = true
             };
             Process.Start(psi);
-
-        }, DateTime.Now.AddSeconds(time), priority: 1);
+            NotificationManager.SendNotification("openbrowser_executed_browser_basictasks");
+        }, DateTime.Now.AddSeconds(time), priority);
 
         taskScheduler.ScheduleTask(Browser);
     }

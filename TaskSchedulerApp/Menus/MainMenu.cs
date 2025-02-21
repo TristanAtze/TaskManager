@@ -5,6 +5,7 @@ using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TaskSchedulerApp.Sonstiges;
 using static TranslationsLibrary.TranslationManager;
 
 namespace TaskSchedulerApp.Menus;
@@ -18,6 +19,7 @@ public class MainMenu : Menu
         [
             GetTranslation(GetCurrentLanguage(), "newtask_options_mainmenu"),
             GetTranslation(GetCurrentLanguage(), "showtask_options_mainmenu"),
+            $"[ {GetTranslation(GetCurrentLanguage(), "headline_deletetask")} ]",
             " ",
             GetTranslation(GetCurrentLanguage(), "loadpreset_options_mainmenu"),
             GetTranslation(GetCurrentLanguage(), "settings_options_mainmenu"),
@@ -37,14 +39,18 @@ public class MainMenu : Menu
             case 1:
                 PrintTasks();
                 break;
-            case 3:
-                //todo Config laden verknüpfen
+            case 2:
+                var delete = new DeleteTasks();
+                delete.Start();
                 break;
             case 4:
+                //todo Config laden verknüpfen
+                break;
+            case 5:
                 var settings = new SettingsMenu();
                 settings.Start();
                 break;
-            case 6:
+            case 7:
                 KeepGoing = false;
                 break;
             default:

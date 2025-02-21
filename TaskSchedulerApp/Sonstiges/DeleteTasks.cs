@@ -13,6 +13,9 @@ namespace TaskSchedulerApp.Sonstiges
         {
             Headline = GetTranslation(GetCurrentLanguage(), "headline_deletetask");
 
+            if (TaskScheduler.NextTask != null)
+                Options = [.. Options, $"[ {TaskScheduler.NextTask.Name} ]"];
+
             foreach(var item in TaskScheduler.TaskQueue.TaskList)
             {
                 Options = [.. Options, $"[ {item.Name} ]"];
@@ -28,9 +31,12 @@ namespace TaskSchedulerApp.Sonstiges
         {
             if (Options[ChoiceIndex] != GetTranslation(GetCurrentLanguage(), "back_options_settingsmenu"))
             {
-                if(ChoiceIndex < TaskScheduler.TaskQueue.TaskList.Count)
+                if (ChoiceIndex == 0)
+                    TaskScheduler.NextTask = TaskScheduler.TaskQueue.GetNextTask();
+
+                else if(ChoiceIndex - 1 < TaskScheduler.TaskQueue.TaskList.Count)
                 {
-                    TaskScheduler.TaskQueue.TaskList.RemoveAt(ChoiceIndex);
+                    TaskScheduler.TaskQueue.TaskList.RemoveAt(ChoiceIndex - 1);
                 }
             }
 

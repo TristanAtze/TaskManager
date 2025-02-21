@@ -8,7 +8,7 @@ using System.Windows.Forms;
 public class BasicTasks
 {
     //Time ist hier Tatsächlich die zeit bis zur ausführung (in Sekunden)
-    public static void Email(TaskScheduler taskScheduler, double time, int priority = 1)
+    public static void Email(double time, int priority = 1)
     {
         //var notificationManager = new NotificationManager();
         //var logger = new Logger("task_logs.csv");
@@ -37,10 +37,10 @@ public class BasicTasks
 
         }, DateTime.Now.AddSeconds(time), priority);
 
-        taskScheduler.ScheduleTask(OpenEmail);
+        TaskScheduler.ScheduleTask(OpenEmail);
     }
 
-    public static void Calculator(TaskScheduler taskScheduler, double time, int priority = 1)
+    public static void Calculator(double time, int priority = 1)
     {
         NotificationManager.SendNotification("Create Calc ausgeführt " + time + priority);
         Console.WriteLine("Test");
@@ -59,10 +59,10 @@ public class BasicTasks
             NotificationManager.SendNotification("opencalc_executed_calculator_basictasks");
         }, DateTime.Now.AddSeconds(time), priority);
 
-        taskScheduler.ScheduleTask(Calculator);
+        TaskScheduler.ScheduleTask(Calculator);
     }
 
-    public static void Browser(TaskScheduler taskScheduler, double time, int priority = 1)
+    public static void Browser(double time, int priority = 1)
     {
         //var notificationManager = new NotificationManager();
         //var logger = new Logger("task_logs.csv");
@@ -80,10 +80,10 @@ public class BasicTasks
             NotificationManager.SendNotification("openbrowser_executed_browser_basictasks");
         }, DateTime.Now.AddSeconds(time), priority);
 
-        taskScheduler.ScheduleTask(Browser);
+        TaskScheduler.ScheduleTask(Browser);
     }
 
-    public static void LockInactive(TaskScheduler taskScheduler)
+    public static void LockInactive(double time, int priority = 1)
     {
         //var notificationManager = new NotificationManager();
         //var logger = new Logger("task_logs.csv");
@@ -111,7 +111,7 @@ public class BasicTasks
                 }
             });
 
-        }, DateTime.Now.AddSeconds(5), priority: 1);
-        taskScheduler.ScheduleTask(LockInactive);
+        }, DateTime.Now.AddSeconds(time), priority);
+        TaskScheduler.ScheduleTask(LockInactive);
     }
 }

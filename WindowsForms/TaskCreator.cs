@@ -53,7 +53,7 @@ public partial class TaskCreator : Form
     /// <summary>
     /// Das Scheduler-Objekt, für das eine neue Task erstellt wird.
     /// </summary>
-    private TaskScheduler Scheduler { get; set; }
+    private static TaskScheduler? Scheduler { get; set; }
 
     /// <summary>
     /// Konstruktor des Task-Erstellers.
@@ -213,7 +213,7 @@ public partial class TaskCreator : Form
             ConditionShuttingDown = ShuttingDown
         };
 
-        Scheduler.ScheduleTask(task);
+        TaskScheduler.ScheduleTask(task);
         Application.Exit();
     }
 

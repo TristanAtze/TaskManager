@@ -4,13 +4,13 @@ using TaskClasses;
 
 public class TaskScheduler
 {
-    public TaskQueue TaskQueue { get; private set; } = new TaskQueue();
+    public static TaskQueue TaskQueue { get; private set; } = new TaskQueue();
 
     /// <summary>
     /// Fügt in der Warteschlange eine neue Task hinzu.
     /// </summary>
     /// <param name="task">Die neue Task</param>
-    public void ScheduleTask(MainTask task)
+    public static void ScheduleTask(MainTask task)
     {
         TaskQueue.AddTask(task);
     }

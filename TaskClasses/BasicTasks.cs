@@ -7,8 +7,8 @@ using System.Windows.Forms;
 public class BasicTasks
 {
     //Time ist hier Tatsächlich die zeit bis zur ausführung (in Sekunden)
-    public static void Email(TaskScheduler taskScheduler, double time)
-    {
+    public static void Email(double time)
+{
         //var notificationManager = new NotificationManager();
         //var logger = new Logger("task_logs.csv");
 
@@ -34,10 +34,10 @@ public class BasicTasks
 
         }, DateTime.Now.AddSeconds(time), priority: 1);
 
-        taskScheduler.ScheduleTask(OpenEmail);
+        TaskScheduler.ScheduleTask(OpenEmail);
     }
 
-    public static void Calculator(TaskScheduler taskScheduler, double time)
+    public static void Calculator(double time)
     {
         //var notificationManager = new NotificationManager();
         //var logger = new Logger("task_logs.csv");
@@ -57,10 +57,10 @@ public class BasicTasks
 
         }, DateTime.Now.AddSeconds(time), priority: 1);
 
-        taskScheduler.ScheduleTask(Calculator);
+        TaskScheduler.ScheduleTask(Calculator);
     }
 
-    public static void Browser(TaskScheduler taskScheduler, double time)
+    public static void Browser(double time)
     {
         //var notificationManager = new NotificationManager();
         //var logger = new Logger("task_logs.csv");
@@ -78,10 +78,10 @@ public class BasicTasks
 
         }, DateTime.Now.AddSeconds(time), priority: 1);
 
-        taskScheduler.ScheduleTask(Browser);
+        TaskScheduler.ScheduleTask(Browser);
     }
 
-    public static void LockInactive(TaskScheduler taskScheduler)
+    public static void LockInactive()
     {
         //var notificationManager = new NotificationManager();
         //var logger = new Logger("task_logs.csv");
@@ -110,6 +110,6 @@ public class BasicTasks
             });
 
         }, DateTime.Now.AddSeconds(5), priority: 1);
-        taskScheduler.ScheduleTask(LockInactive);
+        TaskScheduler.ScheduleTask(LockInactive);
     }
 }

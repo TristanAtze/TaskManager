@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Threading;
 using TaskClasses;
+using TaskSchedulerApp.BackgroundClasses;
 
-public class TaskScheduler
+public static class TaskScheduler
 {
-    public TaskQueue TaskQueue { get; private set; } = new TaskQueue();
+    public static TaskQueue TaskQueue { get; private set; } = new TaskQueue();
 
     /// <summary>
     /// Fügt in der Warteschlange eine neue Task hinzu.
     /// </summary>
     /// <param name="task">Die neue Task</param>
-    public void ScheduleTask(MainTask task)
+    public static void ScheduleTask(MainTask task)
     {
         TaskQueue.AddTask(task);
     }
@@ -19,7 +20,7 @@ public class TaskScheduler
     /// Startet den Scheduler.
     /// </summary>
     /// <returns>Leerer Task</returns>
-    public async Task Start()
+    public static async Task Start()
     {
         while (true)
         {
@@ -34,7 +35,7 @@ public class TaskScheduler
 
                 if (RequirementsMet(nextTask))
                 {
-                    //nextTask.Execute();
+                    nextTask.Execute();
 
                     if (nextTask.IsRecurring && nextTask.Interval.HasValue)
                     {
@@ -50,11 +51,19 @@ public class TaskScheduler
         }
     }
 
-    bool RequirementsMet(MainTask task)
+    static bool RequirementsMet(MainTask task)
     {
         bool result = true;
 
-        if (task.ConditionCPUUsage && true) { }
-        return true;
+        if (task.ConditionCPUUsage && !PcStatus.IsPcLightlyLoaded)
+            result = false;
+
+        if (task.ConditionJustBooted && !PcStatus.IsJustBooted)
+            result = false;
+
+        if (task.ConditionShuttingDown && !PcStatus.IsShuttingDown)
+            result = false;
+
+        return result;
     }
 }

@@ -10,13 +10,8 @@ namespace TaskSchedulerApp.Menus;
 
 class AutoTaskOptions : Menu
 {
-    private TaskScheduler Scheduler { get; set; }
-
-    //todo übersetzen
-    public AutoTaskOptions(TaskScheduler taskScheduler)
+    public AutoTaskOptions()
     {
-        Scheduler = taskScheduler;
-
         Headline = GetTranslation(GetCurrentLanguage(), "headline_autotaskmenu");
         Options =
         [
@@ -34,17 +29,16 @@ class AutoTaskOptions : Menu
         switch (ChoiceIndex)
         {
             case 0:
-                BasicTasks.Email(Scheduler, GetInput());
+                BasicTasks.Email(GetInput());
                 break;
             case 1:
-                BasicTasks.Calculator(Scheduler, GetInput());
+                BasicTasks.Calculator(GetInput());
                 break;
             case 2:
-                BasicTasks.Browser(Scheduler, GetInput());
+                BasicTasks.Browser(GetInput());
                 break;
             case 3:
-
-                BasicTasks.LockInactive(Scheduler);
+                BasicTasks.LockInactive();
                 break;
             case 5:
                 KeepGoing = false;

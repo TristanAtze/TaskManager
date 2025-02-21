@@ -1,13 +1,8 @@
 ﻿
 using TaskClasses;
-using System.Diagnostics;
 using static TranslationsLibrary.TranslationManager;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace FileDialog;
-
 using System.Windows.Forms;
-
-using System.Xml.Linq;
 using WindowsForms;
 
 public partial class TaskCreator : Form
@@ -51,16 +46,10 @@ public partial class TaskCreator : Form
     #endregion
 
     /// <summary>
-    /// Das Scheduler-Objekt, für das eine neue Task erstellt wird.
-    /// </summary>
-    private TaskScheduler Scheduler { get; set; }
-
-    /// <summary>
     /// Konstruktor des Task-Erstellers.
     /// </summary>
-    public TaskCreator(TaskScheduler taskScheduler)
+    public TaskCreator()
     {
-        Scheduler = taskScheduler;
         InitializeComponent();
 
         MaximumSize = Size;
@@ -93,6 +82,7 @@ public partial class TaskCreator : Form
         _taskName = "";
         _taskFilePath = "";
         _taskDateTime = date.Value;
+        
         saveButton.Enabled = false;
     }
 
@@ -196,19 +186,14 @@ public partial class TaskCreator : Form
 
     private void SaveButton_MouseClick(object sender, MouseEventArgs e)
     {
-        var task = new OwnTask(_taskName,
-            _taskFilePath,
-            _taskDateTime,
-            _taskPriority,
-            _taskIsRecurring,
-            _taskInterval)
+        OwnTask task = new OwnTask(_taskName, _taskFilePath, _taskDateTime, _taskPriority, _taskIsRecurring, _taskInterval)
         {
             ConditionCPUUsage = CpuUsage,
             ConditionJustBooted = JustBooted,
             ConditionShuttingDown = ShuttingDown
         };
 
-        Scheduler.ScheduleTask(task);
+        TaskScheduler.ScheduleTask(task);
         Application.Exit();
     }
 
@@ -252,7 +237,7 @@ public partial class TaskCreator : Form
 
     private void Conditions_MouseClick(object sender, MouseEventArgs e)
     {
-        ConditionManager manager = new(this, Scheduler);
+        ConditionManager manager = new(this);
 
         manager.ShowDialog();
     }

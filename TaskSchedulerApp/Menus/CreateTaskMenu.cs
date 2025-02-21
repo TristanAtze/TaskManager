@@ -13,12 +13,8 @@ namespace TaskSchedulerApp.Menus;
 
 class CreateTaskMenu : Menu
 {
-    private TaskScheduler Scheduler { get; set; }
-
-    public CreateTaskMenu(TaskScheduler taskScheduler)
+    public CreateTaskMenu()
     {
-        Scheduler = taskScheduler;
-
         Headline = GetTranslation(GetCurrentLanguage(), "headline_createtaskmenu");
         Options =
         [
@@ -35,16 +31,16 @@ class CreateTaskMenu : Menu
         switch (ChoiceIndex)
         {
             case 0:
-                var creator = new TaskCreator(Scheduler);
-                System.Windows.Forms.Application.Run(creator);
+                TaskCreator creator = new ();
+                Application.Run(creator);
                 break;
             case 1:
-                var autoCreator = new AutoTaskOptions(Scheduler);
+                var autoCreator = new AutoTaskOptions();
                 autoCreator.Start();
                 break;
             case 2:
                 var backupTask = new Form1();
-                System.Windows.Forms.Application.Run(backupTask);
+                Application.Run(backupTask);
                 break;
             case 4:
                 KeepGoing = false;

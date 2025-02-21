@@ -14,16 +14,14 @@ namespace WindowsForms
 {
     public partial class ConditionManager : Form
     {
-        private TaskScheduler Scheduler { get; set; }
         private TaskCreator Creator { get; set; }
 
         private bool _cpuUsage;
         private bool _justBooted;
         private bool _shuttingDown;
 
-        public ConditionManager(TaskCreator creator, TaskScheduler taskScheduler)
+        public ConditionManager(TaskCreator creator)
         {
-            Scheduler = taskScheduler;
             Creator = creator;
 
             InitializeComponent();

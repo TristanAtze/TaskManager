@@ -11,12 +11,8 @@ namespace TaskSchedulerApp.Menus;
 
 public class MainMenu : Menu
 {
-    private TaskScheduler Scheduler { get; set; }
-
-    public MainMenu(TaskScheduler taskScheduler)
+    public MainMenu()
     {
-        Scheduler = taskScheduler;
-
         Headline = GetTranslation(GetCurrentLanguage(), "headline_mainmenu");
         Options =
         [
@@ -35,7 +31,7 @@ public class MainMenu : Menu
         switch (ChoiceIndex)
         {
             case 0:
-                var createTask = new CreateTaskMenu(Scheduler);
+                var createTask = new CreateTaskMenu();
                 createTask.Start();
                 break;
             case 1:
@@ -61,7 +57,7 @@ public class MainMenu : Menu
     {
         Console.WriteLine(GetTranslation(GetCurrentLanguage(), "headline_printtasks_mainmenu"));
 
-        foreach (var item in Scheduler.TaskQueue.TaskList)
+        foreach (var item in TaskScheduler.TaskQueue.TaskList)
         {
             Console.WriteLine(GetTranslation(GetCurrentLanguage(), "name_printtasks_mainmenu") + item.Name);
             Console.WriteLine(GetTranslation(GetCurrentLanguage(), "priority_printtasks_mainmenu") + item.Priority);

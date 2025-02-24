@@ -13,4 +13,8 @@
     <ProjectReference Include="..\TaskClasses\TaskClasses.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="TaskPresetCreator.cs" />
+  </ItemGroup>
+
 </Project>

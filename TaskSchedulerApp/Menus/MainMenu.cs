@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing.Printing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using TaskSchedulerApp.Sonstiges;
@@ -13,7 +14,7 @@ namespace TaskSchedulerApp.Menus;
 public class MainMenu : Menu
 {
     public MainMenu()
-    {
+    {    
         Headline = GetTranslation(GetCurrentLanguage(), "headline_mainmenu");
         Options =
         [

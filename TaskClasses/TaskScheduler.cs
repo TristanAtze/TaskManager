@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using System.Threading;
 using TaskClasses;
 using TaskSchedulerApp.BackgroundClasses;
@@ -24,6 +25,7 @@ public static class TaskScheduler
     /// <returns>Leerer Task</returns>
     public static async Task Start()
     {
+
         while (true)
         {
             NextTask = TaskQueue.GetNextTask();

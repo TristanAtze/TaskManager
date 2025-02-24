@@ -2,14 +2,11 @@
 using TaskClasses;
 using static TranslationsLibrary.TranslationManager;
 namespace FileDialog;
-
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using WindowsForms;
 
-public partial class TaskCreator : Form
+public partial class TaskPresetCreator : TaskCreator
 {
-    private static int? CheckNum { get; set; }
     /// <summary>
     /// Array mit allen möglichen Prioritäten, die zur Auswahl stehen.
     /// </summary>
@@ -51,7 +48,7 @@ public partial class TaskCreator : Form
     /// <summary>
     /// Konstruktor des Task-Erstellers.
     /// </summary>
-    public TaskCreator()
+    public TaskPresetCreator()
     {
         InitializeComponent();
 
@@ -87,14 +84,6 @@ public partial class TaskCreator : Form
         _taskDateTime = date.Value;
         
         saveButton.Enabled = false;
-    }
-
-    public static void StartTaskCreator(int checkNum = 0)
-    {
-        CheckNum = checkNum;
-        TaskCreator creator = new();
-        Application.Run(creator);
-
     }
 
     //public TaskCreator(TaskScheduler taskScheduler, string taskName, string taskFilePath) : this(taskScheduler)
@@ -209,20 +198,8 @@ public partial class TaskCreator : Form
             ConditionShuttingDown = ShuttingDown
         };
 
-        if (CheckNum == 1)
-        {
-           ReturnValue(task);
-        }   
-        else
-            TaskScheduler.ScheduleTask(task);
+        TaskScheduler.ScheduleTask(task);
         Close();
-    }
-
-
-
-    public static MainTask ReturnValue(MainTask task) 
-    {
-        return task;
     }
 
     private void DateTime_ValueChanged(object sender, EventArgs e)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FileDialog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,7 +27,7 @@ public class SettingsMenu : Menu
         switch (ChoiceIndex)
         {
             case 0:
-                //todo Config ändern verknüpfen
+                TaskCreator.StartTaskCreator(1);
                 break;
             case 1:
                 var settings = new LanguageMenu();

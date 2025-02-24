@@ -35,6 +35,8 @@ namespace WindowsForms
             MaximumSize = Size;
         }
 
+
+
         private void Save_MouseClick(object sender, MouseEventArgs e)
         {
             Creator.CpuUsage = _cpuUsage;

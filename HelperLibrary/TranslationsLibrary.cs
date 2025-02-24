@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text.Json;
-
-namespace HelperLibrary
+﻿namespace HelperLibrary
 {
     public static class TranslationManager
     {

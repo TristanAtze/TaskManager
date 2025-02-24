@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Windows.Forms;
-using static HelperLibrary.TranslationManager;
+﻿using static HelperLibrary.TranslationManager;
 
 namespace BackupTool
 {
@@ -231,7 +227,7 @@ namespace BackupTool
 
         private void OnFileChanged(object sender, FileSystemEventArgs e)
         {
-            if(debounceTimer != null)
+            if (debounceTimer != null)
             {
                 debounceTimer.Stop();
                 debounceTimer.Start();

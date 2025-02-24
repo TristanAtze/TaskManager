@@ -1,8 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Diagnostics;
 using static HelperLibrary.TranslationManager;
 
 namespace RestartApp
@@ -16,7 +12,7 @@ namespace RestartApp
 
         private async void MainForm_Load(object? sender, EventArgs e)
         {
-            string processName = "TaskSchedulerApp"; 
+            string processName = "TaskSchedulerApp";
 
             // 1️ Beende alle laufenden Instanzen des Programms
             KillProcess(processName);

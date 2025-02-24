@@ -1,7 +1,4 @@
-using System;
-using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using System.Runtime.CompilerServices;
 using static HelperLibrary.TranslationManager;
 
 namespace ShutdownBlocker
@@ -11,7 +8,7 @@ namespace ShutdownBlocker
         [STAThread]
         public static async void Start()
         {
-            
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new HiddenForm());

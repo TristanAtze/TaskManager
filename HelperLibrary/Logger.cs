@@ -1,13 +1,16 @@
-﻿using System;
-using System.IO;
-using System.Runtime.CompilerServices;
-using System.Windows.Forms;
-using static HelperLibrary.TranslationManager;
+﻿using System.Runtime.CompilerServices;
 
 namespace HelperLibrary;
 
 public static class Logger
 {
+    private static List<string> logs = [];
+
+    static Logger()
+    {
+        Task.Run(() => ExecuteLog());
+    }
+
     public static void LogFileCreate(string logFilePath = "task_logs.csv")
     {
         if (!File.Exists(logFilePath))
@@ -21,17 +24,38 @@ public static class Logger
 
     public static void Log(string message, [CallerMemberName] string memberName = "", string logFilePath = "task_logs.csv")
     {
+        if (logFilePath is null)
+        {
+            throw new ArgumentNullException(nameof(logFilePath));
+        }
+
         try
         {
             string logEntry = $"{DateTime.Now},{memberName},{message}";
-
-            using var writer = new StreamWriter(logFilePath, append: true);
-            writer.WriteLine(logEntry);
-            writer.Close();
+            logs.Add(logEntry);
         }
         catch
         {
             Environment.Exit(0);
         }
     }
+
+    private static async Task ExecuteLog(string logFilePath = "task_logs.csv")
+    {
+        using var writer = new StreamWriter(logFilePath, append: true);
+
+        while (true)
+        {
+            if (logs.Count != 0)
+            {
+                foreach (var e in logs)
+                {
+                    writer.WriteLine(e);
+                    logs.Remove(e);
+                }
+            }
+            Thread.Sleep(2000);
+        }
+    }
 }
+

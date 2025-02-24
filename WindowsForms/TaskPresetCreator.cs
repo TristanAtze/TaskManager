@@ -40,9 +40,9 @@ public partial class TaskPresetCreator : TaskCreator
     private bool _taskIsRecurring;
     private TimeSpan? _taskInterval;
 
-    new public bool CpuUsage;
-    new public bool JustBooted;
-    new public bool ShuttingDown;
+    public new bool CpuUsage;
+    public new bool JustBooted;
+    public new bool ShuttingDown;
     #endregion
 
     /// <summary>
@@ -82,7 +82,7 @@ public partial class TaskPresetCreator : TaskCreator
         _taskName = "";
         _taskFilePath = "";
         _taskDateTime = date.Value;
-        
+
         saveButton.Enabled = false;
     }
 

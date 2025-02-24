@@ -2,7 +2,6 @@
 using static HelperLibrary.TranslationManager;
 namespace FileDialog;
 
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using WindowsForms;
 
@@ -84,7 +83,7 @@ public partial class TaskCreator : Form
         _taskName = "";
         _taskFilePath = "";
         _taskDateTime = date.Value;
-        
+
         saveButton.Enabled = false;
     }
 
@@ -210,17 +209,17 @@ public partial class TaskCreator : Form
 
         if (CheckNum == 1)
         {
-           ReturnValue(task);
-        }   
+            ReturnValue(task);
+        }
         else
             TaskScheduler.ScheduleTask(task);
-            
+
         Close();
     }
 
 
 
-    public static MainTask ReturnValue(MainTask task) 
+    public static MainTask ReturnValue(MainTask task)
     {
         return task;
     }
@@ -246,7 +245,7 @@ public partial class TaskCreator : Form
             int interval = 0;
             string? selectedItem = units.SelectedItem.ToString();
 
-            if(selectedItem != null)
+            if (selectedItem != null)
             {
                 interval = value * _units[selectedItem];
             }

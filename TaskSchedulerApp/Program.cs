@@ -1,12 +1,9 @@
-﻿using TaskSchedulerApp.BackgroundClasses;
-using System.Runtime.InteropServices;
-using TaskSchedulerApp.Menus;
-using System.Diagnostics;
-using TaskSchedulerApp.Sonstiges;
-using TaskClasses;
+﻿using HelperLibrary;
 using ShutdownBlocker;
-using System.Runtime.CompilerServices;
-using HelperLibrary;
+using System.Runtime.InteropServices;
+using TaskClasses;
+using TaskSchedulerApp.BackgroundClasses;
+using TaskSchedulerApp.Menus;
 
 public class Program
 {
@@ -23,9 +20,9 @@ public class Program
 
 
         List<MainTask>? plannedTasks = Config.GetSettings()?.PlannedTasks;
-        if(plannedTasks != null)
+        if (plannedTasks != null)
         {
-            foreach(var item in plannedTasks)
+            foreach (var item in plannedTasks)
             {
                 TaskScheduler.ScheduleTask(item);
             }
@@ -39,11 +36,11 @@ public class Program
         var mainMenu = new MainMenu();
         mainMenu.Start();
 
-        
+
     }
 }
 
-public static class SystemControl
+public static partial class SystemControl
 {
     [DllImport("user32.dll", SetLastError = true)]
     public static extern bool LockWorkStation();

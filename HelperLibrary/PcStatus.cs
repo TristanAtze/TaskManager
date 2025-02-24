@@ -1,15 +1,7 @@
-﻿using System;
-using System.ComponentModel;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using HelperLibrary;
 using Microsoft.Win32;
-using static HelperLibrary.TranslationManager;
-using System.Windows.Forms;
 using System.Diagnostics;
-using HelperLibrary;
+using System.Runtime.InteropServices;
 
 namespace TaskSchedulerApp.BackgroundClasses
 {
@@ -56,7 +48,7 @@ namespace TaskSchedulerApp.BackgroundClasses
                     IsJustBooted = uptimeMilliseconds < bootThreshold.TotalMilliseconds;
                     await Task.Delay(1000, token);
                 }
-                
+
             }, token);
 
             _ = Task.Run(async () =>
@@ -217,7 +209,7 @@ namespace TaskSchedulerApp.BackgroundClasses
                     IsGoingToSleep = false;
                 }
             }
-            
+
         }
 
         #endregion

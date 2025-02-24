@@ -1,7 +1,4 @@
-﻿using System;
-using System.Runtime.CompilerServices;
-using System.Threading;
-using TaskClasses;
+﻿using TaskClasses;
 using TaskSchedulerApp.BackgroundClasses;
 
 public static class TaskScheduler
@@ -33,17 +30,17 @@ public static class TaskScheduler
                 var delay = NextTask.ScheduledTime - DateTime.Now;
                 if (delay.TotalMilliseconds > 0)
                 {
-                    await Task.Delay(delay); 
+                    await Task.Delay(delay);
                 }
 
                 if (RequirementsMet(NextTask))
                 {
-                    await Task.Run(() => NextTask.Execute()); 
+                    await Task.Run(() => NextTask.Execute());
 
                     if (NextTask.IsRecurring && NextTask.Interval.HasValue)
                     {
                         NextTask.ScheduledTime = DateTime.Now.Add(NextTask.Interval.Value);
-                        ScheduleTask(NextTask); 
+                        ScheduleTask(NextTask);
                     }
                 }
                 else
@@ -53,13 +50,13 @@ public static class TaskScheduler
             }
             else
             {
-                await Task.Delay(1000); 
+                await Task.Delay(1000);
             }
         }
     }
 
 
-    static bool RequirementsMet(MainTask task)
+    private static bool RequirementsMet(MainTask task)
     {
         bool result = true;
 

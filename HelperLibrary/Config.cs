@@ -54,16 +54,19 @@ namespace TaskSchedulerApp.TaskClasses
                 settings = new();
             }
 
-            settings.TimeStamp = DateTime.Now;
+            if (settings != null)
+            {
+                settings.TimeStamp = DateTime.Now;
 
-            if (language != null)
-                settings.Language = language;
-            if (consoleColor != null)
-                settings.ConsoleColorStr = (ConsoleColor)consoleColor;
-            if (presets != null)
-                settings.Presets = presets;
-            if (plannedTasks != null)
-                settings.PlannedTasks = plannedTasks;
+                if (language != null)
+                    settings.Language = language;
+                if (consoleColor != null)
+                    settings.ConsoleColorStr = (ConsoleColor)consoleColor;
+                if (presets != null)
+                    settings.Presets = presets;
+                if (plannedTasks != null)
+                    settings.PlannedTasks = plannedTasks;
+            }
 
             if (!File.Exists("settings.json"))
             {

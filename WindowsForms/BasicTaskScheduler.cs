@@ -1,7 +1,7 @@
 ﻿
 using TaskClasses;
 using System.Diagnostics;
-using static TranslationsLibrary.TranslationManager;
+using static HelperLibrary.TranslationManager;
 
 using System;
 using System.Windows.Forms;

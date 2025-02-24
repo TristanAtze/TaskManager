@@ -1,6 +1,6 @@
 ﻿using System;
 using System.IO;
-using static TranslationsLibrary.TranslationManager;
+using static HelperLibrary.TranslationManager;
 public class Logger
 {
     private readonly string _logFilePath;

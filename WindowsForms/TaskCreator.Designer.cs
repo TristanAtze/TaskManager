@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 using System.Drawing;
-using static TranslationsLibrary.TranslationManager;
+using static HelperLibrary.TranslationManager;
 
 namespace FileDialog
 {
@@ -168,7 +168,6 @@ namespace FileDialog
             Name = "TaskCreator";
             ShowIcon = false;
             ShowInTaskbar = false;
-            Text = "TaskCreator";
             ResumeLayout(false);
             PerformLayout();
         }

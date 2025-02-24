@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using static TranslationsLibrary.TranslationManager;
+using static HelperLibrary.TranslationManager;
 
 public static class NotificationManager
 {

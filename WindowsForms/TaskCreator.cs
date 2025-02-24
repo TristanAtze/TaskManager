@@ -196,7 +196,7 @@ public partial class TaskCreator : Form
             ConditionJustBooted = JustBooted,
             ConditionShuttingDown = ShuttingDown
         };
-
+        
         TaskScheduler.ScheduleTask(task);
         Close();
     }

@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TaskSchedulerApp.TaskClasses;
+
 //using static System.Net.Mime.MediaTypeNames;
 using static HelperLibrary.TranslationManager;
 
@@ -58,7 +60,7 @@ public class LanguageMenu : Menu
                 break;
         }
         KeepGoing = false;
-        SaveSettings();
+        Config.SaveSettings(CurrentLanguage);
 
         if (!getBack)
             DoRestart();

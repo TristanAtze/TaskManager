@@ -9,7 +9,7 @@ namespace TaskClasses
     /// <summary>
     /// Überklasse für alle Tasks. Individuelle wie vorgefertigte.
     /// </summary>
-    public abstract class MainTask
+    public class MainTask
     {
         /// <summary>
         /// Name der Task.
@@ -55,6 +55,6 @@ namespace TaskClasses
         /// <summary>
         /// Die spezifische Art und Weise, wie eine Task ausgeführt werden soll
         /// </summary>
-        public abstract void Execute();
+        public virtual void Execute() { }
     }
 }

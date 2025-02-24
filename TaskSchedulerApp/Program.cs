@@ -5,6 +5,7 @@ using System.Diagnostics;
 using TaskSchedulerApp.Sonstiges;
 using TaskClasses;
 using ShutdownBlocker;
+using TaskSchedulerApp.TaskClasses;
 
 public class Program
 {
@@ -12,6 +13,23 @@ public class Program
     public static void Main()
     {
         Console.CursorVisible = false;
+
+        //ConsoleColor? color = Config.GetSettings()?.ConsoleColorStr;
+        //if (color != null)
+        //    Console.ForegroundColor = (ConsoleColor)color;
+        //else
+        //    Console.ForegroundColor = ConsoleColor.White;
+
+
+        List<MainTask>? plannedTasks = Config.GetSettings()?.PlannedTasks;
+        if(plannedTasks != null)
+        {
+            foreach(var item in plannedTasks)
+            {
+                TaskScheduler.ScheduleTask(item);
+            }
+        }
+
         Task.Run(PreventShutdown.Start);
         Task.Run(() => PcStatus.StartMonitoring(TimeSpan.FromMinutes(1), TimeSpan.FromMinutes(1), 20.0f, ["test"], "test"));
 

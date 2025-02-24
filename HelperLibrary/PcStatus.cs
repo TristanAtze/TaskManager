@@ -97,13 +97,16 @@ namespace TaskSchedulerApp.BackgroundClasses
                 {
                     try
                     {
-                        using (PerformanceCounter cpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total"))
+                        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
                         {
-                            // Initialer Aufruf liefert oft 0, daher kurzes Warten
-                            cpuCounter.NextValue();
-                            await Task.Delay(1000, token);
-                            float currentCpuUsage = cpuCounter.NextValue();
-                            IsPcLightlyLoaded = currentCpuUsage < cpuUsageThreshold;
+                            using (PerformanceCounter cpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total"))
+                            {
+                                // Initialer Aufruf liefert oft 0, daher kurzes Warten
+                                cpuCounter.NextValue();
+                                await Task.Delay(1000, token);
+                                float currentCpuUsage = cpuCounter.NextValue();
+                                IsPcLightlyLoaded = currentCpuUsage < cpuUsageThreshold;
+                            }
                         }
                     }
                     catch (Exception ex)
@@ -179,7 +182,10 @@ namespace TaskSchedulerApp.BackgroundClasses
         /// </summary>
         public static void OnSessionEnding(object sender, SessionEndingEventArgs e)
         {
-            e.Cancel = true;
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                e.Cancel = true;
+            }
             IsShuttingDown = true;
         }
 
@@ -188,14 +194,18 @@ namespace TaskSchedulerApp.BackgroundClasses
         /// </summary>
         public static void OnPowerModeChanged(object sender, PowerModeChangedEventArgs e)
         {
-            if (e.Mode == PowerModes.Suspend)
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
-                IsGoingToSleep = true;
+                if (e.Mode == PowerModes.Suspend)
+                {
+                    IsGoingToSleep = true;
+                }
+                else if (e.Mode == PowerModes.Resume)
+                {
+                    IsGoingToSleep = false;
+                }
             }
-            else if (e.Mode == PowerModes.Resume)
-            {
-                IsGoingToSleep = false;
-            }
+            
         }
 
         #endregion

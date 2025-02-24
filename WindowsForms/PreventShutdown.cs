@@ -15,6 +15,8 @@ namespace ShutdownBlocker
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new HiddenForm());
+
+            await Task.Delay(200);
         }
     }
 
@@ -39,12 +41,12 @@ namespace ShutdownBlocker
             this.Shown += HiddenForm_Shown;
         }
 
-        private void HiddenForm_Load(object sender, EventArgs e)
+        private void HiddenForm_Load(object? sender, EventArgs e)
         {
             this.Hide();
         }
 
-        private void HiddenForm_Shown(object sender, EventArgs e)
+        private void HiddenForm_Shown(object? sender, EventArgs e)
         {
             ShutdownBlockReasonCreate(this.Handle, GetTranslation(GetCurrentLanguage(), "shutdown_prevented_preventshutdown"));
         }

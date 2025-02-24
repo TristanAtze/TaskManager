@@ -9,10 +9,11 @@ namespace TaskSchedulerApp.Sonstiges;
 
 public static class AsyncMethods
 {
-    public static void StartAsyncStatusTasks()
+    public static async Task StartAsyncStatusTasks()
     {
-        Task.Run(async () => PcStatus.StartMonitoring(TimeSpan.FromHours(10), TimeSpan.FromSeconds(5), 100.0f, ["Test"], "Test"));
-        Task.Run(async () =>
+        var startMonitorung = Task.Run(() => PcStatus.StartMonitoring(TimeSpan.FromHours(10), TimeSpan.FromSeconds(5), 100.0f, ["Test"], "Test"));
+
+        _ = Task.Run(async () =>
         {
             while (true)
             {
@@ -33,7 +34,10 @@ public static class AsyncMethods
                     string settings = "Bixt.txt";
                     File.WriteAllText(settingsFilePath, settings);
                 }
+                await Task.Delay(200);
             }
+
         });
+        await startMonitorung;
     }
 }

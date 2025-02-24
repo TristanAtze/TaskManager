@@ -24,7 +24,7 @@ namespace TaskClasses
         /// <summary>
         /// Priorität der Task.
         /// </summary>
-        public int Priority { get; set; } // 1 = high, 5 = low
+        public int? Priority { get; set; } // 1 = high, 5 = low
 
         /// <summary>
         /// Wahrheitswert, ob sich die Task wiederholen soll.

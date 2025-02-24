@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 
@@ -21,9 +22,13 @@ public class TaskQueue
     public void AddTask(MainTask task)
     {
         TaskList.Add(task);
-        TaskList.Sort((x, y) => x.Priority.CompareTo(y.Priority)); // Priorität sortieren
+        TaskList.Sort((x, y) => {
+            var xNotNull = x.Priority ?? int.MinValue;
+            var yNotNull = y.Priority ?? int.MinValue;
+            return xNotNull.CompareTo(yNotNull);
+        }); // Priorität sortieren
     }
-
+    
     /// <summary>
     /// Gibt die nächste ausstehende Task der Liste zurück.
     /// </summary>

@@ -25,7 +25,6 @@ public static class TaskScheduler
     /// <returns>Leerer Task</returns>
     public static async Task Start()
     {
-
         while (true)
         {
             NextTask = TaskQueue.GetNextTask();
@@ -34,17 +33,17 @@ public static class TaskScheduler
                 var delay = NextTask.ScheduledTime - DateTime.Now;
                 if (delay.TotalMilliseconds > 0)
                 {
-                    Thread.Sleep(delay);
+                    await Task.Delay(delay); 
                 }
 
                 if (RequirementsMet(NextTask))
                 {
-                    NextTask.Execute();
+                    await Task.Run(() => NextTask.Execute()); 
 
                     if (NextTask.IsRecurring && NextTask.Interval.HasValue)
                     {
-                        NextTask.ScheduledTime = DateTime.Now.Add(NextTask.Interval.Value); // Neu planen
-                        ScheduleTask(NextTask); // Wieder hinzufügen
+                        NextTask.ScheduledTime = DateTime.Now.Add(NextTask.Interval.Value);
+                        ScheduleTask(NextTask); 
                     }
                 }
                 else
@@ -52,8 +51,13 @@ public static class TaskScheduler
                     TaskQueue.ThrowTask(NextTask);
                 }
             }
+            else
+            {
+                await Task.Delay(1000); 
+            }
         }
     }
+
 
     static bool RequirementsMet(MainTask task)
     {

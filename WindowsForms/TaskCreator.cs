@@ -242,9 +242,15 @@ public partial class TaskCreator : Form
     {
         if (units.SelectedItem != null && int.TryParse(interval.Text, out int value))
         {
-            int interval = value * _units[units.SelectedItem.ToString()];
+            int interval = 0;
+            string? selectedItem = units.SelectedItem.ToString();
 
-            _taskInterval = new TimeSpan(interval * 1000000000);
+            if(selectedItem != null)
+            {
+                interval = value * _units[selectedItem];
+            }
+
+            _taskInterval = new TimeSpan((int)(interval * 1000000000));
         }
 
         UpdateSaveButton();
@@ -254,9 +260,15 @@ public partial class TaskCreator : Form
     {
         if (units.SelectedItem != null && int.TryParse(interval.Text, out int value))
         {
-            int interval = value * _units[units.SelectedItem.ToString()];
+            int interval = 0;
+            string? selectedItem = units.SelectedItem.ToString();
 
-            _taskInterval = new TimeSpan(interval * 1000000000);
+            if (selectedItem != null)
+            {
+                interval = value * _units[selectedItem];
+            }
+
+            _taskInterval = new TimeSpan((int)(interval * 1000000000));
         }
 
         UpdateSaveButton();

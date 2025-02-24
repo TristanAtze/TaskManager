@@ -83,7 +83,7 @@ namespace BackupTool
         private void UpdateTaskListView()
         {
             listViewActiveTasks.Items.Clear();
-            foreach (var task in backupTasks)
+            foreach (BackupTask? task in backupTasks)
             {
                 if (task.IsActive)
                 {
@@ -178,16 +178,16 @@ namespace BackupTool
     /// </summary>
     public class BackupTask
     {
-        public Guid TaskId { get; private set; }
-        public string SourceFolder { get; private set; }
-        public string DestinationFolder { get; private set; }
-        public string BackupType { get; private set; }
-        public string AutomationMethod { get; private set; }
+        public Guid? TaskId { get; private set; }
+        public string? SourceFolder { get; private set; }
+        public string? DestinationFolder { get; private set; }
+        public string? BackupType { get; private set; }
+        public string? AutomationMethod { get; private set; }
         public bool IsActive { get; private set; } = false;
 
-        private System.Windows.Forms.Timer plannedTimer;
-        private System.Windows.Forms.Timer debounceTimer;
-        private FileSystemWatcher fileWatcher { get; set; }
+        private System.Windows.Forms.Timer? plannedTimer;
+        private System.Windows.Forms.Timer? debounceTimer;
+        private FileSystemWatcher? fileWatcher { get; set; }
 
         public BackupTask(string source, string destination, string backupType, string automationMethod)
         {
@@ -196,6 +196,8 @@ namespace BackupTool
             DestinationFolder = destination;
             BackupType = backupType;
             AutomationMethod = automationMethod;
+
+            debounceTimer = new System.Windows.Forms.Timer();
         }
 
         /// <summary>
@@ -229,8 +231,11 @@ namespace BackupTool
 
         private void OnFileChanged(object sender, FileSystemEventArgs e)
         {
-            debounceTimer.Stop();
-            debounceTimer.Start();
+            if(debounceTimer != null)
+            {
+                debounceTimer.Stop();
+                debounceTimer.Start();
+            }
         }
 
         /// <summary>
@@ -281,20 +286,20 @@ namespace BackupTool
     {
         private static string markerFileName = "fullBackupMarker.txt";
 
-        public static void PerformBackup(string sourceFolder, string destinationFolder, string backupType)
+        public static void PerformBackup(string? sourceFolder, string? destinationFolder, string? backupType)
         {
             if (!Directory.Exists(sourceFolder))
                 throw new Exception("Quellordner existiert nicht.");
-            if (!Directory.Exists(destinationFolder))
+            if (!Directory.Exists(destinationFolder) && destinationFolder != null)
                 Directory.CreateDirectory(destinationFolder);
 
-            if (backupType == GetTranslation(GetCurrentLanguage(), "complete_backuptype_backupmanager"))
+            if (backupType == GetTranslation(GetCurrentLanguage(), "complete_backuptype_backupmanager") && destinationFolder != null)
                 CopyAll(new DirectoryInfo(sourceFolder), new DirectoryInfo(destinationFolder));
-            else if (backupType == GetTranslation(GetCurrentLanguage(), "incremental_backuptype_backupmanager"))
+            else if (backupType == GetTranslation(GetCurrentLanguage(), "incremental_backuptype_backupmanager") && destinationFolder != null)
                 CopyIncremental(new DirectoryInfo(sourceFolder), new DirectoryInfo(destinationFolder));
-            else if (backupType == GetTranslation(GetCurrentLanguage(), "differential_backuptype_backupmanager"))
+            else if (backupType == GetTranslation(GetCurrentLanguage(), "differential_backuptype_backupmanager") && destinationFolder != null)
                 CopyDifferential(new DirectoryInfo(sourceFolder), new DirectoryInfo(destinationFolder));
-            else if (backupType == GetTranslation(GetCurrentLanguage(), "synchronize_backuptype_backupmanager"))
+            else if (backupType == GetTranslation(GetCurrentLanguage(), "synchronize_backuptype_backupmanager") && destinationFolder != null)
                 Synchronize(new DirectoryInfo(sourceFolder), new DirectoryInfo(destinationFolder));
             else
                 throw new Exception(GetTranslation(GetCurrentLanguage(), "unknown_backuptype_backupmanager"));

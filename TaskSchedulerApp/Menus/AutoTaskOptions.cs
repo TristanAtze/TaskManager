@@ -26,29 +26,32 @@ class AutoTaskOptions : Menu
 
     protected override void CallChoice()
     {
-        switch (ChoiceIndex)
+        if (TotalTime != null)
         {
-            case 0:
-                BasicTaskScheduler.BasicTaskScheduler.Start();
-                BasicTasks.Email(TotalTime, Priority);
-                break;
-            case 1:
-                BasicTaskScheduler.BasicTaskScheduler.Start();
-                BasicTasks.Calculator(TotalTime, Priority);
-                break;
-            case 2:
-                BasicTaskScheduler.BasicTaskScheduler.Start();
-                BasicTasks.Browser(TotalTime, Priority);
-                break;
-            case 3:
+            switch (ChoiceIndex)
+            {
+                case 0:
+                    BasicTaskScheduler.BasicTaskScheduler.Start();
+                    BasicTasks.Email((double)TotalTime, Priority);
+                    break;
+                case 1:
+                    BasicTaskScheduler.BasicTaskScheduler.Start();
+                    BasicTasks.Calculator((double)TotalTime, Priority);
+                    break;
+                case 2:
+                    BasicTaskScheduler.BasicTaskScheduler.Start();
+                    BasicTasks.Browser((double)TotalTime, Priority);
+                    break;
+                case 3:
 
-                BasicTasks.LockInactive(TotalTime, Priority);
-                break;
-            case 5:
-                KeepGoing = false;
-                break;
-            default:
-                break;
+                    BasicTasks.LockInactive((double)TotalTime, Priority);
+                    break;
+                case 5:
+                    KeepGoing = false;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

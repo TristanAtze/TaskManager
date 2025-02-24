@@ -10,13 +10,13 @@ namespace BasicTaskScheduler
 {
     public class BasicTaskScheduler : Form
     {
-        private ComboBox comboBoxPriority;
-        private TextBox txtTimeAmount;
-        private ComboBox comboBoxUnit;
-        private Button btnSubmit;
+        private ComboBox? comboBoxPriority;
+        private TextBox? txtTimeAmount;
+        private ComboBox? comboBoxUnit;
+        private Button? btnSubmit;
 
-        public static int Priority = 3;
-        public static double TotalTime = 0;
+        public static int? Priority = 3;
+        public static double? TotalTime = 0;
 
         public BasicTaskScheduler()
         {
@@ -74,16 +74,16 @@ namespace BasicTaskScheduler
             this.Controls.Add(btnSubmit);
         }
 
-        private void btnSubmit_Click(object sender, EventArgs e)
+        private void btnSubmit_Click(object? sender, EventArgs e)
         {
             // Erhalte den int-Wert für die Priorität anhand der Auswahl
-            Priority = GetPriorityFromSelection(comboBoxPriority.SelectedItem.ToString());
+            Priority = GetPriorityFromSelection(comboBoxPriority?.SelectedItem?.ToString());
 
             // Versuche, die Zeitanzahl als double zu parsen
-            if (double.TryParse(txtTimeAmount.Text, out double timeAmount))
+            if (double.TryParse(txtTimeAmount?.Text, out double timeAmount))
             {
                 // Ermittle den Umrechnungsfaktor basierend auf der gewählten Zeiteinheit
-                double factor = GetTimeFactor(comboBoxUnit.SelectedItem.ToString());
+                double? factor = GetTimeFactor(comboBoxUnit?.SelectedItem?.ToString());
                 TotalTime = timeAmount * factor;
 
                 // Ausgabe der Ergebnisse
@@ -98,7 +98,7 @@ namespace BasicTaskScheduler
 
         // Wandelt die ausgewählte Priorität in einen int-Wert um.
         // Hier wird angenommen: "Sehr Wichtig" = 1 (höchste Priorität), "Sehr Unwichtig" = 5 (niedrigste Priorität)
-        private int GetPriorityFromSelection(string selection)
+        private int GetPriorityFromSelection(string? selection)
         {
             if (selection == GetTranslation(GetCurrentLanguage(), "veryimportant_prioritys_taskcreator"))
                 return 1;
@@ -116,7 +116,7 @@ namespace BasicTaskScheduler
 
         // Liefert den Umrechnungsfaktor für die Zeiteinheit.
         // Beispiel: 1 Minute = 60 Sekunden, 1 Stunde = 3600 Sekunden, usw.
-        private double GetTimeFactor(string unit)
+        private double GetTimeFactor(string? unit)
         {
 
             if (unit == GetTranslation(GetCurrentLanguage(), "seconds_taskcreator"))

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
-using static TranslationsLibrary.TranslationManager;
+using static HelperLibrary.TranslationManager;
 
 namespace BackupTool
 {

@@ -1,4 +1,4 @@
-﻿using static TranslationsLibrary.TranslationManager;
+﻿using static HelperLibrary.TranslationManager;
 
 namespace WindowsForms
 {

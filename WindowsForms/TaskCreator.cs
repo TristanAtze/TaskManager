@@ -1,6 +1,5 @@
-﻿
-using TaskClasses;
-using static TranslationsLibrary.TranslationManager;
+﻿using TaskClasses;
+using static HelperLibrary.TranslationManager;
 namespace FileDialog;
 
 using System.Runtime.CompilerServices;

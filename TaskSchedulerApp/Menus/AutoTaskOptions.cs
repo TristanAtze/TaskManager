@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TaskClasses;
+﻿using static BasicTaskScheduler.BasicTaskScheduler;
 using static HelperLibrary.TranslationManager;
-using static BasicTaskScheduler.BasicTaskScheduler;
 namespace TaskSchedulerApp.Menus;
 
-class AutoTaskOptions : Menu
+internal class AutoTaskOptions : Menu
 {
     public AutoTaskOptions()
     {

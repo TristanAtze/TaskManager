@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
+﻿using HelperLibrary;
 
 
 namespace TaskClasses;
@@ -32,7 +30,7 @@ public class TaskQueue
 
         TaskList = [.. TaskList.OrderBy(x => x.ScheduledTime).ThenBy(x => x.Priority)];
     }
-    
+
     /// <summary>
     /// Gibt die nächste ausstehende Task der Liste zurück.
     /// </summary>

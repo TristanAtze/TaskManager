@@ -1,9 +1,9 @@
-﻿using System.Diagnostics;
-using System.Windows;
-using TaskSchedulerApp.BackgroundClasses;
-using TaskClasses;
-using static HelperLibrary.TranslationManager;
+﻿using HelperLibrary;
+using System.Diagnostics;
 using System.Windows.Forms;
+using TaskClasses;
+using TaskSchedulerApp.BackgroundClasses;
+using static HelperLibrary.TranslationManager;
 
 public class BasicTasks
 {
@@ -34,7 +34,7 @@ public class BasicTasks
                 Logger.Log("openmail_executed_mail_basictasks ERROR");
             }
             NotificationManager.SendNotification("openmail_executed_mail_basictasks");
-           
+
 
         }, DateTime.Now.AddSeconds(time), priority);
 
@@ -58,7 +58,7 @@ public class BasicTasks
                 Logger.Log("opencalc_executed_calculator_basictasks ERROR");
             }
             NotificationManager.SendNotification("opencalc_executed_calculator_basictasks");
-           
+
         }, DateTime.Now.AddSeconds(time), priority);
         TaskScheduler.ScheduleTask(Calculator);
     }
@@ -87,7 +87,7 @@ public class BasicTasks
             {
                 Logger.Log("openbrowser_executed_browser_basictasks ERROR");
             }
-            
+
         }, DateTime.Now.AddSeconds(time), priority);
 
         TaskScheduler.ScheduleTask(Browser);

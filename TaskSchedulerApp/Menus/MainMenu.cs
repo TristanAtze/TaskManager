@@ -1,12 +1,4 @@
-﻿using FileDialog;
-using System;
-using System.Collections.Generic;
-using System.Drawing.Printing;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using TaskSchedulerApp.Sonstiges;
+﻿using TaskSchedulerApp.Sonstiges;
 using static HelperLibrary.TranslationManager;
 
 namespace TaskSchedulerApp.Menus;
@@ -14,7 +6,7 @@ namespace TaskSchedulerApp.Menus;
 public class MainMenu : Menu
 {
     public MainMenu()
-    {    
+    {
         Headline = GetTranslation(GetCurrentLanguage(), "headline_mainmenu");
         Options =
         [
@@ -60,11 +52,11 @@ public class MainMenu : Menu
     }
 
     //todo übersetzen
-    void PrintTasks()
+    private static void PrintTasks()
     {
         Console.WriteLine(GetTranslation(GetCurrentLanguage(), "headline_printtasks_mainmenu"));
 
-        if(TaskScheduler.NextTask != null)
+        if (TaskScheduler.NextTask != null)
         {
             Console.WriteLine(GetTranslation(GetCurrentLanguage(), "name_printtasks_mainmenu") + TaskScheduler.NextTask.Name);
             Console.WriteLine(GetTranslation(GetCurrentLanguage(), "priority_printtasks_mainmenu") + TaskScheduler.NextTask.Priority);

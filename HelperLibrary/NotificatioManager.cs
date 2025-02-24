@@ -1,4 +1,4 @@
-﻿using System;
+﻿using HelperLibrary;
 using System.Windows.Forms;
 using static HelperLibrary.TranslationManager;
 

@@ -1,10 +1,4 @@
-﻿
-using TaskClasses;
-using System.Diagnostics;
-using static HelperLibrary.TranslationManager;
-
-using System;
-using System.Windows.Forms;
+﻿using static HelperLibrary.TranslationManager;
 
 namespace BasicTaskScheduler
 {
@@ -30,8 +24,8 @@ namespace BasicTaskScheduler
         {
             // ComboBox für Priorität (Dropdown von "Sehr Wichtig" bis "Sehr Unwichtig")
             comboBoxPriority = new ComboBox();
-            comboBoxPriority.Items.AddRange(new string[] 
-            { 
+            comboBoxPriority.Items.AddRange(new string[]
+            {
                 GetTranslation(GetCurrentLanguage(), "veryimportant_prioritys_taskcreator"),
                 GetTranslation(GetCurrentLanguage(), "important_prioritys_taskcreator"),
                 GetTranslation(GetCurrentLanguage(), "normalimportant_prioritys_taskcreator"),
@@ -52,7 +46,7 @@ namespace BasicTaskScheduler
 
             // ComboBox für die Zeiteinheit (Sekunden, Minuten, Stunden, Tage, Monate)
             comboBoxUnit = new ComboBox();
-            comboBoxUnit.Items.AddRange(new string[] 
+            comboBoxUnit.Items.AddRange(new string[]
             {
                 GetTranslation(GetCurrentLanguage(), "seconds_taskcreator"),
                 GetTranslation(GetCurrentLanguage(), "minutes_taskcreator"),

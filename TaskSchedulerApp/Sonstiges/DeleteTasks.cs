@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static HelperLibrary.TranslationManager;
+﻿using static HelperLibrary.TranslationManager;
 
 namespace TaskSchedulerApp.Sonstiges
 {
@@ -16,12 +11,12 @@ namespace TaskSchedulerApp.Sonstiges
             if (TaskScheduler.NextTask != null)
                 Options = [.. Options, $"[ {TaskScheduler.NextTask.Name} ]"];
 
-            foreach(var item in TaskScheduler.TaskQueue.TaskList)
+            foreach (var item in TaskScheduler.TaskQueue.TaskList)
             {
                 Options = [.. Options, $"[ {item.Name} ]"];
             }
 
-            if(Options.Length != 0)
+            if (Options.Length != 0)
                 Options = [.. Options, " "];
 
             Options = [.. Options, GetTranslation(GetCurrentLanguage(), "back_options_settingsmenu")];
@@ -34,7 +29,7 @@ namespace TaskSchedulerApp.Sonstiges
                 if (ChoiceIndex == 0)
                     TaskScheduler.NextTask = TaskScheduler.TaskQueue.GetNextTask();
 
-                else if(ChoiceIndex - 1 < TaskScheduler.TaskQueue.TaskList.Count)
+                else if (ChoiceIndex - 1 < TaskScheduler.TaskQueue.TaskList.Count)
                 {
                     TaskScheduler.TaskQueue.TaskList.RemoveAt(ChoiceIndex - 1);
                 }

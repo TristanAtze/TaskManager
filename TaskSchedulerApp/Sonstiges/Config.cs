@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace TaskSchedulerApp.PassiveClasses
 {
-    internal class Config
+    public class Config
     {
+        ///Sprache String
+        ///Geplante Tasks (IN ANDERE DATEI) MainTask Liste
+        ///Task Presets (ggf SQL) MainTask Liste
+        ///Consolen Farbe Console.Color
+        ///Zeitstempel DateTime
     }
 }

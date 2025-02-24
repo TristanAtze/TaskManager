@@ -8,11 +8,10 @@ using System.Windows.Forms;
 public class BasicTasks
 {
     //Time ist hier Tatsächlich die zeit bis zur ausführung (in Sekunden)
-    public static void Email(double time, int priority = 1)
+    public static void Email(double time, int? priority = 1)
     {
         //var notificationManager = new NotificationManager();
         //var logger = new Logger("task_logs.csv");
-
         var OpenEmail = new PreTask("OpenMail", () =>
         {
 
@@ -40,7 +39,7 @@ public class BasicTasks
         TaskScheduler.ScheduleTask(OpenEmail);
     }
 
-    public static void Calculator(double time, int priority = 1)
+    public static void Calculator(double time, int? priority = 1)
     {
         var Calculator = new PreTask("Calculator", () =>
         {
@@ -59,7 +58,7 @@ public class BasicTasks
         TaskScheduler.ScheduleTask(Calculator);
     }
 
-    public static void Browser(double time, int priority = 1)
+    public static void Browser(double time, int? priority = 1)
     {
         //var notificationManager = new NotificationManager();
         //var logger = new Logger("task_logs.csv");
@@ -80,7 +79,7 @@ public class BasicTasks
         TaskScheduler.ScheduleTask(Browser);
     }
 
-    public static void LockInactive(double time, int priority = 1)
+    public static void LockInactive(double time, int? priority = 1)
     {
         //var notificationManager = new NotificationManager();
         //var logger = new Logger("task_logs.csv");

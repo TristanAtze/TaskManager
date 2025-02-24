@@ -17,7 +17,7 @@ public class PreTask : MainTask
     /// <summary>
     /// Konstruktor einer vorgefertigten Task.
     /// </summary>
-    public PreTask(string name, Action taskAction, DateTime scheduledTime, int priority = 3, bool isRecurring = false, TimeSpan? interval = null)
+    public PreTask(string name, Action taskAction, DateTime scheduledTime, int? priority = 3, bool isRecurring = false, TimeSpan? interval = null)
     {
         Name = name;
         TaskAction = taskAction;

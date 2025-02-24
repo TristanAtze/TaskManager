@@ -3,7 +3,6 @@ using System.Runtime.CompilerServices;
 using System.Threading;
 using TaskClasses;
 using TaskSchedulerApp.BackgroundClasses;
-using TaskSchedulerApp.TaskClasses;
 
 public static class TaskScheduler
 {
@@ -18,18 +17,6 @@ public static class TaskScheduler
     public static void ScheduleTask(MainTask task)
     {
         TaskQueue.AddTask(task);
-
-        List<MainTask> plannedTasks = [];
-        if(NextTask != null)
-        {
-            plannedTasks.Add(NextTask);
-        }
-        foreach(var item in TaskQueue.TaskList)
-        {
-            plannedTasks.Add(item);
-        }
-
-        Config.SaveSettings(null, null, null, plannedTasks);
     }
 
     /// <summary>
@@ -38,7 +25,6 @@ public static class TaskScheduler
     /// <returns>Leerer Task</returns>
     public static async Task Start()
     {
-
         while (true)
         {
             NextTask = TaskQueue.GetNextTask();
@@ -47,30 +33,17 @@ public static class TaskScheduler
                 var delay = NextTask.ScheduledTime - DateTime.Now;
                 if (delay.TotalMilliseconds > 0)
                 {
-                    Thread.Sleep(delay);
+                    await Task.Delay(delay); 
                 }
 
                 if (RequirementsMet(NextTask))
                 {
-                    if (OwnTask.CompareType(NextTask))
-                    {
-                        var task = (OwnTask)NextTask;
-                        task.Execute();
-                    }
-                    else if (PreTask.CompareType(NextTask))
-                    {
-                        var task = (PreTask)NextTask;
-                        task.Execute();
-                    }
-                    else
-                    {
-                        NextTask.Execute();
-                    }
+                    await Task.Run(() => NextTask.Execute()); 
 
                     if (NextTask.IsRecurring && NextTask.Interval.HasValue)
                     {
-                        NextTask.ScheduledTime = DateTime.Now.Add(NextTask.Interval.Value); // Neu planen
-                        ScheduleTask(NextTask); // Wieder hinzufügen
+                        NextTask.ScheduledTime = DateTime.Now.Add(NextTask.Interval.Value);
+                        ScheduleTask(NextTask); 
                     }
                 }
                 else
@@ -78,8 +51,13 @@ public static class TaskScheduler
                     TaskQueue.ThrowTask(NextTask);
                 }
             }
+            else
+            {
+                await Task.Delay(1000); 
+            }
         }
     }
+
 
     static bool RequirementsMet(MainTask task)
     {

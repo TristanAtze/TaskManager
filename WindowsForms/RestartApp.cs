@@ -14,7 +14,7 @@ namespace RestartApp
             this.Load += MainForm_Load; // Beim Laden ausführen
         }
 
-        private async void MainForm_Load(object sender, EventArgs e)
+        private async void MainForm_Load(object? sender, EventArgs e)
         {
             string processName = "TaskSchedulerApp"; 
 
@@ -28,6 +28,7 @@ namespace RestartApp
             StartProcess(processName);
 
             Application.Exit();
+            await Task.Delay(200);
         }
 
         private void KillProcess(string processName)

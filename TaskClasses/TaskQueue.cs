@@ -13,7 +13,7 @@ public class TaskQueue
     /// <summary>
     /// Liste mit allen Tasks.
     /// </summary>
-    public List<MainTask> TaskList { get; private set; } = new List<MainTask>();
+    public List<MainTask> TaskList { get; private set; } = [];
 
     /// <summary>
     /// Fügt eine Task hinzu und sortiert anschließen die gesamte Liste nach Priorität.
@@ -23,12 +23,14 @@ public class TaskQueue
     {
         TaskList.Add(task);
         Logger.Log("Task was added to TaskQueue");
-        TaskList.Sort((x, y) => {
-            var xNotNull = x.Priority ?? int.MinValue;
-            var yNotNull = y.Priority ?? int.MinValue;
-            Logger.Log("Task Queue was sorted");
-            return xNotNull.CompareTo(yNotNull);
-        }); // Priorität sortieren
+        //TaskList.Sort((x, y) => {
+        //    var xNotNull = x.Priority ?? int.MinValue;
+        //    var yNotNull = y.Priority ?? int.MinValue;
+        //    Logger.Log("Task Queue was sorted");
+        //    return xNotNull.CompareTo(yNotNull);
+        //}); // Priorität sortieren
+
+        TaskList = [.. TaskList.OrderBy(x => x.ScheduledTime).ThenBy(x => x.Priority)];
     }
     
     /// <summary>

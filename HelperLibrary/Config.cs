@@ -6,9 +6,8 @@ using System.Reflection.Metadata;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using TaskClasses;
 
-namespace TaskSchedulerApp.TaskClasses
+namespace HelperLibrary
 {
     public class Config
     {

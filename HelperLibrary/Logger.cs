@@ -1,6 +1,9 @@
 ﻿using System;
 using System.IO;
 using static HelperLibrary.TranslationManager;
+
+namespace HelperLibrary;
+
 public class Logger
 {
     private readonly string _logFilePath;

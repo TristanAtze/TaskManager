@@ -2,6 +2,7 @@
 using static HelperLibrary.TranslationManager;
 namespace FileDialog;
 
+using HelperLibrary;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using WindowsForms;

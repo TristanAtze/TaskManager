@@ -1,6 +1,6 @@
 ﻿
 using TaskClasses;
-using static TranslationsLibrary.TranslationManager;
+using static HelperLibrary.TranslationManager;
 namespace FileDialog;
 using System.Windows.Forms;
 using WindowsForms;

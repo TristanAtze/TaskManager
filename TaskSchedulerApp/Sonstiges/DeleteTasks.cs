@@ -13,24 +13,30 @@ namespace TaskSchedulerApp.Sonstiges
         {
             Headline = GetTranslation(GetCurrentLanguage(), "headline_deletetask");
 
+            if (TaskScheduler.NextTask != null)
+                Options = [.. Options, $"[ {TaskScheduler.NextTask.Name} ]"];
+
             foreach(var item in TaskScheduler.TaskQueue.TaskList)
             {
-                Options.Append($"[ {item.Name} ]");
+                Options = [.. Options, $"[ {item.Name} ]"];
             }
-            Options.Append("");
-            Options.Append(GetTranslation(GetCurrentLanguage(), "back_options_settingsmenu"));
+
+            if(Options.Length != 0)
+                Options = [.. Options, " "];
+
+            Options = [.. Options, GetTranslation(GetCurrentLanguage(), "back_options_settingsmenu")];
         }
 
         protected override void CallChoice()
         {
             if (Options[ChoiceIndex] != GetTranslation(GetCurrentLanguage(), "back_options_settingsmenu"))
             {
-                for(int i = 0; i < TaskScheduler.TaskQueue.TaskList.Count; i++)
+                if (ChoiceIndex == 0)
+                    TaskScheduler.NextTask = TaskScheduler.TaskQueue.GetNextTask();
+
+                else if(ChoiceIndex - 1 < TaskScheduler.TaskQueue.TaskList.Count)
                 {
-                    if (TaskScheduler.TaskQueue.TaskList[i].Name == Options[ChoiceIndex])
-                    {
-                        TaskScheduler.TaskQueue.TaskList.Remove(TaskScheduler.TaskQueue.TaskList[i]);
-                    }
+                    TaskScheduler.TaskQueue.TaskList.RemoveAt(ChoiceIndex - 1);
                 }
             }
 

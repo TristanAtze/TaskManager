@@ -60,7 +60,7 @@ public class MainMenu : Menu
     }
 
     //todo übersetzen
-    void PrintTasks()
+    static void PrintTasks()
     {
         Console.WriteLine(GetTranslation(GetCurrentLanguage(), "headline_printtasks_mainmenu"));
 

@@ -5,8 +5,8 @@ using System.Diagnostics;
 using TaskSchedulerApp.Sonstiges;
 using TaskClasses;
 using ShutdownBlocker;
-using TaskSchedulerApp.TaskClasses;
 using System.Runtime.CompilerServices;
+using HelperLibrary;
 
 public class Program
 {

@@ -9,6 +9,7 @@ using Microsoft.Win32;
 using static HelperLibrary.TranslationManager;
 using System.Windows.Forms;
 using System.Diagnostics;
+using HelperLibrary;
 
 namespace TaskSchedulerApp.BackgroundClasses
 {

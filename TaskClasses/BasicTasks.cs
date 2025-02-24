@@ -4,6 +4,7 @@ using TaskSchedulerApp.BackgroundClasses;
 using TaskClasses;
 using static HelperLibrary.TranslationManager;
 using System.Windows.Forms;
+using HelperLibrary;
 
 public class BasicTasks
 {

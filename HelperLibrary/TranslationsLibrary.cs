@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.Json;
-using TaskSchedulerApp.TaskClasses;
 
 namespace HelperLibrary
 {
@@ -1142,9 +1141,8 @@ namespace HelperLibrary
         public static string GetTranslation(string language, string key, params object[] args)
         {
             Logger.Log("");
-            if (translations.ContainsKey(language) && translations[language].ContainsKey(key))
+            if (translations.TryGetValue(language, out Dictionary<string, string>? value) && value.TryGetValue(key, out string? translationStr))
             {
-                var translationStr = translations[language][key];
                 for (int i = 0; i < args.Length; i++)
                 {
                     translationStr = translationStr.Replace("{" + i.ToString() + "}", args[i].ToString());

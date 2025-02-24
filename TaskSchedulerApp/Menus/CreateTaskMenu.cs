@@ -31,8 +31,7 @@ class CreateTaskMenu : Menu
         switch (ChoiceIndex)
         {
             case 0:
-                TaskCreator creator = new();
-                Application.Run(creator);
+                TaskCreator.StartTaskCreator();
                 break;
             case 1:
                 var autoCreator = new AutoTaskOptions();

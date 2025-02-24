@@ -6,6 +6,7 @@ using TaskSchedulerApp.Sonstiges;
 using TaskClasses;
 using ShutdownBlocker;
 using TaskSchedulerApp.TaskClasses;
+using System.Runtime.CompilerServices;
 
 public class Program
 {
@@ -37,6 +38,8 @@ public class Program
 
         var mainMenu = new MainMenu();
         mainMenu.Start();
+
+        
     }
 }
 
@@ -45,3 +48,4 @@ public static class SystemControl
     [DllImport("user32.dll", SetLastError = true)]
     public static extern bool LockWorkStation();
 }
+

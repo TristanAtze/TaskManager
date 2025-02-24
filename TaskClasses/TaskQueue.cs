@@ -22,9 +22,11 @@ public class TaskQueue
     public void AddTask(MainTask task)
     {
         TaskList.Add(task);
+        Logger.Log("Task was added to TaskQueue");
         TaskList.Sort((x, y) => {
             var xNotNull = x.Priority ?? int.MinValue;
             var yNotNull = y.Priority ?? int.MinValue;
+            Logger.Log("Task Queue was sorted");
             return xNotNull.CompareTo(yNotNull);
         }); // Priorität sortieren
     }

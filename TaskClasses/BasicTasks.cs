@@ -26,13 +26,15 @@ public class BasicTasks
             try
             {
                 Process.Start(new ProcessStartInfo(mailto) { UseShellExecute = true });
-
+                Logger.Log("openmail_executed_mail_basictasks");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(GetTranslation(GetCurrentLanguage(), "openmail_error_executed_mail_basictasks") + ex.Message);
+                Logger.Log("openmail_executed_mail_basictasks ERROR");
             }
             NotificationManager.SendNotification("openmail_executed_mail_basictasks");
+           
 
         }, DateTime.Now.AddSeconds(time), priority);
 
@@ -48,12 +50,15 @@ public class BasicTasks
             try
             {
                 Process.Start(new ProcessStartInfo("calc.exe") { UseShellExecute = true });
+                Logger.Log("opencalc_executed_calculator_basictasks");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(GetTranslation(GetCurrentLanguage(), "opencalc_error_executed_calculator_basictasks") + ex.Message);
+                Logger.Log("opencalc_executed_calculator_basictasks ERROR");
             }
             NotificationManager.SendNotification("opencalc_executed_calculator_basictasks");
+           
         }, DateTime.Now.AddSeconds(time), priority);
         TaskScheduler.ScheduleTask(Calculator);
     }
@@ -65,15 +70,24 @@ public class BasicTasks
 
         var Browser = new PreTask("Browser", () =>
         {
-            //notificationManager.SendNotification(GetTranslation(GetCurrentLanguage(), "openbrowser_executed_browser_basictasks"));
-            //logger.Log("Browser", "Task successfully executed.");
-            ProcessStartInfo psi = new ProcessStartInfo
+            try
             {
-                FileName = "https://www.google.com",
-                UseShellExecute = true
-            };
-            Process.Start(psi);
-            NotificationManager.SendNotification("openbrowser_executed_browser_basictasks");
+                //notificationManager.SendNotification(GetTranslation(GetCurrentLanguage(), "openbrowser_executed_browser_basictasks"));
+                //logger.Log("Browser", "Task successfully executed.");
+                ProcessStartInfo psi = new ProcessStartInfo
+                {
+                    FileName = "https://www.google.com",
+                    UseShellExecute = true
+                };
+                Process.Start(psi);
+                NotificationManager.SendNotification("openbrowser_executed_browser_basictasks");
+                Logger.Log("openbrowser_executed_browser_basictasks");
+            }
+            catch
+            {
+                Logger.Log("openbrowser_executed_browser_basictasks ERROR");
+            }
+            
         }, DateTime.Now.AddSeconds(time), priority);
 
         TaskScheduler.ScheduleTask(Browser);
@@ -81,13 +95,9 @@ public class BasicTasks
 
     public static void LockInactive(double time, int? priority = 1)
     {
-        //var notificationManager = new NotificationManager();
-        //var logger = new Logger("task_logs.csv");
-
         var LockInactive = new PreTask("LockInactive", () =>
         {
-            //notificationManager.SendNotification("LockInactive executed.");
-            //logger.Log("LockInactive", "Task successfully executed.");
+            Logger.Log("Task successfully executed.");
             Task.Run(async () =>
             {
                 while (true)

@@ -1,27 +1,27 @@
 ﻿using System;
 using System.IO;
+using System.Runtime.CompilerServices;
 using static HelperLibrary.TranslationManager;
-public class Logger
+public static class Logger
 {
-    private readonly string _logFilePath;
-
-    public Logger(string logFilePath)
+    public static void LogFileCreate(string logFilePath = "task_logs.csv")
     {
-        _logFilePath = logFilePath;
-
-        if (!File.Exists(_logFilePath))
+        if (!File.Exists(logFilePath))
         {
-            using var writer = new StreamWriter(_logFilePath, append: false);
-            writer.WriteLine("Timestamp,TaskName,Message");  // CSV-Header
+            using var writer = new StreamWriter(logFilePath, append: false);
+            writer.WriteLine("Timestamp,TaskName,Message");
             writer.Close();
+            Logger.Log("Log File Created");
         }
     }
 
-    public void Log(string taskName, string message)
+    public static void Log(string message, [CallerMemberName] string memberName = "", string logFilePath = "task_logs.csv")
     {
-        string logEntry = $"{DateTime.Now},{taskName},{message}";
+        
 
-        using var writer = new StreamWriter(_logFilePath, append: true);
+        string logEntry = $"{DateTime.Now},{memberName},{message}";
+
+        using var writer = new StreamWriter(logFilePath, append: true);
         writer.WriteLine(logEntry);
         writer.Close();
     }

@@ -47,18 +47,23 @@ namespace TaskSchedulerApp.BackgroundClasses
 
             _ = Task.Run(async () =>
             {
+                Logger.Log("Async uptime started");
                 while (!token.IsCancellationRequested)
                 {
+                    Logger.Log("Async uptime read");
                     long uptimeMilliseconds = Environment.TickCount64;
                     IsJustBooted = uptimeMilliseconds < bootThreshold.TotalMilliseconds;
                     await Task.Delay(1000, token);
                 }
+                
             }, token);
 
             _ = Task.Run(async () =>
             {
+                Logger.Log("Async inactive started");
                 while (!token.IsCancellationRequested)
                 {
+                    Logger.Log("Async inactive read");
                     try
                     {
                         LASTINPUTINFO lastInputInfo = new LASTINPUTINFO();
@@ -80,6 +85,7 @@ namespace TaskSchedulerApp.BackgroundClasses
                     }
                     catch
                     {
+                        Logger.Log("Async inactive ERROR");
                         Environment.Exit(0);
                     }
                     await Task.Delay(1000, token);
@@ -95,6 +101,7 @@ namespace TaskSchedulerApp.BackgroundClasses
             {
                 while (!token.IsCancellationRequested)
                 {
+                    Logger.Log("Perfomance Counter Started");
                     try
                     {
                         if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
@@ -111,7 +118,7 @@ namespace TaskSchedulerApp.BackgroundClasses
                     }
                     catch (Exception ex)
                     {
-                        Debug.WriteLine("Fehler beim Abrufen der CPU-Auslastung: " + ex.Message);
+                        Logger.Log("Fehler beim Abrufen der CPU-Auslastung: " + ex.Message);
                         IsPcLightlyLoaded = false;
                     }
                     await Task.Delay(1000, token);
@@ -122,6 +129,7 @@ namespace TaskSchedulerApp.BackgroundClasses
             {
                 while (!token.IsCancellationRequested)
                 {
+                    Logger.Log("Get Current Process");
                     bool open = false;
                     try
                     {
@@ -154,6 +162,7 @@ namespace TaskSchedulerApp.BackgroundClasses
 
             _ = Task.Run(async () =>
             {
+                Logger.Log("Get Current Processes");
                 while (!token.IsCancellationRequested)
                 {
                     bool open = false;
@@ -182,6 +191,7 @@ namespace TaskSchedulerApp.BackgroundClasses
         /// </summary>
         public static void OnSessionEnding(object sender, SessionEndingEventArgs e)
         {
+            Logger.Log("Pc shutdown");
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
                 e.Cancel = true;
@@ -194,6 +204,7 @@ namespace TaskSchedulerApp.BackgroundClasses
         /// </summary>
         public static void OnPowerModeChanged(object sender, PowerModeChangedEventArgs e)
         {
+            Logger.Log("PowerModeChanged");
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
                 if (e.Mode == PowerModes.Suspend)
@@ -215,6 +226,7 @@ namespace TaskSchedulerApp.BackgroundClasses
         /// </summary>
         public static void StopMonitoring()
         {
+            Logger.Log("Monitoring Stopped");
             if (_cts != null)
             {
                 _cts.Cancel();

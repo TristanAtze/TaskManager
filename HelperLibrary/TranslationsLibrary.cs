@@ -1141,6 +1141,7 @@ namespace HelperLibrary
         /// <returns>Die übersetzte Zeichenkette oder den Schlüssel, wenn keine passende Übersetzung vorhanden ist.</returns>
         public static string GetTranslation(string language, string key, params object[] args)
         {
+            Logger.Log("");
             if (translations.ContainsKey(language) && translations[language].ContainsKey(key))
             {
                 var translationStr = translations[language][key];
@@ -1155,6 +1156,7 @@ namespace HelperLibrary
 
         public static string GetCurrentLanguage()
         {
+            Logger.Log("CurrentLanguage");
             string? language = Config.GetSettings()?.Language;
 
             if (language != null)

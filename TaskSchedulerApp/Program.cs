@@ -14,7 +14,7 @@ public class Program
     public static void Main()
     {
         Console.CursorVisible = false;
-
+        Logger.LogFileCreate();
         //ConsoleColor? color = Config.GetSettings()?.ConsoleColorStr;
         //if (color != null)
         //    Console.ForegroundColor = (ConsoleColor)color;

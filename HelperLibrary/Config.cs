@@ -28,13 +28,14 @@ namespace TaskSchedulerApp.TaskClasses
         {
             if (!File.Exists("settings.json"))
             {
+                Logger.Log("settings.json created.");
                 File.Create("settings.json");
             }
 
             string fileContent = File.ReadAllText("settings.json");
 
             Config? settings = JsonConvert.DeserializeObject<Config>(fileContent);
-
+            Logger.Log("settings.json loaded.");
             return settings;
         }
 
@@ -52,6 +53,7 @@ namespace TaskSchedulerApp.TaskClasses
             else
             {
                 settings = new();
+                Logger.Log("New settings created");
             }
 
             if (settings != null)
@@ -74,6 +76,7 @@ namespace TaskSchedulerApp.TaskClasses
             }
             var content = JsonConvert.SerializeObject(settings);
             File.WriteAllText("settings.json", content);
+            Logger.Log("settings were saved");
         }
     }
 }

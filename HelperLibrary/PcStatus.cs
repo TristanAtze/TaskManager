@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Win32;
-using static TranslationsLibrary.TranslationManager;
+using static HelperLibrary.TranslationManager;
 using System.Windows.Forms;
 using System.Diagnostics;
 

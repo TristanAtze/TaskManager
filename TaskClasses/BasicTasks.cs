@@ -2,7 +2,7 @@
 using System.Windows;
 using TaskSchedulerApp.BackgroundClasses;
 using TaskClasses;
-using static TranslationsLibrary.TranslationManager;
+using static HelperLibrary.TranslationManager;
 using System.Windows.Forms;
 
 public class BasicTasks

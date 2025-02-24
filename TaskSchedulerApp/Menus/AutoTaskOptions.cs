@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TaskClasses;
-using static TranslationsLibrary.TranslationManager;
+using static HelperLibrary.TranslationManager;
 using static BasicTaskScheduler.BasicTaskScheduler;
 namespace TaskSchedulerApp.Menus;
 

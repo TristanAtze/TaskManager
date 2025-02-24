@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace TranslationsLibrary
+namespace HelperLibrary
 {
     public static class TranslationManager
     {
-        public static string CurrentLanguage = "de";
+        public static string CurrentLanguage { get; set; } = "de";
         /// <summary>
         /// Ist Das Dictionary für die übersetzung. Darf nur über die dafür vorgesehene methode aufgerufen werden
         /// Die übergebenen Parameter definieren dabei die jeweiligen Schwellenwerte.

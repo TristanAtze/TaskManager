@@ -27,6 +27,17 @@ public class PreTask : MainTask
         Interval = interval;
     }
 
+    public static bool CompareType(object obj)
+    {
+        PreTask task = new("", new Action(() => Process.Start(new ProcessStartInfo())), DateTime.Now);
+
+        if (task.GetType() == obj.GetType())
+            return true;
+
+        else
+            return false;
+    }
+
     /// <summary>
     /// Führt die Action der Task aus.
     /// </summary>
@@ -57,6 +68,17 @@ public class OwnTask : MainTask
         Priority = priority;
         IsRecurring = isRecurring;
         Interval = interval;
+    }
+
+    public static bool CompareType(object obj)
+    {
+        OwnTask task = new("", "", DateTime.Now);
+
+        if (task.GetType() == obj.GetType())
+            return true;
+
+        else
+            return false;
     }
 
     /// <summary>

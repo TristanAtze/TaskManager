@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json;
+using TaskSchedulerApp.TaskClasses;
 
 namespace HelperLibrary
 {
@@ -1151,31 +1153,14 @@ namespace HelperLibrary
             return key;
         }
 
-        public static string SaveSettings()
-        {
-            string settingsFilePath = "settings.txt";
-
-            string settings = CurrentLanguage;
-
-            File.WriteAllText(settingsFilePath, settings);
-            return settings;
-        }
-
         public static string GetCurrentLanguage()
         {
-            string settingsFilePath = "settings.txt";
+            string? language = Config.GetSettings()?.Language;
 
-            if (File.Exists(settingsFilePath))
-            {
-                string[] settings = File.ReadAllLines(settingsFilePath);
+            if (language != null)
+                CurrentLanguage = language;
 
-                if (settings.Length >= 1)
-                {
-                    CurrentLanguage = settings[0].Replace("\n", "").Trim();
-                    return settings[0].Replace("\n", "").Trim();
-                }
-            }
-            return SaveSettings();
+            return CurrentLanguage;
         }
     }
 }

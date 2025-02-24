@@ -214,6 +214,7 @@ public partial class TaskCreator : Form
         }   
         else
             TaskScheduler.ScheduleTask(task);
+            
         Close();
     }
 

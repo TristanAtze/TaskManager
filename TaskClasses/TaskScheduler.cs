@@ -3,6 +3,7 @@ using System.Runtime.CompilerServices;
 using System.Threading;
 using TaskClasses;
 using TaskSchedulerApp.BackgroundClasses;
+using TaskSchedulerApp.TaskClasses;
 
 public static class TaskScheduler
 {
@@ -17,6 +18,18 @@ public static class TaskScheduler
     public static void ScheduleTask(MainTask task)
     {
         TaskQueue.AddTask(task);
+
+        List<MainTask> plannedTasks = [];
+        if(NextTask != null)
+        {
+            plannedTasks.Add(NextTask);
+        }
+        foreach(var item in TaskQueue.TaskList)
+        {
+            plannedTasks.Add(item);
+        }
+
+        Config.SaveSettings(null, null, null, plannedTasks);
     }
 
     /// <summary>
@@ -39,7 +52,20 @@ public static class TaskScheduler
 
                 if (RequirementsMet(NextTask))
                 {
-                    NextTask.Execute();
+                    if (OwnTask.CompareType(NextTask))
+                    {
+                        var task = (OwnTask)NextTask;
+                        task.Execute();
+                    }
+                    else if (PreTask.CompareType(NextTask))
+                    {
+                        var task = (PreTask)NextTask;
+                        task.Execute();
+                    }
+                    else
+                    {
+                        NextTask.Execute();
+                    }
 
                     if (NextTask.IsRecurring && NextTask.Interval.HasValue)
                     {

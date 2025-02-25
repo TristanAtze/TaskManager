@@ -1,4 +1,5 @@
-﻿using TaskClasses;
+﻿using HelperLibrary;
+using TaskClasses;
 using TaskSchedulerApp.BackgroundClasses;
 
 public static class TaskScheduler
@@ -14,6 +15,27 @@ public static class TaskScheduler
     public static void ScheduleTask(MainTask task)
     {
         TaskQueue.AddTask(task);
+
+        List<MainTask>? alreadyPlanned = Config.GetSettings()?.PlannedTasks;
+        List<MainTask> plannedTasks = [];
+        if(alreadyPlanned != null)
+        {
+            if (NextTask != null && !alreadyPlanned.Contains(NextTask))
+                plannedTasks.Add(NextTask);
+
+            foreach (var item in TaskQueue.TaskList)
+            {
+                plannedTasks.Add(item);
+
+                foreach (var elem in alreadyPlanned)
+                {
+                    if (elem == item)
+                        plannedTasks.Remove(item);
+                }
+            }
+        }
+
+        Config.SaveSettings(null, null, null, plannedTasks);
     }
 
     /// <summary>
@@ -35,7 +57,20 @@ public static class TaskScheduler
 
                 if (RequirementsMet(NextTask))
                 {
-                    await Task.Run(() => NextTask.Execute());
+                    if (PreTask.CompareType(NextTask))
+                    {
+                        PreTask task = (PreTask)NextTask;
+                        task.Execute();
+                    }
+                    else if(OwnTask.CompareType(NextTask))
+                    {
+                        OwnTask task = (OwnTask)NextTask;
+                        task.Execute();
+                    }
+                    else
+                    {
+                        NextTask.Execute();
+                    }
 
                     if (NextTask.IsRecurring && NextTask.Interval.HasValue)
                     {
@@ -47,6 +82,8 @@ public static class TaskScheduler
                 {
                     TaskQueue.ThrowTask(NextTask);
                 }
+
+                Config.SaveSettings(null, null, null, TaskQueue.TaskList);
             }
             else
             {

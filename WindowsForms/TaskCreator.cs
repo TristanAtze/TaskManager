@@ -251,9 +251,9 @@ public partial class TaskCreator : Form
             }
 
             _taskInterval = new TimeSpan((int)(interval * 1000000000));
+            UpdateSaveButton();
         }
 
-        UpdateSaveButton();
     }
 
     private void Units_SelectedIndexChanged(object sender, EventArgs e)
@@ -269,9 +269,9 @@ public partial class TaskCreator : Form
             }
 
             _taskInterval = new TimeSpan((int)(interval * 1000000000));
+            UpdateSaveButton();
         }
 
-        UpdateSaveButton();
     }
 
     private void Conditions_MouseClick(object sender, MouseEventArgs e)

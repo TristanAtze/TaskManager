@@ -12,6 +12,7 @@ public class SettingsMenu : Menu
         [
             GetTranslation(GetCurrentLanguage(), "taskpreset_options_settingsmenu"),
             GetTranslation(GetCurrentLanguage(), "language_options_settingsmenu"),
+            GetTranslation(GetCurrentLanguage(), "color_options_settingsmenu"),
             " ",
             GetTranslation(GetCurrentLanguage(), "back_options_settingsmenu")
         ];
@@ -28,7 +29,11 @@ public class SettingsMenu : Menu
                 var settings = new LanguageMenu();
                 settings.Start();
                 break;
-            case 3:
+            case 2:
+                var color = new ColorMenu();
+                color.Start();
+                break;
+            case 4:
                 KeepGoing = false;
                 break;
             default:

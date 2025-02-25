@@ -1,4 +1,6 @@
-﻿using static HelperLibrary.TranslationManager;
+﻿using HelperLibrary;
+using TaskClasses;
+using static HelperLibrary.TranslationManager;
 
 namespace TaskSchedulerApp.Sonstiges
 {
@@ -33,6 +35,17 @@ namespace TaskSchedulerApp.Sonstiges
                 {
                     TaskScheduler.TaskQueue.TaskList.RemoveAt(ChoiceIndex - 1);
                 }
+
+                List<MainTask> plannedTask = [];
+                if (TaskScheduler.NextTask != null)
+                    plannedTask.Add(TaskScheduler.NextTask);
+
+                foreach(var item in TaskScheduler.TaskQueue.TaskList)
+                {
+                    plannedTask.Add(item);
+                }
+
+                Config.SaveSettings(null, null, null, plannedTask);
             }
 
             KeepGoing = false;

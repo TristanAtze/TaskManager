@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Diagnostics;
 using TaskClasses;
 
 namespace HelperLibrary;
@@ -25,7 +26,7 @@ public class Config
             File.Create("settings.json");
         }
 
-        string fileContent = File.ReadAllText("settings.json");
+        string fileContent = ReadFile();
 
         Config? settings = JsonConvert.DeserializeObject<Config>(fileContent);
         Logger.Log("settings.json loaded.");
@@ -70,5 +71,18 @@ public class Config
         var content = JsonConvert.SerializeObject(settings);
         File.WriteAllText("settings.json", content);
         Logger.Log("settings were saved");
+    }
+
+    static string ReadFile()
+    {
+        try
+        {
+            return File.ReadAllText("settings.json");
+        }
+        catch
+        {
+            Thread.Sleep(50);
+            return ReadFile();
+        }
     }
 }

@@ -20,16 +20,16 @@ public class Config
 
     public static Config? GetSettings()
     {
-        if (!File.Exists("settings.json"))
+        if (!File.Exists("settings.taskmanager"))
         {
-            Logger.Log("settings.json created.");
-            File.Create("settings.json");
+            Logger.Log("settings.taskmanager created.");
+            File.Create("settings.taskmanager");
         }
 
         string fileContent = ReadFile();
 
         Config? settings = JsonConvert.DeserializeObject<Config>(fileContent);
-        Logger.Log("settings.json loaded.");
+        Logger.Log("settings.taskmanager loaded.");
         return settings;
     }
 
@@ -64,12 +64,12 @@ public class Config
                 settings.PlannedTasks = plannedTasks;
         }
 
-        if (!File.Exists("settings.json"))
+        if (!File.Exists("settings.taskmanager"))
         {
-            File.Create("settings.json");
+            File.Create("settings.taskmanager");
         }
         var content = JsonConvert.SerializeObject(settings);
-        File.WriteAllText("settings.json", content);
+        File.WriteAllText("settings.taskmanager", content);
         Logger.Log("settings were saved");
     }
 
@@ -77,7 +77,7 @@ public class Config
     {
         try
         {
-            return File.ReadAllText("settings.json");
+            return File.ReadAllText("settings.taskmanager");
         }
         catch
         {

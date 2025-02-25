@@ -37,7 +37,8 @@ public class MainMenu : Menu
                 delete.Start();
                 break;
             case 4:
-                //todo Config laden verknüpfen
+                var loadpresets = new LoadPresetsMenu();
+                loadpresets.Start();
                 break;
             case 5:
                 var settings = new SettingsMenu();

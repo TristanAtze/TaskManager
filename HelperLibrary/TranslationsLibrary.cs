@@ -161,6 +161,23 @@
                     #region
                     {"headline_deletetask", "Task entfernen" },
                     #endregion
+
+                    { "color_options_settingsmenu", "[ Farbe ]" },
+                    { "[ Blue ]", "Blau" },
+                    { "[ Cyan ]", "Cyan" },
+                    { "[ DarkBlue ]", "Dunkelblau" },
+                    { "[ DarkCyan ]", "Dunkelcyan" },
+                    { "[ DarkGray ]", "Dunkelgrau" },
+                    { "[ DarkGreen ]", "Dunkelgrün" },
+                    { "[ DarkMagenta ]", "Dunkelmagenta" },
+                    { "[ DarkRed ]", "Dunkelrot" },
+                    { "[ DarkYellow ]", "Dunkelgelb" },
+                    { "[ Gray ]", "Grau" },
+                    { "[ Green ]", "Grün" },
+                    { "[ Magenta ]", "Magenta" },
+                    { "[ Red ]", "Rot" },
+                    { "[ White ]", "Weiß" },
+                    { "[ Yellow ]", "Gelb" }
                 }
             },
             {
@@ -305,6 +322,23 @@
                     #region
                     {"headline_deletetask", "Remove task" },
                     #endregion
+
+                    { "color_options_settingsmenu", "[ Color ]" },
+                    { "[ Blue ]", "Blue" },
+                    { "[ Cyan ]", "Cyan" },
+                    { "[ DarkBlue ]", "Dark Blue" },
+                    { "[ DarkCyan ]", "Dark Cyan" },
+                    { "[ DarkGray ]", "Dark Gray" },
+                    { "[ DarkGreen ]", "Dark Green" },
+                    { "[ DarkMagenta ]", "Dark Magenta" },
+                    { "[ DarkRed ]", "Dark Red" },
+                    { "[ DarkYellow ]", "Dark Yellow" },
+                    { "[ Gray ]", "Gray" },
+                    { "[ Green ]", "Green" },
+                    { "[ Magenta ]", "Magenta" },
+                    { "[ Red ]", "Red" },
+                    { "[ White ]", "White" },
+                    { "[ Yellow ]", "Yellow" }
                 }
             },
             {
@@ -449,6 +483,23 @@
                     #region
                     {"headline_deletetask", "Supprimer une tâche" },
                     #endregion
+
+                    { "color_options_settingsmenu", "[ Coleur ]" },
+                    { "[ Blue ]", "Bleu" },
+                    { "[ Cyan ]", "Cyan" },
+                    { "[ DarkBlue ]", "Bleu foncé" },
+                    { "[ DarkCyan ]", "Cyan foncé" },
+                    { "[ DarkGray ]", "Gris foncé" },
+                    { "[ DarkGreen ]", "Vert foncé" },
+                    { "[ DarkMagenta ]", "Magenta foncé" },
+                    { "[ DarkRed ]", "Rouge foncé" },
+                    { "[ DarkYellow ]", "Jaune foncé" },
+                    { "[ Gray ]", "Gris" },
+                    { "[ Green ]", "Vert" },
+                    { "[ Magenta ]", "Magenta" },
+                    { "[ Red ]", "Rouge" },
+                    { "[ White ]", "Blanc" },
+                    { "[ Yellow ]", "Jaune" }
                 }
             },
             {
@@ -593,6 +644,23 @@
                     #region
                     {"headline_deletetask", "Rimuovere attività" },
                     #endregion
+
+                    { "color_options_settingsmenu", "[ Colore ]" },
+                    { "[ Blue ]", "Blu" },
+                    { "[ Cyan ]", "Ciano" },
+                    { "[ DarkBlue ]", "Blu scuro" },
+                    { "[ DarkCyan ]", "Ciano scuro" },
+                    { "[ DarkGray ]", "Grigio scuro" },
+                    { "[ DarkGreen ]", "Verde scuro" },
+                    { "[ DarkMagenta ]", "Magenta scuro" },
+                    { "[ DarkRed ]", "Rosso scuro" },
+                    { "[ DarkYellow ]", "Giallo scuro" },
+                    { "[ Gray ]", "Grigio" },
+                    { "[ Green ]", "Verde" },
+                    { "[ Magenta ]", "Magenta" },
+                    { "[ Red ]", "Rosso" },
+                    { "[ White ]", "Bianco" },
+                    { "[ Yellow ]", "Giallo" }
                 }
             },
             {
@@ -737,6 +805,23 @@
                     #region
                     {"headline_deletetask", "Eliminar tarea" },
                     #endregion
+
+                    { "color_options_settingsmenu", "[ Color ]" },
+                    { "[ Blue ]", "Azul" },
+                    { "[ Cyan ]", "Cian" },
+                    { "[ DarkBlue ]", "Azul oscuro" },
+                    { "[ DarkCyan ]", "Cian oscuro" },
+                    { "[ DarkGray ]", "Gris oscuro" },
+                    { "[ DarkGreen ]", "Verde oscuro" },
+                    { "[ DarkMagenta ]", "Magenta oscuro" },
+                    { "[ DarkRed ]", "Rojo oscuro" },
+                    { "[ DarkYellow ]", "Amarillo oscuro" },
+                    { "[ Gray ]", "Gris" },
+                    { "[ Green ]", "Verde" },
+                    { "[ Magenta ]", "Magenta" },
+                    { "[ Red ]", "Rojo" },
+                    { "[ White ]", "Blanco" },
+                    { "[ Yellow ]", "Amarillo" }
                 }
             },
             {

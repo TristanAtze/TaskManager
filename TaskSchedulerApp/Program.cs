@@ -12,11 +12,12 @@ public class Program
     {
         Console.CursorVisible = false;
         Logger.LogFileCreate();
-        //ConsoleColor? color = Config.GetSettings()?.ConsoleColorStr;
-        //if (color != null)
-        //    Console.ForegroundColor = (ConsoleColor)color;
-        //else
-        //    Console.ForegroundColor = ConsoleColor.White;
+        ConsoleColor? color = Config.GetSettings()?.ConsoleColorStr;
+        if (color != null && color != 0)
+            Console.ForegroundColor = (ConsoleColor)color;
+        else
+            Console.ForegroundColor = ConsoleColor.White;
+
 
 
         List<MainTask>? plannedTasks = Config.GetSettings()?.PlannedTasks;

@@ -1,4 +1,5 @@
-﻿using static HelperLibrary.TranslationManager;
+﻿using Newtonsoft.Json;
+using static HelperLibrary.TranslationManager;
 
 namespace BackupTool
 {
@@ -66,7 +67,14 @@ namespace BackupTool
                 return;
 
             // Neuen Task anlegen und starten
-            BackupTask task = new BackupTask(sourceFolder, destinationFolder, backupType, automationMethod);
+            BackupTask task = new (sourceFolder, destinationFolder, backupType, automationMethod);
+
+            if(BackupManager.PlannedTasks != null)
+            {
+                BackupManager.PlannedTasks.Add(task);
+                BackupManager.SaveTasks();
+            }
+
             backupTasks.Add(task);
             task.Start();
 
@@ -280,7 +288,36 @@ namespace BackupTool
     /// </summary>
     public static class BackupManager
     {
+        public static List<BackupTask>? PlannedTasks { get; set; }
+
         private static string markerFileName = "fullBackupMarker.txt";
+
+        static BackupManager()
+        {
+            if (!File.Exists("BackupTasks.json"))
+            {
+                File.Create("BackupTasks.json");
+            }
+
+            var content = File.ReadAllText("BackupTasks.json");
+
+            PlannedTasks = JsonConvert.DeserializeObject<List<BackupTask>>(content);
+
+            if (PlannedTasks == null)
+                PlannedTasks = [];
+        }
+
+        public static void SaveTasks()
+        {
+            if (!File.Exists("BackupTasks.json"))
+            {
+                File.Create("BackupTasks.json");
+            }
+
+            var content = JsonConvert.SerializeObject(PlannedTasks);
+
+            File.WriteAllText("BackupTasks.json", content);
+        }
 
         public static void PerformBackup(string? sourceFolder, string? destinationFolder, string? backupType)
         {

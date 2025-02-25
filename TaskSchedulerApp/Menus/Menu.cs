@@ -74,7 +74,7 @@ public abstract class Menu
         else
             ChoiceIndex--;
 
-        if (Options[ChoiceIndex] is " ")
+        if (Options[ChoiceIndex] is " " or "[ NOCH NICHT FUNKTIONS FÄHIG ]")
             MoveUp();
     }
 
@@ -86,7 +86,7 @@ public abstract class Menu
         else
             ChoiceIndex++;
 
-        if (Options[ChoiceIndex] is " ")
+        if (Options[ChoiceIndex] is " " or "[ NOCH NICHT FUNKTIONS FÄHIG ]")
             MoveDown();
     }
 

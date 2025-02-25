@@ -1,9 +1,12 @@
 ﻿using TaskClasses;
 using static HelperLibrary.TranslationManager;
-namespace FileDialog;
-
+using static HelperLibrary.Config;
 using System.Windows.Forms;
 using WindowsForms;
+
+namespace FileDialog;
+
+
 
 public partial class TaskCreator : Form
 {
@@ -221,6 +224,7 @@ public partial class TaskCreator : Form
 
     public static MainTask ReturnValue(MainTask task)
     {
+        SaveSettings(null, null, [task]);
         return task;
     }
 

@@ -114,7 +114,7 @@ public partial class TaskCreator : Form
             case true:
                 if (_taskName != "" &&
                     _taskFilePath != "" &&
-                    _taskInterval != null) saveButton.Enabled = true;
+                    (_taskInterval != null && int.TryParse(interval.Text, out _) && !filePath.Text.Contains("Task"))) saveButton.Enabled = true;
                 else
                 {
                     saveButton.Enabled = false;
@@ -122,13 +122,14 @@ public partial class TaskCreator : Form
                 break;
             case false:
                 if (_taskName != "" &&
-                    _taskFilePath != "") saveButton.Enabled = true;
+                    _taskFilePath != "" && !filePath.Text.Contains("Task")) saveButton.Enabled = true;
                 else
                 {
                     saveButton.Enabled = false;
                 }
                 break;
         }
+        
     }
 
     /// <summary>
@@ -162,9 +163,8 @@ public partial class TaskCreator : Form
 
     private void FilePath_TextChanged(object sender, EventArgs e)
     {
-        _taskFilePath = filePath.Text;
-
-        UpdateSaveButton();
+            _taskFilePath = filePath.Text;
+            UpdateSaveButton();
     }
 
     private void IsRecurring_MouseClick(object sender, MouseEventArgs e)
@@ -255,9 +255,12 @@ public partial class TaskCreator : Form
             }
 
             _taskInterval = new TimeSpan((int)(interval * 1000000000));
-            UpdateSaveButton();
         }
-
+        else
+        {
+            saveButton.Enabled = false;
+        }
+            UpdateSaveButton();
     }
 
     private void Units_SelectedIndexChanged(object sender, EventArgs e)

@@ -92,7 +92,23 @@ namespace HelperLibrary
             {
                 File.Create("settings.taskmanager");
             }
-            var content = JsonConvert.SerializeObject(settings);
+
+            var content = JsonConvert.SerializeObject("");
+            //TODO: Fix this (AUTOTASKS)
+            string[] basicTasks = ["OpenMail", "Calculator", "Browser", "LockInactiv"];
+
+            if (plannedTasks != null)
+            {
+                for (int i = 0; i < plannedTasks.Count; i++)
+                {
+                    if (basicTasks.Contains(plannedTasks[i].Name))
+                    {
+                        plannedTasks.RemoveAt(i);
+                    }
+                }
+            }
+            content = JsonConvert.SerializeObject(settings);
+
             File.WriteAllText("settings.taskmanager", content);
             Logger.Log("settings were saved");
         }

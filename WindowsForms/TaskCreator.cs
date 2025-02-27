@@ -237,7 +237,7 @@ public partial class TaskCreator : Form
 
     private void Priority_SelectedIndexChanged(object sender, EventArgs e)
     {
-        _taskPriority = ConvertPriority(priority.SelectedText);
+        _taskPriority = ConvertPriority(priority.SelectedItem.ToString());
 
         UpdateSaveButton();
     }

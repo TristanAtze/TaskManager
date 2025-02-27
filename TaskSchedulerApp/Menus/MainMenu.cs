@@ -18,6 +18,7 @@ public class MainMenu : Menu
             GetTranslation(GetCurrentLanguage(), "settings_options_mainmenu"),
             " ",
             GetTranslation(GetCurrentLanguage(), "end_options_mainmenu")
+            //end_options_mainmenu
         ];
     }
 

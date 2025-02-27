@@ -64,6 +64,11 @@ namespace HelperLibrary
         {
             Config? settings;
 
+            string[] basicTasks = ["OpenMail", "Calculator", "Browser", "LockInactiv"];
+
+            if (plannedTasks != null)
+                plannedTasks = [.. plannedTasks.Where(Tasks => !basicTasks.Contains(Tasks.Name))];
+
             if (GetSettings() != null)
             {
                 settings = GetSettings();
@@ -95,10 +100,9 @@ namespace HelperLibrary
 
             var content = JsonConvert.SerializeObject("");
             //TODO: Fix this (AUTOTASKS)
-            string[] basicTasks = ["OpenMail", "Calculator", "Browser", "LockInactiv"];
+            
 
-            if (plannedTasks != null)
-                plannedTasks = [.. plannedTasks.Where(Tasks => !basicTasks.Contains(Tasks.Name))];
+           
 
             content = JsonConvert.SerializeObject(settings);
 

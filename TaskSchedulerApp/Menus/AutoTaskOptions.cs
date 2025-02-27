@@ -1,4 +1,5 @@
-﻿using static BasicTaskScheduler.BasicTaskScheduler;
+﻿using System.Windows.Forms;
+using static BasicTaskScheduler.BasicTaskScheduler;
 using static HelperLibrary.TranslationManager;
 namespace TaskSchedulerApp.Menus;
 
@@ -37,8 +38,8 @@ internal class AutoTaskOptions : Menu
                     BasicTasks.Browser((double)TotalTime, Priority);
                     break;
                 case 3:
+                    MessageBox.Show("In der aktuellen Version nicht verfügbar");    
 
-                    BasicTasks.LockInactive((double)TotalTime, Priority);
                     break;
                 case 5:
                     KeepGoing = false;

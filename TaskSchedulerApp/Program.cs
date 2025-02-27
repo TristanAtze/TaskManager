@@ -1,4 +1,5 @@
 ﻿using HelperLibrary;
+using HelperLibrary.TaskClasses;
 using ShutdownBlocker;
 using System.Runtime.InteropServices;
 using TaskSchedulerApp.Menus;
@@ -18,7 +19,7 @@ public class Program
 
 
 
-        List<MainTask>? plannedTasks = Config.GetSettings()?.PlannedTasks;
+        List<OwnTask>? plannedTasks = Config.GetSettings()?.PlannedTasks;
         if (plannedTasks != null)
             plannedTasks?.ToList().ForEach(TaskScheduler.ScheduleTask);
 

@@ -1,4 +1,6 @@
 ﻿using HelperLibrary;
+using HelperLibrary.TaskClasses;
+using System.ComponentModel;
 using static HelperLibrary.TranslationManager;
 
 namespace TaskSchedulerApp.Sonstiges
@@ -7,6 +9,7 @@ namespace TaskSchedulerApp.Sonstiges
     {
         public DeleteTasks()
         {
+            StopScheduler();
             Headline = GetTranslation(GetCurrentLanguage(), "headline_deletetask");
 
             if (TaskScheduler.NextTask != null)
@@ -17,14 +20,25 @@ namespace TaskSchedulerApp.Sonstiges
                 .. Options,
                 .. TaskScheduler.TaskQueue.TaskList
                                .Select(item => $"[ {item.Name} ]"),
+
             ];
-
-
 
             if (Options.Length != 0)
                 Options = [.. Options, " "];
 
             Options = [.. Options, GetTranslation(GetCurrentLanguage(), "back_options_settingsmenu")];
+        }
+
+        private static async void StopScheduler()
+        {
+            TaskScheduler.IsRunning = false;
+            await TaskScheduler.Start();
+        }
+
+        private static async void StartScheduler()
+        {
+            TaskScheduler.IsRunning = true;
+            Task.Run(TaskScheduler.Start);
         }
 
         protected override void CallChoice()
@@ -37,7 +51,7 @@ namespace TaskSchedulerApp.Sonstiges
                 else if (ChoiceIndex - 1 < TaskScheduler.TaskQueue.TaskList.Count)
                     TaskScheduler.TaskQueue.TaskList.RemoveAt(ChoiceIndex - 1);
 
-                List<MainTask> plannedTask = [];
+                List<OwnTask> plannedTask = [];
                 if (TaskScheduler.NextTask != null)
                     plannedTask.Add(TaskScheduler.NextTask);
 
@@ -47,6 +61,7 @@ namespace TaskSchedulerApp.Sonstiges
             }
 
             KeepGoing = false;
+            StartScheduler();
         }
     }
 }

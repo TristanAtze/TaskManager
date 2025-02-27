@@ -1,4 +1,5 @@
 ﻿using HelperLibrary;
+using HelperLibrary.TaskClasses;
 
 
 namespace TaskClasses;
@@ -11,13 +12,13 @@ public class TaskQueue
     /// <summary>
     /// Liste mit allen Tasks.
     /// </summary>
-    public List<MainTask> TaskList { get; private set; } = [];
+    public List<OwnTask> TaskList { get; private set; } = [];
 
     /// <summary>
     /// Fügt eine Task hinzu und sortiert anschließen die gesamte Liste nach Priorität.
     /// </summary>
     /// <param name="task">Hinzuzufügende Task</param>
-    public void AddTask(MainTask task)
+    public void AddTask(OwnTask task)
     {
         TaskList.Add(task);
         Logger.Log("Task was added to TaskQueue");
@@ -35,7 +36,7 @@ public class TaskQueue
     /// Gibt die nächste ausstehende Task der Liste zurück.
     /// </summary>
     /// <returns>Nächste ausstehende Task</returns>
-    public MainTask? GetNextTask()
+    public OwnTask? GetNextTask()
     {
         var taskToExecute = TaskList.FirstOrDefault();
         if (taskToExecute != null)
@@ -45,7 +46,7 @@ public class TaskQueue
         return taskToExecute;
     }
 
-    public void ThrowTask(MainTask actualTask)
+    public void ThrowTask(OwnTask actualTask)
     {
         TaskList.Add(actualTask);
     }

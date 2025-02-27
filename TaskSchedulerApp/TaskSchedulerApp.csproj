@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HelperLibrary\HelperLibrary.csproj" />
-    <ProjectReference Include="..\TaskClasses\TaskClasses.csproj" />
     <ProjectReference Include="..\WindowsForms\WindowsForms.csproj" />
   </ItemGroup>
 

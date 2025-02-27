@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using HelperLibrary.TaskClasses;
+using Newtonsoft.Json;
 using System.Diagnostics;
 
 namespace HelperLibrary
@@ -59,7 +60,7 @@ namespace HelperLibrary
         public static void SaveSettings(string? language = null,
             ConsoleColor? consoleColor = null,
             List<MainTask>? presets = null,
-            List<MainTask>? plannedTasks = null)
+            List<OwnTask>? plannedTasks = null)
         {
             Config? settings;
 
@@ -96,7 +97,6 @@ namespace HelperLibrary
             }
 
             var content = JsonConvert.SerializeObject("");
-            //TODO: Fix this (AUTOTASKS)
 
             content = JsonConvert.SerializeObject(settings);
 

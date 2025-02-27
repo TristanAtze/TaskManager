@@ -1,9 +1,9 @@
-﻿using TaskClasses;
-using static HelperLibrary.TranslationManager;
+﻿using static HelperLibrary.TranslationManager;
 using static HelperLibrary.Config;
 using System.Windows.Forms;
 using WindowsForms;
 using HelperLibrary;
+using HelperLibrary.TaskClasses;
 
 namespace FileDialog;
 
@@ -251,11 +251,10 @@ public partial class TaskCreator : Form
             string? selectedItem = units.SelectedItem.ToString();
 
             if (selectedItem != null)
-            {
                 interval = value * _units[selectedItem];
-            }
 
-            _taskInterval = new TimeSpan((int)(interval * 1000000000));
+            _taskInterval = TimeSpan.FromSeconds(interval);
+            //_taskInterval = new TimeSpan((int)(interval * 1000000000));
         }
         else
             saveButton.Enabled = false;
@@ -274,7 +273,7 @@ public partial class TaskCreator : Form
                 interval = value * _units[selectedItem];
             }
 
-            _taskInterval = new TimeSpan((int)(interval * 1000000000));
+            _taskInterval = TimeSpan.FromSeconds(interval);
             UpdateSaveButton();
         }
 

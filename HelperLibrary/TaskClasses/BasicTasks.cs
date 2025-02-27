@@ -1,5 +1,7 @@
 ﻿using HelperLibrary;
+using HelperLibrary.TaskClasses;
 using System.Diagnostics;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using TaskClasses;
 using static HelperLibrary.TranslationManager;
@@ -7,89 +9,65 @@ using static HelperLibrary.TranslationManager;
 public class BasicTasks
 {
     //Time ist hier Tatsächlich die zeit bis zur ausführung (in Sekunden)
-    public static void Email(double time, int? priority = 1)
+    public static async Task Email(double time, int? priority = 1)
     {
-        //var notificationManager = new NotificationManager();
-        //var logger = new Logger("task_logs.csv");
-        var OpenEmail = new PreTask("OpenMail", () =>
+        await Task.Delay(TimeSpan.FromSeconds(time));
+        string email = GetTranslation(GetCurrentLanguage(), "reciever_mail_basictasks");
+        string subject = Uri.EscapeDataString(GetTranslation(GetCurrentLanguage(), "subject_mail_basictasks"));
+        string body = Uri.EscapeDataString(GetTranslation(GetCurrentLanguage(), "text_mail_basictasks"));
+
+        string mailto = $"mailto:{email}?subject={subject}&body={body}";
+
+        try
         {
-
-            //notificationManager.SendNotification("openmail_executed_mail_basictasks");
-            //logger.Log("OpenMail", "Task successfully executed.");
-            string email = GetTranslation(GetCurrentLanguage(), "reciever_mail_basictasks");
-            string subject = Uri.EscapeDataString(GetTranslation(GetCurrentLanguage(), "subject_mail_basictasks"));
-            string body = Uri.EscapeDataString(GetTranslation(GetCurrentLanguage(), "text_mail_basictasks"));
-
-            string mailto = $"mailto:{email}?subject={subject}&body={body}";
-
-            try
-            {
-                Process.Start(new ProcessStartInfo(mailto) { UseShellExecute = true });
-                Logger.Log("openmail_executed_mail_basictasks");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(GetTranslation(GetCurrentLanguage(), "openmail_error_executed_mail_basictasks") + ex.Message);
-                Logger.Log("openmail_executed_mail_basictasks ERROR");
-            }
-            NotificationManager.SendNotification("openmail_executed_mail_basictasks");
-
-
-        }, DateTime.Now.AddSeconds(time), priority);
-
-        TaskScheduler.ScheduleTask(OpenEmail);
+            Process.Start(new ProcessStartInfo(mailto) { UseShellExecute = true });
+            Logger.Log("openmail_executed_mail_basictasks");
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(GetTranslation(GetCurrentLanguage(), "openmail_error_executed_mail_basictasks") + ex.Message);
+            Logger.Log("openmail_executed_mail_basictasks ERROR");
+        }
+        NotificationManager.SendNotification("openmail_executed_mail_basictasks");
     }
 
-    public static void Calculator(double time, int? priority = 1)
+    public static async Task Calculator(double time, int? priority = 1)
     {
-        var Calculator = new PreTask("Calculator", () =>
-        {
-            //notificationManager.SendNotification(GetTranslation(GetCurrentLanguage(), "opencalc_executed_calculator_basictasks"));
-            //logger.Log("Calculator", "Task successfully executed.");
-            try
-            {
-                Process.Start(new ProcessStartInfo("calc.exe") { UseShellExecute = true });
-                Logger.Log("opencalc_executed_calculator_basictasks");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(GetTranslation(GetCurrentLanguage(), "opencalc_error_executed_calculator_basictasks") + ex.Message);
-                Logger.Log("opencalc_executed_calculator_basictasks ERROR");
-            }
-            NotificationManager.SendNotification("opencalc_executed_calculator_basictasks");
+        await Task.Delay(TimeSpan.FromSeconds(time));
 
-        }, DateTime.Now.AddSeconds(time), priority);
-        TaskScheduler.ScheduleTask(Calculator);
+        try
+        {
+            Process.Start(new ProcessStartInfo("calc.exe") { UseShellExecute = true });
+            Logger.Log("opencalc_executed_calculator_basictasks");
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(GetTranslation(GetCurrentLanguage(), "opencalc_error_executed_calculator_basictasks") + ex.Message);
+            Logger.Log("opencalc_executed_calculator_basictasks ERROR");
+        }
+        NotificationManager.SendNotification("opencalc_executed_calculator_basictasks");
+
     }
 
-    public static void Browser(double time, int? priority = 1)
+    public static async Task Browser(double time, int? priority = 1)
     {
-        //var notificationManager = new NotificationManager();
-        //var logger = new Logger("task_logs.csv");
-
-        var Browser = new PreTask("Browser", () =>
+        await Task.Delay(TimeSpan.FromSeconds(time));
+        try
         {
-            try
-            {
-                //notificationManager.SendNotification(GetTranslation(GetCurrentLanguage(), "openbrowser_executed_browser_basictasks"));
-                //logger.Log("Browser", "Task successfully executed.");
-                ProcessStartInfo psi = new ProcessStartInfo
-                {
-                    FileName = "https://www.google.com",
-                    UseShellExecute = true
-                };
-                Process.Start(psi);
-                NotificationManager.SendNotification("openbrowser_executed_browser_basictasks");
-                Logger.Log("openbrowser_executed_browser_basictasks");
-            }
-            catch
-            {
-                Logger.Log("openbrowser_executed_browser_basictasks ERROR");
-            }
 
-        }, DateTime.Now.AddSeconds(time), priority);
-
-        TaskScheduler.ScheduleTask(Browser);
+            ProcessStartInfo psi = new ProcessStartInfo
+            {
+                FileName = "https://www.google.com",
+                UseShellExecute = true
+            };
+            Process.Start(psi);
+            NotificationManager.SendNotification("openbrowser_executed_browser_basictasks");
+            Logger.Log("openbrowser_executed_browser_basictasks");
+        }
+        catch
+        {
+            Logger.Log("openbrowser_executed_browser_basictasks ERROR");
+        }
     }
 
     public static void LockInactive(double time, int? priority = 1)
@@ -117,6 +95,5 @@ public class BasicTasks
             });
 
         }, DateTime.Now.AddSeconds(time), priority);
-        TaskScheduler.ScheduleTask(LockInactive);
     }
 }

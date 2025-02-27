@@ -1,9 +1,8 @@
-﻿using HelperLibrary;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Threading.Tasks;
 
 
-namespace TaskClasses;
+namespace HelperLibrary.TaskClasses;
 
 
 /// <summary>

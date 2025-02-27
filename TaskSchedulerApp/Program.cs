@@ -1,8 +1,6 @@
 ﻿using HelperLibrary;
 using ShutdownBlocker;
 using System.Runtime.InteropServices;
-using TaskClasses;
-using TaskSchedulerApp.BackgroundClasses;
 using TaskSchedulerApp.Menus;
 
 public class Program
@@ -22,12 +20,7 @@ public class Program
 
         List<MainTask>? plannedTasks = Config.GetSettings()?.PlannedTasks;
         if (plannedTasks != null)
-        {
-            foreach (var item in plannedTasks)
-            {
-                TaskScheduler.ScheduleTask(item);
-            }
-        }
+            plannedTasks?.ToList().ForEach(TaskScheduler.ScheduleTask);
 
         Task.Run(PreventShutdown.Start);
         Task.Run(() => PcStatus.StartMonitoring(TimeSpan.FromMinutes(1), TimeSpan.FromMinutes(1), 20.0f, ["test"], "test"));

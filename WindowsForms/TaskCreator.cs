@@ -3,6 +3,7 @@ using static HelperLibrary.TranslationManager;
 using static HelperLibrary.Config;
 using System.Windows.Forms;
 using WindowsForms;
+using HelperLibrary;
 
 namespace FileDialog;
 
@@ -15,16 +16,16 @@ public partial class TaskCreator : Form
     /// Array mit allen möglichen Prioritäten, die zur Auswahl stehen.
     /// </summary>
     private readonly string[] _prioritys =
-    {
+    [
         GetTranslation(GetCurrentLanguage(), "veryimportant_prioritys_taskcreator"),
         GetTranslation(GetCurrentLanguage(), "important_prioritys_taskcreator"),
         GetTranslation(GetCurrentLanguage(), "normalimportant_prioritys_taskcreator"),
         GetTranslation(GetCurrentLanguage(), "lessimportant_prioritys_taskcreator"),
         GetTranslation(GetCurrentLanguage(), "leastimportant_prioritys_taskcreator")
-    };
+    ];
 
 
-    private readonly Dictionary<string, int> _units = new Dictionary<string, int>()
+    private readonly Dictionary<string, int> _units = new()
     {
         {GetTranslation(GetCurrentLanguage(), "seconds_taskcreator"), 1 },
         {GetTranslation(GetCurrentLanguage(), "minutes_taskcreator"), 60 },
@@ -137,7 +138,7 @@ public partial class TaskCreator : Form
     /// </summary>
     /// <param name="selectedPriority">string-Priorität</param>
     /// <returns>Integer</returns>
-    private int ConvertPriority(string selectedPriority)
+    private static int ConvertPriority(string selectedPriority)
     {
         int result = 3;
         if (selectedPriority == GetTranslation(GetCurrentLanguage(), "veryimportant_prioritys_taskcreator"))
@@ -203,7 +204,7 @@ public partial class TaskCreator : Form
 
     private void SaveButton_MouseClick(object sender, MouseEventArgs e)
     {
-        OwnTask task = new OwnTask(_taskName, _taskFilePath, _taskDateTime, _taskPriority, _taskIsRecurring, _taskInterval)
+        OwnTask task = new(_taskName, _taskFilePath, _taskDateTime, _taskPriority, _taskIsRecurring, _taskInterval)
         {
             ConditionCPUUsage = CpuUsage,
             ConditionJustBooted = JustBooted,
@@ -211,9 +212,7 @@ public partial class TaskCreator : Form
         };
 
         if (CheckNum == 1)
-        {
             ReturnValue(task);
-        }
         else
             TaskScheduler.ScheduleTask(task);
 
@@ -237,9 +236,11 @@ public partial class TaskCreator : Form
 
     private void Priority_SelectedIndexChanged(object sender, EventArgs e)
     {
-        _taskPriority = ConvertPriority(priority.SelectedItem.ToString());
-
-        UpdateSaveButton();
+        if (priority.SelectedItem != null)
+        {
+            _taskPriority = ConvertPriority(priority.SelectedItem?.ToString() ?? string.Empty);
+            UpdateSaveButton();
+        }
     }
 
     private void Interval_TextChanged(object sender, EventArgs e)
@@ -257,9 +258,7 @@ public partial class TaskCreator : Form
             _taskInterval = new TimeSpan((int)(interval * 1000000000));
         }
         else
-        {
             saveButton.Enabled = false;
-        }
             UpdateSaveButton();
     }
 

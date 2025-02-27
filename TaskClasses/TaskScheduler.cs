@@ -1,6 +1,5 @@
 ﻿using HelperLibrary;
 using TaskClasses;
-using TaskSchedulerApp.BackgroundClasses;
 
 public static class TaskScheduler
 {
@@ -20,19 +19,25 @@ public static class TaskScheduler
         List<MainTask> plannedTasks = [];
         if(alreadyPlanned != null)
         {
-            if (NextTask != null && !alreadyPlanned.Contains(NextTask))
-                plannedTasks.Add(NextTask);
+            //if (NextTask != null && !alreadyPlanned.Contains(NextTask))
+            //    plannedTasks.Add(NextTask);
 
-            foreach (var item in TaskQueue.TaskList)
-            {
-                plannedTasks.Add(item);
+            //foreach (var item in TaskQueue.TaskList)
+            //{
+            //    plannedTasks.Add(item);
 
-                foreach (var elem in alreadyPlanned)
-                {
-                    if (elem == item)
-                        plannedTasks.Remove(item);
-                }
-            }
+            //    foreach (var elem in alreadyPlanned)
+            //    {
+            //        if (elem == item)
+            //            plannedTasks.Remove(item);
+            //    }
+            //}
+
+            plannedTasks.AddRange(
+                new[] { NextTask }
+                    .Where(task => task != null && !alreadyPlanned.Contains(task))
+                    .Concat(TaskQueue.TaskList.Where(task => !alreadyPlanned.Contains(task)))
+            );
         }
 
         Config.SaveSettings(null, null, null, plannedTasks);
@@ -50,10 +55,9 @@ public static class TaskScheduler
             if (NextTask != null)
             {
                 var delay = NextTask.ScheduledTime - DateTime.Now;
+
                 if (delay.TotalMilliseconds > 0)
-                {
                     await Task.Delay(delay);
-                }
 
                 if (RequirementsMet(NextTask))
                 {
@@ -68,9 +72,7 @@ public static class TaskScheduler
                         task.Execute();
                     }
                     else
-                    {
                         NextTask.Execute();
-                    }
 
                     if (NextTask.IsRecurring && NextTask.Interval.HasValue)
                     {

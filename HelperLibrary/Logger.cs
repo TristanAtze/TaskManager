@@ -24,10 +24,7 @@ public static class Logger
 
     public static void Log(string message, [CallerMemberName] string memberName = "", string logFilePath = "task_logs.csv")
     {
-        if (logFilePath is null)
-        {
-            throw new ArgumentNullException(nameof(logFilePath));
-        }
+        ArgumentNullException.ThrowIfNull(logFilePath);
 
         try
         {
@@ -48,13 +45,15 @@ public static class Logger
         {
             if (logs.Count != 0)
             {
-                foreach (var e in logs)
+                var logsToWrite = new List<string>(logs);
+                logs.Clear();
+
+                foreach (var e in logsToWrite)
                 {
-                    writer.WriteLine(e);
-                    logs.Remove(e);
+                    await writer.WriteLineAsync(e);
                 }
             }
-            Thread.Sleep(5000);
+            await Task.Delay(5000);
         }
     }
 }

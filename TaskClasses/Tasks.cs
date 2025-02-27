@@ -1,4 +1,6 @@
-﻿using System.Diagnostics;
+﻿using HelperLibrary;
+using System.Diagnostics;
+using System.Threading.Tasks;
 
 
 namespace TaskClasses;
@@ -29,13 +31,12 @@ public class PreTask : MainTask
 
     public static bool CompareType(object obj)
     {
+        bool result;
         PreTask task = new("", new Action(() => Process.Start(new ProcessStartInfo())), DateTime.Now);
 
-        if (task.GetType() == obj.GetType())
-            return true;
+        result = task.GetType() == obj.GetType();
 
-        else
-            return false;
+        return result;
     }
 
     /// <summary>
@@ -70,15 +71,14 @@ public class OwnTask : MainTask
         Interval = interval;
     }
 
-    public static bool CompareType(object obj)
+    public static bool CompareType(object? obj)
     {
+        bool result;
+
         OwnTask task = new("", "", DateTime.Now);
+        result = task.GetType() == obj?.GetType();
 
-        if (task.GetType() == obj.GetType())
-            return true;
-
-        else
-            return false;
+        return result;
     }
 
     /// <summary>

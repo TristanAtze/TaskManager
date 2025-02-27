@@ -1,4 +1,4 @@
-﻿using TaskSchedulerApp.BackgroundClasses;
+﻿using HelperLibrary;
 
 namespace TaskSchedulerApp.Sonstiges;
 

@@ -1,5 +1,4 @@
 ﻿using HelperLibrary;
-using TaskClasses;
 using static HelperLibrary.TranslationManager;
 
 namespace TaskSchedulerApp.Sonstiges
@@ -13,10 +12,14 @@ namespace TaskSchedulerApp.Sonstiges
             if (TaskScheduler.NextTask != null)
                 Options = [.. Options, $"[ {TaskScheduler.NextTask.Name} ]"];
 
-            foreach (var item in TaskScheduler.TaskQueue.TaskList)
-            {
-                Options = [.. Options, $"[ {item.Name} ]"];
-            }
+            Options =
+            [
+                .. Options,
+                .. TaskScheduler.TaskQueue.TaskList
+                               .Select(item => $"[ {item.Name} ]"),
+            ];
+
+
 
             if (Options.Length != 0)
                 Options = [.. Options, " "];
@@ -32,18 +35,13 @@ namespace TaskSchedulerApp.Sonstiges
                     TaskScheduler.NextTask = TaskScheduler.TaskQueue.GetNextTask();
 
                 else if (ChoiceIndex - 1 < TaskScheduler.TaskQueue.TaskList.Count)
-                {
                     TaskScheduler.TaskQueue.TaskList.RemoveAt(ChoiceIndex - 1);
-                }
 
                 List<MainTask> plannedTask = [];
                 if (TaskScheduler.NextTask != null)
                     plannedTask.Add(TaskScheduler.NextTask);
 
-                foreach(var item in TaskScheduler.TaskQueue.TaskList)
-                {
-                    plannedTask.Add(item);
-                }
+                plannedTask.AddRange(TaskScheduler.TaskQueue.TaskList);
 
                 Config.SaveSettings(null, null, null, plannedTask);
             }

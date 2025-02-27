@@ -180,7 +180,7 @@ namespace BackupTool
             buttonBackupStart.TabIndex = 11;
 
             buttonBackupStart.UseVisualStyleBackColor = true;
-            buttonBackupStart.Click += buttonBackupStart_Click;
+            buttonBackupStart.Click += ButtonBackupStart_Click;
             // 
             // listViewActiveTasks
             // 

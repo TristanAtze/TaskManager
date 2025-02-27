@@ -1,9 +1,8 @@
-﻿using HelperLibrary;
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 
-namespace TaskSchedulerApp.BackgroundClasses
+namespace HelperLibrary
 {
     public static class PcStatus
     {
@@ -59,8 +58,10 @@ namespace TaskSchedulerApp.BackgroundClasses
                     Logger.Log("Async inactive read");
                     try
                     {
-                        LASTINPUTINFO lastInputInfo = new LASTINPUTINFO();
-                        lastInputInfo.cbSize = (uint)Marshal.SizeOf(typeof(LASTINPUTINFO));
+                        LASTINPUTINFO lastInputInfo = new()
+                        {
+                            cbSize = (uint)Marshal.SizeOf(typeof(LASTINPUTINFO))
+                        };
 
                         // Ruft die Zeit der letzten Eingabe ab
                         if (!GetLastInputInfo(ref lastInputInfo))
@@ -74,7 +75,7 @@ namespace TaskSchedulerApp.BackgroundClasses
                         uint inaktiveZeitInMillisekunden = aktuelleZeit - letzteEingabe;
 
                         // Prüft, ob die inaktive Zeit die angegebene Schwelle überschreitet
-                        IsUserInactive = (inaktiveZeitInMillisekunden / 1000) >= 5;
+                        IsUserInactive = inaktiveZeitInMillisekunden / 1000 >= 5;
                     }
                     catch
                     {
@@ -85,11 +86,6 @@ namespace TaskSchedulerApp.BackgroundClasses
                 }
             }, token);
 
-            //_ = Task.Run(async () =>
-            //{
-            //    IsUserInactive = true;
-            //}, token);
-
             _ = Task.Run(async () =>
             {
                 while (!token.IsCancellationRequested)
@@ -99,14 +95,12 @@ namespace TaskSchedulerApp.BackgroundClasses
                     {
                         if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
                         {
-                            using (PerformanceCounter cpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total"))
-                            {
-                                // Initialer Aufruf liefert oft 0, daher kurzes Warten
-                                cpuCounter.NextValue();
-                                await Task.Delay(1000, token);
-                                float currentCpuUsage = cpuCounter.NextValue();
-                                IsPcLightlyLoaded = currentCpuUsage < cpuUsageThreshold;
-                            }
+                            using PerformanceCounter cpuCounter = new("Processor", "% Processor Time", "_Total");
+                            // Initialer Aufruf liefert oft 0, daher kurzes Warten
+                            cpuCounter.NextValue();
+                            await Task.Delay(1000, token);
+                            float currentCpuUsage = cpuCounter.NextValue();
+                            IsPcLightlyLoaded = currentCpuUsage < cpuUsageThreshold;
                         }
                     }
                     catch (Exception ex)
@@ -163,7 +157,7 @@ namespace TaskSchedulerApp.BackgroundClasses
                     {
                         // Sucht nach einem bestimmten Prozess
                         var processes = Process.GetProcessesByName(Path.GetFileNameWithoutExtension(specificProgramName));
-                        open = processes.Any();
+                        open = processes.Length != 0;
                     }
                     catch { /* Fehler ggf. loggen */ }
                     IsProgramOpen = open;

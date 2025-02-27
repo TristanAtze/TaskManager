@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using System.Diagnostics;
-using TaskClasses;
 
 namespace HelperLibrary
 {
@@ -15,7 +14,7 @@ namespace HelperLibrary
         public string? Language { get; set; } = null;
         public ConsoleColor ConsoleColorStr { get; set; }
         public List<MainTask> Presets { get; set; }
-        public List<MainTask> PlannedTasks { get; set; }
+        public List<OwnTask> PlannedTasks { get; set; }
 
         /// <summary>
         /// Initialisiert eine neue Instanz der <see cref="Config"/>-Klasse.
@@ -23,8 +22,8 @@ namespace HelperLibrary
         /// </summary>
         public Config()
         {
-            Presets = new List<MainTask>();
-            PlannedTasks = new List<MainTask>();
+            Presets = [];
+            PlannedTasks = [];
         }
 
         /// <summary>
@@ -70,9 +69,7 @@ namespace HelperLibrary
                 plannedTasks = [.. plannedTasks.Where(Tasks => !basicTasks.Contains(Tasks.Name))];
 
             if (GetSettings() != null)
-            {
                 settings = GetSettings();
-            }
             else
             {
                 settings = new();
@@ -100,9 +97,6 @@ namespace HelperLibrary
 
             var content = JsonConvert.SerializeObject("");
             //TODO: Fix this (AUTOTASKS)
-            
-
-           
 
             content = JsonConvert.SerializeObject(settings);
 
@@ -124,8 +118,9 @@ namespace HelperLibrary
             catch
             {
                 Thread.Sleep(50);
-                return ReadFile();
+                ReadFile();
             }
+            return "";
         }
     }
 }

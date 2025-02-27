@@ -1,4 +1,4 @@
-﻿namespace TaskClasses
+﻿namespace HelperLibrary
 {
     /// <summary>
     /// Überklasse für alle Tasks. Individuelle wie vorgefertigte.

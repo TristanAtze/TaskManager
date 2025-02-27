@@ -1,6 +1,7 @@
 ﻿using HelperLibrary;
-using RestartApp;
 using System.Windows.Forms;
+using WindowsForms;
+
 
 //using static System.Net.Mime.MediaTypeNames;
 using static HelperLibrary.TranslationManager;

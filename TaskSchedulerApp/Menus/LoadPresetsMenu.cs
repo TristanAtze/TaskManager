@@ -1,5 +1,4 @@
 ﻿using HelperLibrary;
-using RestartApp;
 using System.Drawing;
 using System.Windows.Forms;
 using static HelperLibrary.TranslationManager;
@@ -14,10 +13,10 @@ public class LoadPresetsMenu : Menu
         Headline = GetTranslation(GetCurrentLanguage(), "loadpreset_options_mainmenu");
         Options =
         [
-            settigns.Presets.ToString(),
-            "[ NOCH NICHT FUNKTIONS FÄHIG ]",
-            GetTranslation(GetCurrentLanguage(), "return_autotaskmenu")
-        ]; 
+            settigns?.Presets?.ToString() ?? string.Empty,
+                    "[ NOCH NICHT FUNKTIONS FÄHIG ]",
+                    GetTranslation(GetCurrentLanguage(), "return_autotaskmenu")
+        ];
     }
 
     protected override void CallChoice()

@@ -2,22 +2,22 @@
 using System.Runtime.InteropServices;
 using static HelperLibrary.TranslationManager;
 
-namespace RestartApp
+namespace WindowsForms
 {
     public partial class MainForm : Form
     {
         [DllImport("kernel32.dll")]
-        private static extern IntPtr GetConsoleWindow();
+        private static extern nint GetConsoleWindow();
 
         [DllImport("user32.dll")]
-        private static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+        private static extern bool ShowWindow(nint hWnd, int nCmdShow);
 
         const int SW_MINIMIZE = 6;
         const int SW_RESTORE = 9;
 
         public MainForm()
         {
-            this.Load += MainForm_Load; // Beim Laden ausführen
+            Load += MainForm_Load; // Beim Laden ausführen
         }
 
         private async void MainForm_Load(object? sender, EventArgs e)
@@ -40,45 +40,41 @@ namespace RestartApp
 
         private async Task LockInput()
         {
-            IntPtr consoleHandle = GetConsoleWindow();
+            nint consoleHandle = GetConsoleWindow();
             ShowWindow(consoleHandle, SW_MINIMIZE); // Minimiert das Fenster
-            Thread.Sleep(2000);                      // Warte 5 Sekunden
-            ShowWindow(consoleHandle, SW_RESTORE);   // Stellt das Fenster wieder her
+            await Task.Delay(2000);                 // Warte 2 Sekunden
+            ShowWindow(consoleHandle, SW_RESTORE);  // Stellt das Fenster wieder her
         }
 
-        private void KillProcess(string processName)
+        private static void KillProcess(string processName)
         {
-            int currentProcessId = Process.GetCurrentProcess().Id;
+            int currentProcessId = Environment.ProcessId;
 
-            foreach (var process in Process.GetProcessesByName(processName))
-            {
-                if (process.Id == currentProcessId)
-                    continue;
-
-                try
+            Process.GetProcessesByName(processName)
+                .Where(process => process.Id != currentProcessId)
+                .ToList()
+                .ForEach(process =>
                 {
-                    process.Kill();
-                    process.WaitForExit();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Fehler beim Beenden des Prozesses {processName}: {ex.Message}", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
+                    try
+                    {
+                        process.Kill();
+                        process.WaitForExit();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Fehler beim Beenden des Prozesses {processName}: {ex.Message}", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                });
         }
 
 
-        private void StartProcess(string processName)
+        private static void StartProcess(string processName)
         {
             string exePath = Application.StartupPath + "\\" + processName + ".exe";
-            if (System.IO.File.Exists(exePath))
-            {
+            if (File.Exists(exePath))
                 Process.Start(exePath);
-            }
             else
-            {
                 MessageBox.Show($"Die EXE wurde nicht gefunden: {exePath}", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
     }
 }

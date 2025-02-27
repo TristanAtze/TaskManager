@@ -6,7 +6,7 @@ namespace BackupTool
     public partial class Form1 : Form
     {
         // Liste für alle aktiven Backup-Tasks
-        private List<BackupTask> backupTasks = new List<BackupTask>();
+        private List<BackupTask> backupTasks = [];
 
         public Form1()
         {
@@ -15,11 +15,11 @@ namespace BackupTool
             buttonBrowseDestination.Text = GetTranslation(GetCurrentLanguage(), "searching_designer_backupmanager");
             labelSource.Text = GetTranslation(GetCurrentLanguage(), "source_designer_backupmanager");
             labelDestination.Text = GetTranslation(GetCurrentLanguage(), "destination_folder_designer_backupmanager");
-            comboBoxBackupType.Items.AddRange(new object[] { GetTranslation(GetCurrentLanguage(), "complete_backuptype_backupmanager"), GetTranslation(GetCurrentLanguage(), "incremental_backuptype_backupmanager"), GetTranslation(GetCurrentLanguage(), "differential_backuptype_backupmanager"), GetTranslation(GetCurrentLanguage(), "synchronize_backuptype_backupmanager") });
+            comboBoxBackupType.Items.AddRange([GetTranslation(GetCurrentLanguage(), "complete_backuptype_backupmanager"), GetTranslation(GetCurrentLanguage(), "incremental_backuptype_backupmanager"), GetTranslation(GetCurrentLanguage(), "differential_backuptype_backupmanager"), GetTranslation(GetCurrentLanguage(), "synchronize_backuptype_backupmanager")]);
             labelAutomation.Text = GetTranslation(GetCurrentLanguage(), "automation_designer_backupmanager");
             labelBackupType.Text = GetTranslation(GetCurrentLanguage(), "backuptype_designer_backupmanager");
 
-            comboBoxAutomation.Items.AddRange(new object[] { GetTranslation(GetCurrentLanguage(), "manual_automationmethod_backupmanager"), GetTranslation(GetCurrentLanguage(), "scheduled_automationmethod_backupmanager"), GetTranslation(GetCurrentLanguage(), "realtime_automationmethod_backupmanager") });
+            comboBoxAutomation.Items.AddRange([GetTranslation(GetCurrentLanguage(), "manual_automationmethod_backupmanager"), GetTranslation(GetCurrentLanguage(), "scheduled_automationmethod_backupmanager"), GetTranslation(GetCurrentLanguage(), "realtime_automationmethod_backupmanager")]);
             buttonBackupStart.Text = GetTranslation(GetCurrentLanguage(), "startbackup_designer_backupmanager");
 
             columnHeaderTaskId.Text = GetTranslation(GetCurrentLanguage(), "taskid_designer_backupmanager");
@@ -50,7 +50,7 @@ namespace BackupTool
         /// <summary>
         /// Startet einen neuen Backup-Task.
         /// </summary>
-        private void buttonBackupStart_Click(object sender, EventArgs e)
+        private void ButtonBackupStart_Click(object sender, EventArgs e)
         {
             string sourceFolder = textBoxSourceFolder.Text;
             string destinationFolder = textBoxDestinationFolder.Text;
@@ -87,18 +87,19 @@ namespace BackupTool
         private void UpdateTaskListView()
         {
             listViewActiveTasks.Items.Clear();
-            foreach (BackupTask? task in backupTasks)
-            {
-                if (task.IsActive)
-                {
+            backupTasks
+                .Where(task => task != null && task.IsActive)
+                .Select(task => {
                     var item = new ListViewItem(task.TaskId.ToString());
                     item.SubItems.Add(task.SourceFolder);
                     item.SubItems.Add(task.DestinationFolder);
                     item.SubItems.Add(task.BackupType);
                     item.SubItems.Add(task.AutomationMethod);
-                    listViewActiveTasks.Items.Add(item);
-                }
-            }
+                    return item;
+                })
+                .ToList()
+                .ForEach(item => listViewActiveTasks.Items.Add(item));
+
             // Schalte den Button "Stop Selected Task" nur frei, wenn mindestens ein Eintrag ausgewählt ist
             buttonStopSelectedTask.Enabled = true;
         }
@@ -127,11 +128,9 @@ namespace BackupTool
         /// </summary>
         private void ButtonStopAllTasks_Click(object sender, EventArgs e)
         {
-            foreach (var task in backupTasks)
-            {
-                task.Stop();
-            }
-            backupTasks.Clear();
+            backupTasks?.ToList().ForEach(task => task.Stop());
+
+            backupTasks?.Clear();
             UpdateTaskListView();
         }
 
@@ -140,16 +139,14 @@ namespace BackupTool
         /// </summary>
         private void ButtonBrowseSource_Click(object sender, EventArgs e)
         {
-            using (FolderBrowserDialog folderDialog = new FolderBrowserDialog())
-            {
-                folderDialog.Description = GetTranslation(GetCurrentLanguage(), "choose_source_folder_backupmanager");
-                if (!string.IsNullOrEmpty(textBoxSourceFolder.Text))
-                    folderDialog.SelectedPath = textBoxSourceFolder.Text;
+            using FolderBrowserDialog folderDialog = new();
+            folderDialog.Description = GetTranslation(GetCurrentLanguage(), "choose_source_folder_backupmanager");
+            if (!string.IsNullOrEmpty(textBoxSourceFolder.Text))
+                folderDialog.SelectedPath = textBoxSourceFolder.Text;
 
-                if (folderDialog.ShowDialog() == DialogResult.OK)
-                {
-                    textBoxSourceFolder.Text = folderDialog.SelectedPath;
-                }
+            if (folderDialog.ShowDialog() == DialogResult.OK)
+            {
+                textBoxSourceFolder.Text = folderDialog.SelectedPath;
             }
         }
 
@@ -158,16 +155,14 @@ namespace BackupTool
         /// </summary>
         private void ButtonBrowseDestination_Click(object sender, EventArgs e)
         {
-            using (FolderBrowserDialog folderDialog = new FolderBrowserDialog())
-            {
-                folderDialog.Description = GetTranslation(GetCurrentLanguage(), "choose_destination_folder_backupmanager");
-                if (!string.IsNullOrEmpty(textBoxDestinationFolder.Text))
-                    folderDialog.SelectedPath = textBoxDestinationFolder.Text;
+            using FolderBrowserDialog folderDialog = new();
+            folderDialog.Description = GetTranslation(GetCurrentLanguage(), "choose_destination_folder_backupmanager");
+            if (!string.IsNullOrEmpty(textBoxDestinationFolder.Text))
+                folderDialog.SelectedPath = textBoxDestinationFolder.Text;
 
-                if (folderDialog.ShowDialog() == DialogResult.OK)
-                {
-                    textBoxDestinationFolder.Text = folderDialog.SelectedPath;
-                }
+            if (folderDialog.ShowDialog() == DialogResult.OK)
+            {
+                textBoxDestinationFolder.Text = folderDialog.SelectedPath;
             }
         }
 
@@ -191,7 +186,7 @@ namespace BackupTool
 
         private System.Windows.Forms.Timer? plannedTimer;
         private System.Windows.Forms.Timer? debounceTimer;
-        private FileSystemWatcher? fileWatcher { get; set; }
+        private FileSystemWatcher? FileWatcher { get; set; }
 
         public BackupTask(string source, string destination, string backupType, string automationMethod)
         {
@@ -217,16 +212,20 @@ namespace BackupTool
             }
             else if (AutomationMethod == GetTranslation(GetCurrentLanguage(), "scheduled_automationmethod_backupmanager"))
             {
-                plannedTimer = new System.Windows.Forms.Timer();
-                plannedTimer.Interval = 60000; // 60 Sekunden
+                plannedTimer = new System.Windows.Forms.Timer
+                {
+                    Interval = 60000 // 60 Sekunden
+                };
                 plannedTimer.Tick += (s, e) => PerformBackup();
                 plannedTimer.Start();
                 IsActive = true;
             }
             else if (AutomationMethod == GetTranslation(GetCurrentLanguage(), "realtime_automationmethod_backupmanager"))
             {
-                plannedTimer = new System.Windows.Forms.Timer();
-                plannedTimer.Interval = 5000; // 5 Sekunden
+                plannedTimer = new System.Windows.Forms.Timer
+                {
+                    Interval = 5000 // 5 Sekunden
+                };
                 plannedTimer.Tick += (s, e) => PerformBackup();
                 plannedTimer.Start();
                 IsActive = true;
@@ -252,10 +251,10 @@ namespace BackupTool
                 plannedTimer.Stop();
                 plannedTimer.Dispose();
             }
-            if (fileWatcher != null)
+            if (FileWatcher != null)
             {
-                fileWatcher.EnableRaisingEvents = false;
-                fileWatcher.Dispose();
+                FileWatcher.EnableRaisingEvents = false;
+                FileWatcher.Dispose();
             }
             if (debounceTimer != null)
             {
@@ -270,14 +269,19 @@ namespace BackupTool
         /// </summary>
         private void PerformBackup()
         {
-            try
+            try 
             {
-                if (SourceFolder != DestinationFolder
+                if (SourceFolder != null && DestinationFolder != null
+                    && SourceFolder != DestinationFolder
                     && !SourceFolder.Contains("TaskScheduler")
                     && !DestinationFolder.Contains("TaskScheduler"))
+                {
                     BackupManager.PerformBackup(SourceFolder, DestinationFolder, BackupType);
+                }
                 else
+                {
                     NotificationManager.SendNotification("ERROR. Please Retry");
+                }
             }
             catch (Exception ex)
             {
@@ -295,29 +299,29 @@ namespace BackupTool
     {
         public static List<BackupTask>? PlannedTasks { get; set; }
 
-        private static string markerFileName = "fullBackupMarker.txt";
+        private const string FullBackupMarkerFileName = "fullBackupMarker.txt";
+        private static string markerFileName = FullBackupMarkerFileName;
 
         static BackupManager()
         {
-            if (!File.Exists("BackupTasks.json"))
-            {
-                File.Create("BackupTasks.json");
-            }
+            FileCreate();
 
             var content = File.ReadAllText("BackupTasks.json");
 
             PlannedTasks = JsonConvert.DeserializeObject<List<BackupTask>>(content);
 
-            if (PlannedTasks == null)
-                PlannedTasks = [];
+            PlannedTasks ??= [];
+        }
+
+        public static void FileCreate()
+        {
+            if (!File.Exists("BackupTasks.json"))
+                File.Create("BackupTasks.json");
         }
 
         public static void SaveTasks()
         {
-            if (!File.Exists("BackupTasks.json"))
-            {
-                File.Create("BackupTasks.json");
-            }
+            FileCreate();
 
             var content = JsonConvert.SerializeObject(PlannedTasks);
 
@@ -345,41 +349,25 @@ namespace BackupTool
 
         private static void CopyAll(DirectoryInfo source, DirectoryInfo target)
         {
-            foreach (FileInfo file in source.GetFiles())
-            {
-                string targetFilePath = Path.Combine(target.FullName, file.Name);
-                file.CopyTo(targetFilePath, true);
-            }
-            foreach (DirectoryInfo subDir in source.GetDirectories())
-            {
-                DirectoryInfo nextTargetSubDir = target.CreateSubdirectory(subDir.Name);
-                CopyAll(subDir, nextTargetSubDir);
-            }
+            source.GetFiles().ToList().ForEach(file => file.CopyTo(Path.Combine(target.FullName, file.Name), true));
+            source.GetDirectories().ToList().ForEach(subDir => CopyAll(subDir, target.CreateSubdirectory(subDir.Name)));
+
         }
 
         private static void CopyIncremental(DirectoryInfo source, DirectoryInfo target)
         {
-            foreach (FileInfo file in source.GetFiles())
+            source.GetFiles().ToList().ForEach(file =>
             {
                 string targetFilePath = Path.Combine(target.FullName, file.Name);
-                if (!File.Exists(targetFilePath))
-                {
+                if (!File.Exists(targetFilePath) || file.LastWriteTime > new FileInfo(targetFilePath).LastWriteTime)
                     file.CopyTo(targetFilePath, true);
-                }
-                else
-                {
-                    FileInfo targetFile = new FileInfo(targetFilePath);
-                    if (file.LastWriteTime > targetFile.LastWriteTime)
-                    {
-                        file.CopyTo(targetFilePath, true);
-                    }
-                }
-            }
-            foreach (DirectoryInfo subDir in source.GetDirectories())
+            });
+
+            source.GetDirectories().ToList().ForEach(subDir =>
             {
                 DirectoryInfo nextTargetSubDir = target.CreateSubdirectory(subDir.Name);
                 CopyIncremental(subDir, nextTargetSubDir);
-            }
+            });
         }
 
         private static void CopyDifferential(DirectoryInfo source, DirectoryInfo target)
@@ -409,63 +397,57 @@ namespace BackupTool
 
         private static void CopyDifferentialRecursive(DirectoryInfo source, DirectoryInfo target, DateTime fullBackupTime)
         {
-            foreach (FileInfo file in source.GetFiles())
+            source.GetFiles().ToList().ForEach(file =>
             {
                 if (file.LastWriteTime > fullBackupTime)
                 {
                     string targetFilePath = Path.Combine(target.FullName, file.Name);
                     file.CopyTo(targetFilePath, true);
                 }
-            }
-            foreach (DirectoryInfo subDir in source.GetDirectories())
+            });
+            source.GetDirectories().ToList().ForEach(subDir =>
             {
                 DirectoryInfo nextTargetSubDir = target.CreateSubdirectory(subDir.Name);
                 CopyDifferentialRecursive(subDir, nextTargetSubDir, fullBackupTime);
-            }
+            });
         }
 
         private static void Synchronize(DirectoryInfo source, DirectoryInfo target)
         {
             if (!target.Exists)
                 target.Create();
-            foreach (FileInfo sourceFile in source.GetFiles())
+
+            source.GetFiles().ToList().ForEach(sourceFile =>
             {
                 string targetFilePath = Path.Combine(target.FullName, sourceFile.Name);
                 if (!File.Exists(targetFilePath))
-                {
                     sourceFile.CopyTo(targetFilePath, true);
-                }
                 else
                 {
                     FileInfo targetFile = new FileInfo(targetFilePath);
                     if (sourceFile.LastWriteTime > targetFile.LastWriteTime)
-                    {
                         sourceFile.CopyTo(targetFilePath, true);
-                    }
                 }
-            }
-            foreach (DirectoryInfo sourceSubDir in source.GetDirectories())
+            });
+            
+            source.GetDirectories().ToList().ForEach(sourceSubDir =>
             {
                 string targetSubDirPath = Path.Combine(target.FullName, sourceSubDir.Name);
-                DirectoryInfo targetSubDir = new DirectoryInfo(targetSubDirPath);
+                DirectoryInfo targetSubDir = new(targetSubDirPath);
                 Synchronize(sourceSubDir, targetSubDir);
-            }
-            foreach (FileInfo targetFile in target.GetFiles())
+            });
+            target.GetFiles().ToList().ForEach(targetFile =>
             {
                 string sourceFilePath = Path.Combine(source.FullName, targetFile.Name);
                 if (!File.Exists(sourceFilePath))
-                {
                     targetFile.Delete();
-                }
-            }
-            foreach (DirectoryInfo targetSubDir in target.GetDirectories())
+            });
+            target.GetDirectories().ToList().ForEach(targetSubDir =>
             {
                 string sourceSubDirPath = Path.Combine(source.FullName, targetSubDir.Name);
                 if (!Directory.Exists(sourceSubDirPath))
-                {
                     targetSubDir.Delete(true);
-                }
-            }
+            });
         }
     }
 }

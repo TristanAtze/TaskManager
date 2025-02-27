@@ -224,9 +224,7 @@ public partial class TaskPresetCreator : TaskCreator
             string? selectedItem = units.SelectedItem.ToString();
 
             if (selectedItem != null)
-            {
                 interval = value * _units[selectedItem];
-            }
 
             _taskInterval = new TimeSpan((int)(interval * 1000000000));
         }
@@ -242,9 +240,7 @@ public partial class TaskPresetCreator : TaskCreator
             string? selectedItem = units.SelectedItem.ToString();
 
             if (selectedItem != null)
-            {
                 interval = value * _units[selectedItem];
-            }
 
             _taskInterval = new TimeSpan((int)(interval * 1000000000));
         }

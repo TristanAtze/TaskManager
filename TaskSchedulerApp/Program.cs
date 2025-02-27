@@ -36,8 +36,6 @@ public class Program
 
         var mainMenu = new MainMenu();
         mainMenu.Start();
-
-
     }
 }
 

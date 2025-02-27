@@ -98,15 +98,8 @@ namespace HelperLibrary
             string[] basicTasks = ["OpenMail", "Calculator", "Browser", "LockInactiv"];
 
             if (plannedTasks != null)
-            {
-                for (int i = 0; i < plannedTasks.Count; i++)
-                {
-                    if (basicTasks.Contains(plannedTasks[i].Name))
-                    {
-                        plannedTasks.RemoveAt(i);
-                    }
-                }
-            }
+                plannedTasks = [.. plannedTasks.Where(Tasks => !basicTasks.Contains(Tasks.Name))];
+
             content = JsonConvert.SerializeObject(settings);
 
             File.WriteAllText("settings.taskmanager", content);

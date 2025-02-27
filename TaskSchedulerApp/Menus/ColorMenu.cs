@@ -37,7 +37,7 @@ public class ColorMenu : Menu
     protected override void CallChoice()
     {
         bool getBack = false;
-        int color = 15;
+        int? color = null;
         switch (ChoiceIndex)
         {
             case 0:
@@ -92,7 +92,9 @@ public class ColorMenu : Menu
                 break;
         }
         KeepGoing = false;
-        Config.SaveSettings(null, (ConsoleColor)color);
+
+        if (color != null)
+            Config.SaveSettings(null, (ConsoleColor)color);
 
         if (!getBack)
             DoRestart();

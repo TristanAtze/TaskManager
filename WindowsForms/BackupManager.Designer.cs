@@ -109,7 +109,7 @@ namespace BackupTool
             buttonBrowseSource.TabIndex = 3;
 
             buttonBrowseSource.UseVisualStyleBackColor = true;
-            buttonBrowseSource.Click += buttonBrowseSource_Click;
+            buttonBrowseSource.Click += ButtonBrowseSource_Click;
             // 
             // labelDestination
             // 
@@ -134,7 +134,7 @@ namespace BackupTool
             buttonBrowseDestination.TabIndex = 6;
 
             buttonBrowseDestination.UseVisualStyleBackColor = true;
-            buttonBrowseDestination.Click += buttonBrowseDestination_Click;
+            buttonBrowseDestination.Click += ButtonBrowseDestination_Click;
             // 
             // labelBackupType
             // 
@@ -206,7 +206,7 @@ namespace BackupTool
             buttonStopSelectedTask.TabIndex = 14;
 
             buttonStopSelectedTask.UseVisualStyleBackColor = true;
-            buttonStopSelectedTask.Click += buttonStopSelectedTask_Click;
+            buttonStopSelectedTask.Click += ButtonStopSelectedTask_Click;
             // 
             // buttonStopAllTasks
             // 
@@ -216,7 +216,7 @@ namespace BackupTool
             buttonStopAllTasks.TabIndex = 15;
 
             buttonStopAllTasks.UseVisualStyleBackColor = true;
-            buttonStopAllTasks.Click += buttonStopAllTasks_Click;
+            buttonStopAllTasks.Click += ButtonStopAllTasks_Click;
             // 
             // Form1
             // 

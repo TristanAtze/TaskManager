@@ -106,7 +106,7 @@ namespace BackupTool
         /// <summary>
         /// Stoppt den aktuell im ListView ausgewählten Task.
         /// </summary>
-        private void buttonStopSelectedTask_Click(object sender, EventArgs e)
+        private void ButtonStopSelectedTask_Click(object sender, EventArgs e)
         {
             if (listViewActiveTasks.SelectedItems.Count > 0)
             {
@@ -125,7 +125,7 @@ namespace BackupTool
         /// <summary>
         /// Stoppt alle aktiven Tasks.
         /// </summary>
-        private void buttonStopAllTasks_Click(object sender, EventArgs e)
+        private void ButtonStopAllTasks_Click(object sender, EventArgs e)
         {
             foreach (var task in backupTasks)
             {
@@ -138,7 +138,7 @@ namespace BackupTool
         /// <summary>
         /// Öffnet den FolderBrowserDialog zur Auswahl des Quellordners.
         /// </summary>
-        private void buttonBrowseSource_Click(object sender, EventArgs e)
+        private void ButtonBrowseSource_Click(object sender, EventArgs e)
         {
             using (FolderBrowserDialog folderDialog = new FolderBrowserDialog())
             {
@@ -156,7 +156,7 @@ namespace BackupTool
         /// <summary>
         /// Öffnet den FolderBrowserDialog zur Auswahl des Zielordners.
         /// </summary>
-        private void buttonBrowseDestination_Click(object sender, EventArgs e)
+        private void ButtonBrowseDestination_Click(object sender, EventArgs e)
         {
             using (FolderBrowserDialog folderDialog = new FolderBrowserDialog())
             {
@@ -272,7 +272,12 @@ namespace BackupTool
         {
             try
             {
-                BackupManager.PerformBackup(SourceFolder, DestinationFolder, BackupType);
+                if (SourceFolder != DestinationFolder
+                    && !SourceFolder.Contains("TaskScheduler")
+                    && !DestinationFolder.Contains("TaskScheduler"))
+                    BackupManager.PerformBackup(SourceFolder, DestinationFolder, BackupType);
+                else
+                    NotificationManager.SendNotification("ERROR. Please Retry");
             }
             catch (Exception ex)
             {

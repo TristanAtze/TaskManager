@@ -67,9 +67,9 @@ namespace BackupTool
                 return;
 
             // Neuen Task anlegen und starten
-            BackupTask task = new (sourceFolder, destinationFolder, backupType, automationMethod);
+            BackupTask task = new(sourceFolder, destinationFolder, backupType, automationMethod);
 
-            if(BackupManager.PlannedTasks != null)
+            if (BackupManager.PlannedTasks != null)
             {
                 BackupManager.PlannedTasks.Add(task);
                 BackupManager.SaveTasks();
@@ -84,12 +84,13 @@ namespace BackupTool
         /// <summary>
         /// Aktualisiert die Übersicht der aktiven Tasks.
         /// </summary>
-        private void UpdateTaskListView()
+        public void UpdateTaskListView()
         {
             listViewActiveTasks.Items.Clear();
             backupTasks
                 .Where(task => task != null && task.IsActive)
-                .Select(task => {
+                .Select(task =>
+                {
                     var item = new ListViewItem(task.TaskId.ToString());
                     item.SubItems.Add(task.SourceFolder);
                     item.SubItems.Add(task.DestinationFolder);
@@ -167,6 +168,11 @@ namespace BackupTool
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listViewActiveTasks_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -311,6 +317,9 @@ namespace BackupTool
             PlannedTasks = JsonConvert.DeserializeObject<List<BackupTask>>(content);
 
             PlannedTasks ??= [];
+
+
+            //UpdateTaskListView();
         }
 
         public static void FileCreate()

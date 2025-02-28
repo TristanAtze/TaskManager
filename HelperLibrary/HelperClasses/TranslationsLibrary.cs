@@ -1222,15 +1222,20 @@
         public static string GetTranslation(string language, string key, params object[] args)
         {
             Logger.Log("");
-            if (translations.TryGetValue(language, out Dictionary<string, string>? value) && value.TryGetValue(key, out string? translationStr))
-            {
-                for (int i = 0; i < args.Length; i++)
-                {
-                    translationStr = translationStr.Replace("{" + i.ToString() + "}", args[i].ToString());
-                }
-                return translationStr;
-            }
-            return key;
+            //if (translations.TryGetValue(language, out Dictionary<string, string>? value) && value.TryGetValue(key, out string? translationStr))
+            //{
+            //    for (int i = 0; i < args.Length; i++)
+            //    {
+            //        translationStr = translationStr.Replace("{" + i.ToString() + "}", args[i].ToString());
+            //    }
+            //    return translationStr;
+            //}
+            //return key;
+
+            return translations.TryGetValue(language, out var value) && value.TryGetValue(key, out var translationStr)
+            ? Enumerable.Range(0, args.Length)
+                        .Aggregate(translationStr, (current, i) => current.Replace($"{{{i}}}", args[i].ToString()))
+            : key;
         }
 
         public static string GetCurrentLanguage()

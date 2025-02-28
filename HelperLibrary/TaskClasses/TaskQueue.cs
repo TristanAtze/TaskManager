@@ -36,14 +36,14 @@ public class TaskQueue
     /// Gibt die nächste ausstehende Task der Liste zurück.
     /// </summary>
     /// <returns>Nächste ausstehende Task</returns>
-    public OwnTask? GetNextTask()
+    public OwnTask GetNextTask()
     {
         var taskToExecute = TaskList.FirstOrDefault();
         if (taskToExecute != null)
         {
             TaskList.RemoveAt(0);
         }
-        return taskToExecute;
+        return taskToExecute ?? new OwnTask("", "", DateTime.Now);
     }
 
     public void ThrowTask(OwnTask actualTask)

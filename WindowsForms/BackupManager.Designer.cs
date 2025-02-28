@@ -107,7 +107,6 @@ namespace BackupTool
             buttonBrowseSource.Name = "buttonBrowseSource";
             buttonBrowseSource.Size = new Size(100, 23);
             buttonBrowseSource.TabIndex = 3;
-
             buttonBrowseSource.UseVisualStyleBackColor = true;
             buttonBrowseSource.Click += ButtonBrowseSource_Click;
             // 
@@ -132,7 +131,6 @@ namespace BackupTool
             buttonBrowseDestination.Name = "buttonBrowseDestination";
             buttonBrowseDestination.Size = new Size(100, 23);
             buttonBrowseDestination.TabIndex = 6;
-
             buttonBrowseDestination.UseVisualStyleBackColor = true;
             buttonBrowseDestination.Click += ButtonBrowseDestination_Click;
             // 
@@ -148,7 +146,6 @@ namespace BackupTool
             // 
             comboBoxBackupType.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxBackupType.FormattingEnabled = true;
-
             comboBoxBackupType.Location = new Point(30, 210);
             comboBoxBackupType.Name = "comboBoxBackupType";
             comboBoxBackupType.Size = new Size(200, 23);
@@ -166,7 +163,6 @@ namespace BackupTool
             // 
             comboBoxAutomation.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxAutomation.FormattingEnabled = true;
-
             comboBoxAutomation.Location = new Point(30, 270);
             comboBoxAutomation.Name = "comboBoxAutomation";
             comboBoxAutomation.Size = new Size(200, 23);
@@ -178,7 +174,6 @@ namespace BackupTool
             buttonBackupStart.Name = "buttonBackupStart";
             buttonBackupStart.Size = new Size(120, 30);
             buttonBackupStart.TabIndex = 11;
-
             buttonBackupStart.UseVisualStyleBackColor = true;
             buttonBackupStart.Click += ButtonBackupStart_Click;
             // 
@@ -193,10 +188,7 @@ namespace BackupTool
             listViewActiveTasks.TabIndex = 13;
             listViewActiveTasks.UseCompatibleStateImageBehavior = false;
             listViewActiveTasks.View = View.Details;
-            // 
-            // columnHeaderTaskId
-            // 
-
+            listViewActiveTasks.SelectedIndexChanged += listViewActiveTasks_SelectedIndexChanged;
             // 
             // buttonStopSelectedTask
             // 
@@ -204,7 +196,6 @@ namespace BackupTool
             buttonStopSelectedTask.Name = "buttonStopSelectedTask";
             buttonStopSelectedTask.Size = new Size(150, 30);
             buttonStopSelectedTask.TabIndex = 14;
-
             buttonStopSelectedTask.UseVisualStyleBackColor = true;
             buttonStopSelectedTask.Click += ButtonStopSelectedTask_Click;
             // 
@@ -214,7 +205,6 @@ namespace BackupTool
             buttonStopAllTasks.Name = "buttonStopAllTasks";
             buttonStopAllTasks.Size = new Size(150, 30);
             buttonStopAllTasks.TabIndex = 15;
-
             buttonStopAllTasks.UseVisualStyleBackColor = true;
             buttonStopAllTasks.Click += ButtonStopAllTasks_Click;
             // 

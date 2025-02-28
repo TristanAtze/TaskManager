@@ -7,7 +7,7 @@ public static class TaskScheduler
     public static TaskQueue TaskQueue { get; private set; } = new TaskQueue();
 
     public static bool IsRunning { private get; set; } = true;
-    public static OwnTask? NextTask { get; set; } = null;
+    public static OwnTask NextTask { get; set; } = new OwnTask("", "", DateTime.Now);
 
     /// <summary>
     /// Fügt in der Warteschlange eine neue Task hinzu.
@@ -39,49 +39,43 @@ public static class TaskScheduler
     {
         while (IsRunning)
         {
-            try
+            NextTask = TaskQueue.GetNextTask();
+            if (NextTask != null)
             {
-                NextTask = TaskQueue.GetNextTask();
-                if (NextTask != null)
+                var delay = NextTask.ScheduledTime - DateTime.Now;
+
+                if (delay.TotalMilliseconds > 0)
+                    await Task.Delay(delay);
+
+                if (RequirementsMet(NextTask))
                 {
-                    var delay = NextTask.ScheduledTime - DateTime.Now;
-
-                    if (delay.TotalMilliseconds > 0)
-                        await Task.Delay(delay);
-
-                    if (RequirementsMet(NextTask))
+                    if (OwnTask.CompareType(NextTask))
                     {
-                        if (OwnTask.CompareType(NextTask))
-                        {
-                            OwnTask task = (OwnTask)NextTask;
-                            task.Execute();
-                        }
-                        else
-                            NextTask.Execute();
-
-                        if (NextTask.IsRecurring && NextTask.Interval.HasValue)
-                        {
-                            NextTask.ScheduledTime = DateTime.Now.Add(NextTask.Interval.Value);
-                            ScheduleTask(NextTask);
-                        }
+                        OwnTask task = (OwnTask)NextTask;
+                        task.Execute();
                     }
-                    else
-                        TaskQueue.ThrowTask(NextTask);
+                    else 
+                        NextTask.Execute();
 
-                    Config.SaveSettings(null, null, null, TaskQueue.TaskList);
+                            
+
+                    if (NextTask.IsRecurring && NextTask.Interval.HasValue)
+                    {
+                        NextTask.ScheduledTime = DateTime.Now.Add(NextTask.Interval.Value);
+                        ScheduleTask(NextTask);
+                    }
                 }
                 else
-                {
-                    await Task.Delay(1000);
-                }
+                    TaskQueue.ThrowTask(NextTask);
+
+                Config.SaveSettings(null, null, null, TaskQueue.TaskList);
             }
-            catch(Exception e)
+            else
             {
-                Logger.Log("Scheduler ERROR: " + e);
+                await Task.Delay(1000);
             }
         }
     }
-
 
     private static bool RequirementsMet(MainTask task)
     {

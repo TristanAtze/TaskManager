@@ -58,7 +58,7 @@ public class MainMenu : Menu
     {
         Console.WriteLine(GetTranslation(GetCurrentLanguage(), "headline_printtasks_mainmenu"));
 
-        if (TaskScheduler.NextTask != null)
+        if (TaskScheduler.NextTask != null && TaskScheduler.NextTask.Name != "")
         {
             Console.WriteLine(GetTranslation(GetCurrentLanguage(), "name_printtasks_mainmenu") + TaskScheduler.NextTask.Name);
             Console.WriteLine(GetTranslation(GetCurrentLanguage(), "priority_printtasks_mainmenu") + TaskScheduler.NextTask.Priority);
@@ -74,6 +74,9 @@ public class MainMenu : Menu
 
         foreach (var item in TaskScheduler.TaskQueue.TaskList)
         {
+            //ACHTUNG: Wenn Name leer, dann überspringen
+            if (item.Name == "")
+                continue;
             Console.WriteLine(GetTranslation(GetCurrentLanguage(), "name_printtasks_mainmenu") + item.Name);
             Console.WriteLine(GetTranslation(GetCurrentLanguage(), "priority_printtasks_mainmenu") + item.Priority);
             Console.WriteLine(GetTranslation(GetCurrentLanguage(), "date_printtasks_mainmenu") + item.ScheduledTime);

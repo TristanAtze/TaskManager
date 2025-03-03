@@ -74,7 +74,7 @@ namespace BasicTaskScheduler
             Priority = GetPriorityFromSelection(comboBoxPriority?.SelectedItem?.ToString());
 
             // Versuche, die Zeitanzahl als double zu parsen
-            if (double.TryParse(txtTimeAmount?.Text, out double timeAmount))
+            if (double.TryParse(txtTimeAmount?.Text, out double timeAmount) && txtTimeAmount?.Text != "0")
             {
                 // Ermittle den Umrechnungsfaktor basierend auf der gewählten Zeiteinheit
                 double? factor = GetTimeFactor(comboBoxUnit?.SelectedItem?.ToString());

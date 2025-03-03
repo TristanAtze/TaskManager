@@ -27,15 +27,18 @@ internal class AutoTaskOptions : Menu
             {
                 case 0:
                     BasicTaskScheduler.BasicTaskScheduler.Start();
-                    Task.Run(async() => BasicTasks.Email((double)TotalTime, Priority));
+                    if (TotalTime != 0)
+                        Task.Run(async() => BasicTasks.Email((double)TotalTime, Priority));
                     break;
                 case 1:
                     BasicTaskScheduler.BasicTaskScheduler.Start();
-                    Task.Run(async() => BasicTasks.Calculator((double)TotalTime, Priority));
+                    if (TotalTime != 0)
+                        Task.Run(async() => BasicTasks.Calculator((double)TotalTime, Priority));
                     break;
                 case 2:
                     BasicTaskScheduler.BasicTaskScheduler.Start();
-                    Task.Run(async () => BasicTasks.Browser((double)TotalTime, Priority));
+                    if (TotalTime != 0)
+                        Task.Run(async () => BasicTasks.Browser((double)TotalTime, Priority));
                     break;
                 case 3:
                     MessageBox.Show("In der aktuellen Version nicht verfügbar");    

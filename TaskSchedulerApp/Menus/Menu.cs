@@ -6,7 +6,6 @@ public abstract class Menu
     protected string[] Options { get; set; } = [];
 
     protected int ChoiceIndex { get; set; } = 0;
-
     protected bool KeepGoing { get; set; } = true;
 
     public virtual void Start()
